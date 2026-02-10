@@ -104,10 +104,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>4BCB89ADD5FA784621CB7005AD8CC891DAF72B24</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>D28C0DBC49F47DE059ABABC807212D2E2031738C</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Razer_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Razer_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -123,6 +123,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Razer_1_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Infragistics.Services.Schedules.WcfConnectorService, Version=25.2.20252.45, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
@@ -317,6 +320,7 @@
     </None>
     <AppDesigner Include="Properties\" />
     <None Include="Razer_1_TemporaryKey.pfx" />
+    <None Include="Razer_2_TemporaryKey.pfx" />
     <None Include="Service References\BillingServiceLocal\BillingService.wsdl" />
     <None Include="Service References\BillingServiceLocal\BillingService.xsd">
       <SubType>Designer</SubType>
