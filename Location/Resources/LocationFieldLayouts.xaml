@@ -21,15 +21,7 @@
         <igDP:Field Name="psa_state" Label="State" Width="50"></igDP:Field>
         <igDP:Field Name="psa_country" Label="Country" Width="90"></igDP:Field>
         <igDP:Field Name="psa_province" Label="Province" Width="90"></igDP:Field>
-        <igDP:Field Name="archived_yn" Label="Archived" Width="60"></igDP:Field>
-        <igDP:Field Name="ship_to_address1" Label="Ship To Address1" Width="110"></igDP:Field>
-        <igDP:Field Name="ship_to_address2" Label="Ship To Address2" Width="110"></igDP:Field>
-        <igDP:Field Name="ship_to_city" Label="Ship To City" Width="110"></igDP:Field>
-        <igDP:Field Name="ship_to_state" Label="Ship To State" Width="80"></igDP:Field>
-        <igDP:Field Name="ship_to_province" Label="Ship To Province" Width="100"></igDP:Field>
-        <igDP:Field Name="ship_to_country" Label="Ship To Country" Width="100"></igDP:Field>
-        <igDP:Field Name="ship_to_postal_code" Label="Ship To Postal Code" Width="120"></igDP:Field>
-
+        <igDP:Field Name="archived_yn" Label="Archived" Width="60"></igDP:Field>      
     </igDP:FieldLayout>
 
     <igDP:FieldLayout x:Key="services" x:Shared="False">
