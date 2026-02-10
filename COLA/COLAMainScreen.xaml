@@ -1,0 +1,29 @@
+﻿<RazerBase:ScreenBase x:Class="COLA.COLAMainScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+        xmlns:local="clr-namespace:COLA"
+        xmlns:igWindows="http://infragistics.com/Windows"
+        xmlns:igDP="http://infragistics.com/DataPresenter" 
+        mc:Ignorable="d" 
+        d:DesignHeight="720" d:DesignWidth="1080">
+    <Grid>
+        <igWindows:XamTabControl Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="4" Background="{DynamicResource ApplicationBackground}" Name="tcMainTab">
+            <igWindows:TabItemEx Name="General"  Header="Cola Candidates" Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:COLAGeneralTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="uGeneral" RootParentObjectType="COLA.COLAMainScreen"></local:COLAGeneralTab>
+                </Grid>
+            </igWindows:TabItemEx>
+        </igWindows:XamTabControl>
+    </Grid>
+</RazerBase:ScreenBase>

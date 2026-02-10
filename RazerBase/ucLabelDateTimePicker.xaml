@@ -1,0 +1,27 @@
+﻿<UserControl xmlns:igEditors="http://infragistics.com/Editors"  xmlns:ig="http://schemas.infragistics.com/xaml"  x:Class="RazerBase.ucLabelDateTimePicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:local="clr-namespace:RazerBase"
+             x:Name="ucLabelDateTimePicker1" DataContextChanged="ValidateDataContextChanged"
+             d:DesignHeight="40" d:DesignWidth="300">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Name="GridLabelColumn" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0*" />
+        </Grid.RowDefinitions>
+
+        <Label Style="{DynamicResource LabelLightUpStyle}"  Name="Label" Content="[LabelText]" Margin="1,1,0,1" Width="99" HorizontalContentAlignment="Right"></Label>
+        <igEditors:XamDateTimeEditor Name="DatePicker" Grid.Column="1"  d:LayoutOverrides="Height" Grid.ColumnSpan="2" 
+                    VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Stretch"
+                    Value="{Binding ElementName=ucLabelDateTimePicker1, Path=SelText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                    BorderBrush="{x:Null}" Mask="{}{date} {time}" SpinButtonDisplayMode="Always" SpinWrap="True" />
+    </Grid>
+</UserControl>

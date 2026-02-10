@@ -1,0 +1,49 @@
+﻿<RazerBase:ScreenBase x:Class="SecurityMaintenance.SecurityRole"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+             xmlns:local="clr-namespace:SecurityMaintenance"
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="720"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}" xmlns:igWindows="http://infragistics.com/Windows">
+    <Grid Background="{DynamicResource ApplicationBackgroundDark}" Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" MinHeight="40" MaxHeight="40" />
+            <RowDefinition Height="10" MinHeight="10" MaxHeight="10" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+
+                <RazerBase:ucLabelTextBox Grid.Column="0" HorizontalAlignment="Left" Name="txtRoleID" VerticalAlignment="Center" LabelText="Role ID:" Width="120" MouseDoubleClick="txtRoleID_MouseDoubleClick" LabelWidth="55" LostFocus="txtRoleID_LostFocus" EnterActsLikeTab="True"/>
+                <Separator Height="30" Name="separator1" Width="5" Margin="5" />
+                <RazerBase:ucLabelTextBox Grid.Column="1" HorizontalAlignment="Left" Name="txtRoleDescription" VerticalAlignment="Center" LabelText="Role Description:" Width="350" MouseDoubleClick="txtRoleDescription_MouseDoubleClick" LabelWidth="102" IsReadOnly="True" />
+            </StackPanel>
+        </Grid>
+
+        <igWindows:XamTabControl Grid.Row="2" HorizontalAlignment="Stretch" Name="xamTabControl1" VerticalAlignment="Stretch" Background="{DynamicResource ApplicationBackground}">
+            <igWindows:TabItemEx Header="Access" Name="Access" Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <local:RoleAccessTab x:Name="RoleAccessTab" />
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Members" Name="Members" Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <local:RoleMembersTab x:Name="RoleMembersTab" />
+                </Grid>
+            </igWindows:TabItemEx>
+        </igWindows:XamTabControl>
+    </Grid>
+</RazerBase:ScreenBase>

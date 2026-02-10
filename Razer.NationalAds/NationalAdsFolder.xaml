@@ -1,0 +1,85 @@
+﻿<RazerBase:ScreenBase x:Class="Razer.NationalAds.NationalAdsFolder"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"             
+             xmlns:igWindows="http://infragistics.com/Windows"
+             xmlns:igDP="http://infragistics.com/DataPresenter"   
+             xmlns:local="clr-namespace:Razer.NationalAds"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="850">
+    
+    <Grid Background="{DynamicResource ApplicationBackgroundDark}" Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" MaxHeight="40" MinHeight="40"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <RazerBase:ucLabelTextBox Name="txtInvoiceNumber" LabelText="Invoice Number:" BindPath="invoice_number" Grid.Row="0" Grid.Column="0" LabelWidth="120"
+                                  EnterActsLikeTab="True" LostFocus="txtInvoiceNumber_LostFocus" GotFocus="txtInvoiceNumber_GotFocus" MouseDoubleClick="txtInvoiceNumber_MouseDoubleClick"/>
+        <RazerBase:ucLabelTextBox Name="txtReceivableAccount" LabelText="Customer ID:"  IsReadOnly="True" BindPath="receivable_account" Grid.Row="0" Grid.Column="2" LabelWidth="120"
+                                  EnterActsLikeTab="True" />
+
+        <igWindows:XamTabControl Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="4"  Name="tcMainTab">
+            <igWindows:TabItemEx Header="General"  FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:NationalAdsGeneralTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="General" />
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Detail"  FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:NationalAdsDetails Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="Details" />
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Deferred" Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:NationalAdsDefRevTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="Deferred"></local:NationalAdsDefRevTab>
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="View"  FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:NationalAdsView Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="View" />
+                </Grid>
+            </igWindows:TabItemEx>
+        </igWindows:XamTabControl>
+    </Grid>
+</RazerBase:ScreenBase>

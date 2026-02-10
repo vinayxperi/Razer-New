@@ -1,0 +1,205 @@
+﻿<local:ScreenBase x:Class="Customer.CustomerGeneralTab" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+             xmlns:Converters="clr-namespace:RazerConverters;assembly=RazerConverters"
+             mc:Ignorable="d"  
+             d:DesignHeight="1024" d:DesignWidth="1280"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}" Loaded="ScreenBase_Loaded">
+   
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Grid>
+        <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+                <RowDefinition Height="10" />
+                <RowDefinition Height="320" /> <!--Was 280-->
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="120" />
+                <RowDefinition Height="30" />
+                <RowDefinition  Height="80*" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="80" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="110" />            
+                <RowDefinition Height="104*" />
+                <RowDefinition Height="104*" />
+            </Grid.RowDefinitions>
+
+
+            <Grid Grid.Row="1" Grid.ColumnSpan="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition MinWidth="150"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition MinWidth="250"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition MinWidth="150"/>
+                       <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition/> <!-- Vinay's change -->
+                </Grid.RowDefinitions>
+                    <local:ucLabelTextBox Name="txtCustAcctName" Grid.Row="0" Grid.Column="1" LabelText="Customer Name:" BindPath="account_name" LabelWidth="120" Grid.ColumnSpan="3" />
+                
+                <local:ucLabelTextBox Name="txtAddress1" Grid.Row="1" Grid.Column="1" LabelText="Address 1:" BindPath="address_1"  />
+                <local:ucLabelTextBox Name="txtAddress2" Grid.Row="2" Grid.Column="1" LabelText="Address 2:" BindPath="address_2"  />
+                <local:ucLabelTextBox Name="txtAddress3" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" LabelText="Address 3:" BindPath="address_3"  />
+                <local:ucLabelTextBox Name="txtCity" Grid.Row="4" Grid.Column="1" LabelText="City:" BindPath="city"  />
+                <!--<local:ucLookupTextBox Name="lkState" Grid.Row="3" Grid.Column="3" LabelText="State:" SelectedValue="{Binding Path=state, Mode=TwoWay}"  />-->
+                <local:ucLabelComboBox Name="cmbState" Grid.Row="5" Grid.Column="1" LabelText="State:" SelectedValue="{Binding Path=state, Mode=TwoWay}"  />
+                <local:ucLabelTextBox Name="txtPostalCode" Grid.Row="4" Grid.Column="3" LabelText="Postal Code:" BindPath="postal_code" />
+               
+                <!--<local:ucLookupTextBox Name="lkCountry" Grid.Row="3" Grid.Column="7" LabelText="Country:" SelectedValue="{Binding Path=country_id, Mode=TwoWay}"  />-->
+                <local:ucLabelComboBox Name="cmbCountry" Grid.Row="5" Grid.Column="3" LabelText="Country:" SelectedValue="{Binding Path=country_id, Mode=TwoWay}"  SelectionChanged="cmbCountry_SelectionChanged" />
+                <local:ucLabelTextBox Name="txtAttnLine" Grid.Row="0" Grid.Column="5" LabelText="Attn:" BindPath="attn_line"  />
+                <local:ucLabelTextBox Name="txtPayorName" Grid.Row="1" Grid.Column="5" LabelText="Payor:" BindPath="payor_name"  />
+                <local:ucLabelTextBox Name="txtPhoneNumber" Grid.Row="3" Grid.Column="5" LabelText="Phone:" BindPath="phone_number"  />
+                <local:ucLabelTextBox Name="txtFaxNumber" Grid.Row="4" Grid.Column="5" LabelText="Fax:" BindPath="fax_number"  />
+                <local:ucLabelComboBox Name="cmbProvince" Grid.Row="5" Grid.Column="5" LabelText="Province:" SelectedValue="{Binding Path=province_id, Mode=TwoWay}" SelectionChanged="cmbProvince_SelectionChanged" />
+               
+                <local:ucLabelComboBox Name="cmbGeography" Grid.Row="5" Grid.Column="7" LabelText="Geography:" SelectedValue ="{Binding Path=geography, Mode=TwoWay}"   />
+                <local:ucLabelTextBox Name="txtDescription" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" LabelText="Description:" BindPath="description"  />
+                <Button Name="btnPrinted" Grid.Column="5" Grid.Row="6" Content="Printed Addr" MaxWidth="80" MaxHeight="30" Click="btnPrinted_Click" />
+                <local:ucLabelTextBox Name="txtSFCustAcctName" Grid.Row="7" Grid.Column="1" LabelText="SF Customer Name:" BindPath="sf_account_name" LabelWidth="120" Grid.ColumnSpan="3" />
+                <local:ucLabelTextBox Name="txtNSCustAcctName" Grid.Row="8" Grid.Column="1" LabelText="NS Customer Name:" BindPath="ns_account_name" LabelWidth="120" Grid.ColumnSpan="3" />
+                <local:ucLabelTextBox Name="txtSFID" Grid.Row="7" Grid.Column="5" LabelText="SF ID:" BindPath="sf_id"  />
+                <!--<StackPanel Orientation="Horizontal" Grid.Row="8" Grid.Column="5" >
+                    <Label Style="{DynamicResource LabelLightUpStyle}" Content="NS Internal ID:" Margin="1,1,0,1" Width="90" HorizontalContentAlignment="Right" />
+                    <TextBox Name="txtNSInternalID" Background="#FFFFFFFF" MinWidth="250" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="Helvetica" FontWeight="Bold" 
+                     Height="25" TextChanged="txtNSInternalID_TextChanged" LostFocus="txtNSInternalID_LostFocus" />
+                </StackPanel>-->
+                
+                <local:ucLabelTextBox Name="txtNSInternalID" Grid.Row="8" Grid.Column="5" LabelText="NS Internal ID:" LabelWidth="90" 
+                                      BindPath="ns_internal_id" LostFocus="txtNSInternalID_LostFocus" >
+                </local:ucLabelTextBox>
+                
+                <local:ucLabelTextBox Name="txtParentId" Grid.Column="3" Grid.Row="1" LabelText="Parent:" LabelWidth="120" 
+                                          BindPath="parent_id" MouseDoubleClick="Customer_DoubleClick" LostFocus="txtParentId_LostFocus"    />
+                <local:ucLabelTextBox Name="txtParentName" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3" LabelText="Parent Name:" 
+                                          BindPath="parent_name" LabelWidth="120" IsReadOnly="True"  />
+
+                <local:ucLabelTextBox Name="txtBillMSO" Grid.Row="3" Grid.Column="3" LabelText="Entity:" BindPath="credit_account"  MouseDoubleClick="txtBillMSO_MouseDoubleClick" LostFocus="txtBillMSO_LostFocus" />
+                <local:ucLabelCheckBox Name="chkAccountStatus" Grid.Column="7" Grid.Row="0" LabelText="InActive:" LabelWidth="120" BindPath="account_status" />
+                <local:ucLabelCheckBox Name="chkNAFlag" Grid.Row="1" Grid.Column="7" LabelWidth="120" LabelText="Ads:" BindPath="natl_ads_ind" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+                <local:ucLabelComboBox Name="cmbLanguage" Grid.Row="3" Grid.Column="6" LabelText="Language:" SelectedValue="{Binding Path=language_id, Mode=TwoWay}"  />
+            </Grid>
+            <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Column="0" Grid.Row="3" >Credit</Label>
+            <Border Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5" BorderBrush="Gray"  BorderThickness="2" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition MinWidth="250"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition MinWidth="100"/>
+                        <ColumnDefinition Width="2"/>
+                        <ColumnDefinition Width="8" />
+                        <ColumnDefinition MinWidth="250"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    
+                    <local:ucLabelComboBox Name="cmbCreditRating" Grid.Row="0" Grid.Column="1" LabelWidth="120" LabelText="Credit Rating:" SelectedValue="{Binding Path=credit_rating, Mode=TwoWay}"  />
+                    <local:ucLabelCheckBox Name="chkBankruptcyFlag" Grid.Row="0" Grid.Column="3" LabelWidth="150" LabelText="Bankruptcy:" BindPath="bankruptcy_flag" />
+                    <local:ucLabelCheckBox Name="chkCreditStatusGranted" Grid.Column="5" LabelWidth="150" LabelText="Credit Status Granted:" BindPath="credit_status_granted" Grid.ColumnSpan="3" Margin="2,0,309,0" />
+                    <!--<local:ucLookupTextBox Name="lkCredCoord" Grid.Row="1" Grid.Column="1" LabelText="Credit Coordinator:" SelectedValue="{Binding Path=credit_coordinator_id, Mode=TwoWay}"  />-->
+                    <local:ucLabelComboBox Name="cmbCredCoord" Grid.Row="1" Grid.Column="1" LabelText="Credit Coordinator:" LabelWidth="120" SelectedValue="{Binding Path=credit_coordinator_id, Mode=TwoWay}"  />
+                    <!--<local:ucLookupTextBox Name="lkPaymentType" Grid.Row="1" Grid.Column="3" LabelText="Payment Type:" LabelWidth="120" SelectedValue="{Binding Path=pmt_type_id, Mode=TwoWay}"/>-->
+                    <local:ucLabelComboBox Name="cmbPaymentType" Grid.Row="1" Grid.Column="3" LabelText="Payment Type:" LabelWidth="120" SelectedValue="{Binding Path=pmt_type_id, Mode=TwoWay}"/>
+                    <!--<local:ucLookupTextBox Name="lkFinanceCharge" Grid.Row="1" Grid.Column="5" LabelWidth="120" LabelText="Finance Charge:" SelectedValue="{Binding Path=finance_charge_id, Mode=TwoWay}" Width="320"/>-->
+                    <local:ucLabelComboBox Name="cmbFinanceCharge" Grid.Row="1" Grid.Column="5" LabelWidth="110" LabelText="Finance Charge:" SelectedValue="{Binding Path=finance_charge_id, Mode=TwoWay}" Width="320" Grid.ColumnSpan="3" Margin="2,0,309,0" />
+                    <local:ucLabelComboBox Name="cmbBillMethod" Grid.Row="2" Grid.Column="1" LabelText="Bill Method:" SelectedValue="{Binding Path=bill_method, Mode=TwoWay}" />
+                    <local:ucLabelTextBox Name="txtApprovedCreditLimit" Grid.Row="2" Grid.Column="3" LabelText="Approved Credit Limit:" 
+                                          Text ="{Binding Path=approved_credit_limit,Mode=TwoWay,Converter={StaticResource TextNumericConverter}}" LabelWidth="150"  />
+                    <!--BindPath="approved_credit_limit"-->
+                    <!--<TextBox Name="txtApprovedCreditLimit" Grid.Row="2" Grid.Column="1" Text ="{Binding Path=approved_credit_limit,Mode=TwoWay,Converter={StaticResource TextNumericConverter}}" />-->
+                    <local:ucLabelDatePicker Name="ldtDateCreditChecked" Grid.Row="2" Grid.Column="5"  LabelWidth="125" BindPath="date_credit_checked" LabelText="Date Credit Checked:" Grid.ColumnSpan="3" Margin="2,0,309,0" />
+                    <local:ucLabelDatePicker Name="ldtLastDunDate" Grid.Row="2" Grid.Column="7"  LabelWidth="120" BindPath="last_dun" LabelText="Last Dun:" />
+                    
+                </Grid>
+            </Border>
+            <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Column="0" Grid.Row="5" >Taxes</Label>
+            <Border Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="5" BorderBrush="Gray"  BorderThickness="2" > 
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition MinWidth="250"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition MinWidth="100"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition MinWidth="250"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition MaxHeight="1"/>
+                    </Grid.RowDefinitions>
+                    <local:ucLabelCheckBox Name="chkTaxExempt"  Grid.Row="0" Grid.Column="1" LabelWidth="150" LabelText="Tax Exempt:" BindPath="tax_exempt" />
+                  
+                    <local:ucLabelCheckBox Name="chkWhtAutoCalcFlag" Grid.Row="1" Grid.Column="1" LabelWidth="150" LabelText="Wht Auto Calc:" BindPath="wht_auto_calc_flag" IsEnabled="False" />
+                    <local:ucLabelCheckBox Name="chkNoWhtFlag" Grid.Row="2" Grid.Column="1" LabelWidth="150" LabelText="No Withholding Tax:" BindPath="no_wht_flag" Checked="chkNoWhtFlag_Checked" UnChecked="chkNoWhtFlag_UnChecked"/>
+                    <local:ucLabelTextBox   Name="txtSalesTax" Grid.Row="0" Grid.Column="3" LabelText="Sales Tax %:"  
+                                            Text ="{Binding Path=sales_tax_rate,StringFormat=p4}"  LabelWidth="150" />
+                    <local:ucLabelComboBox   Name="cmbWHT" Grid.Row="1" Grid.Column="3" LabelText="Withholding Tax %:"  
+                                            SelectedValue="{Binding Path=wht_rate_id, Mode=TwoWay,StringFormat=p2}"  LabelWidth="150" IsEnabled="False" />
+                    <local:ucLabelCheckBox Name="chkWhtMultiFlag" Grid.Row="1" Grid.Column="5" LabelWidth="150" LabelText="Wht Multi Rates:" BindPath="wht_multi_flag" IsEnabled="False" Checked="chkWhtMultiFlag_Checked"  UnChecked="chkWhtMultiFlag_UnChecked" />
+                    <local:ucLabelCheckBox Name="chkCommPrcntFlag"  Grid.Row="1" Grid.Column="5" LabelWidth="150" LabelText="Comm %:" BindPath="comm_prcnt_flag" Visibility="Collapsed"/>
+
+
+                </Grid>
+            </Border>
+            <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Column="0" Grid.Row="7" >Ads</Label>
+            <Border Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="5" BorderBrush="Gray"  BorderThickness="2" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition MinWidth="150" Width="309*" />
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition MinWidth="100" Width="312*" />
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition MinWidth="250" Width="312*" />
+                        <ColumnDefinition Width="312*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <local:ucLabelComboBox Name="cmbPaymentTerms" Grid.Row="0" Grid.Column="1" LabelText="Payment Terms:" LabelWidth="113" SelectedValue="{Binding Path=ads_terms, Mode=TwoWay}" IsEnabled="{Binding ElementName=chkNAFlag, Path=IsChecked}"/>
+                    <local:ucLabelTextBox Name="txtVATNum"  Grid.Row="0" Grid.Column="3" LabelWidth="120" LabelText="VAT #:" BindPath="vat_nbr" IsEnabled="{Binding ElementName=chkNAFlag, Path=IsChecked}" />
+                    <local:ucLabelCheckBox Name="chkLegalFlag" Grid.Row="0" Grid.Column="5" LabelWidth="140" LabelText="No Legal Clause:" BindPath="ads_no_legal_clause_flag"  IsEnabled="{Binding ElementName=chkNAFlag, Path=IsChecked}" Checked="chkLegalFlag_Checked" />
+                   
+                    <local:ucLabelCheckBox Name="chkZeroAgencyCommFlag" Grid.Row="1" Grid.Column="1" LabelWidth="166" LabelText="Zero Agency Commissions:" BindPath="agency_comm"  IsEnabled="{Binding ElementName=chkNAFlag, Path=IsChecked}" Checked="chkZeroAgencyCommFlag_Checked" />
+                    <local:ucLabelCheckBox Name="chkComm100Flag" Grid.Row="1" Grid.Column="3" LabelWidth="179" LabelText="100% Commission:" BindPath="comm100_flag" Checked="chkComm100Flag_Checked" IsEnabled="{Binding ElementName=chkNAFlag, Path=IsChecked}"/>
+                    <local:ucLabelTextBox Name="txtCommPct" Grid.Row="1" Grid.Column="5" LabelText="Commission %" Text ="{Binding Path=comm_percent, StringFormat=p2}"     LabelWidth="130" IsEnabled="{Binding ElementName=chkNAFlag, Path=IsChecked}" KeyDown="txtCommPct_KeyDown" />
+                </Grid>
+            </Border>
+        </Grid>
+    </ScrollViewer>
+</local:ScreenBase>
+
+    

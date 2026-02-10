@@ -1,0 +1,38 @@
+﻿<RazerBase:ScreenBase x:Class="Customer.CustomerDispute" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+                  xmlns:igDP="http://infragistics.com/DataPresenter" 
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="900"
+             Height="Auto" Width="Auto" >
+
+    <Border Grid.Row="5" Grid.ColumnSpan="3" BorderBrush="Gray" BorderThickness="1,0,0,0">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="35"/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15" />               
+                <RowDefinition Height="35" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="5" />
+            </Grid.RowDefinitions>
+            <!-- Place Controls Here -->
+            <Label  Grid.Column="1" Grid.Row="1" FontSize="14" FontWeight="Bold">Enter Dispute Amounts</Label>
+            <RazerBase:ucBaseGrid Grid.Column="1" Name="idgDetails" Grid.Row="2" Grid.ColumnSpan="3" />
+            <!--<RazerBase:ucLabelTextBox Name="txtDispute"  Grid.Row="5" Grid.Column="2" LabelText="Disputed:"  IsEnabled="False" BindPath="dispute_amount"  />-->
+            <!--</Border>-->
+            <Button Grid.Column="2" Grid.Row="3" Name="btnOK" Content="Update Dispute" Height="23"   Width="150" Click="btnOK_Click" Margin="0,2,7,0" />
+            <Button Grid.Column="2" Grid.Row="1" Name="btnAll" Content="Dispute All" Height="23"   Width="150" Click="btnAll_Click" Margin="0,2,7,0" />
+             
+        </Grid>
+    </Border>
+</RazerBase:ScreenBase>

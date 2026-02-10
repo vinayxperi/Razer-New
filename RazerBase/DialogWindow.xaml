@@ -1,0 +1,11 @@
+﻿<Window x:Class="RazerBase.DialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="DialogWindow"
+        xmlns:my="clr-namespace:RazerBase" Background="{DynamicResource  ApplicationBackground}" 
+        WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown"
+        Width="320" Height="530" Activated="Window_Activated">
+    <Grid>
+        <my:ucListSelector HorizontalAlignment="Stretch" x:Name="ListSelector" VerticalAlignment="Stretch" />
+    </Grid>
+</Window>

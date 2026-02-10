@@ -1,0 +1,88 @@
+﻿<RazerBase:ScreenBase x:Class="Contract.ContractFolderMainScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+             xmlns:local="clr-namespace:Contract"
+             xmlns:igWindows="http://infragistics.com/Windows"
+             xmlns:igDP="http://infragistics.com/DataPresenter" 
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="900">
+
+    <Grid Background="{DynamicResource ApplicationBackgroundDark}" Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" MaxHeight="40" MinHeight="40"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <RazerBase:ucLabelTextBox Name="txtContractID" LabelText="Contract ID:" Grid.Row="0" Grid.Column="0" LabelWidth="120"
+                                  LostFocus="txtContractID_LostFocus" GotFocus="txtContractID_GotFocus" MouseDoubleClick="txtContractID_MouseDoubleClick"
+                                  EnterActsLikeTab="True" />
+        <igWindows:XamTabControl Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="4"  Name="tcMainTab">
+            <igWindows:TabItemEx Header="General"  FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:ContractGeneralTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="General"></local:ContractGeneralTab>
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Detail" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:ContractBillingTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="Billing"></local:ContractBillingTab>
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Locations" FontWeight="Bold">
+                <local:ContractLocationsTab x:Name="Locations"></local:ContractLocationsTab>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Rates" FontWeight="Bold">
+                <local:ContractRatesTab x:Name="Rates"></local:ContractRatesTab>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Reporting" FontWeight="Bold">
+                <local:ContractReportingTab x:Name="Reporting"></local:ContractReportingTab>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Billing Totals" FontWeight="Bold">
+                <local:ContractBillingTotalsTab x:Name="BillingTotals"></local:ContractBillingTotalsTab>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Units" FontWeight="Bold">
+                <local:ContractUnitsTab x:Name="Units" />
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Ops" FontWeight="Bold">
+                <local:ContractOpsTab x:Name="Ops" />
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Location Rules" FontWeight="Bold">
+                <local:ContractLocationRulesTab x:Name="LocRules" />
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Review Dates" FontWeight="Bold">
+                <local:ContractReviewDatesTab x:Name="ReviewDates" />
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Comments" FontWeight="Bold">
+                <RazerBase:ucComments x:Name="Comments" Grid.RowSpan="2" Grid.ColumnSpan="2" RootParentObjectType="Contract.ContractFolderMainScreen" ></RazerBase:ucComments>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Attachments" FontWeight="Bold">
+                <RazerBase:ucAttachmentsTab x:Name="ContractAttachments" Grid.RowSpan="2" Grid.ColumnSpan="2" RootParentObjectType="Contract.ContractFolderMainScreen" ></RazerBase:ucAttachmentsTab>
+            </igWindows:TabItemEx>
+        </igWindows:XamTabControl>
+    </Grid>
+ 
+</RazerBase:ScreenBase>

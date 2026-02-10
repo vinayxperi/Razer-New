@@ -1,0 +1,230 @@
+﻿<RazerBase:ScreenBase x:Class="Razer.CustomInvoice.CustomInvoiceGeneral"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase" 
+             xmlns:Converters="clr-namespace:RazerConverters;assembly=RazerConverters"     
+             xmlns:igWindows="http://infragistics.com/Windows"
+             xmlns:igDP="http://infragistics.com/DataPresenter"           
+             mc:Ignorable="d" 
+             d:DesignHeight="750" d:DesignWidth="1000"
+             ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+
+    <UserControl.Resources>
+        <Converters:TrueFalseReversalConverter x:Key="BooleanReversal"/>
+        <Converters:cTextFormat x:Key="DateFormat"/>
+    </UserControl.Resources>
+
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ScrollChanged="ScrollViewer_ScrollChanged">
+        <Grid Background="{DynamicResource ApplicationBackgroundDark}" Name="MainGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="480" />
+                <ColumnDefinition Width="210" />
+                <ColumnDefinition Width="310" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="15"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Grid.Column="1"  BorderBrush="Gray" BorderThickness="1,0,1,0" />
+            <Border Grid.ColumnSpan="3" BorderBrush="Gray" BorderThickness="0,0,0,1" />
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition Height="10" />
+                </Grid.RowDefinitions>
+                <RazerBase:ucLabelCheckBox Name="chkPosted" LabelText="Posted:" BindPath="posted_flag" Grid.Column="1" Grid.ColumnSpan="2" LabelWidth="70" IsEnabled="False" />
+                <!--<RazerBase:ucLabelCheckBox Name="chkPORequired" LabelText="PO Required:" BindPath="po_required" Grid.Column="3" Grid.ColumnSpan="2" LabelWidth="85" IsEnabled="False" />-->
+                <RazerBase:ucLabelTextBox Name="txtAccountName" LabelText="Name:" BindPath="account_name" IsReadOnly="True" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" LabelWidth="90" />
+                <RazerBase:ucLabelTextBox Name="txtAddress1" LabelText="Address1:" BindPath="address_1" IsReadOnly="True" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" LabelWidth="90" />
+                <RazerBase:ucLabelTextBox Name="txtAddress2" LabelText="Address2:" BindPath="address_2" IsReadOnly="True" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" LabelWidth="90" />
+                <RazerBase:ucLabelTextBox Name="txtCity" LabelText="City:" BindPath="city" Grid.Row="4" IsReadOnly="True" Grid.Column="0"  Grid.ColumnSpan="3" LabelWidth="90" />
+                <RazerBase:ucLabelTextBox Name="txtState" LabelText="State:" BindPath="state" Grid.Row="4" IsReadOnly="True" Grid.Column="3"  LabelWidth="55" />
+                <RazerBase:ucLabelTextBox Name="txtPostalCode" LabelText="Postal Code:" BindPath="postal_code" IsReadOnly="True" Grid.Row="5" Grid.Column="0"  Grid.ColumnSpan="2" LabelWidth="90" />
+                <RazerBase:ucLabelTextBox Name="txtCountry" LabelText="Country:" BindPath="country_id" IsReadOnly="True" Grid.Row="5" Grid.Column="2"  Grid.ColumnSpan="3" LabelWidth="90" />
+                <RazerBase:ucLabelTextBox Name="txtDescription" BindPath="description" LabelText="Description:" Grid.Row="6" Grid.ColumnSpan="5" LabelWidth="85" />
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="170" />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition />
+                    <RowDefinition Height="10"/>
+                    <RowDefinition />
+                    <RowDefinition Height="10"/>
+                    <RowDefinition />
+                    <RowDefinition Height="10"/>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <RazerBase:ucLedgerTextBox Name="txtTotalAmount" LabelText="Total Amount:" Text="{Binding Path=total_amt, Mode=TwoWay, StringFormat={}{0:C}}" Grid.Row="1" Grid.Column="1" LabelWidth="170" IsReadOnly="True" />
+                <RazerBase:ucLedgerTextBox Name="txtCommissionAmount" LabelText="Discount Amount:" Text="{Binding Path=disc_amt, Mode=TwoWay, StringFormat={}{0:C}}" Grid.Row="3" Grid.Column="1" LabelWidth="170" IsReadOnly="True" />
+                <RazerBase:ucLedgerTextBox Name="txtNetAmount" LabelText="Net Amount:" Text="{Binding Path=net_amt, Mode=TwoWay, StringFormat={}{0:C}}" Grid.Row="5" Grid.Column="1" LabelWidth="170" IsReadOnly="True" />
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="10" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition />
+                    <RowDefinition Height="10"/>
+                    <RowDefinition />
+                    <RowDefinition Height="10"/>
+                    <RowDefinition />
+                    <RowDefinition Height="10"/>
+                    <RowDefinition />
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <RazerBase:ucLabelDatePicker Name="ldpInvoiceDate" Grid.Row="1" Grid.Column="1" BindPath="invoice_date" LabelText="Invoice Date:" LabelWidth="100" />
+                <RazerBase:ucLabelDatePicker Name="ldpBillingPeriod" Grid.Row="3" Grid.Column="1" BindPath="billing_period" LabelText="Billing Period:" LabelWidth="100" IsReadOnly="False" />
+                <RazerBase:ucLabelDatePicker Name="ldpAccountingPeriod" Grid.Row="5" Grid.ColumnSpan="2" BindPath="acct_period" LabelText="Accounting Period:" LabelWidth="120" IsReadOnly="False" />
+                <RazerBase:ucLabelDatePicker Name="ldpDueDate" Grid.Row="7" Grid.Column="1" BindPath="invoice_due_date" LabelText="Due Date:" LabelWidth="100" />
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="360" />
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="50" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10" />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="1" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="330" />
+                        <ColumnDefinition Width="30" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5" />
+                        <RowDefinition />
+                        <RowDefinition Height="1"/>
+                        <RowDefinition />
+                        <RowDefinition Height="5"/>
+                        <RowDefinition />
+                        <RowDefinition Height="5"/>
+                        <RowDefinition />
+                        <RowDefinition Height="5"/>
+                        <RowDefinition />
+                        <RowDefinition Height="1"/>
+                        <RowDefinition />
+                        <RowDefinition Height="1"/>
+                        <RowDefinition />
+                        <RowDefinition Height="5"/>
+                        <RowDefinition />
+                        <RowDefinition Height="1"/>
+                        <RowDefinition />
+                        <RowDefinition Height="10"/>
+                        <RowDefinition />
+                        <RowDefinition Height="1"/>
+                        <RowDefinition />
+                        <RowDefinition Height="1"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <RazerBase:ucLabelComboBox Name="cmbInvoiceType" LabelText="Invoice Type:" Grid.Row="1" Grid.Column="0" LabelWidth="100" SelectedValue="{Binding Path=invoice_type, Mode=TwoWay}" />
+                    <RazerBase:ucLabelCheckBox Name="chkProforma" BindPath="proforma_closed_flag" Checked="chkProforma_Checked" UnChecked="chkProforma_UnChecked" LabelText="Proforma Closed:" Grid.Column="0" Grid.Row="3" LabelWidth="120" />
+                    <RazerBase:ucLabelCheckBox Name="chkProformaEmail" BindPath="proforma_email_sent_flag" Checked="chkProforma_Email_Checked" UnChecked="chkProforma_Email_UnChecked" LabelText="Proforma Sent:" Grid.Column="0" Grid.Row="5" LabelWidth="120" />
+                    <RazerBase:ucLabelDatePicker Name="ldpProformaEmailSentDate" BindPath="proforma_email_sent_date" Grid.Row="7" Grid.Column="0" LabelText="Proforma Sent Date: " LabelWidth="120" IsReadOnly="False" />
+                    <RazerBase:ucLabelComboBox Name="cmbCompany" LabelText="Company:" Grid.Row="9" Grid.Column="0" LabelWidth="100" SelectedValue="{Binding Path=company_code, Mode=TwoWay}"/>
+                    <RazerBase:ucLabelComboBox Name="cmbCurrencyCode" LabelText="Currency:" Grid.Row="11" Grid.Column="0" LabelWidth="100" SelectedValue="{Binding Path=currency_code, Mode=TwoWay}"/>
+                    <RazerBase:ucLabelTextBox Name="txtDiscountAccount" BindPath="disc_account" LabelText="Discount Account:  " Grid.Row="13" Grid.Column="0" LabelWidth="115" />
+                    <RazerBase:ucLabelCheckBox Name="chkRecurring" BindPath="recurring_flag" Checked="chkRecurring_Checked" UnChecked="chkRecurring_UnChecked" LabelText="Recurring:" Grid.Column="0" Grid.Row="17" LabelWidth="80" />
+                    <RazerBase:ucLabelDatePicker Name="ldpRecurringEndDate" BindPath="end_recurring_date" Grid.Row="19" Grid.Column="0" LabelText="Recurring End Date: " LabelWidth="120" IsReadOnly="False" />
+                    <RazerBase:ucLabelComboBox Name="cmbRecurringFrequency" LabelText="Frequency:  " Grid.Row="21" Grid.Column="0" LabelWidth="110" SelectedValue="{Binding Path=bill_freq, Mode=TwoWay}" IsEnabled="False"/>
+                    <RazerBase:ucLabelTextBox Name="txtContractName" BindPath="contract_description" LabelText="Contract :  " Grid.Row="15" Grid.Column="0" LabelWidth="115" />
+                    <RazerBase:ucLabelTextBox Name="txtContractId" BindPath="contract_id" Visibility="Collapsed" />
+                    <RazerBase:ucLabelTextBox Name="txtOriginalRecurringInvoice" BindPath="recurring_original_invoice" LabelText="Original Recurring:  " Grid.Row="23" Grid.Column="0" LabelWidth="115" IsReadOnly="True" />
+                </Grid>
+                <Grid Grid.Column="2" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="80" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20" />
+                            <RowDefinition />
+                            <RowDefinition Height="5" />
+                            <RowDefinition />
+                            <RowDefinition Height="5" />
+                            <RowDefinition />
+                            <RowDefinition Height="5" />
+                            <RowDefinition />
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition />
+                            <RowDefinition Height="10" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Label Content="Current Workflow Status" Grid.Row="1" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontFamily="Arial" Foreground="Black" />
+                        <RazerBase:ucLabelTextBox Name="txtApprovalStatus" BindPath="approval_description" LabelText="Approval Status:  " Grid.Row="3" LabelWidth="150" />
+                        <RazerBase:ucLabelTextBox Name="txtApprovalId" BindPath="approver" LabelText="Approval Id:  " Grid.Row="5" LabelWidth="150" />
+                        <RazerBase:ucLabelTextBox Name="txtApprovalDate" BindPath="approval_date" LabelText="Approval Date:  " Grid.Row="7" LabelWidth="150" />
+                        <Grid Grid.Row="10" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <RazerBase:ucLabelTextBox Name="txtCreatedBy" BindPath="creator_id" IsReadOnly="True" LabelText="Created By:  " LabelWidth="100" />
+                            <RazerBase:ucLabelTextBox Name="txtCreationDate" BindPath="creation_date" IsReadOnly="True" LabelText="Creation Date:  " Grid.Column="3" LabelWidth="100" />
+                        </Grid>
+                        <Grid Grid.Row="12" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <RazerBase:ucLabelCheckBox Name="chkConvert" LabelText="Convert to Previously Proforma"  LabelWidth="180" Checked="chkConvert_Checked" UnChecked="chkConvert_UnChecked" />
+                            <RazerBase:ucLabelCheckBox Name="chkClose" LabelText="Close Proforma Requested" Grid.Column="3"   LabelWidth="155" Checked="chkClose_Checked" UnChecked="chkClose_UnChecked" />
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="3" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="400" />
+                    <RowDefinition />                   
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="160" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="50" />
+                </Grid.ColumnDefinitions>
+                <Button Name="btnPrint" Content="Reprint" Click="btnPrint_Click" Height="23" Width="100" Grid.Column="1" Grid.Row="1" />
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+</RazerBase:ScreenBase>

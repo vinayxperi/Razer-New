@@ -1,0 +1,53 @@
+﻿<Application x:Class="Razer.App"
+             xmlns:igThemes="http://infragistics.com/Themes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml" Startup="Application_Startup">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+
+                <ResourceDictionary Source="Resources\RAZERDefaultStyle.xaml"/>
+                <ResourceDictionary Source="Resources\Styles\StyleBlack.xaml"/>
+                <!--<ResourceDictionary Source="Resources\Brushes.xaml"/>-->
+                <ResourceDictionary Source="Resources\FieldLayouts\RecvAcctFieldLayouts.xaml"/>
+                <!--<ResourceDictionary Source="Resources\FieldLayouts\CustomerFieldLayouts.xaml"/>-->
+                <!--<ResourceDictionary Source="Resources\FieldLayouts\ContractFieldLayouts.xaml"/>-->
+                <!--<ResourceDictionary Source="Resources\FieldLayouts\TableMaintenanceLayout.xaml"/>-->
+                <!--<ResourceDictionary Source="Resources\FieldLayouts\InvoiceFieldLayouts.xaml"/>-->
+                <!--<ResourceDictionary Source="Resources\FieldLayouts\MiscFolderFieldLayouts.xaml"/>-->
+                <!--<ResourceDictionary Source="Resources\FieldLayouts\ContactFieldLayouts.xaml"/>-->
+                <!--<ResourceDictionary Source="Resources\FieldLayouts\AdminFieldLayouts.xaml"/>-->
+                <!--<ResourceDictionary Source="Resources\FieldLayouts\NationalAdsLayout.xaml"/>-->
+                <!--<ResourceDictionary Source="Resources\FieldLayouts\EntityFieldLayouts.xaml"/>-->
+                <!--<ResourceDictionary Source="Resources\FieldLayouts\CashFieldLayouts.xaml"/>-->
+                <!--<ResourceDictionary Source="Resources\FieldLayouts\LocationFieldLayouts.xaml"/>-->
+                <!--<ResourceDictionary Source="Resources\FieldLayouts\BatchBillingFieldLayouts.xaml"/>-->
+                <!--<ResourceDictionary Source="Resources\FieldLayouts\CashEntryFieldLayouts.xaml"/>-->
+                <!--<ResourceDictionary Source="Resources\FieldLayouts\UnitFieldLayouts.xaml"/>-->
+                <!--<ResourceDictionary Source="Resources\FieldLayouts\CustomInvoiceFieldLayouts.xaml"/>-->
+                <!--<ResourceDictionary Source="Resources\FieldLayouts\AdjustmentFieldLayouts.xaml"/>-->
+                <!--<ResourceDictionary Source="Resources\FieldLayouts\SecurityMaintenanceLayout.xaml"/>-->
+                <!--<ResourceDictionary Source="Resources\FieldLayouts\CustomInvoiceFieldLayouts.xaml"/>-->
+                <!--<ResourceDictionary Source="Resources\FieldLayouts\GLVchrFieldLayouts.xaml"/>-->
+                <!--<ResourceDictionary Source="Resources\FieldLayouts\COLAFieldLayouts.xaml"/>-->
+                <ResourceDictionary Source="Resources\Styles\GridStyles.xaml"/>
+                <igThemes:RibbonOffice2k7Black />
+                <igThemes:ResourceWasher AutoWash="True" WashMode="HueSaturationReplacement"  >
+                    <igThemes:ResourceWasher.SourceDictionary>
+                        <igThemes:RibbonOffice2k7BlackBrushes/>
+                    </igThemes:ResourceWasher.SourceDictionary>
+                    <igThemes:ResourceWasher.WashGroups>
+                        <igThemes:WashGroupCollection>
+                            <igThemes:WashGroup Name="Hover"   WashColor="#FF004499"/>
+                            <igThemes:WashGroup Name="ActiveColor"   WashColor="#FF004499"/>
+                            <igThemes:WashGroup Name="Pressed"  WashColor="#FF004499"/>
+                       
+                        </igThemes:WashGroupCollection>
+                    </igThemes:ResourceWasher.WashGroups>
+                </igThemes:ResourceWasher>
+              
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

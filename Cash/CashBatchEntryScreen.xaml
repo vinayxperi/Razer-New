@@ -1,0 +1,38 @@
+﻿<RazerBase:ScreenBase x:Class="Cash.CashBatchEntryScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+             xmlns:local="clr-namespace:Cash"
+             xmlns:igWindows="http://infragistics.com/Windows"
+             xmlns:igDP="http://infragistics.com/DataPresenter" 
+             mc:Ignorable="d" 
+             d:DesignHeight="520" d:DesignWidth="720" 
+             Background="{DynamicResource ApplicationBackground}">
+    <Grid Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="320" />
+            <ColumnDefinition Width="320" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"  />
+            <RowDefinition Height="Auto"  />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <RazerBase:BaseContainer Grid.Row="1" Grid.Column="1" LabelWidth="120" >
+            <RazerBase:ucLabelTextBox Name="txtTempBatchId" LabelText="Temp Batch Id:" BindPath="Temp_batch_id"  />
+            <RazerBase:ucLabelTextBox Name="txtSourceId" LabelText="Source Id:" BindPath="Source_id"  />
+            <RazerBase:ucLabelTextBox Name="txtBatchDate" LabelText="Batch Date:" BindPath="Batch_date"  />
+            <RazerBase:ucLabelTextBox Name="txtBankId" LabelText="Bank Id:" BindPath="Bank_id"  />
+        </RazerBase:BaseContainer>
+        <RazerBase:BaseContainer Grid.Row="1" Grid.Column="2" LabelWidth="120" Width="240" HorizontalAlignment="Left" Margin="40, 0,0, 0">
+            <RazerBase:ucLabelTextBox Name="txtBatchTotal" LabelText="Batch Total:" BindPath="Batch_total"  />
+            <RazerBase:ucLabelTextBox Name="txtRemitTotal" LabelText="Remit Total:" BindPath="Remit_total"  />
+            <RazerBase:ucLabelTextBox Name="txtAllocatedTotal" LabelText="Allocated Total:" BindPath="Allocated_total"  />
+            <RazerBase:ucLabelCheckBox Name="chkBatchStatus" LabelText="Ready For Upload:" LabelWidth="112" BindPath="Batch_status" />
+        </RazerBase:BaseContainer>
+    </Grid>
+    </RazerBase:ScreenBase>

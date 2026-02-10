@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="e47f1f3f-ee7f-4ad9-8ca6-76d6bb38a24c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50573/RazerService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RazerService.xsd" MetadataType="Schema" ID="095ebebe-ba2e-4701-b7c6-28a99ab7710c" SourceId="1" SourceUrl="http://localhost:50573/RazerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="RazerService1.xsd" MetadataType="Schema" ID="464f8111-a70f-4ba6-9dcf-c5bb456beb93" SourceId="1" SourceUrl="http://localhost:50573/RazerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="RazerService.disco" MetadataType="Disco" ID="5aacd16f-7880-4b9e-b304-d21b9ca6692e" SourceId="1" SourceUrl="http://localhost:50573/RazerService.svc?disco" />
+    <MetadataFile FileName="RazerService.wsdl" MetadataType="Wsdl" ID="64093c87-eff3-45dc-a441-1bb5ee0ede2a" SourceId="1" SourceUrl="http://localhost:50573/RazerService.svc?wsdl" />
+    <MetadataFile FileName="RazerService2.xsd" MetadataType="Schema" ID="11b2f1f4-55c7-4354-bcb2-93a7ff9e7fa2" SourceId="1" SourceUrl="http://localhost:50573/RazerService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

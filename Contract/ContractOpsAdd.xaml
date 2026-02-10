@@ -1,0 +1,63 @@
+﻿<RazerBase:ScreenBase x:Class="Contract.ContractOpsAdd" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" d:DesignWidth="919"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+    
+   
+        
+            <Grid>
+                
+
+            
+                <Grid Grid.ColumnSpan="5" Grid.Row="1" >
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition MinWidth="250"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition MinWidth="250"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition MinWidth="150"/>
+
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition  Height="40"/>
+                <RowDefinition  Height="40"/>
+                <RowDefinition  Height="40"/>
+                <RowDefinition />
+                <RowDefinition  Height="10"  />
+                        </Grid.RowDefinitions>
+                    <RazerBase:ucLabelTextBox Name="txtContractId" LabelText="Contract ID:" Text="{Binding Path=contract_id, Mode=TwoWay}" Grid.Column="1" LabelWidth="120" IsReadOnly="True"  />
+                    <RazerBase:ucLabelComboBox Name="cmbRateID" LabelText="Rate ID:" SelectedValue="{Binding Path=rate_id, Mode=TwoWay}" Grid.Column="1" Grid.Row="1" LabelWidth="85" SelectionChanged="cmbRateID_SelectionChanged"   />
+                    <RazerBase:ucLabelComboBox Name="cmbLocation" LabelText="Location:" SelectedValue="{Binding Path=contract_location_id, Mode=TwoWay}" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" LabelWidth="150" SelectionChanged="cmbLocation_SelectionChanged"/>
+                        <!--<RazerBase:ucLabelTextBox Name="txtContractEntity" LabelText="Billing Location ID:" BindPath="contract_entity" Grid.Column="3" Grid.ColumnSpan="1" LabelWidth="130"  IsReadOnly="True" MouseDoubleClick="txtContractEntity_MouseDoubleClick" />-->
+                    <RazerBase:ucLabelComboBox Name="cmbRuleID" LabelText="Rule ID:" SelectedValue="{Binding Path=rule_id, Mode=TwoWay}" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="1" LabelWidth="85" SelectionChanged="cmbRuleID_SelectionChanged"   />
+                        <RazerBase:ucLabelTextBox Name="txtLocationID" Grid.Column="1" Grid.Row="3" LabelText="Location ID:" BindPath="cs_id" LabelWidth="90"  IsReadOnly="True" />
+                    <RazerBase:ucLabelCheckBox Name="chkNeverBillFlag" Grid.Column="3" Grid.Row="0" LabelText="Never Bill:" BindPath="never_bill_flag" LabelWidth="120" IsEnabled="False" />
+                <RazerBase:ucLabelDatePicker Name="ldtServicePeriodStart" Grid.Row="4" Grid.Column="1"  LabelWidth="120" BindPath="service_period_start" LabelText="Service Period Start:" LostFocus="ldtServicePeriodStart_LostFocus" />
+                <RazerBase:ucLabelDatePicker Name="ldtServicePeriodEnd" Grid.Row="4" Grid.Column="3"  LabelWidth="120" BindPath="service_period_end" LabelText="Service Period End:"  />
+                <RazerBase:ucLabelTextBox Name="txtSchedBillPeriod" LabelText="Sched Bill Period:" Text="{Binding Path=scheduled_bill_period, Mode=TwoWay,StringFormat={}{0:MM/dd/yyyy}}"
+                                      Grid.Column="5" LabelWidth="110" IsReadOnly="True" Grid.ColumnSpan="1" Grid.Row="4"  />
+                <Button Name="btnSave" Grid.Row="6"  Grid.Column="3"  Content="Add Billing Location" Height="25" Width="120" Click="btnSave_Click" />
+                <Button Name="btnCancel" Grid.Row="6"  Grid.Column="5"  Content="Cancel" Height="25" Width="120" Click="btnCancel_Click" />
+
+
+
+            </Grid>
+
+    </Grid>
+
+
+
+</RazerBase:ScreenBase>
+ 

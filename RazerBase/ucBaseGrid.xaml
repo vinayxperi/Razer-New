@@ -1,0 +1,108 @@
+﻿    <UserControl x:Class="RazerBase.ucBaseGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"              
+             xmlns:igWindows="clr-namespace:Infragistics.Windows;assembly=InfragisticsWPF"
+             xmlns:igDP="clr-namespace:Infragistics.Windows.DataPresenter;assembly=InfragisticsWPF.DataPresenter"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:RazerBase"
+             xmlns:RazerConverters="clr-namespace:RazerConverters;assembly=RazerConverters"
+             mc:Ignorable="d" 
+             d:DesignHeight="356" d:DesignWidth="647" xmlns:ig="http://schemas.infragistics.com/xaml"
+             x:Name="ucBaseGrid1" MouseRightButtonDown="ucBaseGrid1_MouseRightButtonDown" PreviewMouseLeftButtonDown="ucBaseGrid1_PreviewMouseLeftButtonDown" 
+                 PreviewMouseMove="ucBaseGrid1_PreviewMouseMove" MouseLeftButtonUp="ucBaseGrid1_MouseLeftButtonUp" >
+
+    <!--<UserControl.Resources>
+        Code moved to GridStyles resource dictionary 1/11/12
+    </UserControl.Resources>-->
+        
+    <Grid Loaded="Grid_Loaded">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <igDP:XamDataGrid x:Name="xGrid" x:FieldModifier="public" RecordContainerGenerationMode="Virtualize" ActiveRecord="{Binding ElementName=ucBaseGrid1, Path=ActiveRecord, Mode=TwoWay}"
+                           MouseDoubleClick="xGrid_MouseDoubleClick" SelectedItemsChanged="xGrid_SelectedItemsChanged"  GotFocus="xGrid_GotFocus" 
+                          EditModeStarted="xGrid_EditModeStarted" EditModeEnded="xGrid_EditModeEnded" SelectedItemsChanging="xGrid_SelectedItemsChanging" 
+                          VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="Auto" Height="Auto" CellUpdated="xGrid_CellUpdated" Loaded="xGrid_Loaded" >
+            <igDP:XamDataGrid.FieldSettings>
+                <igDP:FieldSettings />
+            </igDP:XamDataGrid.FieldSettings>
+            <igDP:XamDataGrid.ContextMenu>
+                <ContextMenu Name="mPopup" >
+                    <ContextMenu.BitmapEffect>
+                        <OuterGlowBitmapEffect />
+                    </ContextMenu.BitmapEffect>
+                    <MenuItem Name="popupSaveToExcel" Header="Save To Excel" Click="MenuItem_Click" >
+                        <MenuItem.Icon>
+                            <Image Source="/Razer;component/Resources/Excel.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="popupSaveGridSettings" Header ="Save Grid Settings" Command="local:cCommandLibrary.SaveGridSettings" >
+                        <MenuItem.Icon>
+                            <Image Source="/Razer;component/Resources/Save1.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="popupResetGridSettings" Header="Reset Grid Settings" Command="local:cCommandLibrary.ResetGridSettings">
+                        <MenuItem.Icon>
+                            <Image Source="/Razer;component/Resources/refresh1.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="popupToggleFilter" Header="Toggle Grid Filter On/Off" Command="local:cCommandLibrary.ToggleGridFilter">
+                        <MenuItem.Icon>
+                            <Image Source="/Razer;component/Resources/toggle.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="popupAddRecord" Header ="Add Record" Command="local:cCommandLibrary.AddGridItem">
+                        <MenuItem.Icon>
+                            <Image Source="/Razer;component/Resources/Add1.png"   />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="popupRemoveRecord" Header ="Remove Record" Command="local:cCommandLibrary.RemoveGridItem">
+                        <MenuItem.Icon>
+                            <Image Source="/Razer;component/Resources/Delete1.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="popupGeneric1" Header ="Generic1" Command="local:cCommandLibrary.GenericGridItem1" Visibility="Collapsed">
+                        <MenuItem.Icon>
+                            <Image Name="popupGenericImage1" Source="/Razer;component/Resources/generic1.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="popupGeneric2" Header ="Generic2" Command="local:cCommandLibrary.GenericGridItem2" Visibility="Collapsed">
+                        <MenuItem.Icon>
+                            <Image Name="popupGenericImage2" Source="/Razer;component/Resources/generic1.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="popupGeneric3" Header ="Generic3" Command="local:cCommandLibrary.GenericGridItem3" Visibility="Collapsed">
+                        <MenuItem.Icon>
+                            <Image Name="popupGenericImage3" Source="/Razer;component/Resources/generic1.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Name="popupGeneric4" Header ="Generic4" Command="local:cCommandLibrary.GenericGridItem4" Visibility="Collapsed">
+                        <MenuItem.Icon>
+                            <Image Name="popupGenericImage4" Source="/Razer;component/Resources/generic1.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                   
+                </ContextMenu>
+
+            </igDP:XamDataGrid.ContextMenu>
+            
+            <!--<igDP:XamDataGrid.FieldLayouts>
+                <igDP:FieldLayout>
+                    <igDP:FieldLayout.FieldSettings>
+                        <igDP:FieldSettings LabelPresenterStyle="{DynamicResource GridHeaderStyle}"/>
+                    </igDP:FieldLayout.FieldSettings>
+                </igDP:FieldLayout>
+            </igDP:XamDataGrid.FieldLayouts>
+            <igDP:XamDataGrid.FieldLayoutSettings>
+                <igDP:FieldLayoutSettings HighlightAlternateRecords="True" />
+                
+            </igDP:XamDataGrid.FieldLayoutSettings>-->
+        </igDP:XamDataGrid>
+        <!--<ig:XamMenuItem Height="100" HorizontalAlignment="Left" Margin="142,329,0,0" Name="xamMenuItem1" VerticalAlignment="Top" Width="200" />-->
+    </Grid>
+</UserControl>

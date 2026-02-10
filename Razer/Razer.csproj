@@ -1,0 +1,788 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5AD05116-E386-4EC8-B452-3D6EADC9DE51}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Razer</RootNamespace>
+    <AssemblyName>Razer</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+    <PublishUrl>\\aurora\razer_source\razerappstagingprod\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Razer</ProductName>
+    <PublisherName>Rovi Corp</PublisherName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>102</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Razer.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\Razer.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\Razer.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>4BCB89ADD5FA784621CB7005AD8CC891DAF72B24</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Razer_1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>RazerAppIcon_Final48.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Razer.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Infragistics.Services.Schedules.WcfConnectorService, Version=25.2.20252.45, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Schedules.Wcf.25.2.45\lib\net40\Infragistics.Services.Schedules.WcfConnectorService.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.25.2.59\lib\net40\InfragisticsWPF.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Charts.XamDataChart, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Charts.25.2.59\lib\net40\InfragisticsWPF.Controls.Charts.XamDataChart.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Editors.XamCalendar, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Calendar.25.2.59\lib\net40\InfragisticsWPF.Controls.Editors.XamCalendar.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Editors.XamColorPicker, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.ColorPicker.25.2.59\lib\net40\InfragisticsWPF.Controls.Editors.XamColorPicker.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Editors.XamSlider, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Slider.25.2.59\lib\net40\InfragisticsWPF.Controls.Editors.XamSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Interactions.XamDialogWindow, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DialogWindow.25.2.59\lib\net40\InfragisticsWPF.Controls.Interactions.XamDialogWindow.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Interactions.XamSpellChecker, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.SpellChecker.25.2.59\lib\net40\InfragisticsWPF.Controls.Interactions.XamSpellChecker.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Layouts.XamTileManager, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.TileManager.25.2.59\lib\net40\InfragisticsWPF.Controls.Layouts.XamTileManager.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Menus.XamDataTree, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DataTree.25.2.59\lib\net40\InfragisticsWPF.Controls.Menus.XamDataTree.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Menus.XamMenu, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Menus.25.2.59\lib\net40\InfragisticsWPF.Controls.Menus.XamMenu.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Menus.XamTagCloud, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.TagCloud.25.2.59\lib\net40\InfragisticsWPF.Controls.Menus.XamTagCloud.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Schedules, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Schedules.25.2.59\lib\net40\InfragisticsWPF.Controls.Schedules.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.SchedulesDialogs, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Schedules.Dialogs.25.2.59\lib\net40\InfragisticsWPF.Controls.SchedulesDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.SchedulesExchangeConnector, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Schedules.Exchange.25.2.59\lib\net40\InfragisticsWPF.Controls.SchedulesExchangeConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DataManager, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DataManager.25.2.59\lib\net40\InfragisticsWPF.DataManager.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DataPresenter, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DataGrids.25.2.59\lib\net40\InfragisticsWPF.DataPresenter.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DataPresenter.ExcelExporter, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DataGrids.Excel.25.2.59\lib\net40\InfragisticsWPF.DataPresenter.ExcelExporter.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DataPresenter.WordWriter, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DataGrids.Word.25.2.59\lib\net40\InfragisticsWPF.DataPresenter.WordWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DataVisualization, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DataVisualization.25.2.59\lib\net40\InfragisticsWPF.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DockManager, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DockManager.25.2.59\lib\net40\InfragisticsWPF.DockManager.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Documents.Core, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Documents.Core.25.2.59\lib\net40\InfragisticsWPF.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Documents.Excel, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Excel.25.2.59\lib\net40\InfragisticsWPF.Documents.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Documents.IO, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Word.25.2.59\lib\net40\InfragisticsWPF.Documents.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DragDrop, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DragDrop.25.2.59\lib\net40\InfragisticsWPF.DragDrop.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Editors, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Editors.25.2.59\lib\net40\InfragisticsWPF.Editors.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Math, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Math.25.2.59\lib\net40\InfragisticsWPF.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.OutlookBar, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.OutlookBar.25.2.59\lib\net40\InfragisticsWPF.OutlookBar.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Reporting, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Reporting.25.2.59\lib\net40\InfragisticsWPF.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Ribbon, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Ribbon.25.2.59\lib\net40\InfragisticsWPF.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Themes.Fall, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Themes.Fall.25.2.59\lib\net40\InfragisticsWPF.Themes.Fall.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Themes.ForestGreen, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Themes.ForestGreen.25.2.59\lib\net40\InfragisticsWPF.Themes.ForestGreen.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Themes.Leaf, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Themes.Leaf.25.2.59\lib\net40\InfragisticsWPF.Themes.Leaf.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Themes.Lipstick, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Themes.Lipstick.25.2.59\lib\net40\InfragisticsWPF.Themes.Lipstick.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Themes.Water, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Themes.Water.25.2.59\lib\net40\InfragisticsWPF.Themes.Water.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Themes.Wind, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Themes.Wind.25.2.59\lib\net40\InfragisticsWPF.Themes.Wind.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Library\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="PresentationFramework.Luna" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AppCode\BillingServiceDelegate.cs" />
+    <Compile Include="AppCode\RazerServiceDelegate.cs" />
+    <Compile Include="AdminMFA.xaml.cs">
+      <DependentUpon>AdminMFA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BillingServiceLocal\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RazerService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Razer_1_TemporaryKey.pfx" />
+    <None Include="Service References\BillingServiceLocal\BillingService.wsdl" />
+    <None Include="Service References\BillingServiceLocal\BillingService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BillingServiceLocal\BillingService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BillingServiceLocal\BillingService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BillingServiceLocal\BillingService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BillingServiceLocal\BillingService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RazerService\RazerService.wsdl" />
+    <None Include="Service References\RazerService\RazerService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RazerService\RazerService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RazerService\RazerService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="AdminMFA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <Page Include="Resources\RAZERDefaultStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\FieldLayouts\RecvAcctFieldLayouts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\RazerRibbon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\GridStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\StyleAccounting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\StyleBlack.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\StyleBlue.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\StyleGray.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\StyleGreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\StyleOrange.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\StylePurple.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\StyleRed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\StyleTeal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\StyleYellow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <EmbeddedResource Include="Resources\XamDockManager.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\XamRibbon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Cut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\downarrow.png" />
+    <Resource Include="Resources\Excel_Icon_small.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ferrari.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Globe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Load.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Paste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PrintPreview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Redo_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Save_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\world.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Adjustment\Adjustment.csproj">
+      <Project>{61456C56-E80D-45D2-B07A-017ADFE0DB4B}</Project>
+      <Name>Adjustment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Admin\Admin.csproj">
+      <Project>{25AD4BCA-45A3-41FC-A550-FFE6FE516841}</Project>
+      <Name>Admin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCF\BCF.csproj">
+      <Project>{162DC5C2-EED7-4C46-8D47-0F8BB383283B}</Project>
+      <Name>BCF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cash\Cash.csproj">
+      <Project>{FC8436D7-0BA0-4E26-851E-28B61D64D34B}</Project>
+      <Name>Cash</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\COLA\COLA.csproj">
+      <Project>{1E5FF940-9313-404E-9FEF-7751E8F3E65E}</Project>
+      <Name>COLA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Contact\Contact.csproj">
+      <Project>{CC278EE5-A925-4814-A598-347EBE3388FE}</Project>
+      <Name>Contact</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Contract\Contract.csproj">
+      <Project>{7BEE0E17-B391-431B-9077-1335EF8F1702}</Project>
+      <Name>Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Customer\Customer.csproj">
+      <Project>{E2FABBC8-C7BD-4FCB-9AF5-CD982BBE59EE}</Project>
+      <Name>Customer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{F58B3E02-0604-48EC-94A3-67995D4B0002}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeneralLedger\GeneralLedger.csproj">
+      <Project>{4A30330A-DF38-4B79-8FE2-628E55DF73F9}</Project>
+      <Name>GeneralLedger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Invoice\Invoice.csproj">
+      <Project>{2BCF8B4B-B2ED-4636-8020-338C5BA99FE4}</Project>
+      <Name>Invoice</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Location\Location.csproj">
+      <Project>{C0AD5E6D-4917-4758-9427-6B2F3602E9F3}</Project>
+      <Name>Location</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MiscFolders\MiscFolders.csproj">
+      <Project>{0D95E776-E201-45A7-894D-06157EAA5D0C}</Project>
+      <Name>MiscFolders</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Razer.BatchBilling\Razer.BatchBilling.csproj">
+      <Project>{41BF4438-8273-411F-A7D2-476B6A75C863}</Project>
+      <Name>Razer.BatchBilling</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Razer.Common\Razer.Common.csproj">
+      <Project>{87A25370-5697-4F1A-855D-EC5F4390B219}</Project>
+      <Name>Razer.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Razer.CustomInvoice\Razer.CustomInvoice.csproj">
+      <Project>{95450AF7-3625-4BF0-9F30-0CA199D9639B}</Project>
+      <Name>Razer.CustomInvoice</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Razer.NationalAds\Razer.NationalAds.csproj">
+      <Project>{8C4C5015-9035-42C6-886A-52A02AC1E296}</Project>
+      <Name>Razer.NationalAds</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Razer.TableMaintenance\Razer.TableMaintenance.csproj">
+      <Project>{5E98DB04-BB30-4B17-8AE2-68F7F126D352}</Project>
+      <Name>Razer.TableMaintenance</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RazerBase\RazerBase.csproj">
+      <Project>{92F34D8B-F692-41A7-AF2D-42F5B84D6C9C}</Project>
+      <Name>RazerBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RazerConverters\RazerConverters.csproj">
+      <Project>{3B0B455E-4F81-461C-8C72-A3033470B72F}</Project>
+      <Name>RazerConverters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RazerInterface\RazerInterface.csproj">
+      <Project>{8E38FFCB-144A-45F2-AF87-123DD9245220}</Project>
+      <Name>RazerInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SecurityMaintenance\SecurityMaintenance.csproj">
+      <Project>{0DF27C69-C582-40E5-9B3F-08FAD291E950}</Project>
+      <Name>SecurityMaintenance</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TF\TF.csproj">
+      <Project>{2259F650-934F-4C6B-B411-9D2410DD3AB5}</Project>
+      <Name>TF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Units\Units.csproj">
+      <Project>{97C8BDC3-BAA4-4BA2-B537-238156722B6A}</Project>
+      <Name>Units</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unity\UnitySource\Source\Unity.Configuration\Src\Unity.Configuration.csproj">
+      <Project>{AEF45ED2-3E7F-4AA5-9001-A4D1BAC12EBE}</Project>
+      <Name>Unity.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unity\UnitySource\Source\Unity\Src\Unity.csproj">
+      <Project>{EE1F752C-1FAB-41AD-AD63-857D0E62AB6B}</Project>
+      <Name>Unity %28Unity\Unity%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Razer_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RazerService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\RazerService\configuration.svcinfo" />
+    <None Include="Service References\RazerService\configuration91.svcinfo" />
+    <None Include="Service References\RazerService\RazerService.disco" />
+    <None Include="Service References\BillingServiceLocal\Razer.BillingServiceLocal.CopyAttachmentsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillingServiceLocal\Razer.BillingServiceLocal.GetMiscCreditDebitMaximumsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillingServiceLocal\Razer.BillingServiceLocal.InsertNewAdjustmentBillingDiffResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillingServiceLocal\Razer.BillingServiceLocal.InsertNewAdjustmentFXCreditResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillingServiceLocal\Razer.BillingServiceLocal.InsertNewAdjustmentFXDebitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillingServiceLocal\Razer.BillingServiceLocal.InsertNewAdjustmentMiscCreditDebitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillingServiceLocal\Razer.BillingServiceLocal.InsertNewAdjustmentUACashResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillingServiceLocal\Razer.BillingServiceLocal.InsertNewCashAdjustmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BillingServiceLocal\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\BillingServiceLocal\configuration.svcinfo" />
+    <None Include="Service References\BillingServiceLocal\configuration91.svcinfo" />
+    <None Include="Service References\BillingServiceLocal\BillingService.disco" />
+    <Resource Include="Save1.png" />
+    <Resource Include="toggle.png" />
+    <Resource Include="Resources\toggle.png" />
+    <Resource Include="Resources\New_small.jpg" />
+    <Resource Include="Resources\New_small.png" />
+    <Resource Include="Resources\Icons\ferrari.png" />
+    <Content Include="Resources\razerLogo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Resources\refresh1.png" />
+    <Resource Include="Resources\Save1.png" />
+    <Resource Include="Resources\Icons\AdjustmentQue.png" />
+    <Resource Include="Resources\Icons\CommentSearch.png" />
+    <Resource Include="Resources\Icons\CreditMemoAdjustment.png" />
+    <Resource Include="Resources\Icons\InvoiceConversion.png" />
+    <Resource Include="Resources\Icons\LockdownCreditMemo_BadDebt.png" />
+    <Resource Include="Resources\Icons\ReceivableDocumentFolder.png" />
+    <Resource Include="Resources\Icons\UploadAdjustment.png" />
+    <Resource Include="Resources\Icons\ViewCashAdjustment.png" />
+    <Resource Include="Resources\Icons\WorkflowQue.png" />
+    <Resource Include="Resources\Icons\CustomSettings.png" />
+    <Resource Include="Resources\Icons\ExceptionHandling.png" />
+    <Resource Include="Resources\Icons\Security.png" />
+    <Resource Include="Resources\Icons\TableMaintenence.png" />
+    <Resource Include="Resources\Icons\AdjustmentFolder.png" />
+    <Resource Include="Resources\Icons\AdsFolder.png" />
+    <Resource Include="Resources\Icons\AuditFolder.png" />
+    <Resource Include="Resources\Icons\CashEntry.png" />
+    <Resource Include="Resources\Icons\CashFolder.png" />
+    <Resource Include="Resources\Icons\ContactFolder.png" />
+    <Resource Include="Resources\Icons\ContractFolder.png" />
+    <Resource Include="Resources\Icons\CreateDeferredPoolVoucher.png" />
+    <Resource Include="Resources\Icons\CustomerFolder.png" />
+    <Resource Include="Resources\Icons\CustomInvoiceFolder.png" />
+    <Resource Include="Resources\Icons\EntityFolder.png" />
+    <Resource Include="Resources\Icons\GLJournalVoucherFolder.png" />
+    <Resource Include="Resources\Icons\InvoiceFolder.png" />
+    <Resource Include="Resources\Icons\LocationFolder.png" />
+    <Resource Include="Resources\Icons\MainMenu_Default.png" />
+    <Resource Include="Resources\Icons\PostCash.png" />
+    <Resource Include="Resources\Icons\PostGL.png" />
+    <Resource Include="Resources\Icons\WithholdingTaxFolder.png" />
+    <Resource Include="Resources\Add1.png" />
+    <Resource Include="Resources\cal.png" />
+    <Resource Include="Resources\delete1.png" />
+    <Resource Include="Resources\Delete_new.jpg" />
+    <Resource Include="Resources\Delete_new.png" />
+    <Resource Include="Resources\Excel.png" />
+    <Resource Include="Resources\Folder.png" />
+    <Resource Include="Resources\generic1.png" />
+    <Resource Include="Resources\generic2.png" />
+    <Resource Include="Add1.png" />
+    <Resource Include="delete1.png" />
+    <Resource Include="generic1.png" />
+    <Resource Include="generic2.png" />
+    <Resource Include="Move.png" />
+    <Resource Include="New.png" />
+    <Resource Include="refresh1.png" />
+    <Resource Include="Resources\Icons\SecuredObjects.png" />
+    <Resource Include="Resources\Icons\UserMaitenance.png" />
+    <Resource Include="Resources\Icons\AdsInteractiveRevenueDist.png" />
+    <Resource Include="Resources\Icons\COLA.png" />
+    <Resource Include="Resources\Icons\CreateBillingBatch.png" />
+    <Resource Include="Resources\Icons\GenerateAdsInvoices.png" />
+    <Resource Include="Resources\Icons\GenerateCustomInvoices.png" />
+    <Resource Include="Resources\Icons\GenerateInvoices.png" />
+    <Resource Include="Resources\Icons\InvoiceEmailQueue.png" />
+    <Resource Include="Resources\Icons\PostAdsBilling.png" />
+    <Resource Include="Resources\Icons\SetPeriod.png" />
+    <Resource Include="Resources\Icons\AdsSearch.png" />
+    <Resource Include="Resources\Icons\MainMenu_Hover.png" />
+    <Resource Include="Resources\Icons\MainMenu_Selected.png" />
+    <Resource Include="Resources\Icons\JobGroup_Maintenance.png" />
+    <Resource Include="Resources\Icons\JobGroup_Viewer.png" />
+    <Resource Include="Resources\Icons\JobMonitor.png" />
+    <Resource Include="Resources\Icons\ReportSetup.png" />
+    <Resource Include="Resources\Icons\Report_ConfigurationViewer.png" />
+    <Resource Include="Resources\Icons\Schedule_JobReport.png" />
+    <Resource Include="Resources\Icons\UnitEntry.png" />
+    <Resource Include="Resources\Icons\UnitFilterSetup.png" />
+    <Resource Include="Resources\Icons\UnitUpload.png" />
+    <Resource Include="Resources\Icons\PostBilling.png" />
+    <Resource Include="Resources\Icons\PostCustomBilling.png" />
+    <Resource Include="Resources\Icons\UnpostedBilling.png" />
+    <Resource Include="Resources\Icons\ViewUnpostedCostumInvoices.png" />
+    <Resource Include="Resources\Insert_large.png" />
+    <Resource Include="Resources\Icons\AccountingAdjustment.png" />
+    <Resource Include="Resources\Icons\AdjustCash.png" />
+    <Resource Include="Resources\Icons\ApplyCashAdjustment.png" />
+    <Resource Include="Resources\Icons\ApplyConversionCash.png" />
+    <Resource Include="Resources\Icons\BankFee.png" />
+    <Resource Include="Resources\Icons\ConversionInvoiceAdjustment.png" />
+    <Resource Include="Resources\Icons\CorrectBankAccount.png" />
+    <Resource Include="Resources\Icons\Credit_DebitAdjustment.png" />
+    <Resource Include="Resources\Icons\CustomInvoiceAdjustment.png" />
+    <Resource Include="Resources\Icons\Misc_DB_CR_Adjustment.png" />
+    <Resource Include="Resources\Icons\NSF.png" />
+    <Resource Include="Resources\Icons\Rebill_Invoice.png" />
+    <Resource Include="Resources\Icons\Refund.png" />
+    <Resource Include="Resources\Icons\ReverseInvoice.png" />
+    <Resource Include="Resources\Icons\WriteOff.png" />
+    <Resource Include="Resources\Icons\WTH_CreditDebit.png" />
+    <Resource Include="RazerAppIcon_Final48.ico" />
+    <Resource Include="RazerAppIcon_Final32.ico" />
+    <Resource Include="RazerAppIcon_Final16.ico" />
+    <Resource Include="RazerAppIcon_Final24.ico" />
+    <Resource Include="Resources\Icons\Attachments.png" />
+    <Content Include="Resources\Memo.wav" />
+    <Resource Include="Resources\Move.png" />
+    <Content Include="Resources\MyRazer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BillingServiceLocal\" />
+    <WCFMetadataStorage Include="Service References\RazerService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

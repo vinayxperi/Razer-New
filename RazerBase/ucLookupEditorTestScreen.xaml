@@ -1,0 +1,17 @@
+﻿<local:ScreenBase x:Class="RazerBase.ucLookupEditorTestScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local ="clr-namespace:RazerBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="386" Loaded="ScreenBase_Loaded">
+    <Grid Background="{DynamicResource  ApplicationBackground}">
+        <Label Content="Customer:" Height="28" HorizontalAlignment="Left" Margin="41,41,0,0" Name="CustomerLabel" VerticalAlignment="Top" />
+        <TextBox Text="{Binding Path=CustomerName}" Style="{DynamicResource RoundedText}" Height="23" HorizontalAlignment="Left" Margin="102,41,0,0" x:Name="CustomerNameTextBox" VerticalAlignment="Top" Width="200" />
+        <Label Content="Category:" Height="28" HorizontalAlignment="Left" Margin="44,81,0,0" Name="CategoryLabel" VerticalAlignment="Top" />
+        <local:ucLookupTextBox SelectedValue="{Binding Path=CategoryID}" Style="{DynamicResource RoundedText}" Height="23" HorizontalAlignment="Left" Margin="102,81,0,0" x:Name="CategoryTextBox" VerticalAlignment="Top" Width="200" />
+        <Label Height="28" HorizontalAlignment="Left" Margin="24,125,0,0" Name="SecurityRoleLabel" VerticalAlignment="Top" Content="Security Role:" />
+        <local:ucLookupTextBox Height="23" HorizontalAlignment="Left" Margin="102,125,0,0" x:Name="SecurityRoleTextBox" SelectedValue="{Binding Path=SecurityRole}" Style="{DynamicResource RoundedText}" VerticalAlignment="Top" Width="200" />
+    </Grid>
+</local:ScreenBase>

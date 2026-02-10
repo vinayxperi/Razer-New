@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	                xmlns:d="http://schemas.microsoft.com/expression/interactivedesigner/2006"
+	                mc:Ignorable="d"
+	                xmlns:igwindows="http://infragistics.com/Windows"
+	                xmlns:editors="http://infragistics.com/Editors"	
+	                xmlns:controls="http://infragistics.com/DataPresenter"
+                    xmlns:converters="clr-namespace:RazerConverters;assembly=RazerConverters">
+    <converters:NumericValueToBrushConverter x:Key="NVBC"/>
+    <converters:TextToAccountingFormatConverter x:Key="textToAccountingFormat"/>
+    <Style TargetType="{x:Type editors:XamNumericEditor}" x:Key="AccountingNumericEditor">
+        <Setter Property="Format" Value="$###,##0.00;($###,##0.00)" />
+        <!--<Setter Property="Foreground" Value="{Binding Path=Text, RelativeSource={RelativeSource Self}, Converter={StaticResource ResourceKey=NVBC}}"/>-->
+        <Setter Property="Foreground" Value="{Binding Path=Text, Converter={StaticResource NegativeToRedConverter}}"/>
+    </Style>
+    <Style TargetType="{x:Type TextBox}" x:Key="AccountingTextBoxEditor">
+        <Setter Property="Foreground" Value="{Binding Path=Text, RelativeSource={RelativeSource Self}, Converter={StaticResource ResourceKey=NVBC}}"/>
+    </Style>
+</ResourceDictionary>

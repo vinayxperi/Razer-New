@@ -1,0 +1,77 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:igThemes="http://infragistics.com/Themes" >
+
+
+
+    <!--<ResourceDictionary.MergedDictionaries>-->
+
+
+        <!--<igThemes:RibbonWashBaseDark />
+        <igThemes:ResourceWasher AutoWash="True" WashColor="Green" WashMode="SoftLightBlend" >
+            <igThemes:ResourceWasher.SourceDictionary>
+                <igThemes:RibbonWashBaseDarkBrushes/>
+            </igThemes:ResourceWasher.SourceDictionary>
+        </igThemes:ResourceWasher>-->
+
+        <!--<igThemes:DataPresenterWashBaseDark />
+        <igThemes:ResourceWasher  AutoWash="True" WashColor="Green" WashMode="SoftLightBlend"    >
+            <igThemes:ResourceWasher.SourceDictionary>
+
+                <igThemes:DataPresenterWashBaseDarkBrushes />
+            </igThemes:ResourceWasher.SourceDictionary>
+        </igThemes:ResourceWasher>
+
+        <igThemes:PrimitivesWashBaseDark  />
+        <igThemes:ResourceWasher  AutoWash="True" WashColor="DarkGreen" WashMode="SoftLightBlend"  >
+            <igThemes:ResourceWasher.SourceDictionary>
+
+                <igThemes:PrimitivesWashBaseDark />
+            </igThemes:ResourceWasher.SourceDictionary>
+        </igThemes:ResourceWasher>
+
+        <igThemes:EditorsWashBaseDark  />
+        <igThemes:ResourceWasher  AutoWash="True" WashColor="DarkGreen" WashMode="SoftLightBlend"  >
+            <igThemes:ResourceWasher.SourceDictionary>
+
+                <igThemes:EditorsWashBaseDark />
+            </igThemes:ResourceWasher.SourceDictionary>
+        </igThemes:ResourceWasher>
+
+        <igThemes:DockManagerWashBaseDark   />
+        <igThemes:ResourceWasher  AutoWash="True" WashColor="DarkGreen" WashMode="SoftLightBlend"  >
+            <igThemes:ResourceWasher.SourceDictionary>
+
+                <igThemes:DockManagerWashBaseDark  />
+            </igThemes:ResourceWasher.SourceDictionary>
+        </igThemes:ResourceWasher>
+
+
+        <igThemes:TilesWashBaseDark   />
+        <igThemes:ResourceWasher  AutoWash="True" WashColor="DarkGreen" WashMode="SoftLightBlend"  >
+            <igThemes:ResourceWasher.SourceDictionary>
+
+                <igThemes:TilesWashBaseDark  />
+            </igThemes:ResourceWasher.SourceDictionary>
+        </igThemes:ResourceWasher>
+
+    </ResourceDictionary.MergedDictionaries>-->
+	
+<!--<SolidColorBrush Color="Green" x:Key="RazerButtonBackground" />-->
+
+    <!--<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" x:Key="MenuBackgroundGradient">
+        <GradientStop Color="#FF18F189" Offset="0"/>
+        <GradientStop Color="#FF19E91C" Offset="1"/>
+        <GradientStop Color="#FF0C9339" Offset="0.358"/>
+        <GradientStop Color="#FF0C801E" Offset="0.741"/>
+    </LinearGradientBrush>-->
+
+    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" x:Key="MenuBackgroundGradient">
+        <GradientStop Color="#FF045818" Offset="0"/>
+        <GradientStop Color="#FF046027" Offset="1"/>
+        <GradientStop Color="#FF043514" Offset="0.319"/>
+        <GradientStop Color="#FF03270D" Offset="0.552"/>
+        <GradientStop Color="#FF042F17" Offset="0.797"/>
+    </LinearGradientBrush>
+    
+</ResourceDictionary>

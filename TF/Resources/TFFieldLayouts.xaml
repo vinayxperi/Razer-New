@@ -1,0 +1,529 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    
+                    xmlns:igWindows="http://infragistics.com/Windows"
+                    xmlns:igDP="http://infragistics.com/DataPresenter"
+                    xmlns:igEditors="http://infragistics.com/Editors"
+                    
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:RazerConverters="clr-namespace:RazerConverters;assembly=RazerConverters">
+    
+    
+    
+    <RazerConverters:cCreditStatusConverter x:Key="CreditStatusConverter"/>
+    <RazerConverters:cRowHighlightConverter x:Key="RowHighlightConverter"/>
+    <RazerConverters:cHideNegativesConverter x:Key="HideNegatives"/>
+    <RazerConverters:DateTimeToNullableDateTimeConverter x:Key="NullDateConverter" />
+
+    <igDP:FieldLayout x:Key="TFDetail" x:Shared="False">
+        <igDP:Field Name="tf_invoice_id" Label="Detail ID" Width="60" Visibility="Collapsed" >
+        </igDP:Field>
+        <igDP:Field Name="tf_number" Label="TF Nmber" Width="100" Visibility="Collapsed">
+        </igDP:Field>
+        <igDP:Field Name="invoice_to_be_credited" Label="Invoice to Credit" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="cs_id" Label="Location" Width="80" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="psa_city" Label="PSA City" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="psa_state" Label="PSA State" Width="70" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="product_code" Label="Product Code" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+              
+        <igDP:Field Name="first_billing_period_effected" Label="Service Period Start" Width="115">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="True" EditorType="{x:Type igEditors:XamDateTimeEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="last_billing_period_effected" Label="Service Period End" Width="115">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="True" EditorType="{x:Type igEditors:XamDateTimeEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="credit_amount" Label="Credit Amount" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[credit_amount].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        
+        <igDP:Field Name="document_id" Label="Adjustment Number" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="True" EditorType="{x:Type igEditors:XamTextEditor}"    />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="rebill_flag" Label="Credit/Rebill" Width="80">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="true" EditorType="{x:Type igEditors:XamCheckEditor}" CellValuePresenterStyle="{StaticResource ImmediateCheckBox}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="inv_line_id" Label="Line ID" Width="100" Visibility="Collapsed"></igDP:Field>
+
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="TFCredit" x:Shared="False">
+        <igDP:Field Name="tf_credit_id" Visibility="Collapsed" Width="70"></igDP:Field>
+        <igDP:Field Name="tf_number" Visibility="Collapsed" Width="70"></igDP:Field>
+        <!--<igDP:Field Name="old_bill_mso_id" Label="Old Bill Entity ID" Width="100" ></igDP:Field>-->
+        <igDP:Field Name="old_bill_mso_id" Label="Old Bill Entity ID" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <!--<igDP:Field Name="cs_id" Label="Location" Width="65"></igDP:Field>-->
+        <igDP:Field Name="cs_id" Label="Location" Width="65">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="psa_city" Label="PSA City" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="psa_state" Label="PSA State" Width="70" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <!--<igDP:Field Name="product_code" Label="Product Code" Width="85"></igDP:Field>-->
+        <igDP:Field Name="product_code" Label="Product Code" Width="85" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <!--<igDP:Field Name="old_contract_id" Label="Old Contract ID" Width="100"></igDP:Field>-->
+        <igDP:Field Name="old_contract_id" Label="Old Contract ID" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+               
+        <!--<igDP:Field Name="old_receivable_account" Label="Old Customer ID" Width="100"></igDP:Field>-->
+        <igDP:Field Name="old_receivable_account" Label="Old Customer ID" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="old_account_name" Label="Old Customer Name" Visibility="Collapsed" Width="200"></igDP:Field>
+   
+        <igDP:Field Name="new_contract_id" Label="New Contract ID" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}"    />
+            </igDP:Field.Settings>
+        </igDP:Field>
+          
+        <igDP:Field Name="new_receivable_account" Label="New Customer ID" Width="115"></igDP:Field>
+        <igDP:Field Name="new_account_name" Label="New Customer Name" Visibility="Collapsed" Width="200"></igDP:Field>
+        
+        <igDP:Field Name="contact_information_updated" Label="Invoice Delivery Updated" Width="160">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamCheckEditor}" CellValuePresenterStyle="{StaticResource ImmediateCheckBox}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="subscriber_counts_updated" Label="Subscriber Counts Updated" Width="160">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamCheckEditor}" CellValuePresenterStyle="{StaticResource ImmediateCheckBox}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+   
+        <igDP:Field Name="date_owner_paid_through" Label="Last Service Period" Width="130">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamDateTimeEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="date_to_begin_invoicing_new_owner" Label="Date to Begin Invoicing" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamDateTimeEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        
+    </igDP:FieldLayout>
+    
+    
+
+    <igDP:FieldLayout x:Key="TFLocations" x:Shared="False">
+        <igDP:Field Name="move" Label=" Move" Width="50">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamCheckEditor}" CellValuePresenterStyle="{StaticResource ImmediateCheckBox}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        
+        <igDP:Field Name="tf_number" Visibility="Collapsed" Width="70">
+        </igDP:Field>
+        <igDP:Field Name="cs_id" Label="Location ID" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="system_name" Label="Location Name" Width="250">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="system_status" Label="System Status" Width="180">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="TFPNI" x:Shared="False">
+        <igDP:Field Name="tf_detail_id" Visibility="Collapsed" Width="120">
+        </igDP:Field>
+        <igDP:Field Name="tf_number" Visibility="Collapsed" Width="70">
+        </igDP:Field>
+        <igDP:Field Name="cs_id" Label="Location ID"  Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}"    />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="system_name" Label="Location Name"  Width="250">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}"    />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="head_id" Label="HeadEnd ID" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}"    />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="psa_city" Label="PSA City" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}"    />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="psa_state" Label="PSA State" Width="75">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}"    />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="psa_country" Label="PSA Country" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}"    />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="head_end_type" Label="HeadEnd Type" Width="125">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}"    />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="fs_id" Label="File Server ID" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}"    />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="service_id" Label="Service ID" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}"    />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="service_code" Label="Service Code" Width="125">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}"    />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="service_status" Label="Service Status" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}"    />
+            </igDP:Field.Settings>
+        </igDP:Field>
+       
+   </igDP:FieldLayout>
+
+
+    <igDP:FieldLayout x:Key="TFLocationsPNI" x:Shared="False">
+        <igDP:Field Name="tf_detail_id" Visibility="Collapsed" Width="70">
+        </igDP:Field>
+        <igDP:Field Name="tf_number" Label="TF Number" Visibility="Collapsed" Width="70">
+        </igDP:Field>
+        <igDP:Field Name="move" Label=" Move" Width="50">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamCheckEditor}" CellValuePresenterStyle="{StaticResource ImmediateCheckBox}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="head_id" Label="HeadEnd ID" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}"    />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="head_end_type" Label="HeadEnd Type" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}"    />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="psa_city" Label="PSA City" Width="140"></igDP:Field>
+        <igDP:Field Name="psa_state" Label="PSA State" Width="110"></igDP:Field>
+        <igDP:Field Name="psa_country" Label="PSA Country" Width="110"></igDP:Field>
+        <igDP:Field Name="fs_id" Label="File Server ID" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}"    />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="service_id" Label="Service ID" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}"    />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="service_code" Label="Service Code" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}"    />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="service_status" Label="Service Status" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}"    />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="cs_id" Visibility="Collapsed" Width="70">
+        </igDP:Field>
+        <igDP:Field Name="status" Visibility="Collapsed" Width="70">
+        </igDP:Field>
+        
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="TFView" x:Shared="False">
+        <igDP:Field Name="rpt_image_id" Label="Image ID" Visibility="Collapsed" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}"    />
+            </igDP:Field.Settings>
+           
+        </igDP:Field>
+        <igDP:Field Name="location_id" Visibility="Collapsed" Width="100"></igDP:Field>
+        <igDP:Field Name="document_type" Visibility="Collapsed" Width="90"></igDP:Field>
+        <igDP:Field Name="name" Label="Description" Width="250"></igDP:Field>
+        <igDP:Field Name="file_name" Label="File Name" Width="150"></igDP:Field>
+        <igDP:Field Name="creator_id" Label="Created By" Width="120"></igDP:Field>
+        <igDP:Field Name="server_loc" Label="Server Loc" Visibility="Collapsed"  Width="90"></igDP:Field>
+        <igDP:Field Name="directory" Label="Directory" Visibility="Collapsed"  Width="90"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="TFApproval" x:Shared="False">
+        <igDP:Field Name="document_id" Visibility="Collapsed" />
+        <igDP:Field Name="wf_id" Visibility="Collapsed" />
+        <igDP:Field Name="comment_id" Visibility="Collapsed" />
+        <igDP:Field Name="comment_text" Visibility="Collapsed" />
+        <igDP:Field Name="action_date" Label="Item Date" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamDateTimeEditor}" >
+                            <Setter Property="Mask" Value="{}{date}" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="user" Label="User" Width="120"></igDP:Field>
+        <igDP:Field Name="action" Label="Action" Width="120"></igDP:Field>
+        <igDP:Field Name="subject" Label="Subject" Width="150"></igDP:Field>
+        <igDP:Field Name="update_user" Label="Update User" Width="120"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="ApprovalUsers" x:Shared="False">
+        <igDP:Field Name="user_id" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="user_name" Label="Approver" Width="150"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="ApprovalRecords" x:Shared="False">
+        <igDP:Field Name="document_id" Visibility="Collapsed" />
+        <igDP:Field Name="user_id" Visibility="Collapsed" />
+        <igDP:Field Name="workflow_seq" Visibility="Collapsed" />
+        <igDP:Field Name="user" Label="User" Width="150"></igDP:Field>
+        <igDP:Field Name="action" Label="Action" Width="120"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="TFLookupGrid" x:Shared="False">
+        <igDP:Field Name="tf_number" Label="TF Number" Width="80"></igDP:Field>
+        <igDP:Field Name="tf_description" Label="TF Description" Width="200"></igDP:Field>
+        <igDP:Field Name="date_requested" Label="Requested Date" Width="100"></igDP:Field>
+        <igDP:Field Name="old_customer_number" Label="Customer" Width="75"></igDP:Field>
+        <igDP:Field Name="old_customer_name" Label="Customer Name" Width="150"></igDP:Field>
+        <igDP:Field Name="old_entity_id" Label="Entity ID" Width="60"></igDP:Field>
+        <igDP:Field Name="old_entity_name" Label="Entity Name" Width="150"></igDP:Field>
+        <igDP:Field Name="product_code" Label="Product Code" Width="85"></igDP:Field>
+        <igDP:Field Name="old_contract_id" Label="Contract ID" Width="75"></igDP:Field>
+        <igDP:Field Name="old_contract_description" Label="Contract Description" Width="200"></igDP:Field>
+        <igDP:Field Name="tf_status_flag" Label="Status" Width="60"></igDP:Field>
+
+
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="TFInvoiceLookupGrid" x:Shared="False">
+        <igDP:Field Name="primary_co" Label="Company" Width="80"></igDP:Field>
+        <igDP:Field Name="CS_ID" Label="Location ID" Width="80"></igDP:Field>
+        <igDP:Field Name="invoice_number" Label="Invoice Number" Width="140"></igDP:Field>
+        <igDP:Field Name="invoice_date" Label="Invoice Date" Width="120"></igDP:Field>
+        <igDP:Field Name="invoice_amount" Label="Amount" Width="140"></igDP:Field>
+        <igDP:Field Name="product_code" Label="Product Code" Width="140"></igDP:Field>
+        <igDP:Field Name="entity_name" Label="Entity Name" Width="110"></igDP:Field>
+        <igDP:Field Name="receivable_account" Label="Customer" Width="110"></igDP:Field>
+        <igDP:Field Name="account_name" Label="Customer Name" Width="140"></igDP:Field>
+        <igDP:Field Name="contract_name" Label="Contract Name" Width="140"></igDP:Field>
+        <igDP:Field Name="acct_period" Label="Acctg Period" Width="120"></igDP:Field>
+        <igDP:Field Name="service_period_start" Label="Service Period Start" Width="120"></igDP:Field>
+        <igDP:Field Name="service_period_end" Label="Service Period End" Width="120"></igDP:Field>
+
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="TFDetailGridInvoiceLookup" x:Shared="False">
+        <igDP:Field Name="primary_co" Label="Company" Width="80"></igDP:Field>
+        <igDP:Field Name="CS_ID" Label="Location ID" Width="80"></igDP:Field>        
+        <igDP:Field Name="invoice_number" Label="Invoice Number" Width="140"></igDP:Field>
+        <igDP:Field Name="invoice_date" Label="Invoice Date" Width="120"></igDP:Field>
+        <igDP:Field Name="invoice_amount" Label="Amount" Width="140"></igDP:Field>
+        <igDP:Field Name="entity_name" Label="Entity Name" Width="110"></igDP:Field>
+        <igDP:Field Name="receivable_account" Label="Customer" Width="110"></igDP:Field>
+        <igDP:Field Name="account_name" Label="Customer Name" Width="140"></igDP:Field>
+        <igDP:Field Name="contract_name" Label="Contract Name" Width="140"></igDP:Field>
+        <igDP:Field Name="acct_period" Label="Acctg Period" Width="120"></igDP:Field>
+        <igDP:Field Name="service_period_start" Label="Service Period Start" Width="120"></igDP:Field>
+        <igDP:Field Name="service_period_end" Label="Service Period End" Width="120"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="TFLocationsLookup" x:Shared="False">
+        <igDP:Field Name="owner_entity_id" Label="Owner Entity ID" Width="80"></igDP:Field>
+        <igDP:Field Name="entity_name" Label="Entity Name" Width="140"></igDP:Field>
+        <igDP:Field Name="cs_id" Label="CS ID" Width="120"></igDP:Field>
+        <igDP:Field Name="psa_city" Label="PSA City" Width="140"></igDP:Field>
+        <igDP:Field Name="psa_state" Label="PSA State" Width="110"></igDP:Field>
+        <igDP:Field Name="psa_country" Label="PSA Country" Width="110"></igDP:Field>
+        <igDP:Field Name="product_code" Label="Product" Width="140"></igDP:Field>
+        <igDP:Field Name="receivable_account" Label="Customer ID" Width="140"></igDP:Field>
+        <igDP:Field Name="account_name" Label="Customer Name" Width="120"></igDP:Field>
+        <igDP:Field Name="hold_flag" Label="Hold Flag" Width="140"></igDP:Field>
+        <igDP:Field Name="last_bill_date" Label="Last Bill Date" Width="140"></igDP:Field>
+        <igDP:Field Name="turn_off_date" Label="Turn Off Date" Width="120"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="TFServiceLookup" x:Shared="False">
+        <igDP:Field Name="owner_mso" Label="Owner Entity ID" Width="80"></igDP:Field>
+        <igDP:Field Name="name" Label="Entity Name" Width="140"></igDP:Field>
+        <igDP:Field Name="service_id" Label="Service ID" Width="120"></igDP:Field>
+        <igDP:Field Name="service_status_desc" Label="Service Status" Width="120"></igDP:Field>
+        <igDP:Field Name="service_status" Label="Service ID" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="head_id" Label="HeadEnd ID" Width="140"></igDP:Field>
+        <igDP:Field Name="head_end_type" Label="HeadEnd ID" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="file_server_id" Label="file_server_id" Width="110"></igDP:Field>
+        <igDP:Field Name="mca_address" Label="MCA Address" Width="110"></igDP:Field>
+        <igDP:Field Name="code_value" Label="Status" Width="160"></igDP:Field>
+       
+    </igDP:FieldLayout>
+   
+
+    
+
+    <igDP:FieldLayout x:Key="TFEmailQueueGrid" x:Shared="False">
+
+        <igDP:Field Name="queue_id"   Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="status_description" Label="Status"  Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="True">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamTextEditor}" >
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="tf_number" Label="BCF Number" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamTextEditor}" >
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="bcf_type" Label="Type" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamTextEditor}" >
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="bcf_description" Label="Description" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="product_code" Label="Product"  Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="contract_id" Label="Contract ID" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamTextEditor}" >
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>      
+        <igDP:Field Name="mso_id" Label="Entity ID" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamTextEditor}" >
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="name" Label="Entity Name" Width="170">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="status_flag" Visibility="Collapsed" Width="120">
+        </igDP:Field>
+        <igDP:Field Name="to_address" Label="Email To"  Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="from_address"  Visibility="Collapsed"></igDP:Field>
+      
+        <igDP:Field Name="date_sent" Label="Date Sent"  Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+       
+    </igDP:FieldLayout>
+
+
+</ResourceDictionary>

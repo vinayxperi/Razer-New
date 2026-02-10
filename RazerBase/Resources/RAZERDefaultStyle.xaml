@@ -1,0 +1,642 @@
+﻿    <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:igDP="http://infragistics.com/DataPresenter" 
+    xmlns:My="clr-namespace:RazerBaseObjects"  >
+
+        <!--fonts-->
+       
+    <SolidColorBrush x:Key="PrimaryFontBrush" Color="Black"></SolidColorBrush>
+    <SolidColorBrush x:Key="SecondaryFontBrush" Color="DarkBlue" ></SolidColorBrush>
+    <SolidColorBrush x:Key="TertiaryFontBrush" Color="LightBlue" ></SolidColorBrush>
+    <SolidColorBrush x:Key="ButtonFontBrush" Color="White"></SolidColorBrush>
+        
+    <FontFamily x:Key="PrimaryFont" >
+            Segeo UI
+        </FontFamily>
+
+  
+
+    <!--Used for application background-->
+    <LinearGradientBrush x:Key="ApplicationBackground"  EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFEFEEE5" Offset="0.987"/>
+        <GradientStop Color="#FFFFFFF2" Offset="0.013"/>
+        <GradientStop Color="#FFEBEBC2" Offset="0.522"/>
+    </LinearGradientBrush>
+
+    <!--Used for application background-->
+    <LinearGradientBrush x:Key="ApplicationBackgroundLight" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFB2B2B1" Offset="0.987"/>
+        <GradientStop Color="#FF9B9B94" Offset="0.013"/>
+        <GradientStop Color="#FF727272" Offset="0.522"/>
+    </LinearGradientBrush>
+
+    <!--Used for background areas that need to be darker-->
+    <LinearGradientBrush x:Key="ApplicationBackgroundDark" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF525252" Offset="0"/>
+        <GradientStop Color="#FF333333" Offset="1"/>
+        <GradientStop Color="#FF444445" Offset="0.293"/>
+        <GradientStop Color="#FF252525" Offset="0.522"/>
+        <GradientStop Color="#FF232323" Offset="0.759"/>
+    </LinearGradientBrush>
+
+    <!--Gradient used for labels that need a background-->
+    <LinearGradientBrush x:Key="LabelGradient" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF3F4D9B" Offset="0"/>
+        <GradientStop Color="#FF36548F" Offset="1"/>
+        <GradientStop Color="#FF3668E4" Offset="0.293"/>
+        <GradientStop Color="#FF85A8FF" Offset="0.522"/>
+        <GradientStop Color="#FF457FF3" Offset="0.759"/>
+    </LinearGradientBrush>
+
+    <!--gradient used for data backgrounds-->
+    <LinearGradientBrush x:Key="DataGradient" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF3F4D9B" Offset="0"/>
+        <GradientStop Color="#FF36548F" Offset="1"/>
+        <GradientStop Color="#FF3668E4" Offset="0.293"/>
+        <GradientStop Color="#FF85A8FF" Offset="0.522"/>
+        <GradientStop Color="#FF457FF3" Offset="0.759"/>
+    </LinearGradientBrush>
+
+    <!--gradient used for text data backgrounds-->
+    <LinearGradientBrush x:Key="DataGradientLight" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF6F7DCE" Offset="0"/>
+        <GradientStop Color="#FF8DA1C8" Offset="1"/>
+        <GradientStop Color="#FF6D92EF" Offset="0.293"/>
+        <GradientStop Color="#FFBFCFF7" Offset="0.522"/>
+        <GradientStop Color="#FF96B6F5" Offset="0.759"/>
+    </LinearGradientBrush>
+
+    <!--Generic gradient brush if a third brush is needed-->
+    <LinearGradientBrush x:Key="BasicGradientBrush"  EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFEFEEE5" Offset="0.987"/>
+        <GradientStop Color="#FFFFFFF2" Offset="0.013"/>
+        <GradientStop Color="#FFEBEBC2" Offset="0.522"/>
+    </LinearGradientBrush>
+
+    <!--Used to call user attention to an area-->
+    <LinearGradientBrush x:Key="HotBarGradientBrush" EndPoint="0.956,0.89" MappingMode="RelativeToBoundingBox" StartPoint="0.074,0.091">
+        <GradientStop Color="#FF0C0109"/>
+        <GradientStop Color="#FF10020E" Offset="1"/>
+        <GradientStop Color="#FF29072B" Offset="0.578"/>
+        <GradientStop Color="#FF1B0314" Offset="0.198"/>
+        <GradientStop Color="#FF21071E" Offset="0.78"/>
+        <GradientStop Color="#FF31082A" Offset="0.366"/>
+    </LinearGradientBrush>
+
+    <!--Used for button control-->
+
+    <LinearGradientBrush x:Key="ButtonGradient" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF100C83" Offset="0"/>
+        <GradientStop Color="#FF110A60" Offset="1"/>
+        <GradientStop Color="#FF171AD4" Offset="0.293"/>
+        <GradientStop Color="#FF5557EB" Offset="0.522"/>
+        <GradientStop Color="#FF1736E4" Offset="0.759"/>
+    </LinearGradientBrush>
+
+    <!--Used for header of Grid-->
+    <LinearGradientBrush x:Key="GridHeaderGradient" EndPoint="0.956,0.89" MappingMode="RelativeToBoundingBox" StartPoint="0.074,0.091">
+        <GradientStop Color="#FF0C0109"/>
+        <GradientStop Color="#FF10020E" Offset="1"/>
+        <GradientStop Color="#FF29072B" Offset="0.578"/>
+        <GradientStop Color="#FF1B0314" Offset="0.198"/>
+        <GradientStop Color="#FF21071E" Offset="0.78"/>
+        <GradientStop Color="#FF31082A" Offset="0.366"/>
+    </LinearGradientBrush>
+
+    <!--Used for the grid row selector color-->
+    <LinearGradientBrush x:Key="GridSelectorHighlight" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF6F7DCE" Offset="0"/>
+        <GradientStop Color="#FF8DA1C8" Offset="1"/>
+        <GradientStop Color="#FF6D92EF" Offset="0.293"/>
+        <GradientStop Color="#FFBFCFF7" Offset="0.522"/>
+        <GradientStop Color="#FF96B6F5" Offset="0.759"/>
+    </LinearGradientBrush>
+
+    <!--Used for the detail of the grid-->
+    <LinearGradientBrush x:Key="GridDetailGradient" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFEFEEE5" Offset="0.987"/>
+        <GradientStop Color="#FFFFFFF2" Offset="0.013"/>
+        <GradientStop Color="#FFEBEBC2" Offset="0.522"/>
+    </LinearGradientBrush>
+
+    <!--Gradient stops for the glass brush-->
+        <GradientStopCollection x:Key="GlassGradient">
+            <GradientStop Color="WhiteSmoke" Offset="0.2" />
+            <GradientStop Color="Transparent" Offset="0.4" />
+            <GradientStop Color="WhiteSmoke" Offset="0.5" />
+            <GradientStop Color="Transparent" Offset="0.75" />
+            <GradientStop Color="WhiteSmoke" Offset="0.9" />
+            <GradientStop Color="Transparent" Offset="1" />
+        </GradientStopCollection>
+
+        <!--Used anywhere that a glass like cover is needed-->
+        <LinearGradientBrush x:Key="GlassBrush" StartPoint="0,0" EndPoint="1,1" GradientStops="{DynamicResource GlassGradient}">
+        </LinearGradientBrush>
+
+
+        <LinearGradientBrush x:Key="MyGlassBrushResource" StartPoint="0,0" EndPoint="1,1" Opacity="0.5" 
+                GradientStops="{StaticResource GlassGradient}" />
+
+        <!--Special Brushes-->
+        <!--<ImageBrush x:Key="ParchmentBrush" Stretch="Fill"  >
+        <ImageBrush.ImageSource>Graphics/Backgrounds/Parchment.png</ImageBrush.ImageSource> </ImageBrush>-->
+
+    <!--Templates-->
+    <ItemsPanelTemplate x:Key="ComboBoxItemsPanelTemplate">
+        <StackPanel IsItemsHost="True" Background="{StaticResource DataGradientLight}"/>
+    </ItemsPanelTemplate>
+
+    <!--Styles-->
+
+        <Style x:Key="GridHeaderStyle" TargetType="{x:Type igDP:LabelPresenter}">
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="{DynamicResource TertiaryFontBrush}" />
+            <Setter Property="LabelHighlight" Value="{DynamicResource GridSelectorHighlight}" />
+            <Setter Property="Background" Value="{DynamicResource GridHeaderGradient}" />
+        </Style>
+
+        <Style x:Key="LabelLightUpStyle" TargetType="Label">
+            <Setter Property ="VerticalAlignment" Value="Center"  />
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryFontBrush}"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="{DynamicResource PrimaryFont}"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Margin" Value="1"/>
+            <Setter Property="Opacity" Value=".9"/>
+            <Setter Property="MaxHeight" Value="30"/>
+        <Style.Triggers>
+                <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:0.2" Storyboard.TargetProperty="Opacity" To="1.0" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:0.2"  Storyboard.TargetProperty="Opacity" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="TransparentLabelStyle" TargetType="Label">
+            <Setter Property ="VerticalAlignment" Value="Top"  />
+            <Setter Property="Foreground" Value="{DynamicResource SecondaryFontBrush}"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="{DynamicResource PrimaryFont}"/>
+            <!--<Setter Property="FontSize" Value="12" />-->
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Opacity" Value=".5"/>
+            <Setter Property="MaxHeight" Value="30"/>
+        <Style.Triggers>
+                <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:0.2" Storyboard.TargetProperty="Opacity" To="1.0" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:0.2"  Storyboard.TargetProperty="Opacity" To=".5" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="DataLabelStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="{DynamicResource PrimaryFont}"/>
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="BorderBrush" Value="#FF2D5F12" />
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Foreground" Value="{StaticResource  PrimaryFontBrush}"/>
+            <Setter Property="Background" Value="{DynamicResource DataGradient}"/>
+            <Setter Property="MaxHeight" Value="30"/>
+        </Style>
+
+        <Style x:Key="TextBoxStyle" TargetType="TextBox">
+            <Setter Property="FontFamily" Value="{DynamicResource PrimaryFont}"/>
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="BorderBrush" Value="#FF2D5F12" />
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="10,5,10,5"/>
+            <Setter Property="Foreground" Value="{StaticResource PrimaryFontBrush}"/>
+            <Setter Property="Background" Value="{DynamicResource DataGradientLight}"/>
+            <Setter Property="MaxHeight" Value="30"/>
+    </Style>
+
+        <Style x:Key="TransparentTextBoxStyle" TargetType="TextBox">
+            <Setter Property="FontFamily" Value="{DynamicResource PrimaryFont}"/>
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10,5,10,5"/>
+            <Setter Property="Foreground" Value="{StaticResource TertiaryFontBrush}"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="MaxHeight" Value="30"/>
+    </Style>
+
+    <Style x:Key="RoundedText" TargetType="{x:Type TextBox}">
+        <Setter Property="Background" Value="{StaticResource DataGradientLight}"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="FontWeight"  Value="Bold"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryFontBrush}"/>
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="AllowDrop" Value="true"/>
+        <Setter Property="Margin" Value="3"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="MaxHeight" Value="30"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border SnapsToDevicePixels="true" x:Name="Bd" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="4">
+                        <ScrollViewer SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" x:Name="PART_ContentHost"  VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RoundedLabel" TargetType="{x:Type Label}">
+        <Setter Property="Background" Value="{DynamicResource DataGradient}"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="FontWeight"  Value="Bold"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryFontBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="4,1,1,1"/>
+        <Setter Property="Margin" Value="1"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="MaxHeight" Value="30"/>
+
+                <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border SnapsToDevicePixels="true" x:Name="Bd" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="4">
+                        <!--<ScrollViewer SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" x:Name="PART_ContentHost"  VerticalAlignment="Center"/>-->
+                        <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="{TemplateBinding Padding}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <!--<Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource PrimaryFontBrush}"/>
+                        </Trigger>-->
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ComboDataStyle" TargetType="ComboBox">
+        <Setter Property="FontFamily" Value="{DynamicResource PrimaryFont}"/>
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="BorderBrush" Value="#FF2D5F12" />
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryFontBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource DataGradientLight}"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="ItemsPanel" Value="{StaticResource ComboBoxItemsPanelTemplate}" />
+    </Style>
+
+    <Style x:Key="CheckBoxStyle" TargetType="CheckBox">
+        <Setter Property="BorderBrush" Value="#FF2D5F12" />
+        <Setter Property="Margin" Value="10,5,10,5"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryFontBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource DataGradient}"/>
+        <Setter Property="MaxHeight" Value="25"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+        
+    <!--Buttons-->
+        <Style x:Key="GlassButton"  TargetType="Button">
+            <Setter Property="Background"   Value="{DynamicResource ButtonGradient}" />
+            <!--<Setter Property="Width" Value="200" />-->
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="MaxHeight" Value="70"/>
+            <Setter Property="MaxWidth" Value="240"/>
+        <!--<Setter Property="Foreground" Value="{DynamicResource ButtonFontBrush}"/>-->
+            <Setter Property="ContentPresenter.BitmapEffect" >
+                <Setter.Value>
+                    <DropShadowBitmapEffect x:Name="myBitmapEffect"  ShadowDepth="10"></DropShadowBitmapEffect>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" ClipToBounds="True">
+
+                            <!-- Outer Rectangle with rounded corners. -->
+                            <Rectangle x:Name="outerRectangle" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stroke="{TemplateBinding Background}" 
+                                RadiusX="20" RadiusY="20" StrokeThickness="5" Fill="Transparent"  />
+
+                            <!-- Inner Rectangle with rounded corners. -->
+                            <Rectangle x:Name="innerRectangle" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stroke="Transparent"  StrokeThickness="5" 
+                                Fill="{TemplateBinding Background}" RadiusX="20" RadiusY="20" />
+
+
+                            <!-- Glass Rectangle -->
+                            <Rectangle x:Name="glassCube" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" StrokeThickness="2" RadiusX="10" RadiusY="10" 
+                                       Opacity="0" Fill="{DynamicResource MyGlassBrushResource}" RenderTransformOrigin="0.5,0.5">
+                                <Rectangle.Stroke>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.0" Color="LightBlue"  />
+                                            <GradientStop Offset="1.0" Color="Gray" />
+                                        </LinearGradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Rectangle.Stroke>
+
+                                <!-- These transforms have no effect as they are declared here. 
+           The reason the transforms are included is to be targets 
+           for animation (see later). -->
+                                <Rectangle.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform />
+                                        <RotateTransform />
+                                    </TransformGroup>
+                                </Rectangle.RenderTransform>
+
+                                <!-- A BevelBitmapEffect is applied to give the button a 
+           "Beveled" look. -->
+                                <Rectangle.BitmapEffect>
+                                    <BevelBitmapEffect />
+                                </Rectangle.BitmapEffect>
+                            </Rectangle>
+
+                            <!-- Present Content (text) of the button. -->
+                            <!-- Present Text of the button. -->
+                            <DockPanel Name="myContentPresenterDockPanel">
+                                <ContentPresenter x:Name="myContentPresenter" Margin="20" 
+        Content="{TemplateBinding  Content}" TextBlock.Foreground="{DynamicResource ButtonFontBrush}" />
+                            </DockPanel>
+
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+
+                            <!-- Set properties when mouse pointer is over the button. -->
+                            <Trigger Property="IsMouseOver" Value="True">
+
+                                <!-- Below are three property settings that occur when the 
+         condition is met (user mouses over button).  -->
+                                <!-- Change the color of the outer rectangle when user          mouses over it. -->
+                                <Setter Property ="Rectangle.Stroke" TargetName="outerRectangle"
+      Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+
+                                <!-- Sets the glass opacity to 1, therefore, the          glass "appears" when user mouses over it. -->
+                                <Setter Property="Rectangle.Opacity" Value="1"       TargetName="glassCube" />
+
+                                <!-- Makes the text slightly blurry as though you were          looking at it through blurry glass. -->
+                                <Setter Property="ContentPresenter.BitmapEffect"       TargetName="myContentPresenter">
+                                    <Setter.Value>
+                                        <BlurBitmapEffect Radius="2" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <!-- Set properties when button has focus. -->
+                            <Trigger Property="IsFocused" Value="true">
+                                <Setter Property="Rectangle.Opacity" Value="1"       TargetName="glassCube" />
+                                <Setter Property="Rectangle.Stroke" TargetName="outerRectangle" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                                <Setter Property="Rectangle.Opacity" Value="1" TargetName="glassCube" />
+                            </Trigger>
+
+                            <!-- Animations that start when mouse enters and leaves button. -->
+                            <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard Name="mouseEnterBeginStoryboard">
+                                        <Storyboard>
+
+                                            <!-- This animation makes the glass rectangle shrink in the X direction. -->
+                                            <DoubleAnimation Storyboard.TargetName="glassCube" 
+          Storyboard.TargetProperty=
+          "(Rectangle.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"
+          By="-0.1" Duration="0:0:0.5" />
+
+                                            <!-- This animation makes the glass rectangle shrink in the Y direction. -->
+                                            <DoubleAnimation
+        Storyboard.TargetName="glassCube" 
+          Storyboard.TargetProperty=
+          "(Rectangle.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" 
+          By="-0.2" Duration="0:0:0.5" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                                <EventTrigger.Actions>
+
+                                    <!-- Stopping the storyboard sets all animated properties back to default. -->
+                                    <StopStoryboard BeginStoryboardName="mouseEnterBeginStoryboard" />
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+
+                            <!-- Animation fires when button is clicked, causing glass to spin.  -->
+                            <!--<EventTrigger RoutedEvent="Button.Click">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="glassCube" 
+          Storyboard.TargetProperty=
+          "(Rectangle.RenderTransform).(TransformGroup.Children)[1].(RotateTransform.Angle)" 
+          By="360" Duration="0:0:0.5" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>-->
+
+                        </ControlTemplate.Triggers>
+
+
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="GlassButtonSmall"  TargetType="Button">
+            <Setter Property="Background"   Value="{DynamicResource ButtonGradient}" />
+            <!--<Setter Property="Width" Value="200" />-->
+            <Setter Property="Margin" Value="2" />
+            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="MaxHeight" Value="25"/>
+            <Setter Property="MaxWidth" Value="200"/>
+        <!--<Setter Property="Foreground" Value="{DynamicResource ButtonFontBrush}"/>-->
+            <Setter Property="ContentPresenter.BitmapEffect" >
+                <Setter.Value>
+                    <DropShadowBitmapEffect x:Name="myBitmapEffect"  ShadowDepth="10"></DropShadowBitmapEffect>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" ClipToBounds="True">
+
+                            <!-- Outer Rectangle with rounded corners. -->
+                            <Rectangle x:Name="outerRectangle" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stroke="{TemplateBinding Background}" 
+                                RadiusX="10" RadiusY="10" StrokeThickness="5" Fill="Transparent"  />
+
+                            <!-- Inner Rectangle with rounded corners. -->
+                            <Rectangle x:Name="innerRectangle" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stroke="Transparent"  StrokeThickness="5" 
+                                Fill="{TemplateBinding Background}" RadiusX="10" RadiusY="10" />
+
+
+                            <!-- Glass Rectangle -->
+                            <Rectangle x:Name="glassCube" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" StrokeThickness="2" RadiusX="5" RadiusY="5" 
+                                       Opacity="0" Fill="{DynamicResource MyGlassBrushResource}" RenderTransformOrigin="0.5,0.5">
+                                <Rectangle.Stroke>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop Offset="0.0" Color="LightBlue"  />
+                                            <GradientStop Offset="1.0" Color="Gray" />
+                                        </LinearGradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Rectangle.Stroke>
+
+                                <!-- These transforms have no effect as they are declared here. 
+           The reason the transforms are included is to be targets 
+           for animation (see later). -->
+                                <Rectangle.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform />
+                                        <RotateTransform />
+                                    </TransformGroup>
+                                </Rectangle.RenderTransform>
+
+                                <!-- A BevelBitmapEffect is applied to give the button a 
+           "Beveled" look. -->
+                                <Rectangle.BitmapEffect>
+                                    <BevelBitmapEffect />
+                                </Rectangle.BitmapEffect>
+                            </Rectangle>
+
+                            <!-- Present Content (text) of the button. -->
+                            <!-- Present Text of the button. -->
+                            <DockPanel Name="myContentPresenterDockPanel">
+                                <ContentPresenter x:Name="myContentPresenter" Margin="5" 
+        Content="{TemplateBinding  Content}" TextBlock.Foreground="{DynamicResource ButtonFontBrush}" />
+                            </DockPanel>
+
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+
+                            <!-- Set properties when mouse pointer is over the button. -->
+                            <Trigger Property="IsMouseOver" Value="True">
+
+                                <!-- Below are three property settings that occur when the 
+         condition is met (user mouses over button).  -->
+                                <!-- Change the color of the outer rectangle when user          mouses over it. -->
+                                <Setter Property ="Rectangle.Stroke" TargetName="outerRectangle"
+      Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+
+                                <!-- Sets the glass opacity to 1, therefore, the          glass "appears" when user mouses over it. -->
+                                <Setter Property="Rectangle.Opacity" Value="1"       TargetName="glassCube" />
+
+                                <!-- Makes the text slightly blurry as though you were          looking at it through blurry glass. -->
+                                <Setter Property="ContentPresenter.BitmapEffect"       TargetName="myContentPresenter">
+                                    <Setter.Value>
+                                        <BlurBitmapEffect Radius="1.75" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <!-- Set properties when button has focus. -->
+                            <Trigger Property="IsFocused" Value="true">
+                                <Setter Property="Rectangle.Opacity" Value="1" TargetName="glassCube" />
+                                <Setter Property="Rectangle.Stroke" TargetName="outerRectangle" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                                <!--<Setter Property="Rectangle.Opacity" Value="1" TargetName="glassCube" />-->
+                            </Trigger>
+
+                            <!-- Animations that start when mouse enters and leaves button. -->
+                            <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard Name="mouseEnterBeginStoryboard">
+                                        <Storyboard>
+
+                                            <!-- This animation makes the glass rectangle shrink in the X direction. -->
+                                            <DoubleAnimation Storyboard.TargetName="glassCube" 
+          Storyboard.TargetProperty=
+          "(Rectangle.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"
+          By="-0.1" Duration="0:0:0.5" />
+
+                                            <!-- This animation makes the glass rectangle shrink in the Y direction. -->
+                                            <DoubleAnimation
+        Storyboard.TargetName="glassCube" 
+          Storyboard.TargetProperty=
+          "(Rectangle.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" 
+          By="-0.2" Duration="0:0:0.5" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                                <EventTrigger.Actions>
+
+                                    <!-- Stopping the storyboard sets all animated properties back to default. -->
+                                    <StopStoryboard BeginStoryboardName="mouseEnterBeginStoryboard" />
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+
+                            <!-- Animation fires when button is clicked, causing glass to spin.  -->
+                            <!--<EventTrigger RoutedEvent="Button.Click">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="glassCube" 
+          Storyboard.TargetProperty=
+          "(Rectangle.RenderTransform).(TransformGroup.Children)[1].(RotateTransform.Angle)" 
+          By="360" Duration="0:0:0.5" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>-->
+
+                        </ControlTemplate.Triggers>
+
+
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </ResourceDictionary>
+
+

@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="RazerBase.ucColorKey"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="60" d:DesignWidth="500">
+    <Grid Name="gColorKeyDisplay">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MaxWidth="125"/>
+            <ColumnDefinition Width="*" MaxWidth="125"/>
+            <ColumnDefinition Width="*" MaxWidth="125"/>
+            <ColumnDefinition Width="*" MaxWidth="125"/>
+
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        
+        
+
+        <Border BorderBrush="Gray" BorderThickness="3"  Grid.Row="0" Grid.Column="0"  Name="Color1" 
+                Background="{Binding ElementName=ColorKeyLabel1,Path=Tag, Converter={StaticResource AttachmentHighlightConverter}}"></Border>
+
+        <Border BorderBrush="Gray" BorderThickness="3"  Grid.Row="0" Grid.Column="1"  Name="Color2" 
+                Background="{Binding ElementName=ColorKeyLabel2,Path=Tag, Converter={StaticResource AttachmentHighlightConverter}}"></Border>
+
+        <Border BorderBrush="Gray" BorderThickness="3"  Grid.Row="0" Grid.Column="2"  Name="Color3" 
+                Background="{Binding ElementName=ColorKeyLabel3,Path=Tag, Converter={StaticResource AttachmentHighlightConverter}}"></Border>
+
+        <Border BorderBrush="Gray" BorderThickness="3"  Grid.Row="0" Grid.Column="3"  Name="Color4" 
+                Background="{Binding ElementName=ColorKeyLabel4,Path=Tag, Converter={StaticResource AttachmentHighlightConverter}}"></Border>
+
+        <Label Name="ColorKeyLabel1" Tag="1" Style="{DynamicResource LabelLightUpStyle}" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" FontWeight="Bold" >
+            Green Label
+        </Label>
+        <Label Name="ColorKeyLabel2" Tag="2" Style="{DynamicResource LabelLightUpStyle}" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"  FontWeight="Bold">
+            Yellow Label
+        </Label>
+        <Label Name="ColorKeyLabel3" Tag="3" Style="{DynamicResource LabelLightUpStyle}" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"  FontWeight="Bold">
+            Red Label
+        </Label>
+        <Label Name="ColorKeyLabel4" Tag="4" Style="{DynamicResource LabelLightUpStyle}" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center"  FontWeight="Bold">
+            Teal Label
+        </Label>
+    </Grid>
+</UserControl>

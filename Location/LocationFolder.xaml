@@ -1,0 +1,121 @@
+﻿<RazerBase:ScreenBase x:Class="Location.LocationFolder"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+             xmlns:local="clr-namespace:Location"
+             xmlns:igWindows="http://infragistics.com/Windows"
+             xmlns:igDP="http://infragistics.com/DataPresenter" 
+             mc:Ignorable="d" 
+             d:DesignHeight="520" d:DesignWidth="720">
+    <Grid Background="{DynamicResource ApplicationBackgroundDark}" Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" MaxHeight="40" MinHeight="40"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <RazerBase:ucLabelTextBox Name="txtLocationID" LabelText="Location ID:" LabelWidth="120" Grid.Column="0" MouseDoubleClick="Location_DoubleClick" GotFocus="txtLocationID_GotFocus" LostFocus="txtLocationID_LostFocus" EnterActsLikeTab="True"    ></RazerBase:ucLabelTextBox>
+        <RazerBase:ucLabelTextBox Name="txtLocationName" LabelText="Location Name:" LabelWidth="120" Grid.Column="2" Grid.ColumnSpan="2" MouseDoubleClick="Location_DoubleClick" LostFocus="txtEntityName_LostFocus" EnterActsLikeTab="True"></RazerBase:ucLabelTextBox>
+        <igWindows:XamTabControl Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="4" Background="{DynamicResource ApplicationBackground}" Name="GeneralTab">
+            <igWindows:TabItemEx Name="General" Header="General" Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:LocationGeneralTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="LocationGeneralTab"></local:LocationGeneralTab>
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Headends" Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:LocationHeadendTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="LocationHeadendTab"></local:LocationHeadendTab>
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Units" Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:LocationUnitsTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="LocationUnitsTab"></local:LocationUnitsTab>
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Contracts" Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:LocationContractsTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="LocationContractsTab"></local:LocationContractsTab>
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Billing Totals" Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:LocationBillingTotalTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="LocationBillingTotalTab"></local:LocationBillingTotalTab>
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Comments" Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <RazerBase:ucComments Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="LocationCommentsTab"  RootParentObjectType="Location.LocationFolder"/>
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Attachments" Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <RazerBase:ucAttachmentsTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="LocationAttachmentsTab"  RootParentObjectType="Location.LocationFolder"/>
+                </Grid>
+            </igWindows:TabItemEx>
+        </igWindows:XamTabControl>
+    </Grid>
+    </RazerBase:ScreenBase>

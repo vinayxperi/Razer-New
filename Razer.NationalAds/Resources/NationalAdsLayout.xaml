@@ -1,0 +1,382 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:igWindows="http://infragistics.com/Windows"
+                    xmlns:igDP="http://infragistics.com/DataPresenter"
+                    xmlns:igEditors="http://infragistics.com/Editors"
+                    xmlns:RazerConverters="clr-namespace:RazerConverters;assembly=RazerConverters">
+
+    <!--<RazerConverters:cNegativeToRedConverter x:Key="NegativeToRedConverter"/>-->
+
+    <igDP:FieldLayout x:Key="NationalAdsDetails" x:Shared="False">
+        <igDP:Field Name="air_date" Label="Air Date" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamDateTimeEditor}" AllowEdit="False" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamDateTimeEditor}" >
+                            <Setter Property="Mask" Value="{}{date}" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="agency_copy_code" Label="Agency Copy Code" Width="150"></igDP:Field>
+        <igDP:Field Name="ad_product" Label="Ad Product" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="air_time" Label="Air Time" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamDateTimeEditor}" AllowEdit="False" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamDateTimeEditor}" >
+                            <Setter Property="Mask" Value="{}{time}" />                            
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="ad_length" Label="Ad Length" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="ad_amt" Label="Ad Amt" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[ad_amt].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>                
+                <!--<igDP:FieldSettings 
+                    EditorType="{x:Type igEditors:XamNumericEditor}"
+                    EditorStyle="{DynamicResource ResourceKey=AccountingNumericEditor}"
+                    EditAsType="{x:Type sys:Decimal}" />-->
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="record_source" Label="Source" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="order_line_number" Label="Order Line Number" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="program_name" Label="Program Name" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="order_type" Label="Order Type" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="buy_unit_code" Visibility="Collapsed"  />
+
+        <igDP:Field Name="buy_unit_description" Visibility="Collapsed"  />
+
+        <igDP:Field Name="product_code" Label="Product Code" Width="90">
+                      <igDP:Field.Settings>
+            <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        
+        <igDP:Field Name="products_used" Visibility="Collapsed"  />       
+        <igDP:Field Name="invoice_number" Visibility="Collapsed"  />                    
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="NationalAdsDefPool" x:Shared="False">
+        <igDP:Field Name="pool_id" Label="Deferred ID" Width="120"></igDP:Field>
+        <igDP:Field Name="product_code" Label="Product Code" Width="120"></igDP:Field>
+        <igDP:Field Name="receivable_account" Label="Customer ID" Width="120"></igDP:Field>
+        <igDP:Field Name="account_name" Label="Customer Name" Width="130"></igDP:Field>
+        <igDP:Field Name="amount_recognized" Label="Amount Recog" Visibility="Collapsed">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[amount_recognized].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="amount_deferred" Label="Amount Deferred" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[amount_deferred].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="actual_amt_deferred" Label="Actual Amount Deferred" Width="180">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[actual_amt_deferred].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="date_closed" Label="Date Closed" Visibility="Collapsed"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="NationalAdsDefPoolDtl" x:Shared="False">
+        <igDP:Field Name="pool_id" Visibility="Collapsed"  Width="120"></igDP:Field>
+        <igDP:Field Name="pool_detail_id" Label="Detail ID"  Width="120"></igDP:Field>
+        <igDP:Field Name="account_code" Label="GL Account" Width="160"></igDP:Field>
+        <igDP:Field Name="def_account_code" Label="Deferred Account" Width="160"></igDP:Field>
+
+        <igDP:Field Name="amount_total" Label="Total Amount" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[amount_total].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="amount_recognized" Visibility="Collapsed" Label="Amount Recog" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[amount_recognized].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="amount_deferred" Label="Amount Deferred" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[amount_deferred].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="actual_amt_def_with_cash" Label="Actual Amount Deferred" Width="180">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[actual_amt_def_with_cash].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="date_closed" Label="Date Closed" Visibility="Collapsed" ></igDP:Field>
+    </igDP:FieldLayout>
+
+
+    <igDP:FieldLayout x:Key="NationalAdsDefPoolRsn" x:Shared="False">
+        <igDP:Field Name="pool_id" Visibility="Collapsed"  Width="120"></igDP:Field>
+        <igDP:Field Name="pool_reason_id" Label="Reason ID"  Width="120"></igDP:Field>
+        <igDP:Field Name="pool_detail_id" Label="Detail ID"  Width="120"></igDP:Field>
+        <igDP:Field Name="reason_code" Visibility="Collapsed" Width="120"></igDP:Field>
+        <igDP:Field Name="reason" Label="Reason" Width="130"></igDP:Field>
+        <igDP:Field Name="amt_deferred" Label="Amount Deferred" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[amt_deferred].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="actual_amt_def_with_cash" Label="Actual Amount Deferred" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[actual_amt_def_with_cash].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="priority" Label="Priority" Width="100"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="NationalAdsDefPoolRsnTot" x:Shared="False">
+        <igDP:Field Name="product_code" Label="Product Code"  Width="120"></igDP:Field>
+        <igDP:Field Name="reason_code" Visibility="Collapsed" Width="120"></igDP:Field>
+        <igDP:Field Name="reason" Label="Reason" Width="130"></igDP:Field>
+        <igDP:Field Name="amt_deferred_tot" Label="Amount Deferred" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[amt_deferred_tot].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="actual_amt_deferred_tot" Label="Actual Amount Deferred" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[actual_amt_deferred_tot].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="NationalAdsViewAttachments" x:Shared="False">
+        <igDP:Field Name="attachment_id" Visibility="Collapsed"></igDP:Field>        
+        <igDP:Field Name="document_type" Label="Document Type" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="250">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>        
+        <igDP:Field Name="creation_date" Label="Creation Date" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamDateTimeEditor}" AllowEdit="False" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamDateTimeEditor}" >
+                            <Setter Property="Mask" Value="{}{date}" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="deletion_date" Label="Deletion Date" Width="100" Visibility="Collapsed">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamDateTimeEditor}" AllowEdit="False" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamDateTimeEditor}" >
+                            <Setter Property="Mask" Value="{}{date}" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="retention_days" Label="Retention Days" Width="100" Visibility="Collapsed">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>        
+        <igDP:Field Name="directory" Visibility="Collapsed" />
+        <igDP:Field Name="file_name" Label="File Name" Width="150" />
+        <igDP:Field Name="fkey_1" Label="Document" Width="100" />
+        <igDP:Field Name="server_loc" Visibility="Collapsed" />
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="AdsRevenueSplit" x:Shared="False">
+        <igDP:Field Name="broadcast_month" Visibility="Collapsed" />
+        <igDP:Field Name="product_code" Label="Product Code" Width="110" >
+         <igDP:Field.Settings>
+            <igDP:FieldSettings AllowEdit="False" />
+        </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="product_description" Label="Product" Width="160" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="allocation" Label="Allocation Pct" Width="120" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditAsType="{x:Type sys:Decimal}" AllowEdit="True">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Mask" Value="{}{double:6.2}" />
+
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="NationalAdsSearch" x:Shared="False">
+        <igDP:Field Name="invoice_number" Label="Invoice Number" Width="100" />
+        <igDP:Field Name="invoice_date" Label="Invoice Date" Width="100" />
+        <igDP:Field Name="net_amt" Label="Invoice Amount" Width="100" />
+        <igDP:Field Name="receivable_account" Label="Customer ID" Width="120" />
+        <igDP:Field Name="account_name" Label="Customer Name" Width="150" />
+        <igDP:Field Name="advertiser" Label="Advertiser" Width="150" />
+        <igDP:Field Name="ad_product" Label="Ad Product" Width="120" />
+        <igDP:Field Name="broadcast_month" Label="Broadcast Month" Width="100" />
+        <igDP:Field Name="product_code" Label="Product Code" Width="100" />
+        <igDP:Field Name="deal_number" Label="Deal Number" Width="100" />
+        <igDP:Field Name="order_type" Label="Order Type" Width="100" />
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="NationalAdsSearchOnlineLeads" x:Shared="False">
+        <igDP:Field Name="invoice_number" Label="Invoice Number" Width="100" />
+        <igDP:Field Name="invoice_date" Label="Invoice Date" Width="100" />
+        <igDP:Field Name="net_amt" Label="Invoice Amount" Width="100" />
+        <igDP:Field Name="receivable_account" Label="Customer Number" Width="120" />
+        <igDP:Field Name="account_name" Label="Account Name" Width="150" />
+        <igDP:Field Name="product_code" Label="Product Code" Width="100" />
+        <igDP:Field Name="billing_period" Label="Billing Period" Width="100" />
+        <igDP:Field Name="description" Label="Description" Width="220" />
+    </igDP:FieldLayout>
+    <igDP:FieldLayout x:Key="NationalAdsSales" x:Shared="False">
+        <igDP:Field Name="ae_name" Label="Name" Width="225" />
+        <igDP:Field Name="comm_percent" Label="Commission Percent" Width="155">  
+           <igDP:Field.Settings>
+            <igDP:FieldSettings AllowEdit="False">
+                <igDP:FieldSettings.EditorStyle>
+                    <Style TargetType="{x:Type igEditors:XamTextEditor}" >
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    </Style>
+                </igDP:FieldSettings.EditorStyle>
+            </igDP:FieldSettings>
+            </igDP:Field.Settings>
+           </igDP:Field>              
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="AdsInvoiceFolderLookup" x:Shared="False">
+        <igDP:Field Name="invoice_number" Label="Invoice Number" Width="100"></igDP:Field>
+        <igDP:Field Name="invoice_date" Label="Invoice Date" Width="100"></igDP:Field>
+        <igDP:Field Name="product_code" Label="Product Code" Width="100"></igDP:Field>
+        <igDP:Field Name="currency_code" Label="Currency" Width="80"></igDP:Field>
+        <igDP:Field Name="total_amt" Label="Total Amount" Width="120"></igDP:Field>
+        <igDP:Field Name="receivable_account" Label="Customer" Width="80"></igDP:Field>
+        <igDP:Field Name="account_name" Label="Customer Name" Width="230"></igDP:Field>
+        <igDP:Field Name="acct_period" Label="Acctg Period" Width="100"></igDP:Field>
+        
+    </igDP:FieldLayout>
+
+</ResourceDictionary>

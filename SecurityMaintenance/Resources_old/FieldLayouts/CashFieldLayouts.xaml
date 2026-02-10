@@ -1,0 +1,518 @@
+﻿<ResourceDictionary  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:igDP="http://infragistics.com/DataPresenter"
+                    xmlns:igEditors="http://infragistics.com/Editors"
+                     xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+                      xmlns:RazerConverters="clr-namespace:RazerConverters;assembly=RazerConverters"
+                     xmlns:sys="clr-namespace:System;assembly=mscorlib"  
+                     xmlns:this="clr-namespace:Razer.AppCode">
+
+
+    <!--<Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+        <Setter Property="Format" Value="$###,###.00;{$###,###.00}" />
+     
+    </Style>-->
+    <igDP:FieldLayout x:Key="cash_remitgrid" x:Shared="False">
+        <igDP:Field Name="remit_id" Label="Check Id" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="document_id" Label="Document Id" Width="90"></igDP:Field>
+        <igDP:Field Name="remit_type_id" Label="Remit Type Id" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="remit_date" Label="Remit Date" Width="100"></igDP:Field>
+        <igDP:Field Name="remit_number" Label="Check Number" Width="90"></igDP:Field>
+        <igDP:Field Name="amount" Label="Amount" Width="90"></igDP:Field>
+        <igDP:Field Name="amount_functional" Label="Amt Functional" Width="90"></igDP:Field>
+        <igDP:Field Name="currency_code" Label="Currency Code" Width="90"></igDP:Field>
+        <igDP:Field Name="amnt_alloc" Label="Amount Allocated" Width="90"></igDP:Field>
+    </igDP:FieldLayout>
+    
+    
+    <igDP:FieldLayout x:Key="cash_allocgrid" x:Shared="False" KeyboardNavigation.TabNavigation="Local">
+        <igDP:Field Name="apply_to_doc" Label="Invoice Number" Width="100" KeyboardNavigation.TabIndex="99">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamNumericEditor}"  ></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="apply_to_seq"  Visibility="Collapsed" />
+        <igDP:Field Name="product_code" Label="Product" Width="90" KeyboardNavigation.TabIndex="91">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbProducts, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="unapplied_flag" Label="Unapplied" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"  />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="company_code" Label="Company Code" Width="90" Visibility="Collapsed" >
+        </igDP:Field>
+        <igDP:Field Name="receivable_account" Label="Customer ID" Width="90" KeyboardNavigation.TabIndex="94">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamTextEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamTextEditor}">
+                            <Setter Property="IsTabStop" Value="True" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="amount" Label="Amount" Width="90"  KeyboardNavigation.TabIndex="95" >
+            <igDP:Field.Settings>
+
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamTextEditor}" x:Name="xamed">
+
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+        <igDP:Field Name="remit_id" Label="Remit Id" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="datarowindex"  Visibility="Collapsed" />
+    </igDP:FieldLayout>
+    
+    
+    
+    <igDP:FieldLayout x:Key="cash_lookupgrid" x:Shared="False">
+        <igDP:Field Name="batch_date" Label="Batch Date" Width="100"></igDP:Field>
+        <igDP:Field Name="batch_id" Label="Batch Id" Width="90"></igDP:Field>
+        <igDP:Field Name="code_value" Label="Batch Status" Width="140"></igDP:Field>
+        <igDP:Field Name="batch_total" Label="Batch Total" Width="90"></igDP:Field>
+        <igDP:Field Name="source_id"  Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="batch_status" Visibility="Collapsed" ></igDP:Field>
+        <igDP:Field Name="description" Width="100"></igDP:Field>
+    </igDP:FieldLayout>
+
+
+    <igDP:FieldLayout x:Key="remits" x:Shared="False">
+        <igDP:Field Name="remit_number" Label="Check Number" Width="90"  >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamTextEditor}" AllowEdit="True" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamTextEditor}">
+                            <Setter Property="NullText" Value="AAA"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+
+        <igDP:Field Name="currency_code" Label="Currency" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbCurrency, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                            <Setter Property="NullText" Value="AAA"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+
+
+
+        <igDP:Field Name="amount_functional" Label="Functional (USD)" Width="110" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings  EditorType="{x:Type igEditors:XamNumericEditor}"  />
+
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+        <igDP:Field Name="amount" Label="Amount" Width="70" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamNumericEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="amnt_alloc" Label="Amount Allocated" Width="120"  >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamNumericEditor}" AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="batch_id" Visibility="Collapsed" />
+        <igDP:Field Name="document_id" Visibility="Collapsed" />
+        <igDP:Field Name="remit_id" Visibility="Collapsed" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="cash_invoicegrid" x:Shared="False">
+        <igDP:Field Name="receivable_account" Label="Customer ID" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="company_code" Label="Company Code" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="document_id" Label="Document Id" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="open_amount" Label="Open Amount" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="product_code" Label="Product Code" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="cash_products" x:Shared="False">
+        <igDP:Field Name="seq_code" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="product_code" Label="Product Code" Width="90"></igDP:Field>
+        <igDP:Field Name="open_amount" Label="Open Amount" Width="90"></igDP:Field>
+        <igDP:Field Name="receivable_account" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="company_code" Label="Company Code" Width="90"></igDP:Field>
+
+
+
+
+    </igDP:FieldLayout>
+    <igDP:FieldLayout x:Key="cash_products1" x:Shared="False">
+
+        <igDP:Field Name="product_code" Label="Product Code" Width="90"></igDP:Field>
+        <igDP:Field Name="product_description" Label="Amount" Width="90"></igDP:Field>
+
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="cashViewDocumentDetail" x:Shared="False">
+        <igDP:Field Name="remit_alloc_id" Label="Allocation ID" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="batch_id" Label="Batch ID" Width="90" Visibility="Collapsed">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="remit_id" Label="Batch ID" Width="90" Visibility="Collapsed">
+        </igDP:Field>
+        <igDP:Field Name="company_code" Label="Company Code" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="product_code" Label="Product Code" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="apply_to_doc" Label="Apply to Document" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="apply_to_seq" Label="Apply to Seq" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="amount" Label="Amount" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="account_name" Label="Customer Name" Width="140">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="receivable_account" Label="Customer" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="unapplied_flag" Label="Unapplied" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="viewCashLookup" x:Shared="False">
+        <igDP:Field Name="account_name" Label="Account Name" Width="90"></igDP:Field>
+        <igDP:Field Name="amount" Label="Amount" Width="90"></igDP:Field>
+        <igDP:Field Name="batch_id" Label="Batch ID" Width="70"></igDP:Field>
+        <igDP:Field Name="remit_id" Label="Remit ID" Width="70"></igDP:Field>
+        <igDP:Field Name="document_id" Label="Document ID" Width="90"></igDP:Field>
+        <igDP:Field Name="receivable_account" Label="Customer" Width="90"></igDP:Field>
+        <igDP:Field Name="remit_date" Label="Remit Date" Width="100"></igDP:Field>
+        <igDP:Field Name="remit_number" Label="Remit Number" Width="90"></igDP:Field>
+        <igDP:Field Name="remit_type" Label="Remit Type" Width="90"></igDP:Field>
+        <igDP:Field Name="remit_type_id" Label="Remit Type Id" Width="70" Visibility="Collapsed"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="remits_nonedit" x:Shared="False">
+        <igDP:Field Name="remit_id" Visibility="Collapsed" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="remit_number" Label="Check Number" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamNumericEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="currency_code" Label="Currency" Width="100" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+
+        <igDP:Field Name="amount_functional" Label="Functional (USD)" Width="110" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"    EditorType="{x:Type igEditors:XamNumericEditor}"/>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+        <igDP:Field Name="amount" Label="Amount" Width="70" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"   EditorType="{x:Type igEditors:XamNumericEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="amnt_alloc" Label="Amount Allocated" Width="120" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamNumericEditor}" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="alloc_nonedit" x:Shared="False" KeyboardNavigation.TabNavigation="Local">
+        <igDP:Field Name="apply_to_doc" Label="Invoice Number" Width="100" KeyboardNavigation.TabIndex="99">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamNumericEditor}"  ></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="apply_to_seq"  Visibility="Collapsed" />
+        <igDP:Field Name="product_code" Label="Product" Width="90" KeyboardNavigation.TabIndex="91" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="unapplied_flag" Label="Unapplied" Width="70"  KeyboardNavigation.TabIndex="93"  KeyboardNavigation.DirectionalNavigation="None">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}" AllowEdit="False" KeyboardNavigation.ControlTabNavigation="Local" FocusManager.IsFocusScope="False"  >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="company_code" Label="Company Code" Width="90" Visibility="Collapsed" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="receivable_account" Label="Customer ID" Width="90" KeyboardNavigation.TabIndex="94">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamTextEditor}">
+                            <Setter Property="IsTabStop" Value="True" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="amount" Label="Amount" Width="90"  KeyboardNavigation.TabIndex="95" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"  EditorType="{x:Type igEditors:XamNumericEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}">
+                            <Setter Property="IsTabStop" Value="True" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="remit_id" Label="Remit Id" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="datarowindex"  Visibility="Collapsed" />
+    </igDP:FieldLayout>
+
+
+    <igDP:FieldLayout x:Key="CashRemitLayout" x:Shared="False">
+        <igDP:Field Name="remit_number" Label="Check Number" Width="90"  >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamTextEditor}" AllowEdit="True" >
+                 </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="document_id" Label="Document" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamTextEditor}" AllowEdit="False" >
+                 </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="remit_date" Label="Remit Date" Width="100"></igDP:Field>
+            <igDP:Field Name="currency_code" Label="Currency" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbCurrency, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="amount_functional" Label="Functional (USD)" Width="110" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings  EditorType="{x:Type igEditors:XamNumericEditor}"  />
+            </igDP:Field.Settings>
+       </igDP:Field>
+        <igDP:Field Name="amount" Label="Amount" Width="70" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamNumericEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="amnt_alloc" Label="Amount Allocated" Width="120" Visibility="Collapsed"   >
+           </igDP:Field>
+        <igDP:Field Name="batch_id" Visibility="Collapsed" />
+        
+        <igDP:Field Name="remit_id" Visibility="Collapsed" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="remit_type_id" Visibility="Collapsed" />
+        <igDP:Field Name="exchange_rate" Label="Exchange Rate" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamNumericEditor}" AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="bank_charge_amount" Label="Bank Charge" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamNumericEditor}" AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+
+    <!--<igDP:FieldLayout x:Key="cash_remitgrid" x:Shared="False">
+        <igDP:Field Name="remit_id" Label="Check Id" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="document_id" Label="Document Id" Width="90"></igDP:Field>
+        <igDP:Field Name="remit_type_id" Label="Remit Type Id" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="remit_date" Label="Remit Date" Width="100"></igDP:Field>
+        <igDP:Field Name="remit_number" Label="Check Number" Width="90"></igDP:Field>
+        <igDP:Field Name="amount" Label="Amount" Width="90"></igDP:Field>
+        <igDP:Field Name="amount_functional" Label="Amt Functional" Width="90"></igDP:Field>
+        <igDP:Field Name="currency_code" Label="Currency Code" Width="90"></igDP:Field>
+        <igDP:Field Name="amnt_alloc" Label="Amount Allocated" Width="90"></igDP:Field>
+    </igDP:FieldLayout>-->
+
+   
+
+    <igDP:FieldLayout x:Key="CashRemitAllocLayout" x:Shared="False" >
+        <igDP:Field Name="unapplied_flag" Label="Unapplied" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"  />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="apply_to_doc" Label="Invoice Number" Width="100" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamNumericEditor}"  ></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="apply_to_seq" Label="Seq" Width="50">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbSeq, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="product_code" Label="Product" Width="90" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbProducts, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+ 
+        <igDP:Field Name="company_code" Label="Company Code" Width="90" Visibility="Collapsed" >
+        </igDP:Field>
+        <igDP:Field Name="receivable_account" Label="Customer ID" Width="90" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamTextEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamTextEditor}">
+                            <Setter Property="IsTabStop" Value="True" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="amount" Label="Amount" Width="90"   >
+            <igDP:Field.Settings>
+                    <igDP:FieldSettings EditorType="{x:Type igEditors:XamNumericEditor}"/>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+        <igDP:Field Name="remit_id" Label="Remit Id" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="remit_alloc_id" Label="Remit Alloc Id" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="batch_id" Label="Batch Id" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="need_remit_id" Label="Need Remit Id" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="currency_code" Label="Currency Code" Width="90" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamTextEditor}" AllowEdit="False"  >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>        
+    </igDP:FieldLayout>
+
+
+    <igDP:FieldLayout x:Key="OpenCashLookup" x:Shared="False" >
+        <igDP:Field Name="document_id" Label="Invoice" Width="90" />
+        <igDP:Field Name="company_code" Label="Company" Width="50" />
+        <igDP:Field Name="company_description" Label="Company Name" Width="120" />
+        <igDP:Field Name="amount" Label="Total" Width="90" />
+        <igDP:Field Name="open_amount" Label="Open" Width="90" />
+        <igDP:Field Name="product_code" Label="Product" Width="90" />
+        <igDP:Field Name="receivable_account" Label="Customer" Width="90" />
+        <igDP:Field Name="account_name" Label="Customer Name" Width="180" />
+        <igDP:Field Name="detail_type" Label="Detail Type" Width="90" />
+        <igDP:Field Name="payor_name" Label="Payor" Width="120" />
+        <igDP:Field Name="city" Label="City" Width="90" />
+        <igDP:Field Name="state" Label="ST" Width="40" />
+        <igDP:Field Name="address_1" Label="Address Line 1" Width="150" />
+        <igDP:Field Name="address_2" Label="Address Line 2" Width="150" />
+        <igDP:Field Name="address_3" Label="Address Line 3" Width="150" />
+        <igDP:Field Name="seq_code" Label="Seq" Width="90" Visibility="Collapsed"   />
+    </igDP:FieldLayout>
+
+
+
+    <igDP:FieldLayout x:Key="viewBatchforCorrectBankAcctLookup" x:Shared="False" >
+        <igDP:Field Name="batch_id" Label="Batch ID" Width="90"  />
+        <igDP:Field Name="batch_desc" Label="Source" Width="50" Visibility="Collapsed"/>
+        <igDP:Field Name="remit_date" Label="Check Date" Width="90" />
+        <igDP:Field Name="remit_number" Label="Check Number" Width="90" />
+        <igDP:Field Name="amount" Label="Check Amount" Width="90" />
+        <igDP:Field Name="currency_code" Label="Currency" Width="90" />
+        <igDP:Field Name="account_number" Label="Bank Account Number" Width="120" />
+        <igDP:Field Name="bank_name" Label="Bank Name" Width="90" />
+        <igDP:Field Name="batch_date" Label="Batch Date" Width="90" Visibility="Collapsed"/>
+        <igDP:Field Name="batch_total" Label="Batch Total" Visibility="Collapsed" Width="180" />
+        <igDP:Field Name="document_id" Label="Document" Width="90" Visibility="Collapsed"/>
+        <igDP:Field Name="bank_charge_amount" Label="Bank Charge Amount" Visibility="Collapsed" Width="150" />
+      </igDP:FieldLayout>
+</ResourceDictionary>

@@ -1,0 +1,25 @@
+﻿<local:ScreenBase x:Class="Invoice.InvoiceViewTab" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="720"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="320" />
+            <ColumnDefinition Width="320" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <local:ucBaseGrid Name="gInvoiceView"  Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3"></local:ucBaseGrid>
+    </Grid>
+</local:ScreenBase>

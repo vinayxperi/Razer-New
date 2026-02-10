@@ -1,0 +1,84 @@
+﻿<ResourceDictionary  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:igDP="http://infragistics.com/DataPresenter"
+                     xmlns:igEditors="http://infragistics.com/Editors"
+                     xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+                     xmlns:RazerConverters="clr-namespace:RazerConverters;assembly=RazerConverters"
+                     xmlns:sys="clr-namespace:System;assembly=mscorlib"  
+                     xmlns:this="clr-namespace:Razer.AppCode"
+                     xmlns:igWindows="http://infragistics.com/Windows">
+
+    <igDP:FieldLayout x:Key="GridCOLA" x:Shared="False">
+        <igDP:Field Name="apply_cola_id" Label="Apply Cola Id" Width="90" Visibility="Collapsed">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="contract_id" Label="Contract ID" Width="85" ></igDP:Field>
+        <igDP:Field Name="contract_description" Label="Contract Description" Width="245">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="city" Label="City" Width="90" Visibility="Collapsed">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="state" Label="State" Width="90" Visibility="Collapsed">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="product_code" Label="Product" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="cola_eff_date" Label="Cola Eff Date" Width="100"></igDP:Field>
+        <!--<igDP:Field Name="cola_percent" Label="Cola Percent" Width="90"></igDP:Field>-->
+        <igDP:Field Name="cola_percent" Label="Cola %" Width="60">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="0.0###"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[cola_percent].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="hold_flag" Label="Hold Flag" Width="80">
+        <igDP:Field.Settings>
+            <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+        </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="bill_mso_id" Label="Entity ID" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="mso_name" Label="Entity Name" Width="220">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="send_letter_flag" Label="Send Letter" Width="80" Visibility="Collapsed">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="letter_date" Label="Letter Date" Width="100" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="apply_cola_date" Label="Apply Cola Date" Width="110" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="status_code" Label="Status Code" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="cola_id" Label="COLA ID" Width="70" Visibility="Collapsed">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="attn_line" Label="Attn Line" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="color_status" Label="Color Status" Width="70" Visibility="Collapsed"></igDP:Field>
+     </igDP:FieldLayout>
+    
+</ResourceDictionary>

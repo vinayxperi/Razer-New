@@ -1,0 +1,71 @@
+﻿<RazerBase:ScreenBase x:Class="MiscFolders.CustomerDocumentGeneralTab" 
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1080"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="350" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Grid.ColumnSpan="5" BorderBrush="Gray"  BorderThickness="2" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition MinWidth="300 " Width="256*" />
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition MinWidth="250" Width="256*" />
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition MinWidth="250" Width="274*" />
+                        <ColumnDefinition Width="239*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <!--<RowDefinition Height="*" />-->
+                    </Grid.RowDefinitions>
+
+                    <RazerBase:ucLabelTextBox Name="txtCompany" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="0" LabelText="Company Name:" BindPath="company_description" LabelWidth="120" IsReadOnly="True"  />
+                    <RazerBase:ucLabelTextBox Name="txtGrossAmount" Grid.Column="3" LabelText="Gross Amount:" LabelWidth="120" IsReadOnly="True" Margin="1,0,17,0" Text="{Binding Path=gross_amount, Mode=TwoWay,StringFormat={}{0:C}}" TextBoxHorizontalContentAlignment="Right"/>
+                    <RazerBase:ucLabelTextBox Name="txtExchangeRate" Grid.Column="5" Grid.ColumnSpan="1" Grid.Row="0" LabelText="Exchange Rate:" LabelWidth="120" BindPath="exchange_rate" IsReadOnly="True" />
+                    <RazerBase:ucLabelTextBox Name="txtDocumentType" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="1" LabelText="Document Type:" LabelWidth="120" BindPath="document_type" IsReadOnly="True" />
+                    <RazerBase:ucLabelTextBox Name="txtDiscountAmount" Grid.Column="3" Grid.Row="1" LabelText="Disc Amount:"  LabelWidth="120" IsReadOnly="True" Margin="1,0,17,0" Text="{Binding Path=disc_amount, Mode=TwoWay,StringFormat={}{0:C}}" TextBoxHorizontalContentAlignment="Right"/>
+                    <RazerBase:ucLabelTextBox Name="txtCurrencyCode" Grid.Column="5" Grid.ColumnSpan="1" Grid.Row="1" LabelText="Currency:" LabelWidth="120"  BindPath="currency_code" IsReadOnly="True"/>
+                    <RazerBase:ucLabelCheckBox Name="chkClosed" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="2" LabelText="Closed:" BindPath="status_flag" IsHitTestVisible="False" Focusable="False"/>
+                    <RazerBase:ucLabelTextBox Name="txtNetAmount" Grid.Column="3" Grid.Row="2" LabelText="Net Amount:"  LabelWidth="120" IsReadOnly="True" Margin="1,0,17,0"  Text="{Binding Path=net_amount, Mode=TwoWay,StringFormat={}{0:C}}" TextBoxHorizontalContentAlignment="Right" />
+                    <RazerBase:ucLabelTextBox Name="txtControlGroup" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="3" LabelText="Control Group:" LabelWidth="120"  BindPath="control_group" IsReadOnly="True" />
+                    <RazerBase:ucLabelTextBox Name="txtOpenAmount" Grid.Column="3" Grid.Row="3" LabelText="Open Amount:"  LabelWidth="120" IsReadOnly="True" Margin="1,0,17,0" Text="{Binding Path=open_amount, Mode=TwoWay,StringFormat={}{0:C}}" TextBoxHorizontalContentAlignment="Right" />
+                    <RazerBase:ucLabelTextBox Name="txtCreatedBy" Grid.Column="1" Grid.Row="4" LabelText="Created By:"  BindPath="creator_id" LabelWidth="120" IsReadOnly="True"/>
+                    <RazerBase:ucLabelTextBox Name="txtDocumentDate" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="7"  LabelText="Document Date:" LabelWidth="120"  IsReadOnly="True" Text="{Binding Path=document_date, Mode=TwoWay,StringFormat={}{0:MM/dd/yyyy}}" />
+                    <RazerBase:ucLabelTextBox Name="txtLastActivityDate" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="8" LabelText="Last Activity Date:" LabelWidth="120"  IsReadOnly="True" Text="{Binding Path=last_activity_date, Mode=TwoWay,StringFormat={}{0:MM/dd/yyyy}}" />
+                    <RazerBase:ucLabelTextBox Name="txtDatePosted" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="7" LabelText="Date Posted:"  LabelWidth="120" IsReadOnly="True" Text="{Binding Path=date_posted, Mode=TwoWay,StringFormat={}{0:MM/dd/yyyy}}"  />
+                    <RazerBase:ucLabelTextBox Name="txtDateClosed" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="8" LabelText="Date Closed:"   LabelWidth="120" IsReadOnly="True" Text="{Binding Path=date_closed, Mode=TwoWay,StringFormat={}{0:MM/dd/yyyy}}"  />
+                    <RazerBase:ucLabelTextBox Name="txtDueDate" Grid.Column="5" Grid.Row="7" LabelText="Due Date:"   LabelWidth="120" Margin="1,0,17,0" IsReadOnly="True" Text="{Binding Path=due_date, Mode=TwoWay,StringFormat={}{0:MM/dd/yyyy}}"   />
+                    <!--<RazerBase:ucLabelTextBox Name="txtTerms" Grid.Column="5" Grid.ColumnSpan="1" Grid.Row="8" LabelText="Terms:" BindPath="terms"  />-->
+
+                </Grid>
+           </Border>
+        </Grid>
+    </ScrollViewer>
+    </RazerBase:ScreenBase>
+
+

@@ -1,0 +1,122 @@
+﻿<RazerBase:ScreenBase x:Class="Adjustment.AdjustmentRefund" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="904"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+    
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MaxWidth="350"/>
+                <ColumnDefinition MaxWidth="350"/>
+                <ColumnDefinition MaxWidth="250"/>
+                <ColumnDefinition MaxWidth="250"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition MaxHeight="50"/>
+                <RowDefinition MaxHeight="30"/>
+                <RowDefinition MaxHeight="150"/>
+             
+            <RowDefinition MaxHeight="150"/>
+            <RowDefinition MaxHeight="150"/>
+                <RowDefinition MaxHeight="30"/>
+            </Grid.RowDefinitions>
+            <Border Grid.ColumnSpan="4" Grid.Row="0" BorderBrush="Gray" BorderThickness="0,0,0,1">
+                <Grid DataContext="{Binding ElementName=GridAdjustment, Path=ActiveRecord}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MinWidth="250"/>
+                        <ColumnDefinition MinWidth="350"/>
+                        <ColumnDefinition MinWidth="200"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="50"/>
+                    </Grid.RowDefinitions>
+                <RazerBase:ucLabelTextBox Name="txtCustomer" LabelText="Customer for Refund:" Grid.Column="0" Grid.Row="0" LabelWidth="135" MouseDoubleClick="txtCustomerId_MouseDoubleClick" LostFocus="txtCustomer_LostFocus" EnterActsLikeTab="True" />
+                <RazerBase:ucLabelTextBox Name="txtCustomerName" LabelText="Name:" Grid.Column="1" Grid.Row="0" LabelWidth="45"  />
+                <RazerBase:ucLabelTextBox Name="txtAdjAmt" LabelText="Amount to Adjust:" Grid.Column="2" LabelWidth="120" Text="0.00" EnterActsLikeTab="True" IsEnabled="True" LostFocus="txtAdjAmt_LostFocus" GotFocus="txtAdjAmt_GotFocus"  PreviewKeyDown="txtAdjAmt_PreviewKeyDown" CntrlTabIndex="1" Margin="36,0,0,0" />
+                </Grid>
+            </Border>
+            <Border Grid.ColumnSpan="4" Grid.Row="1" BorderBrush="Gray" BorderThickness="0,0,0,1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="30"/>
+                    </Grid.RowDefinitions>
+                    <Label FontWeight="Bold" Grid.Row="0" Grid.Column="1">Uapplied Cash documents to Refund</Label>
+                </Grid>
+            </Border>
+            <Border Grid.ColumnSpan="4" Grid.Row="2" BorderBrush="Gray" Grid.RowSpan ="2" BorderThickness="0,0,0,1">
+                <Grid Height="215">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MinWidth="150" Width="176" />
+                        <ColumnDefinition MinWidth="150"/>
+                        <ColumnDefinition MinWidth="100"/>
+                        <ColumnDefinition MinWidth="100"/>
+                        <ColumnDefinition MinWidth="100"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="40"/>
+                        <RowDefinition MaxHeight="60"/>
+                    <RowDefinition MaxHeight="60"/>
+                    <RowDefinition MaxHeight="60"/>
+                    <RowDefinition MaxHeight="60"/>
+                    <RowDefinition MaxHeight="60"/>
+                    <RowDefinition MaxHeight="60"/>
+                    <RowDefinition MaxHeight="60"/>
+                        <RowDefinition MaxHeight="60"/>
+                        <RowDefinition MaxHeight="60"/>
+                        <RowDefinition MaxHeight="40"/>
+                    </Grid.RowDefinitions>
+                <RazerBase:ucBaseGrid Name="GridRefund" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="15" CntrlTabIndex="2"  />
+                </Grid>
+            </Border>
+           
+           
+            <Border Grid.ColumnSpan="4"  Grid.Row="4" BorderBrush="Gray" BorderThickness="0,0,0,1" >
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="226*" />
+                        <ColumnDefinition Width="226*" />
+                        <ColumnDefinition Width="226*" />
+                        <ColumnDefinition Width="226*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <RazerBase:ucLabelTextBox Name="txtRunningAdjAmt" LabelText="Adjusted Amt:" Grid.Row="1" Grid.Column="1" LabelWidth="90" Text="0.00" IsEnabled="False"/>
+                    <RazerBase:ucLabelTextBox Name="txtRunningOffsetAmt" LabelText="Refund Offset Amt:" Grid.Column="2" Grid.Row="1" LabelWidth="120" Text="0.00" IsEnabled="False"/>
+                </Grid>
+            </Border>
+            <Border Grid.ColumnSpan="4" Grid.Row="6" BorderBrush="Gray" BorderThickness="0,0,0,1" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="30"/>
+                    </Grid.RowDefinitions>
+                    <Button Name="btnSave" Height="30" Width="150" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" IsEnabled="False" Click="btnSave_Click"  >Save Adjustment</Button>
+                </Grid>
+            </Border>
+            <Border Grid.ColumnSpan="4" Grid.Row="7" BorderBrush="Gray" BorderThickness="0,0,0,1" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="30"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </Border>
+        </Grid>
+    
+</RazerBase:ScreenBase>
+

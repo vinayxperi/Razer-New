@@ -1,0 +1,50 @@
+﻿<local:ScreenBase x:Class="RazerTestProject.ucContactInfoTab" 
+             MainTableName="[CHANGE]"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="720"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="16"/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition Width="16"/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition Width="16"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="16" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <local:ucLabelTextBox LabelWidth="84" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" 
+            Name="tFirstName" LabelText="First Name:"  Text="{Binding Path=FirstName,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <local:ucLabelTextBox LabelWidth="84" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" 
+            Name="tLastName" LabelText="Last Name:"  Text="{Binding Path=LastName,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <local:ucLabelTextBox LabelWidth="84" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="4" 
+            Name="tPhone" LabelText="Phone:"  Text="{Binding Path=Phone,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <local:ucLabelMultilineTextBox  LabelWidth="84" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" 
+            Name="tAbout" LabelText="About:"  Text="{Binding Path=About,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+            Grid.RowSpan="3" />
+    </Grid>
+</local:ScreenBase>

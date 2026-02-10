@@ -1,0 +1,128 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:igThemes="http://infragistics.com/Themes" >
+
+
+
+    <!--<ResourceDictionary.MergedDictionaries>-->
+
+
+
+        <!--<igThemes:RibbonWashBaseDark />
+        <igThemes:ResourceWasher AutoWash="True" WashColor="Blue" WashMode="SoftLightBlend" >
+            <igThemes:ResourceWasher.SourceDictionary>
+                <igThemes:RibbonWashBaseDarkBrushes/>
+            </igThemes:ResourceWasher.SourceDictionary>
+        </igThemes:ResourceWasher>-->
+
+        <!--<igThemes:DataPresenterWashBaseDark />
+        <igThemes:ResourceWasher  AutoWash="True" WashColor="Blue" WashMode="SoftLightBlend"    >
+            <igThemes:ResourceWasher.SourceDictionary>
+
+                <igThemes:DataPresenterWashBaseDarkBrushes />
+            </igThemes:ResourceWasher.SourceDictionary>
+        </igThemes:ResourceWasher>
+
+        <igThemes:PrimitivesWashBaseDark  />
+        <igThemes:ResourceWasher  AutoWash="True" WashColor="DarkBlue" WashMode="SoftLightBlend"  >
+            <igThemes:ResourceWasher.SourceDictionary>
+
+                <igThemes:PrimitivesWashBaseDark />
+            </igThemes:ResourceWasher.SourceDictionary>
+        </igThemes:ResourceWasher>
+
+        <igThemes:EditorsWashBaseDark  />
+        <igThemes:ResourceWasher  AutoWash="True" WashColor="DarkBlue" WashMode="SoftLightBlend"  >
+            <igThemes:ResourceWasher.SourceDictionary>
+
+                <igThemes:EditorsWashBaseDark />
+            </igThemes:ResourceWasher.SourceDictionary>
+        </igThemes:ResourceWasher>
+
+        <igThemes:DockManagerWashBaseDark   />
+        <igThemes:ResourceWasher  AutoWash="True" WashColor="DarkBlue" WashMode="SoftLightBlend"  >
+            <igThemes:ResourceWasher.SourceDictionary>
+
+                <igThemes:DockManagerWashBaseDark  />
+            </igThemes:ResourceWasher.SourceDictionary>
+        </igThemes:ResourceWasher>
+
+
+        <igThemes:TilesWashBaseDark   />
+        <igThemes:ResourceWasher  AutoWash="True" WashColor="DarkBlue" WashMode="SoftLightBlend"  >
+            <igThemes:ResourceWasher.SourceDictionary>
+
+                <igThemes:TilesWashBaseDark  />
+            </igThemes:ResourceWasher.SourceDictionary>
+        </igThemes:ResourceWasher>
+
+    </ResourceDictionary.MergedDictionaries>
+	<SolidColorBrush Color="LightBlue" x:Key="RazerButtonBackground" />-->
+    
+    <!--<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" x:Key="MenuBackgroundGradient">
+        <GradientStop Color="#FF18B0F1" Offset="0"/>
+        <GradientStop Color="#FF1998E9" Offset="1"/>
+        <GradientStop Color="#FF0C0E93" Offset="0.358"/>
+        <GradientStop Color="#FF0C2880" Offset="0.741"/>
+    </LinearGradientBrush>-->
+    
+    <!--Current Color-->
+    <!--<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" x:Key="MenuBackgroundGradient">
+        <GradientStop Color="#FF060995" Offset="0"/>
+        <GradientStop Color="#FF06088F" Offset="1"/>
+        <GradientStop Color="#FF05065C" Offset="0.319"/>
+        <GradientStop Color="#FF01032B" Offset="0.552"/>
+        <GradientStop Color="#FF050754" Offset="0.793"/>
+    </LinearGradientBrush>-->
+
+    <!--Darker Blue-->
+    <!--<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" x:Key="MenuBackgroundGradient">
+        <GradientStop Color="#FF0822B6" Offset="0"/>
+        <GradientStop Color="#FF031A60" Offset="1"/>
+        <GradientStop Color="#FF061135" Offset="0.284"/>
+        <GradientStop Color="#FF0E162D" Offset="0.534"/>
+        <GradientStop Color="#FF081339" Offset="0.802"/>
+        <GradientStop Color="#FF071874" Offset="0.017"/>
+    </LinearGradientBrush>-->
+
+        <!--Blue-Grey-->
+    <!--<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" x:Key="MenuBackgroundGradient">
+        <GradientStop Color="#FF0822B6" Offset="0"/>
+        <GradientStop Color="#FF465A95" Offset="1"/>
+        <GradientStop Color="#FF35416A" Offset="0.284"/>
+        <GradientStop Color="#FF243050" Offset="0.534"/>
+        <GradientStop Color="#FF3A4774" Offset="0.802"/>
+        <GradientStop Color="#FF333A60" Offset="0.017"/>
+    </LinearGradientBrush>-->
+
+    <!--Darker Blue-Grey-->
+    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" x:Key="MenuBackgroundGradient">
+        <GradientStop Color="#FF0822B6" Offset="0"/>
+        <GradientStop Color="#FF1A1F2F" Offset="1"/>
+        <GradientStop Color="#FF404A6A" Offset="0.284"/>
+        <GradientStop Color="#FF2D3858" Offset="0.534"/>
+        <GradientStop Color="#FF252C43" Offset="0.802"/>
+        <GradientStop Color="#FF5F6A95" Offset="0.009"/>
+    </LinearGradientBrush>
+
+    <!--Light Blue-->
+    <!--<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" x:Key="MenuBackgroundGradient">
+        <GradientStop Color="#FF0822B6" Offset="0"/>
+        <GradientStop Color="#FF96C1F1" Offset="1"/>
+        <GradientStop Color="#FFBED7F3" Offset="0.28"/>
+        <GradientStop Color="#FFB6D0F1" Offset="0.534"/>
+        <GradientStop Color="#FFB6D3F3" Offset="0.802"/>
+        <GradientStop Color="#FFD7E3F3" Offset="0.017"/>
+    </LinearGradientBrush>-->
+
+
+    <!--Teal-->
+    <!--<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" x:Key="MenuBackgroundGradient">
+        <GradientStop Color="#FF045A6A" Offset="1"/>
+        <GradientStop Color="#FF03323B" Offset="0.28"/>
+        <GradientStop Color="#FF022A2D" Offset="0.534"/>
+        <GradientStop Color="#FF033B3F" Offset="0.802"/>
+        <GradientStop Color="#FF055D74" Offset="0"/>
+    </LinearGradientBrush>-->
+
+</ResourceDictionary>

@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="RazerBase.ucLabelCheckBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+             xmlns:conv="clr-namespace:RazerConverters;assembly=RazerConverters"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"
+             HorizontalAlignment="Stretch"
+             d:DesignHeight="40" d:DesignWidth="250"
+             x:Name="ucLabelCheckBox1">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Name="GridLabelColumn" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="40"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Style="{DynamicResource LabelLightUpStyle}" Name="Label" Content="[LabelText]"  Width="99"
+               VerticalAlignment="Center" Margin="1,1,0,1" HorizontalContentAlignment="Right" />
+        <CheckBox Grid.Column="1" Style="{DynamicResource CheckBoxStyle}" Name="CheckBox"
+                  HorizontalAlignment="Left" VerticalAlignment="Center" MinHeight="10"
+                  IsChecked="{Binding Converter={conv:BitToBoolConverter}, ElementName=ucLabelCheckBox1, Path=IsChecked}"
+                  Checked="CheckBox_Checked"
+                  Unchecked="CheckBox_Unchecked" Template="{DynamicResource cbControl}"></CheckBox>
+    </Grid>
+</UserControl>

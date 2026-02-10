@@ -1,0 +1,40 @@
+﻿<local:ScreenBase x:Class="Razer.BatchBilling.BillingBatchExceptionTab" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="720"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+ 
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="5" />
+        </Grid.RowDefinitions>
+        <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Row="1" Grid.Column="1">Contract Exceptions</Label>
+        <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Row="1" Grid.Column="4">Location Exceptions</Label>
+        <local:ucBaseGrid Name="gBillingBatchContractException" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" ></local:ucBaseGrid>
+        <local:ucBaseGrid Name="gBillingBatchLocationException" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" ></local:ucBaseGrid>
+
+        <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Row="3" Grid.Column="1">Detailed Exceptions</Label>
+        <local:ucBaseGrid Name="gBillingBatchException" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5" ></local:ucBaseGrid>
+            
+        </Grid>
+
+
+</local:ScreenBase>

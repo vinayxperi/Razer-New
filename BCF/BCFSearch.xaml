@@ -1,0 +1,133 @@
+﻿<RazerBase:ScreenBase x:Class="BCF.BCFSearch"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"             
+             xmlns:igDP="http://infragistics.com/DataPresenter"          
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="800">
+    <Border Grid.Row="1" Grid.ColumnSpan="4" BorderBrush="Gray" BorderThickness="0,0,0,1" >
+        <Grid Background="{DynamicResource ApplicationBackgroundDark}" Name="MainGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition />
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition Width="10" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Style="{DynamicResource LabelLightUpStyle}" Content="Contract ID:" Margin="0,6,5,0" Width="150" Grid.Row="0" Grid.Column="0" 
+                       HorizontalContentAlignment="Right" VerticalAlignment="Center">
+
+                </Label>
+                <TextBox  Name="txtContractId" Background="#FFFFFFFF" Grid.Row="0" Grid.Column ="1" Width="Auto" Margin="0,6,0,0"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="Helvetica" FontWeight="Bold">
+
+                </TextBox>
+
+                <Label Style="{DynamicResource LabelLightUpStyle}" Content="Contract Description:" Margin="0,6,5,0" Width="150" Grid.Row="0" Grid.Column="2" 
+                       HorizontalContentAlignment="Right" VerticalAlignment="Center">
+
+                </Label>
+                <TextBox  Name="txtContractDescription" Background="#FFFFFFFF" Grid.Row="0" Grid.Column ="3" Width="Auto" Margin="0,6,0,0"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="Helvetica" FontWeight="Bold">
+
+                </TextBox>
+
+                <Label Style="{DynamicResource LabelLightUpStyle}" Content="Customer Number:" Margin="0,6,5,0" Width="150" Grid.Row="1" Grid.Column="0" 
+                       HorizontalContentAlignment="Right" VerticalAlignment="Center">
+
+                </Label>
+                <TextBox  Name="txtCustomerNumber" Background="#FFFFFFFF" Grid.Row="1" Grid.Column ="1" Width="Auto" Margin="0,6,0,0"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="Helvetica" FontWeight="Bold">
+
+                </TextBox>
+
+                <Label Style="{DynamicResource LabelLightUpStyle}" Content="Customer Name:" Margin="0,6,5,0" Width="150" Grid.Row="1" Grid.Column="2" 
+                       HorizontalContentAlignment="Right" VerticalAlignment="Center">
+
+                </Label>
+                <TextBox  Name="txtCustomerName" Background="#FFFFFFFF" Grid.Row="1" Grid.Column ="3" Width="Auto" Margin="0,6,0,0"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="Helvetica" FontWeight="Bold">
+
+                </TextBox>
+
+                <Label Style="{DynamicResource LabelLightUpStyle}" Content="Location ID:" Margin="0,6,5,0" Width="150" Grid.Row="2" Grid.Column="0" 
+                       HorizontalContentAlignment="Right" VerticalAlignment="Center">
+
+                </Label>
+                <TextBox  Name="txtLocationId" Background="#FFFFFFFF" Grid.Row="2" Grid.Column ="1" Width="Auto" Margin="0,6,0,0"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="Helvetica" FontWeight="Bold">
+
+                </TextBox>
+
+                <Label Style="{DynamicResource LabelLightUpStyle}" Content="BCF Description:" Margin="0,6,5,0" Width="150" Grid.Row="2" Grid.Column="2" 
+                       HorizontalContentAlignment="Right" VerticalAlignment="Center">
+
+                </Label>
+                <TextBox  Name="txtBCFDescription" Background="#FFFFFFFF" Grid.Row="2" Grid.Column ="3" Width="Auto" Margin="0,6,0,0"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="Helvetica" FontWeight="Bold">
+
+                </TextBox>
+
+                <Label Style="{DynamicResource LabelLightUpStyle}" Content="Product Code:" Width="150" Grid.Row="3" Grid.Column="0" 
+                       HorizontalContentAlignment="Right" VerticalAlignment="Center">
+
+                </Label>
+                <TextBox  Name="txtProductCode" Background="#FFFFFFFF" Grid.Row="3" Grid.Column ="1" Width="Auto"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center" FontFamily="Helvetica" FontWeight="Bold">
+
+                </TextBox>
+                <!--<RazerBase:ucLabelTextBox Name="txtContractId" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" LabelText="Contract ID:" LabelWidth="150" ></RazerBase:ucLabelTextBox>
+                
+                <RazerBase:ucLabelTextBox Name="txtContractDescription" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" LabelText="Contract Description:" LabelWidth="150"></RazerBase:ucLabelTextBox>
+                <RazerBase:ucLabelTextBox Name="txtCustomerNumber" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" LabelText="Customer Number:" LabelWidth="150" ></RazerBase:ucLabelTextBox>
+                <RazerBase:ucLabelTextBox Name="txtCustomerName" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" LabelText="Customer Name:" LabelWidth="150" ></RazerBase:ucLabelTextBox>
+                <RazerBase:ucLabelTextBox Name="txtLocationId" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" LabelText="Location ID:" LabelWidth="150" ></RazerBase:ucLabelTextBox>
+                -->
+                <Grid Grid.Row="3" Grid.Column="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Name="btnSearch" Content="Search" HorizontalAlignment="Right" Margin="0,3,10,0" Height="23" Width="100" Click="btnSearch_Click" IsDefault="True"></Button>
+                    <Button Grid.Column="1" Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="10,3,0,0" Height="23" Width="100" Click="btnClear_Click"></Button>
+                </Grid>
+            </Grid>
+            <RazerBase:ucBaseGrid Name="idgBCFSearchGrid" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4"></RazerBase:ucBaseGrid>
+            <Grid Grid.Row="3" Grid.Column="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Name="btnOk" Content="OK" HorizontalAlignment="Right" Margin="0,20,10,20" Height="23" Width="100" Click="btnOk_Click" IsEnabled="False"></Button>
+                <Button Grid.Column="1" Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="10,20,5,20" Height="23" Width="100" Click="btnCancel_Click"></Button>
+            </Grid>
+
+        </Grid>
+    </Border>
+</RazerBase:ScreenBase>

@@ -1,0 +1,32 @@
+﻿<local:ScreenBase x:Class="Invoice.InvoiceAdjustmentTab" 
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+             xmlns:igDP="http://infragistics.com/DataPresenter" 
+             mc:Ignorable="d" 
+             d:DesignHeight="9500" d:DesignWidth="720"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="220" />
+            <ColumnDefinition Width="320" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="280" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="30*" />
+        </Grid.RowDefinitions>
+        <local:ucBaseGrid Name="gInvoiceAdjustment"  Grid.Row="1" Grid.RowSpan="3" Grid.Column="1" Grid.ColumnSpan="3"></local:ucBaseGrid>
+
+        <!--<local:ucBaseGrid Name="gInvoicewithAdjustment"  Grid.Row="5" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3"></local:ucBaseGrid>-->
+
+    </Grid>
+    <!--</ScrollViewer>-->
+</local:ScreenBase>

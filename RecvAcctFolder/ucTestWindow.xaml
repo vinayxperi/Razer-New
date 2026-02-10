@@ -1,0 +1,30 @@
+﻿<RazerBase:ScreenBase x:Class="RecvAcctFolder.ucTestWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+             xmlns:local="clr-namespace:RecvAcctFolder"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <RazerBase:ucBaseGrid x:Name="uBG1" Grid.Row="0" Grid.ColumnSpan="3"></RazerBase:ucBaseGrid>
+        <RazerBase:ucBaseGrid x:Name="uBG2" Grid.Row="1" Grid.ColumnSpan="3"></RazerBase:ucBaseGrid>
+        <RazerBase:ucBaseGrid x:Name="uBG3" Grid.Row="2" Grid.ColumnSpan="3"></RazerBase:ucBaseGrid>
+        <RazerBase:ucBaseGrid x:Name="uBG4" Grid.Row="3" Grid.ColumnSpan="3" ></RazerBase:ucBaseGrid>
+        <RazerBase:ucBaseGrid x:Name="uBG5" Grid.Row="4" Grid.ColumnSpan="3"></RazerBase:ucBaseGrid>
+        <!--<local:ucBaseLookup x:Name="uBL" Margin="0,276,0,56"></local:ucBaseLookup>-->
+    </Grid>
+</RazerBase:ScreenBase>

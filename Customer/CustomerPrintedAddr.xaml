@@ -1,0 +1,48 @@
+﻿<RazerBase:ScreenBase x:Class="Customer.CustomerPrintedAddr" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+                  xmlns:igDP="http://infragistics.com/DataPresenter" 
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="900"
+             Height="Auto" Width="Auto" >
+
+    <Border Grid.Row="5" Grid.ColumnSpan="3" BorderBrush="Gray" BorderThickness="1,0,0,0">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="320" />
+                <ColumnDefinition Width="320"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15" />
+                <RowDefinition Height="38" />
+                <RowDefinition Height="38" />
+                <RowDefinition Height="38" />
+                <RowDefinition Height="38" />
+                <RowDefinition Height="38" />
+                <RowDefinition Height="38" />
+                <RowDefinition Height="38" />
+                <RowDefinition Height="38" />
+                <RowDefinition Height="38" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="10" />
+            </Grid.RowDefinitions>
+            <!-- Place Controls Here -->
+            <Label  Grid.Column="1" Grid.Row="1" FontSize="14" FontWeight="Bold">Printed Address</Label>
+            <RazerBase:ucLabelTextBox Name="txtAddr1"  Grid.Row="2" Grid.Column="2"   LabelText="" IsReadOnly="True"    />
+            <RazerBase:ucLabelTextBox Name="txtAddr2"  Grid.Row="3" Grid.Column="2"   LabelText="" IsReadOnly="True"    />
+            <RazerBase:ucLabelTextBox Name="txtAddr3"  Grid.Row="4" Grid.Column="2"   LabelText="" IsReadOnly="True"    />
+            <RazerBase:ucLabelTextBox Name="txtAddr4"  Grid.Row="5" Grid.Column="2"   LabelText=""     />
+            <RazerBase:ucLabelTextBox Name="txtAddr5"  Grid.Row="6" Grid.Column="2"   LabelText=""      />
+            <RazerBase:ucLabelTextBox Name="txtAddr6"  Grid.Row="7" Grid.Column="2"   LabelText=""      />
+            <RazerBase:ucLabelTextBox Name="txtAddr7"  Grid.Row="8" Grid.Column="2"   LabelText=""      />
+
+
+
+        </Grid>
+    </Border>
+</RazerBase:ScreenBase>

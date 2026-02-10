@@ -1,0 +1,60 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:igThemes="http://infragistics.com/Themes" >
+
+
+    <ResourceDictionary.MergedDictionaries>
+        <!--<igThemes:RibbonWashBaseDark />
+        <igThemes:ResourceWasher AutoWash="True" WashColor="Gray"  >
+            <igThemes:ResourceWasher.SourceDictionary>
+                <igThemes:RibbonWashBaseDarkBrushes/>
+            </igThemes:ResourceWasher.SourceDictionary>
+        </igThemes:ResourceWasher>-->
+
+        <igThemes:DataPresenterWashBaseDark />
+        <igThemes:ResourceWasher  AutoWash="True" WashColor="Gray" WashMode="SoftLightBlend"    >
+            <igThemes:ResourceWasher.SourceDictionary>
+
+                <igThemes:DataPresenterWashBaseDarkBrushes />
+            </igThemes:ResourceWasher.SourceDictionary>
+        </igThemes:ResourceWasher>
+
+        <igThemes:PrimitivesWashBaseDark  />
+        <igThemes:ResourceWasher  AutoWash="True" WashColor="Gray" WashMode="SoftLightBlend"  >
+            <igThemes:ResourceWasher.SourceDictionary>
+
+                <igThemes:PrimitivesWashBaseDark />
+            </igThemes:ResourceWasher.SourceDictionary>
+        </igThemes:ResourceWasher>
+
+        <igThemes:EditorsWashBaseDark  />
+        <igThemes:ResourceWasher  AutoWash="True" WashColor="Gray" WashMode="SoftLightBlend"  >
+            <igThemes:ResourceWasher.SourceDictionary>
+
+                <igThemes:EditorsWashBaseDark />
+            </igThemes:ResourceWasher.SourceDictionary>
+        </igThemes:ResourceWasher>
+
+        <igThemes:DockManagerWashBaseDark   />
+        <igThemes:ResourceWasher  AutoWash="True" WashColor="Gray" WashMode="SoftLightBlend"  >
+            <igThemes:ResourceWasher.SourceDictionary>
+
+                <igThemes:DockManagerWashBaseDark  />
+            </igThemes:ResourceWasher.SourceDictionary>
+        </igThemes:ResourceWasher>
+
+
+        <igThemes:DataPresenterWashBaseDark/>
+        <igThemes:ResourceWasher  AutoWash="True" WashColor="Gray" WashMode="SoftLightBlend"  >
+            <igThemes:ResourceWasher.SourceDictionary>
+
+                <igThemes:DataPresenterWashBaseDark/>
+            </igThemes:ResourceWasher.SourceDictionary>
+        </igThemes:ResourceWasher>
+
+    </ResourceDictionary.MergedDictionaries>
+
+<SolidColorBrush Color="Gray" x:Key="RazerButtonBackground" />
+
+   
+</ResourceDictionary>

@@ -1,0 +1,43 @@
+﻿<local:ScreenBase x:Class="Razer.CustomInvoice.CustomInvoiceDefRevTab" 
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+             xmlns:igDP="http://infragistics.com/DataPresenter" 
+             mc:Ignorable="d" 
+             d:DesignHeight="9500" d:DesignWidth="720"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+        
+            <!--<RowDefinition Height="25" />-->
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+        <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Column="1" Grid.Row="1" >Deferred Pool</Label>
+        <local:ucBaseGrid Name="gCustomInvoiceDefRev"  Grid.Row="2"   Grid.Column="1" Grid.ColumnSpan="2"></local:ucBaseGrid>
+        <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Column="1" Grid.Row="3" >Deferred Pool Detail</Label>
+        <local:ucBaseGrid Name="gCustomInvoiceDefRevDetail"  Grid.Row="4"  Grid.Column="1" Grid.ColumnSpan="3"></local:ucBaseGrid>
+        <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Column="1" Grid.Row="5" >Deferred Pool Reason</Label>
+        <local:ucBaseGrid Name="gCustomInvoiceDefRevReason"  Grid.Row="6"  Grid.Column="1" Grid.ColumnSpan="3"></local:ucBaseGrid>
+        <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Column="3" Grid.Row="1" >Totals by Reason</Label>
+        <local:ucBaseGrid Name="gCustomInvoiceDefReasonTot"  Grid.Row="2"   Grid.Column="3" Grid.ColumnSpan="1"></local:ucBaseGrid>
+        <!--<local:ucBaseGrid Name="gInvoicewithAdjustment"  Grid.Row="5" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3"></local:ucBaseGrid>-->
+
+    </Grid>
+    <!--</ScrollViewer>-->
+</local:ScreenBase>

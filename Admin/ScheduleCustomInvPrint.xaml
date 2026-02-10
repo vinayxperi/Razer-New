@@ -1,0 +1,53 @@
+﻿<RazerBase:ScreenBase x:Class="Admin.ScheduleCustomInvPrint" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+                  xmlns:igDP="http://infragistics.com/DataPresenter" 
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="900"
+             Height="Auto" Width="Auto" >
+
+    <Border Grid.Row="5" Grid.ColumnSpan="3" BorderBrush="Gray" BorderThickness="1,0,0,0">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="320" />
+                <ColumnDefinition Width="320" />
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="45" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="45" />
+                <RowDefinition Height="45" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <!-- Place Controls Here -->
+            <Label  Grid.Column="1" Grid.Row="1" FontSize="14" FontWeight="Bold">Schedule Custom Invoice Generator</Label>
+          
+           
+            <!--<Border Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" BorderBrush="Gray"  BorderThickness="2" >-->
+           
+            <!--<RazerBase:uc Name="cmbUser" Grid.Row="4" Grid.Column="2" LabelText="Email To:"    />-->
+            <RazerBase:ucLabelComboBox Name="cmbCompany"  Grid.Row="2" Grid.Column="2" LabelText="Company:" Visibility="Collapsed"    />
+            <RazerBase:ucLabelComboBox Name="cmbPrinters" Grid.Row="3" Grid.Column="2" LabelText="Printer:"    />
+            <RazerBase:ucLabelComboBox Name="cmbUser" Grid.Row="4" Grid.Column="2" LabelText="Email To:"    />
+            <RazerBase:ucLabelDateTimePicker Name="ldtDatetoSchedule" Grid.Row="5" Grid.Column="2"  LabelWidth="75"  LabelText="Schedule At:" Margin="0,1,0,24" Grid.RowSpan="2" />
+            <!--</Border>-->
+            <Grid Grid.Row="6" Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+              
+                    <Button Name="btnOK" Content="Schedule" Height="23" Grid.Column="2" Width="100" Click="btnOK_Click" Margin="0,2,7,0" />
+            </Grid>
+        </Grid>
+    </Border>
+</RazerBase:ScreenBase>

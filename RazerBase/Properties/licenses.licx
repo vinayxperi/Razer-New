@@ -1,0 +1,9 @@
+Infragistics.Controls.Editors.XamCalendar, InfragisticsWPF.Controls.Editors.XamCalendar, Version=11.1.20111.1002, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Infragistics.Windows.DataPresenter.XamDataGrid, InfragisticsWPF.DataPresenter, Version=11.1.20111.1002, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Infragistics.Windows.Controls.XamPager, InfragisticsWPF, Version=11.1.20111.1002, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Infragistics.Controls.Editors.XamDateTimeSlider, InfragisticsWPF.Controls.Editors.XamSlider, Version=11.1.20111.1002, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Infragistics.Windows.DockManager.XamDockManager, InfragisticsWPF.DockManager, Version=11.1.20111.1002, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Infragistics.Windows.OutlookBar.XamOutlookBar, InfragisticsWPF.OutlookBar, Version=11.1.20111.1002, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Infragistics.Windows.Editors.XamDateTimeEditor, InfragisticsWPF.Editors, Version=11.1.20111.1002, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Infragistics.Windows.Ribbon.XamRibbon, InfragisticsWPF.Ribbon, Version=11.1.20111.1002, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Infragistics.Windows.Editors.XamCheckEditor, InfragisticsWPF.Editors, Version=11.1.20111.1002, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb

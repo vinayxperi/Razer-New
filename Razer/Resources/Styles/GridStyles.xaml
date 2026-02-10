@@ -1,0 +1,269 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:igWindows="http://infragistics.com/Windows"
+             xmlns:igDP="http://infragistics.com/DataPresenter"
+                    xmlns:igEditors="http://infragistics.com/Editors" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:RazerConverters="clr-namespace:RazerConverters;assembly=RazerConverters">
+
+
+    <RazerConverters:cTextFormat  x:Key="TextFormatter"/>
+    <RazerConverters:ValueToForegroundColorConverter x:Key="ValueToForegroundConverter" />
+    <RazerConverters:cAttachmentHighlightConverter x:Key="AttachmentHighlightConverter" />
+    <RazerConverters:TrueFalseReversalConverter x:Key="BooleanReversal"/>
+    <RazerConverters:cNegativeToRedConverter x:Key="NegativeToRedConverter"/> 
+
+
+    <!--Base Style for rate fields / This style only allows for entry of 2 digits but will display up to 6 digits-->
+    <Style TargetType="{x:Type igEditors:XamNumericEditor}" x:Key="RateStyleCurrency" >
+        <Setter Property="Format" Value="###,###,###.00####;(###,###,###.00####)" />
+    </Style>
+
+    <!--Use this style if you want the user to be able to input up to 6 digits / Will normally only display 2 digits unless data goes beyond 2 digits-->
+    <Style TargetType="{x:Type igEditors:XamNumericEditor}" x:Key="RateStyleDecimal6" >
+        <Setter Property="Format" Value="###,###,###.00####;(###,###,###.00####)" />
+        <Setter Property="Mask" Value="-nnnnnnnnn.nnnnnn"/>
+    </Style>
+    
+    <!--Style to use for rate fields that use a percentage-->
+    <!--% sign in quotes so that infragistics won't autocalculate-->
+    <Style TargetType="{x:Type igEditors:XamNumericEditor}" x:Key="RateStylePercent" >
+        <Setter Property="Format" Value="###,###,###.0000'%';(###,###,###.0000)'%'" />
+        <Setter Property="Mask" Value="-nnnnnnnnn.nnnn"/>
+    </Style>
+
+    <Style TargetType="{x:Type igEditors:XamNumericEditor}" x:Key="RateStylePercentCalc" >
+        <Setter Property="Format" Value="###,###,###.000000%;(###,###,###.000000)%" />
+        <Setter Property="Mask" Value="-nnnnnnnnn.nnnnnn"/>
+    </Style>
+
+    <Style TargetType="{x:Type igEditors:XamNumericEditor}" x:Key="RateStylePercentCalc1" >
+        <Setter Property="Format" Value="###,###,###.000000%;(###,###,###.0000)%" />
+        <Setter Property="Mask" Value="-nnnnnnnnn.nnnn%"/>
+    </Style>
+    
+    <!--Base Grid Styles / Affects all infragistics grids unless overwritten at window level-->
+    <Style TargetType="{x:Type igDP:GroupByArea}" >
+        <Setter Property="Background"  >
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF353535" Offset="0"/>
+                    <GradientStop Color="#FFA3A3A3" Offset="1"/>
+
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type igDP:LabelPresenter}" >
+        <Setter Property="LabelHighlight" >
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF353535" Offset="0"/>
+                    <GradientStop Color="#FFA3A3A3" Offset="1"/>
+
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="LabelHighlight" Value="#FFA3A3A3" />
+        <Setter Property="Background" Value="{DynamicResource GridHeaderColor}"/>
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontSize" Value="11"/>
+            <!--<Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF353535" Offset="0"/>
+                    <GradientStop Color="#FFA3A3A3" Offset="1"/>
+
+                </LinearGradientBrush>
+            </Setter.Value>-->
+        <!--</Setter>-->
+        <Style.Triggers>
+            <Trigger Property="SortStatus" Value="Ascending">
+
+
+
+                <Setter Property="Background" >
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF353535" Offset="0"/>
+                            <GradientStop Color="#FFA3A3A3" Offset="1"/>
+
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+
+
+
+            </Trigger>
+
+            <Trigger Property="SortStatus" Value="Descending">
+
+                <Setter  Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF353535" Offset="0"/>
+                            <GradientStop Color="#FFA3A3A3" Offset="1"/>
+
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+
+
+            </Trigger>
+        </Style.Triggers>
+
+
+    </Style>
+
+
+    <Style TargetType="{x:Type igDP:CellValuePresenter}" x:Key="BaseGridDefaultStyle" >
+        <Setter Property="Background" Value="White" />
+        <Setter Property="FontFamily" Value="Helvetica"  />
+        <!--<Setter Property="Foreground" Value="{Binding Path=Value, Converter={StaticResource ValueToForegroundConverter}}"  />-->
+        <Setter Property="FontWeight" Value="Black" />
+        <Setter Property="FontSize" Value="11" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Path=IsAlternate,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={ x:Type igDP:DataRecordCellArea}} }" Value="True">
+                <Setter Property="Background" Value="#FFE3F2FE" />
+                <Setter Property="FontFamily" Value="Helvetica"  />
+                <Setter Property="Foreground" Value="Black"  />
+                <Setter Property="FontSize" Value="11" />
+                <Setter Property="FontWeight" Value="Black" />
+                <Setter Property="ForegroundActiveStyle">
+                    <Setter.Value>
+                        <Style>
+                            <Setter Property="TextElement.Foreground" Value="Black" />
+                        </Style>
+                    </Setter.Value>
+                </Setter>
+                <!--To color on cell hover-->
+                <!--<Setter Property="BackgroundHover" Value="#FF356CAF"/>-->
+                <Setter Property="BackgroundHover" Value="LightBlue"/>
+                <Setter Property="ForegroundHoverStyle">
+                    <Setter.Value>
+                        <Style>
+                            <Setter Property="TextElement.Foreground" Value="Black" />
+                        </Style>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="ForegroundSelectedStyle">
+                    <Setter.Value>
+                        <Style>
+                            <Setter Property="TextElement.Foreground" Value="Black" />
+                        </Style>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Record.IsSelected}" Value="True">
+                <Setter Property="Background" Value="#FF63A4FF"  />
+                <Setter Property="FontFamily" Value="Helvetica"  />
+                <Setter Property="FontWeight" Value="Black" />
+                <Setter Property="FontSize" Value="11" />
+                <Setter Property="ForegroundStyle">
+                    <Setter.Value>
+                        <Style>
+                            <Setter Property="TextElement.Foreground" Value="Black" />
+                        </Style>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+
+            <!--Change the color for the mouse over row on the grid here-->
+            <Trigger Property="IsMouseOverRecord" Value="True">
+                <!--<Setter Property="Background" Value="#FF63A4FF" />-->
+                <Setter Property="Background" Value="LightBlue"  />
+                <Setter Property="ForegroundStyle">
+                    <Setter.Value>
+                        <Style>
+                            <Setter Property="TextElement.Foreground" Value="Black" />
+
+                        </Style>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+   
+       
+        <!--The following styles are copies of the global styles used for all infragistics grids-->
+        <!--Copying them to the window allows the ability to override the base functionality-->
+        <!--The functionality overridden below pertains to the cell color behavior-->
+        <!--The Cell color for both the primary row and the alternating row are set to transparent so that-->
+        <!--the override color from the converter can be seen.-->
+        <Style TargetType="{x:Type igDP:CellValuePresenter}" x:Key="ColorCodeGridStyle" >
+            <!--This background property was changed from the original to be transparent-->
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="FontFamily" Value="Helvetica"  />
+            <Setter Property="FontWeight" Value="Black" />
+            <Setter Property="FontSize" Value="11" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Path=IsAlternate,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={ x:Type igDP:DataRecordCellArea}} }" Value="True">
+                    <!--This background property was changed from the original to be transparent-->
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="FontFamily" Value="Helvetica"  />
+                    <Setter Property="Foreground" Value="Black"  />
+                    <Setter Property="FontSize" Value="11" />
+                    <Setter Property="FontWeight" Value="Black" />
+                    <Setter Property="ForegroundActiveStyle">
+                        <Setter.Value>
+                            <Style>
+                                <Setter Property="TextElement.Foreground" Value="Black" />
+                            </Style>
+                        </Setter.Value>
+                    </Setter>
+
+                <Setter Property="BackgroundHover" Value="LightBlue" />
+                    <Setter Property="ForegroundHoverStyle">
+                        <Setter.Value>
+                            <Style>
+                                <Setter Property="TextElement.Foreground" Value="Black" />
+                            </Style>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="ForegroundSelectedStyle">
+                        <Setter.Value>
+                            <Style>
+                                <Setter Property="TextElement.Foreground" Value="Black" />
+                            </Style>
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Record.IsSelected}" Value="True">
+                <Setter Property="Background" Value="#FF63A4FF"  />
+                    <Setter Property="FontFamily" Value="Helvetica"  />
+                    <Setter Property="FontWeight" Value="Black" />
+                    <Setter Property="FontSize" Value="11" />
+                    <Setter Property="ForegroundStyle">
+                        <Setter.Value>
+                            <Style>
+                                <Setter Property="TextElement.Foreground" Value="Black" />
+                            </Style>
+                        </Setter.Value>
+                    </Setter>
+
+            </DataTrigger>
+
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Record.IsActive}" Value="True">
+                <!--<Setter Property="Background" Value="LightBlue"  />-->
+                <Setter Property="Background" Value="#FF63A4FF"  />
+            </DataTrigger>
+
+            <Trigger Property="IsMouseOverRecord" Value="True">
+                    <!--<Setter Property="Background" Value="#FF63A4FF" />-->
+                <Setter Property="Background" Value="LightBlue"  />
+                    <Setter Property="ForegroundStyle">
+                        <Setter.Value>
+                            <Style>
+                                <Setter Property="TextElement.Foreground" Value="Black" />
+
+                            </Style>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+ 
+        </Style.Triggers>
+        </Style>
+
+
+</ResourceDictionary>

@@ -1,0 +1,46 @@
+﻿<local:ScreenBase x:Class="Units.UnitTypeSetup" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+        </Grid.ColumnDefinitions>
+        <local:ucLabelTextBox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Name="txtUnitTypeID" VerticalAlignment="Top" Width="200" LabelText="Unit Type ID:" 
+                              MouseDoubleClick="txtUnitTypeID_MouseDoubleClick" EnterActsLikeTab="True" LostFocus="txtUnitTypeID_LostFocus" LabelWidth="100"   />
+        <local:ucLabelTextBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Name="txtDescription" VerticalAlignment="Top" Width="420" LabelText="Description:" 
+                              Grid.ColumnSpan="2" BindPath="unit_description" LabelWidth="100" />
+        <local:ucLabelComboBox Name="cbUnitType" Grid.Column="1" Grid.Row="3" LabelText="Type:" LabelWidth="100" 
+                               SelectedValue="{Binding Path=unit_type, Mode=TwoWay}" Width="400" />
+        <local:ucLabelTextBox Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" Name="txtServicePeriodOffset" VerticalAlignment="Top" 
+                              Width="200" LabelText="Service Offset:" LabelWidth="100"
+                              BindPath="service_period_offset"/>
+        <local:ucLabelCheckBox Name="txtAutoPopulate" LabelText="Auto Populate Units:" BindPath="auto_populate_units" Grid.Row="1" Grid.Column="3" LabelWidth="140"  />
+        <local:ucLabelCheckBox Name="txtTotalUnitFlag" LabelText="Total Units:" BindPath="total_unit_flag" Grid.Row="2" Grid.Column="3" LabelWidth="140"  />
+        <local:ucLabelCheckBox Name="txtEntityLevelUnitFlag" LabelText="Entity Level Units:" BindPath="entity_level_unit_flag" Grid.Row="3" Grid.Column="3" LabelWidth="140"  />
+        <local:ucLabelCheckBox Name="txtPostWithBilling" LabelText="Post Units With Billing:" BindPath="post_units_with_billing" Grid.Row="4" Grid.Column="3" LabelWidth="140"  />
+        <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center">Unit Type - Metadata Categories</Label>
+        <local:ucBaseGrid Name="gXref" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="1"></local:ucBaseGrid >
+    </Grid>
+</local:ScreenBase>

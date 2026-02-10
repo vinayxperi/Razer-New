@@ -1,0 +1,138 @@
+﻿<RazerBase:ScreenBase x:Class="Razer.CustomInvoice.CustomInvoiceFolder"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"             
+             xmlns:igWindows="http://infragistics.com/Windows"
+             xmlns:igDP="http://infragistics.com/DataPresenter"   
+             xmlns:local="clr-namespace:Razer.CustomInvoice"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="900"
+             Width="Auto" Height="Auto" >
+    <Grid Background="{DynamicResource ApplicationBackgroundDark}" Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <RazerBase:ucLabelTextBox Name="txtCustomInvoiceNumber" LabelText="Invoice Number:" Grid.Row="0" Grid.Column="0" LabelWidth="120"
+                                  EnterActsLikeTab="True" LostFocus="txtCustomInvoiceNumber_LostFocus" GotFocus="txtCustomInvoiceNumber_GotFocus" MouseDoubleClick="txtCustomInvoiceNumber_MouseDoubleClick"/>
+        <RazerBase:ucLabelTextBox Name="txtCustomerAccount" LabelText="Customer Account:" Grid.Row="0" Grid.Column="2" LabelWidth="120"
+                                  EnterActsLikeTab="True" MouseDoubleClick="txtCustomerAccount_MouseDoubleClick" LostFocus="txtCustomerAccount_LostFocus" />
+
+        <igWindows:XamTabControl Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="4"  Name="tcMainTab" SelectionChanged="tcMainTab_SelectionChanged">
+            <igWindows:TabItemEx Name ="GeneralMain" Header="General"  FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:CustomInvoiceGeneral Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="General" />
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Details" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:CustomInvoiceDetail Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="Details" />
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Deferred" Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:CustomInvoiceDefRevTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="Deferred"></local:CustomInvoiceDefRevTab>
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="View"  FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:CustomInvoiceView Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="View" />
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Attachments"  FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <RazerBase:ucAttachmentsTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="Attachments" RootParentObjectType="Razer.CustomInvoice.CustomInvoiceFolder" />
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Comments"  FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <RazerBase:ucComments Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="Comments" RootParentObjectType="Razer.CustomInvoice.CustomInvoiceFolder"/>
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Adjustments"  FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:CustomInvoiceAdjustments Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="Adjustments" Loaded="Adjustments_Loaded" />
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Approval"  FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:CustomInvoiceApproval Grid.RowSpan="2" Grid.ColumnSpan="3" x:Name="Approval" />
+                </Grid>
+            </igWindows:TabItemEx>
+        </igWindows:XamTabControl>
+    </Grid>
+</RazerBase:ScreenBase>

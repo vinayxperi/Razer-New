@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{162DC5C2-EED7-4C46-8D47-0F8BB383283B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BCF</RootNamespace>
+    <AssemblyName>BCF</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Infragistics4.Services.Schedules.WcfConnectorService.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\Infragistics4.Services.Schedules.WcfConnectorService.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Chart.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPFCommon\Bin\InfragisticsWPF4.Chart.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Controls.Editors.XamCalendar.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Controls.Editors.XamCalendar.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Controls.Editors.XamColorPicker.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Controls.Editors.XamColorPicker.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Controls.Editors.XamSlider.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Controls.Editors.XamSlider.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Controls.Interactions.XamDialogWindow.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Controls.Interactions.XamDialogWindow.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Controls.Interactions.XamSpellChecker.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Controls.Interactions.XamSpellChecker.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Controls.Menus.XamDataTree.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Controls.Menus.XamDataTree.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Controls.Menus.XamMenu.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Controls.Menus.XamMenu.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Controls.Menus.XamTagCloud.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Controls.Menus.XamTagCloud.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Controls.Schedules.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Controls.Schedules.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Controls.SchedulesDialogs.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Controls.SchedulesDialogs.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Controls.SchedulesExchangeConnector.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Controls.SchedulesExchangeConnector.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.DataManager.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPFCommon\Bin\InfragisticsWPF4.DataManager.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.DataPresenter.ExcelExporter.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.DataPresenter.ExcelExporter.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.DataPresenter.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.DataPresenter.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.DataPresenter.WordWriter.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.DataPresenter.WordWriter.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.DockManager.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.DockManager.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Documents.Core.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPFCommon\Bin\InfragisticsWPF4.Documents.Core.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Documents.Excel.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPFCommon\Bin\InfragisticsWPF4.Documents.Excel.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Documents.IO.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Documents.IO.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.DragDrop.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPFCommon\Bin\InfragisticsWPF4.DragDrop.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Editors.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Editors.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Math.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPFCommon\Bin\InfragisticsWPF4.Math.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.OutlookBar.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.OutlookBar.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Reporting.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Reporting.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Ribbon.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Ribbon.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Themes.Fall.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Themes.Fall.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Themes.ForestGreen.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Themes.ForestGreen.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Themes.Leaf.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Themes.Leaf.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Themes.Lipstick.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Themes.Lipstick.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Themes.Water.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Themes.Water.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Themes.Wind.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Themes.Wind.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.Tiles.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPF\CLR4.0\Bin\InfragisticsWPF4.Tiles.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF4.v11.1, Version=11.1.20111.2282, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Infragistics\NetAdvantage 2011.1\WPFCommon\Bin\InfragisticsWPF4.v11.1.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Log" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BCFApprovalTab.xaml.cs">
+      <DependentUpon>BCFApprovalTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BCFViewTab.xaml.cs">
+      <DependentUpon>BCFViewTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BCFEmailQueue.xaml.cs">
+      <DependentUpon>BCFEmailQueue.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BCFLocationsTab.xaml.cs">
+      <DependentUpon>BCFLocationsTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BCFFolder.xaml.cs">
+      <DependentUpon>BCFFolder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BCFGeneralTab.xaml.cs">
+      <DependentUpon>BCFGeneralTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BCFDetailTab.xaml.cs">
+      <DependentUpon>BCFDetailTab.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Razer.Common\Razer.Common.csproj">
+      <Project>{87A25370-5697-4F1A-855D-EC5F4390B219}</Project>
+      <Name>Razer.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RazerBase\RazerBase.csproj">
+      <Project>{92F34D8B-F692-41A7-AF2D-42F5B84D6C9C}</Project>
+      <Name>RazerBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RazerConverters\RazerConverters.csproj">
+      <Project>{3B0B455E-4F81-461C-8C72-A3033470B72F}</Project>
+      <Name>RazerConverters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RazerInterface\RazerInterface.csproj">
+      <Project>{8E38FFCB-144A-45F2-AF87-123DD9245220}</Project>
+      <Name>RazerInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RazerWS\RazerWS.csproj">
+      <Project>{D7637FBE-0A74-42A1-9742-E1F20F2EE980}</Project>
+      <Name>RazerWS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="BCFApprovalTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BCFFolder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BCFGeneralTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BCFDetailTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BCFViewTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BCFEmailQueue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BCFLocationsTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\BCFFieldLayouts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

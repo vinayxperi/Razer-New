@@ -1,0 +1,30 @@
+﻿<local:ScreenBase x:Class="Contract.ContractReviewDatesTab" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+             xmlns:converters="clr-namespace:RazerConverters;assembly=RazerConverters"
+             mc:Ignorable="d" 
+             d:DesignHeight="750" d:DesignWidth="1080"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+        <Grid x:Name="mainGrid" Width="Auto">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition  Width="*"/>
+            <ColumnDefinition  Width="20"/>
+     
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+           <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+        <!-- Place Controls Here -->
+
+        <local:ucBaseGrid Name="gReviewDates" Grid.Row="1" Grid.Column="1" ></local:ucBaseGrid>
+      
+    </Grid>
+    </ScrollViewer>
+</local:ScreenBase>

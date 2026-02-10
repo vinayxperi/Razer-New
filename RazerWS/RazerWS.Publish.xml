@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="\\tul1razdw1new\wwwroot" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Web.config" publishTime="02/24/2015 10:20:33" />
+    <file relUrl="bin/cDataRazer.dll" publishTime="02/24/2015 10:20:33" />
+    <file relUrl="bin/cTransaction.dll" publishTime="02/24/2015 10:20:33" />
+    <file relUrl="bin/RazerInterface.pdb" publishTime="02/24/2015 10:20:33" />
+    <file relUrl="bin/RazerWS.pdb" publishTime="02/24/2015 14:41:35" />
+    <file relUrl="BillingService.svc" publishTime="08/24/2011 09:33:18" />
+    <file relUrl="bin/cDataRazer.pdb" publishTime="02/24/2015 10:20:33" />
+    <file relUrl="bin/RazerInterface.dll" publishTime="02/24/2015 10:20:33" />
+    <file relUrl="bin/RazerWS.dll" publishTime="02/24/2015 14:41:35" />
+    <file relUrl="RazerService.svc" publishTime="08/24/2011 09:33:18" />
+    <file relUrl="crossdomain.xml" publishTime="08/24/2011 09:33:18" />
+    <file relUrl="bin/cDataRazer.xml" publishTime="02/24/2015 10:20:33" />
+    <file relUrl="clientaccesspolicy.xml" publishTime="08/24/2011 09:33:18" />
+    <file relUrl="bin/cTransaction.pdb" publishTime="02/24/2015 10:20:33" />
+  </publishProfile>
+</publishData>

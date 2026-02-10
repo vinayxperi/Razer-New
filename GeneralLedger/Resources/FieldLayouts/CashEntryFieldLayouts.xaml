@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                        xmlns:igWindows="http://infragistics.com/Windows"
+                    xmlns:igDP="http://infragistics.com/DataPresenter"
+                    xmlns:igEditors="http://infragistics.com/Editors" 
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:RazerConverters="clr-namespace:RazerConverters;assembly=RazerConverters">
+    <igDP:FieldLayout x:Key="remits1" x:Shared="False">
+        <igDP:Field Name="remit_id" Label="Remit Id" Width="70"></igDP:Field>
+        <igDP:Field Name="remit_number" Label="Remit Id" Width="70"></igDP:Field>
+        <igDP:Field Name="amount" Label="Amount" Width="90"></igDP:Field>
+        <igDP:Field Name="amount_functional" Label="Allocated" Width="70"></igDP:Field>
+    </igDP:FieldLayout>
+</ResourceDictionary>

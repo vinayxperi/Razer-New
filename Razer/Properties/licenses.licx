@@ -1,0 +1,4 @@
+Infragistics.Windows.Editors.XamDateTimeEditor, InfragisticsWPF.Editors, Version=11.1.20111.1002, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Infragistics.Windows.Controls.XamPager, InfragisticsWPF, Version=11.1.20111.1002, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Infragistics.Windows.DockManager.XamDockManager, InfragisticsWPF.DockManager, Version=11.1.20111.1002, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb
+Infragistics.Windows.Ribbon.XamRibbon, InfragisticsWPF.Ribbon, Version=11.1.20111.1002, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb

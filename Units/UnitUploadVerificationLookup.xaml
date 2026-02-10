@@ -1,0 +1,66 @@
+﻿<RazerBase:DialogBase x:Class="Units.UnitUploadVerificationLookup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+             mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="1024"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ScrollViewer>
+            <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" Name="txtReport" VerticalAlignment="Stretch" />
+        </ScrollViewer>
+        <RazerBase:ucBaseGrid Grid.Column="0" Grid.Row="1" Name="FilteredGrid" PropertyChanged="FilteredGrid_PropertyChanged" />
+        <TabControl Grid.Column="0" Grid.Row="2" HorizontalAlignment="Stretch" Name="ExceptionsTab" VerticalAlignment="Stretch">
+            <TabItem Header="Multiple Options" Name="MultiOps">
+                <Grid>
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="6,34,0,0" Name="MultiOpsCombo" VerticalAlignment="Top" Width="236" SelectionChanged="MultiOpsCombo_SelectionChanged" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="260,34,0,0" Name="txtMultiOpsOrig" Text="TextBlock" VerticalAlignment="Top" Width="276" />
+                    <Label Content="Property" Height="28" HorizontalAlignment="Left" Margin="6,0,0,0" VerticalAlignment="Top" />
+                    <Label Content="Original Value" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="260,0,0,0" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="554,34,0,0" Name="MultiOpsPotential" VerticalAlignment="Top" Width="236" />
+                    <Label Content="Possible Values" HorizontalAlignment="Left" Margin="554,2,0,0" VerticalAlignment="Top" />
+                    <Button Content="Save Change" Height="23" HorizontalAlignment="Left" Margin="840,34,0,0" Name="btnMultiOpsSave" VerticalAlignment="Top" Width="95" Click="btnMultiOpsSave_Click" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Exception Issues" Name="Exceptions">
+                <Grid>
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="10,44,0,0" Name="ExceptionPropertyCombo" VerticalAlignment="Top" Width="236" SelectionChanged="ExceptionPropertyCombo_SelectionChanged" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="264,44,0,0" Name="txtExceptionOrig" Text="TextBlock" VerticalAlignment="Top" Width="276" />
+                    <Label Content="Property" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" />
+                    <Label Content="Original Value" HorizontalAlignment="Left" Margin="264,10,0,0" VerticalAlignment="Top" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="558,42,0,0" Name="txtExceptionNewValue" VerticalAlignment="Top" Width="236" />
+                    <Label Content="New Value" HorizontalAlignment="Left" Margin="558,12,0,0" VerticalAlignment="Top" />
+                    <Button Content="Save Change" Height="23" HorizontalAlignment="Left" Margin="844,44,0,0" Name="btnExceptionSave" VerticalAlignment="Top" Width="85" Click="btnExceptionSave_Click" />
+                    <CheckBox Content="Apply to all" Height="16" HorizontalAlignment="Left" Margin="844,73,0,0" Name="ExceptionApplyToAll" VerticalAlignment="Top" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Validation Issues" Name="Validation">
+                <Grid>
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="10,44,0,0" Name="ValidationPropertyCombo" VerticalAlignment="Top" Width="236" SelectionChanged="ValidationPropertyCombo_SelectionChanged" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="264,44,0,0" Name="txtValidationOrig" Text="TextBlock" VerticalAlignment="Top" Width="276" />
+                    <Label Content="Property" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" />
+                    <Label Content="Original Value" HorizontalAlignment="Left" Margin="264,10,0,0" VerticalAlignment="Top" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="558,44,0,0" Name="txtValidationNewValue" VerticalAlignment="Top" Width="236" />
+                    <Label Content="New Value" HorizontalAlignment="Left" Margin="558,12,0,0" VerticalAlignment="Top" />
+                    <Button Content="Save Change" Height="23" HorizontalAlignment="Left" Margin="844,44,0,0" Name="btnValidationSave" VerticalAlignment="Top" Width="85" Click="btnValidationSave_Click" />
+                    <CheckBox Content="Apply to all" Height="16" HorizontalAlignment="Left" Margin="844,73,0,0" Name="ValidationApplyToAll" VerticalAlignment="Top" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Upload" Name="Upload" IsEnabled="False">
+                <Grid>
+                    <TextBlock TextWrapping="Wrap" Text="All required issues are handled. If there are any records left in the grid they have model or brand exceptions.  You may continue or manually correct the vaules.  Any exception models remaining will be inseted into the database" Margin="0" />
+                    <Button Content="Continue" Height="23" HorizontalAlignment="Left" Margin="6,44,0,0" Name="btnContinue" VerticalAlignment="Top" Width="75" Click="btnContinue_Click" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</RazerBase:DialogBase>

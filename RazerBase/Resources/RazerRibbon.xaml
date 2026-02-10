@@ -1,0 +1,213 @@
+﻿<igRibbon:XamRibbon 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:igRibbon="clr-namespace:Infragistics.Windows.Ribbon;assembly=InfragisticsWPF4.Ribbon.v11.1"
+    xmlns:igDock="http://infragistics.com/DockManager"
+    xmlns:igEditors="http://infragistics.com/Editors"
+    xmlns:igThemes="http://infragistics.com/Themes"
+    xmlns:event="clr-namespace:RazerBase"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:igWindows="http://infragistics.com/Windows" 
+    mc:Ignorable="d"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:System_ComponentModel="clr-namespace:System.ComponentModel;assembly=PresentationFramework" 
+    x:Name="XamRibbon1" Height="150" >
+	<igRibbon:XamRibbon.Resources>
+
+	</igRibbon:XamRibbon.Resources>
+	
+    <igRibbon:XamRibbon.QuickAccessToolbar>
+        <igRibbon:QuickAccessToolbar Width="300" />
+    </igRibbon:XamRibbon.QuickAccessToolbar>
+    <igRibbon:XamRibbon.ApplicationMenu>
+        <igRibbon:ApplicationMenu Image="/RazerBase;component/Resources/Icons/MainMenu_Default.png" >
+            <igRibbon:ApplicationMenu.FooterToolbar>
+                <igRibbon:ApplicationMenuFooterToolbar>
+                    <igRibbon:ButtonTool   Caption="E_xit" Id="ExitButton" IsQatCommonTool="True" LargeImage="/RazerBase;component/Resources/Exit.png" />
+                </igRibbon:ApplicationMenuFooterToolbar>
+            </igRibbon:ApplicationMenu.FooterToolbar>
+            <igRibbon:ButtonTool   Caption="_Save" Id="btnSave" IsQatCommonTool="True" LargeImage="/RazerBase;component/Resources/Save.png" Command="Save" />
+            <igRibbon:ButtonTool   Caption="_Insert" IsQatCommonTool="True" Id="btnInsert" LargeImage="/RazerBase;component/Resources/New.png" Command="New" />
+            <igRibbon:ButtonTool   Caption="_Delete" Id="btnDelete" IsQatCommonTool="True" LargeImage="/RazerBase;component/Resources/Delete.png" Command="Delete" />
+            <igRibbon:ButtonTool   Caption="Save _As" Id="btnSaveAs" LargeImage="/RazerBase;component/Resources/Save.png" Command="NotACommand" />
+            <igRibbon:ButtonTool   Caption="E_xport" Id="btnExport" SmallImage="/RazerBase;component/Resources/Excel_Icon_small.jpg" Command="SaveAs" />
+            <igRibbon:SeparatorTool/>
+            <igRibbon:MenuTool Caption="_Print" Id="btnPrint" ButtonType="DropDown" LargeImage="/RazerBase;component/Resources/Print.png" >
+                <igRibbon:LabelTool Caption="Print the Screen or a Report" />
+                <igRibbon:ButtonTool   Caption="Print the data on the screen" Id="btnPrintScreen" SmallImage="/RazerBase;component/Resources/Redo_small.png"  Command="Print" />
+                <igRibbon:ButtonTool   Caption="Print a report if the current window" Id="btnPrintReport" SmallImage="/RazerBase;component/Resources/Redo_small.png" Command="PrintPreview" />
+            </igRibbon:MenuTool>
+            <igRibbon:SeparatorTool/>
+            <igRibbon:ButtonTool   Caption="_Refresh" Id="btnRefresh" LargeImage="/RazerBase;component/Resources/Refresh.png" Command="Refresh" />
+            <igRibbon:ButtonTool   Caption="C_lear" Id="btnClear" LargeImage="/RazerBase;component/Resources/Clear.png" Command="NotACommand" />
+            <igRibbon:ButtonTool   Caption="_Undo" Id="btnUndo" Command="Undo" LargeImage="/RazerBase;component/Resources/Undo.png"/>
+            <igRibbon:ButtonTool   Caption="R_edo" Id="btnRedo" Command="Redo" LargeImage="/RazerBase;component/Resources/Folder.png" />
+            <igRibbon:SeparatorTool/>
+            <igRibbon:ButtonTool   Caption="C_opy" Id="btnCopy" LargeImage="/RazerBase;component/Resources/Copy.png" Command="Copy" />
+            <igRibbon:ButtonTool   Caption="C_ut" Id="btnCut" LargeImage="/RazerBase;component/Resources/Cut.png" Command="Cut" />
+            <igRibbon:ButtonTool   Caption="Pas_te" Id="PasteTool" LargeImage="/RazerBase;component/Resources/Paste.png" Command="Paste" />
+            <igRibbon:SeparatorTool/>
+            <igRibbon:ButtonTool   Caption="_Close" Id="CloseButton" IsQatCommonTool="True" LargeImage="/RazerBase;component/Resources/Close.png" Command="Close" />
+        </igRibbon:ApplicationMenu>
+    </igRibbon:XamRibbon.ApplicationMenu>
+    <igRibbon:XamRibbon.ContextualTabGroups>
+        <igRibbon:ContextualTabGroup  IsVisible="True" Key="ctgCore" ToolTipService.ShowDuration="20000">
+            <igRibbon:RibbonTabItem Header="Folder">
+                <igRibbon:RibbonGroup VerticalContentAlignment="Stretch"  Margin="0,10,0,0" Width="950" HorizontalAlignment="Left" >
+                    <igRibbon:ToolHorizontalWrapPanel Margin="0" Height="81" VerticalAlignment="Bottom" Width="940">
+                        <igRibbon:ButtonTool   Caption="Adjustments" Id="btnAdjustments" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            				LargeImage="/RazerBase;component/Resources/Icons/AdjustmentFolder.png" ToolTip="Open Adjustments Folder" Foreground="#FFD2D2D2" Height="77" HorizontalAlignment="Center" VerticalAlignment="Top"  />
+                        <igRibbon:ButtonTool   Caption="Advertisements" Id="btnAds" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            				LargeImage="/RazerBase;component/Resources/Icons/AdsFolder.png" ToolTip="Open Advertisements Folder" Foreground="#FFD2D2D2" HorizontalAlignment="Center" />
+                        <igRibbon:ButtonTool   Caption="Advertisements Search" Id="btnAdSearch" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            				LargeImage="/RazerBase;component/Resources/Icons/AdsFolder.png" ToolTip="Open Advertisements Search" Foreground="#FFD2D2D2" HorizontalAlignment="Center" />
+                        <igRibbon:ButtonTool   Caption="Audit" Id="btnAudit" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            				LargeImage="/RazerBase;component/Resources/Icons/AuditFolder.png" ToolTip="Open Audit Folder" Foreground="#FFD2D2D2" Height="77" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Cash" Id="btnCash" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            				LargeImage="/RazerBase;component/Resources/Icons/CashFolder.png" ToolTip="Open Cash Folder" Foreground="#FFD2D2D2" HorizontalAlignment="Center" />
+                        <igRibbon:ButtonTool   Caption="Entity" Id="btnEntity" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            				LargeImage="/RazerBase;component/Resources/Icons/EntityFolder.png" ToolTip="Open Entity Folder" Foreground="#FFD2D2D2" Height="77" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Contacts" Id="btnContacts" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            				LargeImage="/RazerBase;component/Resources/Icons/ContactFolder.png" ToolTip="Open Contacts Folder" Foreground="#FFD2D2D2" HorizontalAlignment="Center" />
+                        <igRibbon:ButtonTool   Caption="Contracts" Id="btnContracts" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            				LargeImage="/RazerBase;component/Resources/Icons/ContractFolder.png" ToolTip="Open Contracts Folder" Foreground="#FFD2D2D2" HorizontalAlignment="Center" />
+                        <igRibbon:ButtonTool   Caption="Custom Invoice" Id="btnCustomInvoice" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            				LargeImage="/RazerBase;component/Resources/Icons/CustomInvoiceFolder.png" ToolTip="Open Custom Invoice Folder" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Customer" Id="btnCustomer" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            				LargeImage="/RazerBase;component/Resources/Icons/CustomerFolder.png" ToolTip="Open Customer Folder" Foreground="#FFD2D2D2" Height="77" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Invoice" Id="btnInvoice" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            				LargeImage="/RazerBase;component/Resources/Icons/InvoiceFolder.png" ToolTip="Open Invoice Folder" Foreground="#FFD2D2D2" Height="77" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Location" Id="btnLocation" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            				LargeImage="/RazerBase;component/Resources/Icons/LocationFolder.png" ToolTip="Open Location Folder" Foreground="#FFD2D2D2" HorizontalAlignment="Center" />
+                        <igRibbon:ButtonTool   Caption="Withholding Tax" Id="btnWithholdingTax" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            				LargeImage="/RazerBase;component/Resources/Icons/WithholdingTaxFolder.png" ToolTip="Open Withholding Tax Folder" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                    </igRibbon:ToolHorizontalWrapPanel>
+                </igRibbon:RibbonGroup>
+            </igRibbon:RibbonTabItem>
+            <igRibbon:RibbonTabItem Header="Billing" FontWeight="Medium">
+                <igRibbon:RibbonGroup  Margin="2,-7.5,0,-6.5" Width="1000" HorizontalAlignment="Left" >
+                    <igRibbon:ToolHorizontalWrapPanel Margin="0,0,0,-15" HorizontalAlignment="Left">
+                        <igRibbon:ButtonTool   Caption="Ads Interactive Revenue Distribution" Id="btnAdRevenueDistribution" 
+            					igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Ads Interactive Revenue Distribution" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Create Billing Batch" Id="btnBillingBatch" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Create Billing Batch" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="COLA" Id="btnCola" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open COLA" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Generate Invoices" Id="btnGenerateInvoices" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Generate Invoices" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Generate Custom Invoices" Id="btnGenerateCustomInvoices" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Generate Custom Invoices" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Generate Ads Invoices" Id="btnGenerateAdsInvoices" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Generate Ads Invoices" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Invoice Email Queue" Id="btnInvoiceEmailQueue" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Email Queue" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Post Ads Biling" Id="btnPostAdsBiling" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Post Ads Biling" Foreground="#FFD2D2D2" Height="80" />
+                        <igRibbon:ButtonTool   Caption="Post Billing" Id="btnPostBiling" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Post Biling" Foreground="#FFD2D2D2" Height="80" />
+                        <igRibbon:ButtonTool   Caption="Post Custom Billing" Id="btnPostCustomBiling" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Post Custom Biling" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Set Period" Id="btnSetPeriod" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Set Period" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Unposted Billing" Id="btnUnpostedBiling" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Unposted Biling" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="View Unposted Custom Invoices" Id="btnViewUnpostedCustomInvoices" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Unposted Custom Invoices" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Import Units" Id="btnImportUnits" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Import Units" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Unit Entry" Id="btnUnitEntry" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Unit Entry" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                    </igRibbon:ToolHorizontalWrapPanel>
+                </igRibbon:RibbonGroup>
+            </igRibbon:RibbonTabItem>
+            <igRibbon:RibbonTabItem Header="Customer">
+                <igRibbon:RibbonGroup  Margin="2,-7.5,0,-6.5" Width="800" HorizontalAlignment="Left" >
+                    <igRibbon:ToolHorizontalWrapPanel Margin="0,0,0,-15" HorizontalAlignment="Left">
+                        <igRibbon:ButtonTool   Caption="Adjustment Queue" Id="btnAdjustmentQueue" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Icons/AdjustmentQue.png" ToolTip="Open Adjustment Queue" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Comment Search" Id="btnCommentSearch" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Icons/CommentSearch.png" ToolTip="Open Comment Search" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Credit Memo Adjustment" Id="btnCreditMemoAdjustment" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Icons/CreditMemoAdjustment.png" ToolTip="Open Credit Memo Adjustment" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Invoice Conversion" Id="btnInvoiceConversion" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Icons/InvoiceConversion.png" ToolTip="Open Invoice Conversion" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Lockdown Credit Memo/Bad Debt" Id="btnCreditMemoBadDebt" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Icons/LockdownCreditMemo_BadDebt.png" ToolTip="Open Lockdown Credit Memo/Bad Debt" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" />
+                        <igRibbon:ButtonTool   Caption="Customer Documents" Id="btnReceivableDocument" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Icons/ReceivableDocumentFolder.png" ToolTip="Open Receivable Document Folder" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Upload Adjustment" Id="btnUploadAdjustment" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Icons/UploadAdjustment.png" ToolTip="Open Upload Adjustment" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="View Cash Adjustment" Id="btnCashAdjustment" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Icons/ViewCashAdjustment.png" ToolTip="Open Cash Adjustment" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Workflow Queue" Id="btnWorkflowQueue" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Icons/WorkflowQue.png" ToolTip="Open Workflow Queue" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                    </igRibbon:ToolHorizontalWrapPanel>
+                </igRibbon:RibbonGroup>
+            </igRibbon:RibbonTabItem>
+            <igRibbon:RibbonTabItem Header="Accounting" Background="#FF804646">
+                <igRibbon:RibbonGroup  Margin="2,-7.5,0,-6.5" Width="800" HorizontalAlignment="Left" >
+                    <igRibbon:ToolHorizontalWrapPanel Margin="0,0,0,-15" HorizontalAlignment="Left">
+                        <igRibbon:ButtonTool   Caption="Cash Entry" Id="btnCashEntry" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Icons/CashEntry.png" ToolTip="Open Cash Entry" Foreground="#FFD2D2D2" Height="80" />
+                        <igRibbon:ButtonTool   Caption="Create Deferred Pool Voucher" Id="btnDeferredPoolVoucher" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Icons/CreateDeferredPoolVoucher.png" ToolTip="Open Deferred Pool Voucher" Foreground="#FFD2D2D2" Height="80" />
+                        <igRibbon:ButtonTool   Caption="G/L Journal Voucher Folder" Id="btnJournalVoucher" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Icons/GLJournalVoucherFolder.png" ToolTip="Open G/L Journal Voucher Folder" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Post Cash" Id="btnPostCash" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Icons/PostCash.png" ToolTip="Open Post Cash" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Post G/L" Id="btnPostGL" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Icons/PostGL.png" ToolTip="Open Post G/L" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+
+                    </igRibbon:ToolHorizontalWrapPanel>
+                </igRibbon:RibbonGroup>
+            </igRibbon:RibbonTabItem>
+            <igRibbon:RibbonTabItem Header="Admin">
+                <igRibbon:RibbonGroup  Margin="2,-7.5,0,-6.5" Width="800" HorizontalAlignment="Left" >
+                    <igRibbon:ToolHorizontalWrapPanel Margin="0,0,0,-15" HorizontalAlignment="Left">
+                        <igRibbon:ButtonTool   Caption="Custom Settings" Id="btnCustomSettings" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Icons/CustomSettings.png" ToolTip="Open Custom Settings" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" />
+                        <igRibbon:ButtonTool   Caption="Exception Handling" Id="btnExceptionHandling" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Icons/ExceptionHandling.png" ToolTip="Open Exception Handling" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" />
+                        <igRibbon:ButtonTool   Caption="Table Maintenance" Id="btnTableMaintenance" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Icons/TableMaintenence.png" ToolTip="Open Table Maintenance" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" />
+                        <igRibbon:ButtonTool   Caption="Secured Objects" Id="btnSecuredObjects" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Secured Objects" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" />
+                        <igRibbon:ButtonTool   Caption="Security Role/Access Maintenance" Id="btnRoleAccessMaintenance" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Icons/Security.png" ToolTip="Open Security Role/Access Maintenance" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" />
+                        <igRibbon:ButtonTool   Caption="User Maintenance" Id="btnUserMaintenance" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+            					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Security User Maintenance" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" />
+                    </igRibbon:ToolHorizontalWrapPanel>
+                </igRibbon:RibbonGroup>
+            </igRibbon:RibbonTabItem>
+            <igRibbon:RibbonTabItem Header="Reporting" Margin="0,0,18,0" d:LayoutOverrides="Width">
+                <igRibbon:RibbonGroup  Margin="2,-7.5,0,-6.5" Width="800" HorizontalAlignment="Left" HorizontalContentAlignment="Stretch">
+                    <igRibbon:ToolHorizontalWrapPanel Margin="0,0,0,-15" Width="Auto" HorizontalAlignment="Left">
+                        <igRibbon:ButtonTool   Caption="Job/Group Maintenance" Id="btnJobGroupMaintenance" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Job/Group Maintenance" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Job/Group Viewer" Id="btnJobGroupViewer" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Job/Group Viewer" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Job Monitor" Id="btnJobMonitor" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Job Monitor" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Report Configuration/Viewer" Id="btnReportConfigurationViewer" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Report Configuration/Viewer" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Report Setup" Id="btnReportSetup" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Report Setup" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                        <igRibbon:ButtonTool   Caption="Schedule Job/Report" Id="btnScheduleJobReport" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Open Schedule Job/Report" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                    </igRibbon:ToolHorizontalWrapPanel>
+                </igRibbon:RibbonGroup>
+            </igRibbon:RibbonTabItem>
+            <igRibbon:RibbonTabItem Header="Units" Margin="0,0,18,0" d:LayoutOverrides="Width">
+                <igRibbon:RibbonGroup  Margin="2,-7.5,0,-6.5" Width="800" HorizontalAlignment="Left" >
+                    <igRibbon:ToolHorizontalWrapPanel Margin="0,0,0,-15" Width="Auto" HorizontalAlignment="Left">
+                        <igRibbon:ButtonTool   Caption="Unit Filter Setup" Id="btnUnitSetup" igRibbon:RibbonGroup.MaximumSize="ImageAndTextLarge" 
+					LargeImage="/RazerBase;component/Resources/Folder.png" ToolTip="Unit Filter Setup" Foreground="#FFD2D2D2" Height="80" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                    </igRibbon:ToolHorizontalWrapPanel>
+                </igRibbon:RibbonGroup>
+            </igRibbon:RibbonTabItem>
+        </igRibbon:ContextualTabGroup>
+    </igRibbon:XamRibbon.ContextualTabGroups>
+</igRibbon:XamRibbon>
+

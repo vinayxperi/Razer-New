@@ -1,0 +1,39 @@
+﻿<local:ScreenBase x:Class="Contract.ContractBillingTotalsTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="900"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <!-- Place Controls Here -->
+        <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Column="1" Grid.Row="1" >Invoices</Label>
+        <local:ucBaseGrid Name="gInvoices" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" ></local:ucBaseGrid>
+        <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Column="1" Grid.Row="3" >Line Items</Label>
+        <local:ucBaseGrid Name="gLineItems" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" ></local:ucBaseGrid>
+        <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Column="3" Grid.Row="5">Locations</Label>
+        <local:ucBaseGrid Name="gLocations" Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="2" ></local:ucBaseGrid>
+        <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Column="1" Margin="10,0,0,0" Grid.Row="5">Revenue Recognition</Label>
+        <local:ucBaseGrid Name="gRevenueRecognition" Grid.Column="1" Margin="10,0,0,0" Grid.Row="6"  ></local:ucBaseGrid>
+    </Grid>
+</local:ScreenBase>

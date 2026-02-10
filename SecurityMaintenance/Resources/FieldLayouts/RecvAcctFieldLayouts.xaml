@@ -1,0 +1,175 @@
+﻿<ResourceDictionary 
+    x:Class="RazerBaseObjects.RecvAcctFieldLayouts"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:igWindows="http://infragistics.com/Windows"
+                xmlns:igDP="http://infragistics.com/DataPresenter"
+                    xmlns:igEditors="http://infragistics.com/Editors" 
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:RazerConverters="clr-namespace:RazerConverters;assembly=RazerConverters">
+
+    <RazerConverters:cCreditStatusConverter x:Key="CreditStatusConverter"/>
+    <RazerConverters:cRowHighlightConverter x:Key="RowHighlightConverter"/>
+
+    <!--Resource file that is used for setting the default grid behavior for various data grids using the ucBaseGrid control-->
+    <!--Make sure to include the x:Shared="False" or the program will crash when the grid is reloaded.-->
+
+    <igDP:FieldLayout x:Key="RecvAcctHistoryLayout" x:Shared="False">
+        <igDP:Field Name="document_id" Label="Doc ID" Width="300"></igDP:Field>
+        <igDP:Field Name="seq_code" Label="Seq ID" Width="200"></igDP:Field>
+        <igDP:Field Name="document_type" Label="Type" Width="500"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="RecvAcctLookup" x:Shared="False">
+        <igDP:Field Name="receivable_account" Label="Account #" Width="70"></igDP:Field>
+        <igDP:Field Name="account_name" Label="Name" Width="140"></igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200"></igDP:Field>
+        <igDP:Field Name="address_1" Label="Address Line 1" Width="200"></igDP:Field>
+        <igDP:Field Name="city" Label="City" Width="100"></igDP:Field>
+        <igDP:Field Name="state" Label="State" Width="55"></igDP:Field>
+
+        <igDP:Field Name="account_status" Label="Inactive" Width="80">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings 
+                       EditAsType="{x:Type sys:Int16 }">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamCheckEditor}" ></Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="RecvAcctHistory" x:Shared="False">
+        <igDP:Field Name="document_id" Label="Doc ID" Width="90"></igDP:Field>
+        <igDP:Field Name="document_date" Label="Doc Date" Width="80">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamTextEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="amount" Label="Amount" Width="80"></igDP:Field>
+        <igDP:Field Name="open_amount" Label="Open Amount" Width="90"></igDP:Field>
+        <igDP:Field Name="product_code" Label="Product" Width="70"></igDP:Field>
+        <igDP:Field Name="apply_to_doc" Label="Apply To Doc" Width="90"></igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200"></igDP:Field>
+        <igDP:Field Name="due_date" Label="Due Date" Width="80">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamTextEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="detail_type" Label="Detail Type" Width="90"></igDP:Field>
+        <igDP:Field Name="company_code" Label="Company" Width="70"></igDP:Field>
+        <igDP:Field Name="date_closed" Label="Date Closed" Width="80">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamTextEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="last_activity_date" Label="Last Activity" Width="80">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamTextEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="RecvAcctHistory2" x:Shared="False">
+        <igDP:Field Name="document_id" Label="Doc ID" Width="90"></igDP:Field>
+        <igDP:Field Name="document_date" Label="Doc Date" Width="80">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamTextEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="amount" Label="Amount" Width="80"></igDP:Field>
+        <igDP:Field Name="open_amount" Label="Open Amount" Width="90"></igDP:Field>
+        <igDP:Field Name="product_code" Label="Product" Width="70"></igDP:Field>
+        <igDP:Field Name="apply_to_doc" Label="Apply To Doc" Width="90"></igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200"></igDP:Field>
+        <igDP:Field Name="due_date" Label="Due Date" Width="80">
+            <!--<igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamTextEditor}"/>
+            </igDP:Field.Settings>-->
+        </igDP:Field>
+        <igDP:Field Name="detail_type" Label="Detail Type" Width="90"></igDP:Field>
+        <igDP:Field Name="company_code" Label="Company" Width="70"></igDP:Field>
+        <igDP:Field Name="date_closed" Label="Date Closed" Width="80">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamTextEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="last_activity_date" Label="Last Activity" Width="80">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamTextEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+
+    </igDP:FieldLayout>
+    
+    <igDP:FieldLayout x:Key="RecvAcctAgingTotal" x:Shared="False">
+
+        <igDP:Field Name="company_code" Label="Co" Width="30"></igDP:Field>
+        <igDP:Field Name="product_code" Label="Product" Width="80"></igDP:Field>
+        <igDP:Field Name="total_open" Label="Open" Width="90"></igDP:Field>
+        <igDP:Field Name="unapplied_cash" Label="Unapplied" Width="90"></igDP:Field>
+        <igDP:Field Name="current_amt" Label="Current" Width="90"></igDP:Field>
+        <igDP:Field Name="amt_30" Label="1-30" Width="90"></igDP:Field>
+        <igDP:Field Name="amt_60" Label="31-60" Width="90"></igDP:Field>
+        <igDP:Field Name="amt_90" Label="61-90" Width="90"></igDP:Field>
+        <igDP:Field Name="amt_120" Label="91+" Width="90"></igDP:Field>
+
+    </igDP:FieldLayout>
+
+
+    <igDP:FieldLayout x:Key="RecvAcctAgingDetail" x:Shared="False">
+        <igDP:Field Name="document_id" Label="Doc ID" Width="90"></igDP:Field>
+        <igDP:Field Name="amount" Label="Amount" Width="90"></igDP:Field>
+        <igDP:Field Name="open_amount" Label="Open" Width="90"></igDP:Field>
+        <igDP:Field Name="cm_status" Label="CM Status" Width="80"></igDP:Field>
+        <igDP:Field Name="due_date" Label="Due Date" Width="90"></igDP:Field>
+        <igDP:Field Name="last_activity_date" Label="Last Activity" Width="90"></igDP:Field>
+        <igDP:Field Name="document_date" Label="Doc Date" Width="90"></igDP:Field>
+        <igDP:Field Name="product_code" Label="Product" Width="90"></igDP:Field>
+        <igDP:Field Name="ad_product" Label="Ad Prod" Width="90"></igDP:Field>
+        <igDP:Field Name="advertiser" Label="Advertiser" Width="90"></igDP:Field>
+        <!--<igDP:Field Name="company_code" Label="Company" Width="80"></igDP:Field>-->
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="RecvAcctSystemGrid" x:Shared="False">
+        <igDP:Field Name="cs_id" Label="ID" Width="30"></igDP:Field>
+        <igDP:Field Name="psa_city" Label="City" Width="80"></igDP:Field>
+        <igDP:Field Name="psa_st" Label="State" Width="90"></igDP:Field>
+        <igDP:Field Name="product_code" Label="Product Code" Width="90"></igDP:Field>
+        <igDP:Field Name="hold_flag" Label="Hold Flag" Width="90"></igDP:Field>
+        <igDP:Field Name="contracted_flag" Label="Contracted Flag" Width="90"></igDP:Field>
+        <igDP:Field Name="Next_bill_date" Label="Next Bill Date" Width="90"></igDP:Field>
+        <igDP:Field Name="end_bill_date" Label="End Bill Date" Width="90"></igDP:Field>
+    </igDP:FieldLayout>
+
+
+    <!--Styles-->
+
+    <Style TargetType="{x:Type igDP:DataRecordPresenter}" x:Key="AccountStatusColorConverter">
+        <Setter Property="Background">
+            <Setter.Value>
+                <!--SolidColorBrush Color="{Binding Path=DataItem.WORKPRIORITY, Converter={StaticResource genderToColorConverter}}" Opacity="0.3"/>-->
+
+                <!--Equivalent syntax-->
+                <SolidColorBrush Color="{Binding Path=Cells[account_status].Value, Converter={StaticResource RowHighlightConverter}}" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type igDP:DataRecordPresenter}" x:Key="CreditMemoStatusColorConverter">
+        <Setter Property="Background">
+            <Setter.Value>
+                <!--SolidColorBrush Color="{Binding Path=DataItem.WORKPRIORITY, Converter={StaticResource genderToColorConverter}}" Opacity="0.3"/>-->
+
+                <!--Equivalent syntax-->
+                <SolidColorBrush Color="{Binding Path=Cells[cm_status].Value, Converter={StaticResource CreditStatusConverter}}" Opacity="0.3"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+</ResourceDictionary>

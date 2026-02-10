@@ -1,0 +1,112 @@
+﻿<local:ScreenBase x:Class="Contract.ContractLocationsTab" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+             xmlns:converters="clr-namespace:RazerConverters;assembly=RazerConverters"
+             mc:Ignorable="d" 
+             d:DesignHeight="750" d:DesignWidth="1080"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+        <Grid x:Name="mainGrid" Width="Auto">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+        <!-- Place Controls Here -->
+
+        <local:ucBaseGrid Name="gLocations" Grid.Row="2" Grid.Column="1"></local:ucBaseGrid>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="3" Grid.Row="4" Grid.Column="1">
+        <Border Grid.ColumnSpan="3" BorderBrush="Gray"  BorderThickness="2" Grid.Row="4" Grid.Column="1">
+                <Grid DataContext="{Binding ElementName=gLocations, Path=ActiveRecord}" Height="Auto">
+                    <Grid.Resources>
+                        <converters:BitToBoolConverter x:Key="bitToBoolConverter"/>
+                    </Grid.Resources>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition MinWidth="250"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition MinWidth="250"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition MinWidth="250"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition MinWidth="250"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="10"/>
+                    </Grid.RowDefinitions>
+
+                    <local:ucLabelTextBox Name="txtCSID" LabelText="Location ID:" Grid.Column="1" Grid.Row="1" LabelWidth="120" Text="{Binding Path=Cells[cs_id].Value, Mode=TwoWay}" IsReadOnly="True"/>
+                    <local:ucLabelTextBox Name="txtLocationName" LabelText="Location Name:" Grid.Column="3" Grid.Row="1" LabelWidth="120" Grid.ColumnSpan="3" Text="{Binding Path=Cells[location_name].Value, Mode=TwoWay}"  IsReadOnly="True"  />
+                    <local:ucLabelTextBox Name="txtCustomerID" LabelText="Customer ID:" Grid.Column="1" Grid.Row="2" 
+                                          LabelWidth="120" Text="{Binding Path=Cells[receivable_account].Value, Mode=TwoWay}" LostFocus="txtCustomerID_LostFocus" 
+                                          MouseDoubleClick="txtCustomerID_MouseDoubleClick" EnterActsLikeTab="True"  local:ApplicationSecurity.FieldLevelSecurityGUID="253" />
+                    <local:ucLabelTextBox Name="txtCustomerName" LabelText="Customer:" Grid.Column="3" Grid.Row="2" LabelWidth="120" Grid.ColumnSpan="3" Text="{Binding Path=Cells[account_name].Value, Mode=TwoWay}" IsReadOnly="True"/>
+                    <Border BorderBrush="DarkBlue" BorderThickness="1" Grid.Row="1" Grid.RowSpan="2" Grid.Column="7">
+                    <StackPanel >
+                            <local:ucLabelCheckBox Name="txtNeverBillFlag" LabelText="Never Bill:" BindPath="Cells[never_bill_flag].Value"  LabelWidth="120" Height="30"  local:ApplicationSecurity.FieldLevelSecurityGUID="254"/>
+                            <local:ucLabelCheckBox Name="chkGroupBillFlag" LabelText="Group Bill:" BindPath="Cells[group_bill_flag].Value"  LabelWidth="120" Height="30"  local:ApplicationSecurity.FieldLevelSecurityGUID="254" />
+                            <local:ucLabelCheckBox Name="chkTransferFlag" LabelText="Transfer:" BindPath="Cells[transfer_flag].Value"  LabelWidth="120" Height="30"  local:ApplicationSecurity.FieldLevelSecurityGUID="254" />
+
+                    </StackPanel>
+                    </Border>
+                    <local:ucLabelDatePicker Name="txtBillActivationDate" LabelText="Bill Activation Date:" Grid.Column="1" BindPath="Cells[bill_activation_date].Value" Grid.Row="3" LabelWidth="120"  local:ApplicationSecurity.FieldLevelSecurityGUID="254" />
+                    <local:ucLabelDatePicker Name="txtBeginBillDate" LabelText="Begin Bill Date:" Grid.Column="3" BindPath="Cells[begin_bill_date].Value" Grid.Row="3" LabelWidth="120"  local:ApplicationSecurity.FieldLevelSecurityGUID="254"/>
+                    <local:ucLabelDatePicker Name="txtModifiedLaunchDate" LabelText="Mod Launch Date:" BindPath="Cells[modified_launch_date].Value" Grid.Column="5" Grid.Row="3" LabelWidth="120"  local:ApplicationSecurity.FieldLevelSecurityGUID="254"/>
+                    <local:ucLabelDatePicker Name="txtNTODate" LabelText="NTO Date:" Grid.Column="1" BindPath="Cells[nto_date].Value" Grid.Row="4" LabelWidth="120"  local:ApplicationSecurity.FieldLevelSecurityGUID="254"/>
+                    <local:ucLabelDatePicker Name="txtNTOActivationDate" LabelText="NTO Acct Date:" Grid.Column="3" BindPath="Cells[nto_acct_date].Value" Grid.Row="4" LabelWidth="120"  local:ApplicationSecurity.FieldLevelSecurityGUID="254"  />
+                    <local:ucLabelDatePicker Name="txtContractBillStartDate" LabelText="Contract Bill Start:" Grid.Column="5" BindPath="Cells[contract_bill_start_date].Value" Grid.Row="4" LabelWidth="120"  local:ApplicationSecurity.FieldLevelSecurityGUID="254" />
+                    <local:ucLabelDatePicker Name="txtEndDate" LabelText="End Date:" Grid.Column="7" BindPath="Cells[end_date].Value" Grid.Row="4" LabelWidth="120"   local:ApplicationSecurity.FieldLevelSecurityGUID="254"/>
+                    <local:ucLabelMultilineTextBox Name="txtComment" LabelText="Comment:" Text="{Binding Path=Cells[comment].Value, Mode=TwoWay}"  Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="5" LabelWidth="120"  local:ApplicationSecurity.FieldLevelSecurityGUID="254"/>
+                    <local:ucLabelTextBox Name="txtReference" LabelText="Reference:" Text="{Binding Path=Cells[reference].Value, Mode=TwoWay}"  Grid.Column="7" Grid.Row="5" LabelWidth="120"  local:ApplicationSecurity.FieldLevelSecurityGUID="254"/>
+                    <local:ucLabelTextBox Name="txtLastBillDate" LabelText="Last Bill Date:" Text="{Binding Path=Cells[last_bill_date].Value, Mode=TwoWay, StringFormat=MM/dd/yyyy}"  Grid.Column="7" Grid.Row="3" LabelWidth="120" IsReadOnly="True" />
+
+                    <local:ucLabelCheckBox Name="chkHoldFlag" LabelText="Hold Flag:" BindPath="Cells[hold_flag].Value" Grid.Column="1" Grid.Row="6" LabelWidth="120" UnChecked="chkHoldFlag_UnChecked" Checked="chkHoldFlag_Checked"  local:ApplicationSecurity.FieldLevelSecurityGUID="254"/>
+                    <local:ucLabelDatePicker Name="txtHoldDate" LabelText="Hold Date:" Grid.Column="3" Grid.Row="6" BindPath="Cells[hold_date].Value" LabelWidth="120"  
+                        IsEnabled="{Binding ElementName=chkHoldFlag, Path=IsChecked}"  local:ApplicationSecurity.FieldLevelSecurityGUID="254">
+                    </local:ucLabelDatePicker>
+                    <local:ucLabelMultilineTextBox Name="txtHoldReason" LabelText="Hold Reason:" Text="{Binding Path=Cells[hold_reason].Value, Mode=TwoWay}"  Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="7" LabelWidth="120"  local:ApplicationSecurity.FieldLevelSecurityGUID="254"/>
+                    <local:ucLabelCheckBox Name="chkTurnOffFlag" LabelText="Turn Off Flag:" BindPath="Cells[turn_off_flag].Value" Grid.Column="1" Grid.Row="8" LabelWidth="120" 
+                                           Checked="chkTurnOffFlag_Checked" UnChecked="chkTurnOffFlag_Checked"  local:ApplicationSecurity.FieldLevelSecurityGUID="254" />
+                    <local:ucLabelDatePicker Name="txtTurnOffDate" LabelText="Turn Off  Date:" Grid.Column="3" Grid.Row="8" BindPath="Cells[termination_date].Value" LabelWidth="120" 
+                    IsEnabled="{Binding ElementName=chkTurnOffFlag, Path=IsChecked}"  local:ApplicationSecurity.FieldLevelSecurityGUID="254">
+                    </local:ucLabelDatePicker>
+                    <local:ucLabelDatePicker Name="txtTurnOffAcctDate" LabelText="Turn Off Acct Date:" Grid.Column="5" Grid.Row="8" BindPath="Cells[termination_acct_date].Value" LabelWidth="120"  
+                         local:ApplicationSecurity.FieldLevelSecurityGUID="254">
+                    </local:ucLabelDatePicker>
+                    <local:ucLabelMultilineTextBox Name="txtTurnOffReason" LabelText="Turn Off Reason:" Text="{Binding Path=Cells[termination_reason].Value, Mode=TwoWay}"  Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="7" LabelWidth="120"  local:ApplicationSecurity.FieldLevelSecurityGUID="254"/>
+                  
+                </Grid>
+        </Border>
+          
+        </ScrollViewer>
+        <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Column="1" Grid.Row="5" >Location History</Label>
+        <local:ucBaseGrid Name="gHistory" Grid.Row="6" Grid.Column="1" ></local:ucBaseGrid>
+    </Grid>
+    
+</local:ScreenBase>

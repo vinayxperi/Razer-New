@@ -1,0 +1,202 @@
+﻿<RazerBase:ScreenBase x:Class="Adjustment.AdjustmentApplyUACash" 
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+             xmlns:RazerConverters="clr-namespace:RazerConverters;assembly=RazerConverters"
+             mc:Ignorable="d" 
+             d:DesignHeight="880" d:DesignWidth="1020"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+    <ScrollViewer HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto" >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MaxWidth="350"/>
+                <ColumnDefinition MaxWidth="250"/>
+                <ColumnDefinition MaxWidth="350"/>
+                <ColumnDefinition MaxWidth="250"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition MaxHeight="50" Height="50*" />
+                <RowDefinition MaxHeight="30" Height="30*" />
+                <RowDefinition MaxHeight="150" Height="142*" />
+                <RowDefinition MaxHeight="30" Height="30*" />
+                <RowDefinition MaxHeight="150" Height="142*" />
+                <RowDefinition MaxHeight="150" Height="142*" />
+                <RowDefinition MaxHeight="30" Height="30*" />
+                <RowDefinition MaxHeight="30" Height="30*" />
+                <RowDefinition Height="142*" />
+                <RowDefinition MaxHeight="150" Height="34*" />
+                <RowDefinition Height="108*" />
+            </Grid.RowDefinitions>
+            <Border Grid.ColumnSpan="4" Grid.Column="0" Grid.Row="0" BorderBrush="Gray" BorderThickness="0,0,0,1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MinWidth="250"/>
+                        <ColumnDefinition MinWidth="200"/>
+                        <ColumnDefinition MinWidth="400"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <!--<RowDefinition MaxHeight="50" Height="41*" />-->
+                        <!--<RowDefinition MaxHeight="50" Height="8*" />-->
+                        <RowDefinition MaxHeight="50"/>
+                        <RowDefinition MaxHeight="50"/>
+                    </Grid.RowDefinitions>
+                    <RazerBase:ucLabelTextBox Name="txtDocument" LabelText="Document to Adjust:" Grid.Column="0" Grid.Row="0" LabelWidth="125" EnterActsLikeTab="True"  MouseDoubleClick="txtDocument_MouseDoubleClick" PreviewKeyDown="txtDocument_PreviewKeyDown"/>
+                    <RazerBase:ucLabelTextBox Name="txtAdjAmt" LabelText="Amount to Adjust:" IsEnabled="False" Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="1" LabelWidth="120" EnterActsLikeTab="True" LostFocus="txtAdjAmt_LostFocus" GotFocus="txtAdjAmt_GotFocus" PreviewKeyDown="txtAdjAmt_PreviewKeyDown"/>
+                </Grid>
+            </Border>
+            <Border Grid.ColumnSpan="4" Grid.Column="0" Grid.Row="1" BorderBrush="Gray" BorderThickness="0,0,0,1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="30"/>
+                    </Grid.RowDefinitions>
+                    <Label FontWeight="Bold" Grid.Row="0" Grid.Column="1">Cash Source</Label>
+                </Grid>
+            </Border>
+            <Border Name="BorderSource" Grid.ColumnSpan="4" Grid.Column="0" Grid.Row="2" BorderBrush="Gray" BorderThickness="0,0,0,1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MinWidth="150" Width="176" />
+                        <ColumnDefinition MinWidth="150"/>
+                        <ColumnDefinition MinWidth="100"/>
+                        <ColumnDefinition MinWidth="100"/>
+                        <ColumnDefinition MinWidth="100"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="40"/>
+                        <RowDefinition MaxHeight="60"/>
+                        <RowDefinition MaxHeight="40"/>
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Grid.ColumnSpan="5" Grid.Row="1" Grid.RowSpan="2" Margin="20,1" VerticalScrollBarVisibility="Auto">
+                        <RazerBase:ucBaseGrid Name="GridCashSource" Height="125" />
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+            <Border Grid.ColumnSpan="4" Grid.Column="0" Grid.Row="3" BorderBrush="Gray" BorderThickness="0,0,0,1" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="30"/>
+                    </Grid.RowDefinitions>
+                    <Label FontWeight="Bold">Cash Destination</Label>
+                    <RazerBase:ucLabelCheckBox Name="chkApplyUACash" LabelText="Apply Remainder to Unapplied Cash" Grid.Column="1" Grid.Row="1" LabelWidth="220" Grid.ColumnSpan="1" Checked="chkApplyUACash_Checked" UnChecked="chkApplyUACash_UnChecked"/>
+                </Grid>
+            </Border>
+            <Border Name="BorderDestination"  Grid.ColumnSpan="4" Grid.Column="0" Grid.Row="4" BorderBrush="Gray" BorderThickness="0,0,0,1" IsEnabled="False">
+                <Grid Height="Auto">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MinWidth="150"/>
+                        <ColumnDefinition MinWidth="150"/>
+                        <ColumnDefinition MinWidth="100"/>
+                        <ColumnDefinition MinWidth="100"/>
+                        <ColumnDefinition MinWidth="100"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="40"/>
+                        <RowDefinition MaxHeight="50"/>
+                        <RowDefinition MaxHeight="40"/>
+                        
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Grid.ColumnSpan="5" Grid.Row="1" Grid.RowSpan="2" Margin="20,1" VerticalScrollBarVisibility="Auto">
+                        <RazerBase:ucBaseGrid Name="GridCashDestination" Height="150" />
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+
+            <Border Grid.ColumnSpan="4"  Grid.Row="5" Grid.Column="0" BorderBrush="Gray" BorderThickness="0,0,0,1" >
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <RazerBase:ucLabelTextBox Name="txtRunningAdjAmt" LabelText="Adjusted Amt:" Grid.Row="1" Grid.Column="1" LabelWidth="90" IsEnabled="False" Text="{Binding ElementName=txtAdjAmt, Path=Text}" />
+                    <RazerBase:ucLabelTextBox Name="txtRunningOffsetAmt" LabelText="Allocated Amt:" Grid.Column="2" Grid.Row="1" LabelWidth="90" Text="0.00" IsEnabled="False"/>
+                    <Button Name="btnClearDest" Height="30" MaxWidth="90" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="1" IsEnabled="False" Click="btnClearDest_Click">Clear</Button>
+                </Grid>
+            </Border>
+            <Border Grid.ColumnSpan="4" Grid.Row="6" Grid.Column="0" BorderBrush="Gray" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="30"/>
+                    </Grid.RowDefinitions>
+                    <Button Name="btnSave" Height="30" Width="150" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" IsEnabled="False" Click="btnSave_Click"  >Save Adjustment</Button>
+                </Grid>
+            </Border>
+            <Border Grid.ColumnSpan="4" Grid.Row="7" Grid.Column="0" BorderBrush="Gray" BorderThickness="0,0,0,1" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="30"/>
+                    </Grid.RowDefinitions>
+                    <Label FontWeight="Bold">Search Criteria</Label>
+                </Grid>
+            </Border>
+            <Border Name="BorderSearch" Grid.ColumnSpan="4" Grid.Row="8" BorderBrush="Gray" BorderThickness="0,0,0,1" Margin="0,0,0,64">
+                <Grid x:Name="docsearch" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="8*" />
+                        <ColumnDefinition Width="247*" />
+                        <ColumnDefinition Width="255*" />
+                        <ColumnDefinition Width="255*" />
+                        <ColumnDefinition Width="255*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="50" Height="50*" />
+                        <RowDefinition MinHeight="50" Height="*" x:Name="gridsearchrow" />
+                        <RowDefinition Height="3*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.ColumnSpan="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <RazerBase:ucLabelTextBox Name="txtCustNumSearch" LabelText="Customer Num:" Grid.Column="0" Grid.Row="0" LabelWidth="125" EnterActsLikeTab="True" MouseDoubleClick="txtCustNumSearch_MouseDoubleClick" />
+                        <RazerBase:ucLabelTextBox Name="txtInvNumSearch" LabelText="Invoice Number:" Grid.Column="1" Grid.Row="0" LabelWidth="125" EnterActsLikeTab="True" />
+                        <RazerBase:ucLabelTextBox Name="txtAmtSearch" LabelText="Amount:" Grid.Column="2" LabelWidth="125" EnterActsLikeTab="True" />
+                        <Button Name="btnClear" Click="btnClear_Click"  MaxHeight="30" MaxWidth="90" Grid.Column="3" Margin="126,5,39,5">Clear</Button>
+                        <Button Name="btnSearch" Click="btnSearch_Click" MaxHeight="30" MaxWidth="90" Grid.Column="3" Margin="14,5,151,5" HorizontalAlignment="Right" Width="90">Search</Button>
+                    </Grid>
+                    <ScrollViewer Grid.ColumnSpan="5" Grid.Row="1" Grid.RowSpan="2" Margin="20,1" VerticalScrollBarVisibility="Auto">
+                        <RazerBase:ucBaseGrid Name="GridSearch" Height="174" />
+                    </ScrollViewer>
+                        
+                </Grid>
+            </Border>
+            <Border Grid.ColumnSpan="4" Grid.Row="9" BorderBrush="Gray" BorderThickness="0,0,0,1" Grid.RowSpan="2">
+                <Grid Height="0" Width="981">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="150"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </Border>
+        </Grid>
+    </ScrollViewer>
+    </RazerBase:ScreenBase>

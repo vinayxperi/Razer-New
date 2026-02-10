@@ -1,0 +1,167 @@
+﻿<RazerBase:ScreenBase x:Class="Adjustment.AdjustmentConversionInvoice" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+             xmlns:RazerConverters="clr-namespace:RazerConverters;assembly=RazerConverters"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="880"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MaxWidth="350"/>
+                <ColumnDefinition MaxWidth="250"/>
+                <ColumnDefinition MaxWidth="350"/>
+                <ColumnDefinition MaxWidth="250"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition MaxHeight="50"/>
+                <RowDefinition MaxHeight="30"/>
+                <RowDefinition MaxHeight="150"/>
+                <RowDefinition MaxHeight="30"/>
+                <RowDefinition MaxHeight="150"/>
+                <RowDefinition MaxHeight="150"/>
+                <RowDefinition MaxHeight="30"/>
+            </Grid.RowDefinitions>
+            <Border Grid.ColumnSpan="4" Grid.Row="0" BorderBrush="Gray" BorderThickness="0,0,0,1">
+                <Grid DataContext="{Binding ElementName=GridAdjustment, Path=ActiveRecord}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MinWidth="250"/>
+                        <ColumnDefinition MinWidth="200"/>
+                        <ColumnDefinition MinWidth="400"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="50"/>
+                    </Grid.RowDefinitions>
+                    <RazerBase:ucLabelTextBox Name="txtDocument" LabelText="Document to Adjust:" Grid.Column="0" Grid.Row="0" LabelWidth="125" LostFocus="txtDocument_LostFocus" EnterActsLikeTab="True" TabIndex="0" />
+                    <!--<RazerBase:ucLabelTextBox Name="txtAdjAmt" LabelText="Amount to Adjust:" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="1" LabelWidth="120" EnterActsLikeTab="True" Text="{Binding Path=Cells[amt_to_adjust].Value, Mode=OneTime}" IsEnabled="True" LostFocus="txtAdjAmt_LostFocus" GotFocus="txtAdjAmt_GotFocus" PreviewKeyDown="txtAdjAmt_PreviewKeyDown" CntrlTabIndex="1" />-->
+                    <RazerBase:ucLabelTextBox Name="txtAdjAmt" LabelText="Amount to Adjust:" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="1" LabelWidth="120" Text="0.00" EnterActsLikeTab="True" 
+                                              IsEnabled="True" LostFocus="txtAdjAmt_LostFocus" GotFocus="txtAdjAmt_GotFocus" PreviewKeyDown="txtAdjAmt_PreviewKeyDown"
+                                              BindPath="amt_adjusted" TabIndex="2"/>
+                </Grid>
+            </Border>
+            <Border Grid.ColumnSpan="4" Grid.Row="1" BorderBrush="Gray" BorderThickness="0,0,0,1" MinHeight="44">
+                <Grid DataContext="{Binding ElementName=GridAdjustment, Path=ActiveRecord}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="30"/>
+                    </Grid.RowDefinitions>
+                    <Label FontWeight="Bold" Grid.Row="0" Grid.Column="0">Conversion Invoice to Adjust</Label>
+                    <RazerBase:ucLabelTextBox Name="txtInvAmt" LabelText="Inv Amt:" Grid.Row="1" Grid.Column="2" Text="{Binding Path=Cells[amount].Value, Mode=TwoWay, StringFormat={}{0:C}}" LabelWidth="70" IsReadOnly="True"  IsEnabled="False"/>
+                    <RazerBase:ucLabelTextBox Name="txtOpenAmt" LabelText="Open Amt:" Grid.Row="1" Grid.Column="3" Text="{Binding Path=Cells[open_amount].Value, Mode=TwoWay, StringFormat={}{0:C}}" LabelWidth="70" IsReadOnly="True"  IsEnabled="False"/>
+
+                </Grid>
+            </Border>
+            <Border Grid.ColumnSpan="4" Grid.Row="2" BorderBrush="Gray" BorderThickness="0,0,0,1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MinWidth="150" Width="176" />
+                        <ColumnDefinition MinWidth="150"/>
+                        <ColumnDefinition MinWidth="100" Width="176" />
+                        <ColumnDefinition MinWidth="100"/>
+                        <ColumnDefinition MinWidth="100"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="40"/>
+                        <RowDefinition MaxHeight="60"/>
+                        <RowDefinition MaxHeight="40"/>
+                    </Grid.RowDefinitions>
+                    <RazerBase:ucBaseGrid Name="GridAdjustment" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="3" PreviewKeyDown="GridAdjustment_PreviewKeyDown" TabIndex="3"/>
+                </Grid>
+            </Border>
+            <Border Grid.ColumnSpan="4"  Grid.Row="3" BorderBrush="Gray" BorderThickness="0,0,0,1" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="30"/>
+                    </Grid.RowDefinitions>
+                    <Label FontWeight="Bold">G/L Offsetting Entry</Label>
+                </Grid>
+            </Border>
+            <Border Name="GLBorder"  Grid.ColumnSpan="4" Grid.Row="4" BorderBrush="Gray" BorderThickness="0,0,0,1" IsEnabled="False">
+                <Grid DataContext="{Binding ElementName=GridAdjustment, Path=ActiveRecord}" Height="Auto">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MinWidth="150"/>
+                        <ColumnDefinition MinWidth="150"/>
+                        <ColumnDefinition MinWidth="100"/>
+                        <ColumnDefinition MinWidth="100"/>
+                        <ColumnDefinition MinWidth="100"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="40"/>
+                        <RowDefinition MaxHeight="50"/>
+                        <RowDefinition MaxHeight="40"/>
+                    </Grid.RowDefinitions>
+
+                    <RazerBase:ucLabelTextBox Name="txtGLCompany" LabelText="G/L Company:" Grid.Row="0" Grid.Column="0" LabelWidth="93" EnterActsLikeTab="True" 
+                                              Text="{Binding Path=Cells[offsetting_co].Value, Mode=TwoWay}" TabIndex="4" />
+                    <RazerBase:ucLabelTextBox Name="txtGLCostCtr" LabelText="G/L Cost Center:" Grid.Row="0" Grid.Column="1" LabelWidth="110" EnterActsLikeTab="True" 
+                                              Text="{Binding Path=Cells[offsetting_center].Value, Mode=TwoWay}" TabIndex="5"/>
+                    <RazerBase:ucLabelTextBox Name="txtGLAcct" LabelText="Natural Account:" Grid.Row="0" Grid.Column="2" LabelWidth="110" EnterActsLikeTab="True" 
+                                              Text="{Binding Path=Cells[offsetting_account].Value, Mode=TwoWay}" TabIndex="6"/>
+                    <RazerBase:ucLabelTextBox Name="txtGLProduct" LabelText="G/L Product:" Grid.Row="0" Grid.Column="3" LabelWidth="75" EnterActsLikeTab="True" 
+                                              Text="{Binding Path=Cells[offsetting_product].Value, Mode=TwoWay}"  TabIndex="7"/>
+                    <RazerBase:ucLabelTextBox Name="txtGeo" LabelText="G/L Region:" Grid.Row="0" Grid.Column="4" LabelWidth="75" EnterActsLikeTab="True" 
+                                              Text="{Binding Path=Cells[offsetting_region].Value, Mode=TwoWay}" TabIndex="8"/>
+                    <RazerBase:ucLabelTextBox Name="txtOffsetGLIC" LabelText="G/L InterCO:" Grid.Row="1" Grid.Column="0" LabelWidth="93" EnterActsLikeTab="True" 
+                                              Text="{Binding Path=Cells[offsetting_interco].Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <RazerBase:ucLabelTextBox Name="txtGLOffsetAmt" LabelText="G/L Offset Amt:" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" LabelWidth="220" EnterActsLikeTab="True" Text="0.0" LostFocus="txtGLOffsetAmt_LostFocus" 
+                                              GotFocus="txtGLOffsetAmt_GotFocus" IsEnabled="False" Visibility="Collapsed" />
+                    <RazerBase:ucLabelTextBox Name="txtGLOffsetAmt2" LabelText="G/L Offset Amt:" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" LabelWidth="220" 
+                                              EnterActsLikeTab="True" Text="{Binding Path=Cells[offsetting_amount].Value, Mode=TwoWay,Converter={StaticResource TextNumericConverter}}" 
+                                              IsEnabled="False" />
+                </Grid>
+            </Border>
+            <Border Grid.ColumnSpan="4"  Grid.Row="5" BorderBrush="Gray" BorderThickness="0,0,0,1" >
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <RazerBase:ucLabelTextBox Name="txtRunningAdjAmt" LabelText="Adjusted Amt:" Grid.Row="1" Grid.Column="1" LabelWidth="90" IsReadOnly="True"  IsEnabled="False" Text="0.00" />
+                    <RazerBase:ucLabelTextBox Name="txtRunningOffsetAmt" LabelText="Offset Amt:" Grid.Column="2" Grid.Row="1" LabelWidth="80" IsReadOnly="True" IsEnabled="False" Text="0.00"/>
+                </Grid>
+            </Border>
+            <Border Grid.ColumnSpan="4" Grid.Row="6" BorderBrush="Gray" BorderThickness="0,0,0,1" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="30"/>
+                    </Grid.RowDefinitions>
+                    <Button Name="btnSave" Height="30" Width="150" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" IsEnabled="False" Click="btnSave_Click" TabIndex="9" >Save Adjustment</Button>
+                </Grid>
+            </Border>
+            <Border Grid.ColumnSpan="4" Grid.Row="7" BorderBrush="Gray" BorderThickness="0,0,0,1" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MaxHeight="30"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </Border>
+        </Grid>
+    </ScrollViewer>
+</RazerBase:ScreenBase>

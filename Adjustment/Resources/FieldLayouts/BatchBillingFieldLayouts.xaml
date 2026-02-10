@@ -1,0 +1,1160 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:igWindows="http://infragistics.com/Windows"
+                    xmlns:igDP="http://infragistics.com/DataPresenter"
+                    xmlns:igEditors="http://infragistics.com/Editors" >
+
+    
+
+
+    <igDP:FieldLayout x:Key="BatchBillingContractList" x:Shared="False">        
+        <igDP:Field Name="bill_mso_name" Label="Contract Entity" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" CellClickAction="SelectRecord" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="bill_mso_id" Label="Contract Entity ID" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="#########" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="contract_id" Label="Contract ID" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="#########" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="product_code" Label="Product" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="last_bill_date" Label="Last Bill Date" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="hold_flag" Label="Hold" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="contract_description" Label="Description" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="begin_bill_date" Label="Begin Bill Date" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="end_bill_date" Label="End Bill Date" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="under_contract_flag" Label="Another Batch" Width="120">
+              <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+                </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="color_status"  Visibility="Collapsed">          
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="BatchBillingList" x:Shared="False">
+        <igDP:Field Name="batch_id" Visibility="Collapsed">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="name" Label="Contract Entity" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="bill_mso_id" Label="Contract Entity Id" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="#########" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="contract_id" Label="Contract Id" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="#########" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="product_code" Label="Product" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>        
+        <igDP:Field Name="status" Label="Status" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>        
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="BillingBatchSummary" x:Shared="False">
+        <igDP:Field Name="contract_id" Label="Contract ID" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="#########" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="receivable_account" Label="Customer ID" Width="90"></igDP:Field>
+        <igDP:Field Name="account_name" Label="Customer Name" Width="140"></igDP:Field>
+        <igDP:Field Name="cs_id" Label="Location ID" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="#####" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="cs_name" Label="Location" Width="120"></igDP:Field>
+        <igDP:Field Name="psa_city" Label="PSA City" Width="130"></igDP:Field>
+        <igDP:Field Name="psa_state" Label="PSA State" Width="110"></igDP:Field>
+        <igDP:Field Name="product_code" Label="Product " Width="120"></igDP:Field>
+        <igDP:Field Name="sched_bill_period" Label="Sched Bill Period" Width="120"></igDP:Field>
+        <igDP:Field Name="service_period_start" Label="Service Period Start " Width="120"></igDP:Field>
+        <igDP:Field Name="service_period_end" Label="Service Period End " Width="120"></igDP:Field>
+        <igDP:Field Name="bill_frequency" Label="Bill Frequency " Width="120"></igDP:Field>
+        <igDP:Field Name="currency_code" Label="Currency Code" Width="90"></igDP:Field>
+        <igDP:Field Name="extended" Label="Extended" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,###,##0.00;($###,###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[extended].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="prior_amount" Label="Prior Amount" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,###,##0.00;($###,###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[prior_amount].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="varience" Label="Variance" Width="90">
+            <igDP:Field.Settings>
+                   <igDP:FieldSettings>
+                        <igDP:FieldSettings.EditorStyle>
+                            <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                                <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                                <Setter Property="Foreground" Value="{Binding Path=Cells[varience].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                            </Style>
+                        </igDP:FieldSettings.EditorStyle>
+                    </igDP:FieldSettings>
+                </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="change_pct" Label="Variance Pct" Width="90"></igDP:Field>
+        <igDP:Field Name="initial_free_amount" Label="Init Free" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[initial_free_amount].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="no_charge_amount" Label="No Charge Amount" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[no_charge_amount].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="net_extended" Label="Net Extended" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[net_extended].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="tax_amount" Label="Tax Amount" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[tax_amount].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="batch_id"   Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="created_by"   Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="created_on"   Width="70" Visibility="Collapsed"></igDP:Field>
+
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="BillingBatchSummaryTotal" x:Shared="False">
+        <igDP:Field Name="contract_id" Label="Contract ID" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="#########" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="contract_description" Label="Description" Width="160"></igDP:Field>
+        <igDP:Field Name="receivable_account" Label="Customer ID" Width="90"></igDP:Field>
+        <igDP:Field Name="account_name" Label="Customer Name" Width="140"></igDP:Field>
+        
+         <igDP:Field Name="amount" Label="Amount" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,###,##0.00;($###,###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[amount].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+       
+       
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="BillingBatchDetail" x:Shared="False">
+        <igDP:Field Name="cs_id" Label="Location ID" Width="110"></igDP:Field>
+        <igDP:Field Name="name" Label="Location " Width="160"></igDP:Field>
+        <igDP:Field Name="psa_city" Label="PSA City " Width="160"></igDP:Field>
+        <igDP:Field Name="psa_state" Label="PSA State " Width="90"></igDP:Field>
+        <igDP:Field Name="product_code" Label="Product" Width="90"></igDP:Field>
+        <igDP:Field Name="item_description" Label="Product Item" Width="130"></igDP:Field>
+        <igDP:Field Name="contract_id" Label="Contract ID" Width="90"></igDP:Field>
+        <igDP:Field Name="tier_by" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="tier_by_desc" Label="Tier By" Width="120"></igDP:Field>
+        <igDP:Field Name="bill_by" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="bill_by_desc" Label="Bill By" Width="120"></igDP:Field>
+        <igDP:Field Name="minimum_flag" Label="Informational" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="bill_frequency" Label="Bill Freq" Width="110"></igDP:Field>
+        <igDP:Field Name="rate_id" Label="Rate ID" Width="90"></igDP:Field>
+        <igDP:Field Name="rule_id" Label="Rule ID" Width="90"></igDP:Field>
+        <igDP:Field Name="ruleType" Label="Rule Type" Width="120"></igDP:Field>
+        <igDP:Field Name="calcMethod" Label="Calc Method" Width="120"></igDP:Field>
+        <igDP:Field Name="rate" Label="Rate" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="$###,###,###.000000;($###,###,###.000000)" />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[rate].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="bill_units_current" Label="Bill Units Current" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="###,###,###.##" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="extended" Label="Extended" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,###,###.00;($###,###,###.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[extended].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="net_extended" Label="Net Extended" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,###,###.00;($###,###,###.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[net_extended].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="tax_amount" Label="Tax" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,###,###.00;($###,###,###.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[tax_amount].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="bill_period" Label="Bill Period" Width="100"></igDP:Field>
+        <igDP:Field Name="service_period_start" Label="Service Period Start" Width="130"></igDP:Field>
+        <igDP:Field Name="service_period_end" Label="Service Period End" Width="130"></igDP:Field>
+        <igDP:Field Name="unposted_id" Label="Unposted ID" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="percent_complete_flag" Label="Pct Complete" Width="110"  >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="po_required" Label="PO Required" Width="110"  >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="po_number" Label="PO Number" Width="70"  ></igDP:Field>
+        <igDP:Field Name="out_of_contract_flag" Label="Out of Contract" Width="120"  >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="batch_id"   Width="70" Visibility="Collapsed"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="BillingBatchRuleDetail" x:Shared="False">
+        <igDP:Field Name="tier_number" Label="Tier " Width="90"></igDP:Field>
+        <igDP:Field Name="lower_limit" Label="Lower Limit" Width="110"></igDP:Field>
+        <igDP:Field Name="upper_limit" Label="Upper Limit" Width="110"></igDP:Field>
+        <igDP:Field Name="amount" Label="Amount" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,###,###.00;($###,###,###.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[amount].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="bill_units" Label="Bill Units" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="###,###,###.##" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="bill_extended" Label="Extended" Width="90">
+              <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,###,###.00;($###,###,###.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[bill_extended].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="tier_units" Label="Tier Units" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="###,###,###.##" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="tier_extended" Label="Tier Extended" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,###,###.00;($###,###,###.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[tier_extended].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="forecast_units" Label="Forecast Units" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="###,###,###.##" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="forecast_extended" Label="Forecast Extended" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,###,###.00;($###,###,###.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[forecast_extended].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="discount_base_extended" Label="Discount Base Extended" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[discount_base_extended].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="min_max_base_extended" Label="Min Max Base Extended" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[min_max_base_extended].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="units_billed_at_tier" Label="Units Billed at Tier" Width="140">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="###,###,###.00" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="Rule_group_description" Label="Rule Group" Width="130"></igDP:Field>
+        <igDP:Field Name="apply_to_group" Label="Apply To Group" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="unposted_detail_id" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="unposted_id"   Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="batch_id"    Visibility="Collapsed"></igDP:Field>
+
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="BillingBatchAcctDetail" x:Shared="False">
+        <igDP:Field Name="unposted_acct_id"  Label="ID" Width="90" ></igDP:Field>
+        <igDP:Field Name="acct_code" Label="Acct Code" Width="150"></igDP:Field>
+        <igDP:Field Name="def_acct_code" Label="Def Acct Code" Width="150"></igDP:Field>
+        <igDP:Field Name="amount" Label="Amount" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[amount].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="service_period_start" Label="Service Period Start" Width="130"></igDP:Field>
+        <igDP:Field Name="service_period_end" Label="Service Period End" Width="130"></igDP:Field>
+        <igDP:Field Name="recog_period" Label="Recog Period" Width="100"></igDP:Field>
+        <igDP:Field Name="reason" Label="Reason " Width="130"></igDP:Field>
+        <igDP:Field Name="type_value" Label="Type" Width="100"></igDP:Field>
+        <igDP:Field Name="numerator_name" Label="Numerator " Width="130"></igDP:Field>
+        <igDP:Field Name="numerator_units" Label="Num Units " Width="130"></igDP:Field>
+        <igDP:Field Name="denominator_name" Label="Denominator " Width="130"></igDP:Field>
+        <igDP:Field Name="denominator_units" Label="Den Units " Width="130"></igDP:Field>
+        <igDP:Field Name="denom_amount" Label="Denom Amount" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[denom_amount].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="percentage_used" Label="Pct Used " Width="130"></igDP:Field>
+        <igDP:Field Name="ratio_used" Label="Ratio Used " Width="130">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="###,##0.0000;(###,##0.0000)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[ratio_used].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="def_flag" Label="Deferred" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="receivable_account" Label="Customer ID " Width="130"></igDP:Field>
+        <igDP:Field Name="account_name" Label="Customer Name " Width="130"></igDP:Field>
+        <igDP:Field Name="bill_mso_id" Label="Contract Entity ID " Width="130"></igDP:Field>
+        <igDP:Field Name="name" Label="Contract Entity Name " Width="130"></igDP:Field>
+        <igDP:Field Name="unposted_id"   Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="batch_id"    Visibility="Collapsed"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="BillingBatchRuleGroup" x:Shared="False">
+        <igDP:Field Name="rule_group_id" Label="Rule Group" Width="110" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="rule_group_description" Label="Rule Group Description" Width="160"></igDP:Field>
+        <igDP:Field Name="bundled_description" Label="Bundled Description" Width="150"></igDP:Field>
+        <igDP:Field Name="bundled_flag" Label="Bundled" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="unposted_id"   Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="batch_id"    Visibility="Collapsed"></igDP:Field>
+
+
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="BillingBatchLookup" x:Shared="False">
+        <igDP:Field Name="batch_id" Label="Batch ID" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="###,###,###" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="batch_name" Label="Batch Name" Width="90"></igDP:Field>
+        <igDP:Field Name="date_last_run" Label="Date Last Run" Width="120"></igDP:Field>
+        <igDP:Field Name="code_name" Label="Status" Width="90"></igDP:Field>
+    </igDP:FieldLayout>
+    
+    <igDP:FieldLayout x:Key="BillingBatchExceptions" x:Shared="False">
+       
+        <igDP:Field Name="contract_id" Label="Contract ID" Width="100"></igDP:Field>
+        <igDP:Field Name="contract_description" Label="Contract Description" Width="200"></igDP:Field>
+        <igDP:Field Name="billing_location_id" Label="Billing Loc" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="service_period_start" Label="Period Start" Width="90"></igDP:Field>
+        <igDP:Field Name="service_period_end" Label="Period End" Width="90"></igDP:Field>
+        <igDP:Field Name="contract_entity" Label="Entity ID" Width="70"></igDP:Field>
+        <igDP:Field Name="entity_name" Label="Entity" Width="130"></igDP:Field>
+        <igDP:Field Name="location" Label="Loc ID" Width="70"></igDP:Field>
+        <igDP:Field Name="product_code" Label="Product" Width="80"></igDP:Field>
+        <igDP:Field Name="location_name" Label="Location" Width="120"></igDP:Field>
+       
+        <igDP:Field Name="rate_id" Label="Rate ID" Width="60"></igDP:Field>
+        <igDP:Field Name="rule_id" Label="Rule ID" Width="60"></igDP:Field>
+        <igDP:Field Name="extended" Label="Billing" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[extended].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="tier_by_desc" Label="Tier By" Width="130"></igDP:Field> 
+        <igDP:Field Name="bill_by_desc" Label="Bill By" Width="130"></igDP:Field>
+        <igDP:Field Name="minimum_flag" Label="Minimum" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="psa_city" Label="City" Width="80"></igDP:Field>
+        <igDP:Field Name="psa_state" Label="St" Width="50"></igDP:Field>
+        <igDP:Field Name="error_code" Label="Error Code" Width="80"></igDP:Field>
+        <igDP:Field Name="error_detail" Label="Error Detail" Width="300"></igDP:Field>
+        <igDP:Field Name="error_message" Label="Error Message" Width="300"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="BillingBatchContractExceptions" x:Shared="False">
+        <igDP:Field Name="contract_id" Label="Contract ID" Width="100"></igDP:Field>
+        <igDP:Field Name="billing_total" Label="Billing Total" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[billing_total].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="has_exceptions" Label="Has Exceptions" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="entity_id" Label="Entity ID" Width="70"></igDP:Field>
+        <igDP:Field Name="entity_name" Label="Entity" Width="130"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="allUnpostedBilling" x:Shared="False">
+        <igDP:Field Name="accounting_rule" Label="Accounting Rule" Width="70" Visibility="Collapsed" ></igDP:Field>
+        <igDP:Field Name="acct_class_id" Label="Acct Class ID" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="contract_id" Label="Contract ID" Width="70"></igDP:Field>
+        <igDP:Field Name="receivable_account" Label="Customer" Width="90"></igDP:Field>
+        <igDP:Field Name="account_name" Label="Customer Name" Width="90"></igDP:Field>
+        <igDP:Field Name="cs_id" Label="Location ID" Width="70"></igDP:Field>
+        <igDP:Field Name="name" Label="Location Name" Width="150"></igDP:Field>
+        <igDP:Field Name="service_period_start" Label="Service Period Start" Width="100"></igDP:Field>
+        <igDP:Field Name="service_period_end" Label="Service Period End" Width="100"></igDP:Field>
+        <igDP:Field Name="bill_period" Label="Bill Period" Width="100"></igDP:Field>
+        <igDP:Field Name="acct_period" Label="Acct Period" Width="100"></igDP:Field>
+
+        <igDP:Field Name="bill_frequency" Label="Bill Freq" Width="90"></igDP:Field>
+        <igDP:Field Name="product_code" Label="Product Code" Width="90"></igDP:Field>
+        <igDP:Field Name="item_code" Label="Product Item" Width="70"></igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200"></igDP:Field>
+        <igDP:Field Name="code_value" Label="Calc Method" Width="70"></igDP:Field>
+        <igDP:Field Name="rule_type" Label="Rule Type" Width="70"></igDP:Field>
+        <igDP:Field Name="bill_by_name" Label="Bill By" Width="120"  ></igDP:Field>
+        <igDP:Field Name="tier_by_name" Label="Tier By" Width="120" ></igDP:Field>
+        <igDP:Field Name="line_description" Label="Line Description" Width="90"></igDP:Field>
+        <igDP:Field Name="acct_class" Label="Acct Class" Width="120" ></igDP:Field>
+        <igDP:Field Name="bill_units_current" Label="Bill Units Current" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="###,###,###.##" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="rate" Label="Rate" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[rate].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="extended" Label="Extended" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[extended].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="currency_code" Label="Currency Code" Width="90"></igDP:Field>
+        <igDP:Field Name="informational_flag" Label="Informational" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="group_bill_flag" Label="Group Bill" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+
+        <igDP:Field Name="initial_free_amount" Label="Init Free Amount" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[initial_free_amount].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="out_of_contract_flag" Label="Out Of Contract" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="discount_id" Label="Discount ID" Width="70"></igDP:Field>
+        <igDP:Field Name="po_required" Label="PO Required" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="po_id" Label="Po ID" Width="70"></igDP:Field>
+
+        <igDP:Field Name="rate_id" Label="Rate Id" Width="70"></igDP:Field>
+        <igDP:Field Name="rate_start_date" Label="Rate Start Date" Width="100"></igDP:Field>
+        <igDP:Field Name="rate_end_date" Label="Rate End Date" Width="100"></igDP:Field>
+        <igDP:Field Name="rule_id" Label="Rule Id" Width="70"></igDP:Field>
+        <igDP:Field Name="rule_start_date" Label="Rule Start Date" Width="100"></igDP:Field>
+        <igDP:Field Name="rule_end_date" Label="Rule End Date" Width="100"></igDP:Field>
+        <igDP:Field Name="tier_by_contract_flag" Label="Tier By Contract Flag" Width="70"></igDP:Field>
+        <igDP:Field Name="tier_period" Label="Tier Period" Width="70"></igDP:Field>
+        <igDP:Field Name="tier_period_start_date" Label="Tier Period Start Date" Width="100"></igDP:Field>
+        <igDP:Field Name="tier_period_end_date" Label="Tier Period End Date" Width="100"></igDP:Field>
+      
+        <igDP:Field Name="forecast_tier_units" Label="Forecast Tier Units" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="###,###,###.##" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="forecast_bill_units" Label="Forecast Bill Units" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="###,###,###.##" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+        
+
+        <igDP:Field Name="normalized_flag" Label="Normalized Flag" Width="70"></igDP:Field>
+        <igDP:Field Name="normalized_base" Label="Normalized Base" Width="70"></igDP:Field>
+        <igDP:Field Name="normalized_base_units" Label="Normalized Base Units" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="###,###,###.##" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+      
+        
+       
+       
+       
+        <igDP:Field Name="normalized_rate" Label="Normalized Rate" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[normalized_rate].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        
+        <igDP:Field Name="normalized_extended" Label="Normalized Extended" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[normalized_extended].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="normalized_extended_ptd" Label="Normalized Extended Ptd" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[normalized_extended_ptd].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="normalized_extended_prev_ptd" Label="Normalized Extended Prev Ptd" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[normalized_extended_prev_ptd].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+      
+       
+       
+       
+      
+      
+        <igDP:Field Name="primary_company" Label="Primary Company" Width="90" Visibility="Collapsed"></igDP:Field>
+     
+        <igDP:Field Name="batch_id" Label="Batch ID" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="bill_by" Label="Bill By" Width="70" Visibility="Collapsed"></igDP:Field>
+       
+        <igDP:Field Name="bill_status" Label="Bill Status" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="percent_complete_flag" Label="Percent Complete" Width="70" Visibility="Collapsed">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+       
+       
+
+        <igDP:Field Name="billing_location_id" Label="Billing Location ID" Width="70" Visibility="Collapsed"></igDP:Field>
+       
+        <igDP:Field Name="contract_location_id" Label="Contract Location ID" Width="70" Visibility="Collapsed"></igDP:Field>
+      
+       
+        <igDP:Field Name="tier_by" Label="Tier By" Width="70" Visibility="Collapsed"></igDP:Field>
+       
+       
+      
+        <igDP:Field Name="unposted_id" Label="Unposted Id" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="bill_units_ptd" Label="Bill Units Ptd" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="###,###,###.##" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="tier_units_ptd" Label="Tier Units Ptd" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="###,###,###.##" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="allUnpostedBillingDetail" x:Shared="False">
+        <igDP:Field Name="unposted_id" Label="Unposted ID" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="unposted_detail_id" Label="Unposted Detail ID" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="tier_number" Label="Tier Number" Width="70"></igDP:Field>
+        <igDP:Field Name="lower_limit" Label="Lower Limit" Width="70"></igDP:Field>
+        <igDP:Field Name="upper_limit" Label="Upper Limit" Width="70"></igDP:Field>
+        <igDP:Field Name="apply_to_group" Label="Apply To Group" Width="70"></igDP:Field>
+        <igDP:Field Name="bill_units" Label="Bill Units" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="###,###,###.##;(###,###,###.00)" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="tier_units" Label="Tier Units" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="###,###,###.##;(###,###,###.00)"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="forecast_units" Label="Forecast Units" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="###,###,###.##;(###,###,###.00)" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="bill_extended" Label="Bill Extended" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[bill_extended].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="tier_extended" Label="Tier Extended" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[tier_extended].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+       
+       
+        <igDP:Field Name="forecast_extended" Label="Forecast Extended" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[forecast_extended].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+       
+        <igDP:Field Name="amount" Label="Amount" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[amount].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="discount_base_extended" Label="Discount Base Extended" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[discount_base_extended].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+
+        <igDP:Field Name="min_max_base_extended" Label="Min Max Base Extended" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[min_max_base_extended].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        
+       
+     
+        <igDP:Field Name="units_billed_at_tier" Label="Units Billed At Tier" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style 
+					TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter 
+						Property="Format" Value="###,###,###.##;(###,###,###.00)" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+
+            </igDP:Field.Settings>
+        </igDP:Field>
+       
+       
+        
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="BillingBatchLocationExceptions" x:Shared="False">
+        <igDP:Field Name="billing_location_id" Label="Billing Loc" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="contract_id" Label="Contract ID" Width="100"></igDP:Field>
+        <igDP:Field Name="billing_total" Label="Billing Total" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[billing_total].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+            </igDP:Field>
+        <igDP:Field Name="has_exceptions" Label="Has Exceptions" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="cs_id" Label="Loc ID" Width="70"></igDP:Field>
+        <igDP:Field Name="product_code" Label="Product" Width="80"></igDP:Field>
+        <igDP:Field Name="cs_name" Label="Location" Width="120"></igDP:Field>
+       
+        <igDP:Field Name="service_period_start" Label="Period Start" Width="90"></igDP:Field>
+        <igDP:Field Name="service_period_end" Label="Period End" Width="90"></igDP:Field>
+        <igDP:Field Name="psa_city" Label="City" Width="80"></igDP:Field>
+        <igDP:Field Name="psa_state" Label="St" Width="50"></igDP:Field>
+    </igDP:FieldLayout>
+    
+    
+</ResourceDictionary>

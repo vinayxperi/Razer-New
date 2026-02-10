@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="RazerBase.ucLedgerTextBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:local="clr-namespace:RazerBase"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="80" d:DesignWidth="200"
+                          x:Name="ucLedgerTextBox1" DataContextChanged="ValidateDataContextChanged">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Name="GridLabelColumn" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="30"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border Grid.Column="0" Height="25" Background="{DynamicResource ApplicationBackgroundDark}" Grid.ColumnSpan="2" Grid.Row="0" VerticalAlignment="Center" Name="lbBorder">
+            <Label FontFamily="Arial" Foreground="Black" FontWeight="Bold" Name="Label"  
+               Content="[LabelText]" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center"></Label>
+        </Border>
+        <TextBox Style="{DynamicResource TextBoxStyle}" Name="TextBox" HorizontalAlignment="Stretch" 
+                 Grid.Column="0" Grid.ColumnSpan="2" Width="Auto" 
+                  VerticalAlignment="Stretch" 
+                 Text="{Binding ElementName=ucLedgerTextBox1, Path=Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                 MaxHeight="30"  Grid.Row="1" HorizontalContentAlignment="Right"></TextBox>
+
+    </Grid>
+</UserControl>

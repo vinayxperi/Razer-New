@@ -1,0 +1,797 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{92F34D8B-F692-41A7-AF2D-42F5B84D6C9C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RazerBase</RootNamespace>
+    <AssemblyName>RazerBase</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\RazerBase.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\RazerBase.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Infragistics.Services.Schedules.WcfConnectorService, Version=25.2.20252.45, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Schedules.Wcf.25.2.45\lib\net40\Infragistics.Services.Schedules.WcfConnectorService.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.25.2.59\lib\net40\InfragisticsWPF.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Charts.XamDataChart, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Charts.25.2.59\lib\net40\InfragisticsWPF.Controls.Charts.XamDataChart.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Editors.XamCalendar, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Calendar.25.2.59\lib\net40\InfragisticsWPF.Controls.Editors.XamCalendar.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Editors.XamColorPicker, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.ColorPicker.25.2.59\lib\net40\InfragisticsWPF.Controls.Editors.XamColorPicker.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Editors.XamSlider, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Slider.25.2.59\lib\net40\InfragisticsWPF.Controls.Editors.XamSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Interactions.XamDialogWindow, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DialogWindow.25.2.59\lib\net40\InfragisticsWPF.Controls.Interactions.XamDialogWindow.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Interactions.XamSpellChecker, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.SpellChecker.25.2.59\lib\net40\InfragisticsWPF.Controls.Interactions.XamSpellChecker.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Layouts.XamTileManager, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.TileManager.25.2.59\lib\net40\InfragisticsWPF.Controls.Layouts.XamTileManager.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Menus.XamDataTree, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DataTree.25.2.59\lib\net40\InfragisticsWPF.Controls.Menus.XamDataTree.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Menus.XamMenu, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Menus.25.2.59\lib\net40\InfragisticsWPF.Controls.Menus.XamMenu.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Menus.XamTagCloud, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.TagCloud.25.2.59\lib\net40\InfragisticsWPF.Controls.Menus.XamTagCloud.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Schedules, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Schedules.25.2.59\lib\net40\InfragisticsWPF.Controls.Schedules.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.SchedulesDialogs, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Schedules.Dialogs.25.2.59\lib\net40\InfragisticsWPF.Controls.SchedulesDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.SchedulesExchangeConnector, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Schedules.Exchange.25.2.59\lib\net40\InfragisticsWPF.Controls.SchedulesExchangeConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DataManager, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DataManager.25.2.59\lib\net40\InfragisticsWPF.DataManager.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DataPresenter, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DataGrids.25.2.59\lib\net40\InfragisticsWPF.DataPresenter.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DataPresenter.ExcelExporter, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DataGrids.Excel.25.2.59\lib\net40\InfragisticsWPF.DataPresenter.ExcelExporter.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DataPresenter.WordWriter, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DataGrids.Word.25.2.59\lib\net40\InfragisticsWPF.DataPresenter.WordWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DataVisualization, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DataVisualization.25.2.59\lib\net40\InfragisticsWPF.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DockManager, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DockManager.25.2.59\lib\net40\InfragisticsWPF.DockManager.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Documents.Core, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Documents.Core.25.2.59\lib\net40\InfragisticsWPF.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Documents.Excel, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Excel.25.2.59\lib\net40\InfragisticsWPF.Documents.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Documents.IO, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Word.25.2.59\lib\net40\InfragisticsWPF.Documents.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DragDrop, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DragDrop.25.2.59\lib\net40\InfragisticsWPF.DragDrop.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Editors, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Editors.25.2.59\lib\net40\InfragisticsWPF.Editors.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Math, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Math.25.2.59\lib\net40\InfragisticsWPF.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.OutlookBar, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.OutlookBar.25.2.59\lib\net40\InfragisticsWPF.OutlookBar.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Reporting, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Reporting.25.2.59\lib\net40\InfragisticsWPF.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Ribbon, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Ribbon.25.2.59\lib\net40\InfragisticsWPF.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Themes.Fall, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Themes.Fall.25.2.59\lib\net40\InfragisticsWPF.Themes.Fall.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Themes.ForestGreen, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Themes.ForestGreen.25.2.59\lib\net40\InfragisticsWPF.Themes.ForestGreen.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Themes.Leaf, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Themes.Leaf.25.2.59\lib\net40\InfragisticsWPF.Themes.Leaf.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Themes.Lipstick, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Themes.Lipstick.25.2.59\lib\net40\InfragisticsWPF.Themes.Lipstick.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Themes.Water, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Themes.Water.25.2.59\lib\net40\InfragisticsWPF.Themes.Water.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Themes.Wind, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Themes.Wind.25.2.59\lib\net40\InfragisticsWPF.Themes.Wind.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationSecurity.cs" />
+    <Compile Include="AttachmentHelper.cs" />
+    <Compile Include="AutoValidation.cs" />
+    <Compile Include="BaseContainer.cs" />
+    <Compile Include="BindingObject.cs" />
+    <Compile Include="cBaseBusObject.cs" />
+    <Compile Include="cCommandLibrary.cs" />
+    <Compile Include="cDsParms.cs" />
+    <Compile Include="cEnums.cs" />
+    <Compile Include="cGlobals.cs" />
+    <Compile Include="cMailMessage.cs" />
+    <Compile Include="cMainWindowBase.cs" />
+    <Compile Include="ColorExtension.cs" />
+    <Compile Include="DateConverter.cs" />
+    <Compile Include="DropDownButton.cs" />
+    <Compile Include="ExceptionHandler.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="HueSlider.cs" />
+    <Compile Include="Icons.cs" />
+    <Compile Include="Interfaces\IScreen.cs" />
+    <Compile Include="Lookups\AccountingClassLookup.xaml.cs">
+      <DependentUpon>AccountingClassLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\AdjustmentBillingDiffLookup.xaml.cs">
+      <DependentUpon>AdjustmentBillingDiffLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\AdsInvoiceFolderLookup.xaml.cs">
+      <DependentUpon>AdsInvoiceFolderLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\BCFLookup.xaml.cs">
+      <DependentUpon>BCFLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\CashAllocationLookup.xaml.cs">
+      <DependentUpon>CashAllocationLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\CashEntryCompany.xaml.cs">
+      <DependentUpon>CashEntryCompany.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\CashLookup.xaml.cs">
+      <DependentUpon>CashLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\ContactLookup.xaml.cs">
+      <DependentUpon>ContactLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\ContractLookup.xaml.cs">
+      <DependentUpon>ContractLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\BillingBatchLookup.xaml.cs">
+      <DependentUpon>BillingBatchLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\CashDocumentLookup.xaml.cs">
+      <DependentUpon>CashDocumentLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\AdjustmentUACashLookup.xaml.cs">
+      <DependentUpon>AdjustmentUACashLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\CashBatchDocumentLookup.xaml.cs">
+      <DependentUpon>CashBatchDocumentLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\BCFDetailGridInvoiceLookup.xaml.cs">
+      <DependentUpon>BCFDetailGridInvoiceLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\BCFLocationsLookup.xaml.cs">
+      <DependentUpon>BCFLocationsLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\BCFServiceLookup.xaml.cs">
+      <DependentUpon>BCFServiceLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\AdjustmentWHTLookup.xaml.cs">
+      <DependentUpon>AdjustmentWHTLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\TFInvoiceLookup.xaml.cs">
+      <DependentUpon>TFInvoiceLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\TFLookup.xaml.cs">
+      <DependentUpon>TFLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\WHTAdjInvoiceLookup.xaml.cs">
+      <DependentUpon>WHTAdjInvoiceLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\DefRevMgmtDocumentLookup.xaml.cs">
+      <DependentUpon>DefRevMgmtDocumentLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\DefRevMgmtCustomerLookup.xaml.cs">
+      <DependentUpon>DefRevMgmtCustomerLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\DefRevMgmtCompanyLookup.xaml.cs">
+      <DependentUpon>DefRevMgmtCompanyLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\InvoiceFolderLookup.xaml.cs">
+      <DependentUpon>InvoiceFolderLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\LocationInvoiceLookup.xaml.cs">
+      <DependentUpon>LocationInvoiceLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\MultiCustomerLookup.xaml.cs">
+      <DependentUpon>MultiCustomerLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\DefPoolLookup.xaml.cs">
+      <DependentUpon>DefPoolLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\GLJVLookup.xaml.cs">
+      <DependentUpon>GLJVLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\InvoiceLookup.xaml.cs">
+      <DependentUpon>InvoiceLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\LocationLookup.xaml.cs">
+      <DependentUpon>LocationLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\EntityLookup.xaml.cs">
+      <DependentUpon>EntityLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\ProductLookup.xaml.cs">
+      <DependentUpon>ProductLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\UnitEntryLookup.xaml.cs">
+      <DependentUpon>UnitEntryLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\UnitFilterLookup.xaml.cs">
+      <DependentUpon>UnitFilterLookup.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Lookups\UnitFiltersLook.xaml.cs">
+      <DependentUpon>UnitFiltersLook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\UnitMetaDataLookup.xaml.cs">
+      <DependentUpon>UnitMetaDataLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\UnitTypeLookup.xaml.cs">
+      <DependentUpon>UnitTypeLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\UnpostedBillingBatchLookup.xaml.cs">
+      <DependentUpon>UnpostedBillingBatchLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\WorkflowAddApprover.xaml.cs">
+      <DependentUpon>WorkflowAddApprover.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lookups\WorkflowEmail.xaml.cs">
+      <DependentUpon>WorkflowEmail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Messages.cs" />
+    <Compile Include="NoAccess.xaml.cs">
+      <DependentUpon>NoAccess.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NotifyingObject.cs" />
+    <Compile Include="ucAttachmentsTab.xaml.cs">
+      <DependentUpon>ucAttachmentsTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucColorKey.xaml.cs">
+      <DependentUpon>ucColorKey.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucComments.xaml.cs">
+      <DependentUpon>ucComments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucEditorField.xaml.cs">
+      <DependentUpon>ucEditorField.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucField.xaml.cs">
+      <DependentUpon>ucField.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucLabelCalandar.xaml.cs">
+      <DependentUpon>ucLabelCalandar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucFieldPlaceHolder.xaml.cs">
+      <DependentUpon>ucFieldPlaceHolder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EventAggregator.cs" />
+    <Compile Include="Lookups\CustomerLookup.xaml.cs">
+      <DependentUpon>CustomerLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucLabelComboBox.xaml.cs">
+      <DependentUpon>ucLabelComboBox.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ucLabelDatePicker.xaml.cs">
+      <DependentUpon>ucLabelDatePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucLabelDateTimePicker.xaml.cs">
+      <DependentUpon>ucLabelDateTimePicker.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ucLabelMultilineTextBox.xaml.cs">
+      <DependentUpon>ucLabelMultilineTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucLabelCheckBox.xaml.cs">
+      <DependentUpon>ucLabelCheckBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="cParms.cs" />
+    <Compile Include="DialogBase.cs" />
+    <Compile Include="DialogWindow.xaml.cs">
+      <DependentUpon>DialogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ScreenBase.cs" />
+    <Compile Include="ucBaseGrid.xaml.cs">
+      <DependentUpon>ucBaseGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucBaseLookup.xaml.cs">
+      <DependentUpon>ucBaseLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucLabelTextBox.xaml.cs">
+      <DependentUpon>ucLabelTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucLedgerTextBox.xaml.cs">
+      <DependentUpon>ucLedgerTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucListSelector.xaml.cs">
+      <DependentUpon>ucListSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucLookupEditorTestScreen.xaml.cs">
+      <DependentUpon>ucLookupEditorTestScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucLookupTextBox.xaml.cs">
+      <DependentUpon>ucLookupTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucMainWindow.xaml.cs">
+      <DependentUpon>ucMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucRibbon.xaml.cs">
+      <DependentUpon>ucRibbon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucValueEditorCheckBox.xaml.cs">
+      <DependentUpon>ucValueEditorCheckBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucXamCheckBox.xaml.cs">
+      <DependentUpon>ucXamCheckBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ucXamComboBox.cs" />
+    <Compile Include="UserName.cs" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Razer.Common\Razer.Common.csproj">
+      <Project>{87A25370-5697-4F1A-855D-EC5F4390B219}</Project>
+      <Name>Razer.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RazerConverters\RazerConverters.csproj">
+      <Project>{3B0B455E-4F81-461C-8C72-A3033470B72F}</Project>
+      <Name>RazerConverters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RazerInterface\RazerInterface.csproj">
+      <Project>{8E38FFCB-144A-45F2-AF87-123DD9245220}</Project>
+      <Name>RazerInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unity\UnitySource\Source\Unity\Src\Unity.csproj">
+      <Project>{EE1F752C-1FAB-41AD-AD63-857D0E62AB6B}</Project>
+      <Name>Unity %28Unity\Unity%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Lookups\AccountingClassLookup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lookups\AdjustmentBillingDiffLookup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\AdsInvoiceFolderLookup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\BCFLookup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lookups\CashAllocationLookup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lookups\CashEntryCompany.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\CashLookup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lookups\ContactLookup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lookups\ContractLookup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lookups\BillingBatchLookup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\CashDocumentLookup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\AdjustmentUACashLookup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\CashBatchDocumentLookup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\BCFDetailGridInvoiceLookup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\BCFLocationsLookup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\BCFServiceLookup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\AdjustmentWHTLookup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\TFInvoiceLookup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lookups\TFLookup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lookups\WHTAdjInvoiceLookup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\DefRevMgmtDocumentLookup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\DefRevMgmtCustomerLookup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\DefRevMgmtCompanyLookup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\InvoiceFolderLookup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\LocationInvoiceLookup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lookups\MultiCustomerLookup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\DefPoolLookup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\GLJVLookup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\InvoiceLookup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lookups\LocationLookup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\EntityLookup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\ProductLookup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lookups\UnitEntryLookup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lookups\UnitFilterLookup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lookups\UnitFiltersLook.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\UnitMetaDataLookup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lookups\UnitTypeLookup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lookups\UnpostedBillingBatchLookup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\WorkflowAddApprover.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lookups\WorkflowEmail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NoAccess.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ucAttachmentsTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucColorKey.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucComments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucEditorField.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ucField.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucLabelCalandar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ucFieldPlaceHolder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lookups\CustomerLookup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucLabelComboBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucLabelDatePicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucLabelDateTimePicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucLabelMultilineTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ucLabelCheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DialogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucBaseGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucBaseLookup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucLabelTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucLedgerTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucListSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucLookupEditorTestScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucLookupTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucRibbon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucValueEditorCheckBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ucXamCheckBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Outlook">
+      <Guid>{00062FFF-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

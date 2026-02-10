@@ -1,0 +1,48 @@
+﻿<RazerBase:ScreenBase x:Class="Customer.CustomerProformaTab" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+                  xmlns:igDP="http://infragistics.com/DataPresenter"
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="720"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+    <!--Resource area below added to allow for row color coding based on if the attachment is ediatble or not-->
+    <UserControl.Resources>
+        <!--The resource is needed to support the color coding of the rows in the grid-->
+        <Style TargetType="{x:Type igDP:DataRecordPresenter}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="{Binding Path=Cells[color_status].Value, Converter={StaticResource AttachmentHighlightConverter}}" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <!--<local:ucLabelCheckBox Name="chkShowHistoy" LabelText="Show All History" LabelWidth="120"  UnChecked="chkShowHistoy_UnChecked" Checked="chkShowHistoy_Checked" />-->
+            <RazerBase:ucColorKey Grid.Row="0" Grid.Column="1" x:Name="ProformaColorKey"  
+                          YellowLabel="Not Approved"
+                          YellowVisible="True" 
+                          RedVisible="False" 
+                          GreenVisible="False" 
+                          TealVisible="False" >
+            </RazerBase:ucColorKey>
+            <RazerBase:ucBaseGrid x:Name="GridProforma" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" ></RazerBase:ucBaseGrid>
+            <!--<local:ucBaseGrid x:Name="GridAcctHistoryAll" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2"></local:ucBaseGrid>-->
+        </Grid>
+    </ScrollViewer>
+</RazerBase:ScreenBase>

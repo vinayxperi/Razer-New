@@ -1,0 +1,56 @@
+﻿<local:ScreenBase x:Class="Invoice.InvoiceEditDetail" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+             xmlns:igWindows="http://infragistics.com/Windows"
+             xmlns:igDP="http://infragistics.com/DataPresenter" 
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="900" Background="{DynamicResource ApplicationBackground}">
+    <!--Resource area below added to allow for row color coding based on if the attachment is ediatble or not-->
+    <UserControl.Resources>
+        <!--The resource is needed to support the color coding of the rows in the grid-->
+        <Style TargetType="{x:Type igDP:DataRecordPresenter}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="{Binding Path=Cells[color_status].Value, Converter={StaticResource AttachmentHighlightConverter}}" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="220"/>
+
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <local:ucLabelDatePicker x:Name="ldtInvoiceDate" Grid.Row="3" Grid.Column="1" LabelWidth="80" LabelText="Invoice Date:" EnterActsLikeTab="True" 
+                                  LostFocus="ldtInvoiceDate_LostFocus" Margin="0,0,5,0" ></local:ucLabelDatePicker>
+        <local:ucLabelDatePicker x:Name="ldtDueDate" Grid.Row="3" Grid.Column="2" LabelWidth="80" LabelText="Due Date:" EnterActsLikeTab="True" 
+                                  IsReadOnly="True" Margin="0,0,5,0" ></local:ucLabelDatePicker>
+        <local:ucLabelComboBox x:Name="cmbTerms" Grid.Row="3" Grid.Column="3" LabelWidth="70" LabelText="Terms:"
+                                  SelectionChanged="cmbTerms_SelectionChanged" Margin="0,0,5,0" ></local:ucLabelComboBox>
+        <Button Name="btnCalc" Click="btnCalc_Click" Grid.Row="1" Grid.Column="2" Margin="30,0,30,0" IsDefault="False" IsTabStop="False" >Calculate</Button>
+        <Button Name="btnClear" Click="btnClear_Click" Grid.Row="1" Grid.Column="3" Margin="30,0,30,0" IsDefault="False" IsTabStop="False"  >Clear</Button>
+        <Button Name="btnSave" Click="btnSave_Click" Grid.Row="1" Grid.Column="4" Margin="30,0,30,0" IsDefault="False" IsTabStop="False"  >Save</Button>
+
+        <local:ucBaseGrid Name="gInvoiceEdit" Grid.Row="4" Grid.Column="1" Grid.RowSpan="7" Grid.ColumnSpan="7"></local:ucBaseGrid>
+    </Grid>
+</local:ScreenBase>

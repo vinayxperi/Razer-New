@@ -1,0 +1,581 @@
+﻿<ResourceDictionary  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    
+                    xmlns:igWindows="http://infragistics.com/Windows"
+                    xmlns:igDP="http://infragistics.com/DataPresenter"
+                    xmlns:igEditors="http://infragistics.com/Editors" 
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:RazerConverters="clr-namespace:RazerConverters;assembly=RazerConverters">
+
+    <igDP:FieldLayout x:Key="setDates" x:Shared="False">
+        
+        <igDP:Field Name="date_type" Label="Date Type" Width="110"  >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="date_description" Label="Description" Width="160">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="date_value" Label="Date Value" Width="130">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="last_update_date" Label="Last Update Date" Width="140">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="CurrencyConvSearch" x:Shared="False">
+
+        <igDP:Field Name="from_currency" Label="From Currency" Width="100"  >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="to_currency" Label="To Currency" Width="100"  >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="conversion_date" Label="Conversion Date" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="conversion_rate" Label="Rate" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="###,###,###.00######;(###,###,###.00######)"  />
+                            <Setter Property="Mask" Value="-nnnnnnnnn.nnnnnn"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>        
+    </igDP:FieldLayout>
+
+
+    <igDP:FieldLayout x:Key="batchjobs" x:Shared="False">
+        <!--<igDP:Field Name="admin_user" Label="Admin User" Width="90"></igDP:Field>-->
+        <igDP:Field Name="app_id" Label="App Id" Width="90"  >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="280">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="executable" Label="Executable" Width="280">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="admin_user" Label="Administrator" Width="280">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="CashBatchesToPost" x:Shared="False">
+        <igDP:Field Name="batch_status"  Label="Include Batch in Posting" Width="135">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="True" EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        
+        <igDP:Field Name="batch_id" Label="Batch Id" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="batch_date" Label="Batch Date" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="acct_period" Label="Acct Period" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="bank_name" Label="Bank Name" Width="130">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="batch_total" Label="Batch Total" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="currency_code" Label="Currency Code" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        
+        
+    </igDP:FieldLayout>
+    <igDP:FieldLayout x:Key="AdsProcessToSchedule" x:Shared="False">
+        <igDP:Field Name="ProcessSelected" Label="Process to Select" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="True" EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="code_value" Label="Ads Process" Width="400"></igDP:Field>
+        <igDP:Field Name="fkey_int" Label="Ads ID" Visibility="Collapsed"></igDP:Field>
+        
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="BillBatchesToPost" x:Shared="False">
+        <igDP:Field Name="include_in_batch" Label="Include Batch in Posting" Width="155">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="True" EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="batch_id" Label="Batch ID" Width="120"></igDP:Field>
+        <igDP:Field Name="batch_name" Label="Description" Width="150"></igDP:Field>
+        <igDP:Field Name="aud_update_userid" Label="Created By" Width="150"></igDP:Field>
+        <igDP:Field Name="aud_update_datetime" Label="Create Date" Width="150"></igDP:Field>
+        <igDP:Field Name="immediate_flag" Label="Change Due Date to Immediate" Width="185">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="True" EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="scheduled_user" Label="Scheduled User" Width="130" Visibility="Collapsed"></igDP:Field>
+       
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="BillBatchesOverride" x:Shared="False">
+       
+        <igDP:Field Name="batch_id" Label="Batch ID" Width="120" Visibility="Collapsed"></igDP:Field>
+       
+        <igDP:Field Name="immediate_flag" Label="Change Due Date to Immediate" Visibility="Collapsed">
+           
+        </igDP:Field>
+       
+
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="CustomInvoicesAvailToPost" x:Shared="False">
+        <igDP:Field Name="include_in_posting" Label="Include in Posting" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="True" EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="invoice_date" Label="Invoice Date"  Width="80">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="invoice_number" Label="Invoice Number" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="company_code" Label="Company Code" Width="115">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="account_name" Label="Customer" Width="170">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="total_amt" Label="Total Amount" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="currency_code" Label="Currency Code" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="GLtoPost" x:Shared="False">
+        <igDP:Field Name="control_group" Label="Control Group" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="acct_period" Label="Acct Period" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+      
+      
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="workflowApprovalQueue" x:Shared="False">
+        <igDP:Field Name="document_id" Label="Document ID" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="recv_acct" Label="Customer ID" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="account_name" Label="Customer Name" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="type_description" Label="Workflow Type" Width="130">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="adjustment_class" Label="Document Type" Width="130">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="adjustment_amount" Label="Amount" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="$###,##0.00;($###,##0.00)"  />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[adjustment_amount].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="submitter_id" Label="Submitter ID" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="approver_id" Label="Approver ID" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="status_description" Label="Status " Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="comment_id" Label="Comment Id" Width="160" Visibility="Collapsed" ></igDP:Field>
+        <igDP:Field Name="update_date_time" Label="Date Time" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="adj_reason" Label="Reason" Width="120" ></igDP:Field>
+        <igDP:Field Name="comment_subject" Label="WF Comment" Width="150"></igDP:Field>
+          
+        <igDP:Field Name="wf_status" Label="Wf Status" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="workflow_seq" Label="Workflow Seq" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="color_status" Label="Color Status" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="subs_on_hold" Label="SubHold" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+    
+    
+    <igDP:FieldLayout x:Key="multiCustomerLookup" x:Shared="False">
+        <igDP:Field Name="document_id" Label="Document ID" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="receivable_account" Label="Customer ID" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="account_name" Label="Customer Name" Width="180">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+       
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="exceptionHandling" x:Shared="False">
+        <igDP:Field Name="exception_id" Label="Exception Id" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="exception_date" Label="Exception Date" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="exception_message" Label="Exception Message" Width="190">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="comment" Label="Comment" Width="190">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="detail" Label="Detail" Width="190">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="nkey1" Label="Informational Field" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="nkey2" Label="Informational Field" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="skey1" Label="Informational Field" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="skey2" Label="Informational Field" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="jobmonitor" x:Shared="False">
+        <igDP:Field Name="job_id" Label="Job ID" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="sched_user" Label="Sched User" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="sched_time" Label="Sched Time" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamDateTimeEditor}">
+                            <!--<Setter Property="ValueToDisplayTextConverter" Value="{StaticResource NullDateConverter}" />-->
+                            <Setter Property="Mask" Value="{}{date} {time}" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="actual_start" Label="Actual Start" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamDateTimeEditor}">
+                            <!--<Setter Property="ValueToDisplayTextConverter" Value="{StaticResource NullDateConverter}"/>-->
+                            <Setter Property="Mask" Value="{}{date}{time}" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="status" Label="Status" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="status_desc" Label="Status" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="app_id" Label="App Id" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="group_id" Label="Group ID" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="notify_user" Label="Notify User" Width="90" Visibility="Collapsed"></igDP:Field>
+        
+        
+       
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="rptsAvailtoRun" x:Shared="False">
+        <igDP:Field Name="app_id" Label="App Id" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="app_type" Label="App Type" Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="410"></igDP:Field>
+       
+        
+   
+        
+
+    </igDP:FieldLayout>
+    <igDP:FieldLayout x:Key="rptsAvailtoView" x:Shared="False">
+        <igDP:Field Name="rpt_image_id" Label="Document ID" Width="110" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}">
+                            <Setter 
+						Property="Format" Value="#########" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+           
+        </igDP:Field>
+        <igDP:Field Name="config_id"   Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="app_id"   Width="70" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="name" Label="Description" Width="140"></igDP:Field>
+        <igDP:Field Name="job_id" Label="Job ID" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}">
+                            <Setter 
+						Property="Format" Value="#########" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="server_loc" Visibility="Collapsed" Width="140"></igDP:Field>
+        <igDP:Field Name="directory" Label="Directory" Visibility="Collapsed"  Width="90"></igDP:Field>
+        <igDP:Field Name="file_name" Label="File Name" Visibility="Collapsed"  Width="90"></igDP:Field>
+        <igDP:Field Name="creator_id"  Label="Submitted By" Width="110" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="status_code" Visibility="Collapsed" Width="90"></igDP:Field>
+        <igDP:Field Name="creation_date" Label="Report Date" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+
+
+
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="AcctClassAlloc" x:Shared="False">
+        <igDP:Field Name="allocation_id" Label="Allocation Id" Width="90" Visibility="Collapsed"  >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" />
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="percentage" Label="Percentage" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}">
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+                <igDP:Field Name="ratio_numerator" Label="Ratio Numerator" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+
+                        <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbNumerator, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+        <igDP:Field Name="ratio_denominator" Label="Ratio Denominator" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbDenominator, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+
+        <igDP:Field Name="acct_class_id" Label="Acct Class ID" Width="70" Visibility="Collapsed"></igDP:Field>
+        
+        <igDP:Field Name="acct_code" Label="Account Code" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="True">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamMaskedEditor}">
+                            <Setter Property="Mask" Value=">AA-####-#####-####-####-AA"/>
+                            <Setter Property="DataMode" Value="Raw"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+      
+        <igDP:Field Name="deferred_account_code" Label="Deferred Account Code" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="True">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamMaskedEditor}">
+                            <Setter Property="Mask" Value=">AA-####-#####-####-####-AA"/>
+                            <Setter Property="DataMode" Value="Raw"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                    
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+    </igDP:FieldLayout>
+    <igDP:FieldLayout x:Key="AcctClassLookup" x:Shared="False">
+        <igDP:Field Name="acct_class_id" Label="Acct Class ID" Width="90"></igDP:Field>
+        <igDP:Field Name="acct_class" Label="Acct Class" Width="90"></igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200"></igDP:Field>
+        <igDP:Field Name="status" Label="InActive" Width="80" >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="True" EditorType="{x:Type igEditors:XamCheckEditor}">
+                <igDP:FieldSettings.EditorStyle >
+                    <Style TargetType="{x:Type igEditors:XamCheckEditor}">
+  
+                    </Style>
+                </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="code_value" Label="Type" Width="70"></igDP:Field>
+        <igDP:Field Name="use_ratio_flag" Label="Use Ratio Flag" Visibility="Collapsed"  Width="70"></igDP:Field>
+    </igDP:FieldLayout>
+</ResourceDictionary>

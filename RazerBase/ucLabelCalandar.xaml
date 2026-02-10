@@ -1,0 +1,24 @@
+﻿<UserControl xmlns:ig="http://schemas.infragistics.com/xaml"  x:Class="RazerBase.ucLabelCalendar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+             d:DesignHeight="40" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Name="GridLabelColumn" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0*" />
+        </Grid.RowDefinitions>
+        <Label Style="{DynamicResource LabelLightUpStyle}"  Name="Label" Content="[LabelText]"></Label>
+        <DatePicker Grid.Column="1"  d:LayoutOverrides="Height" Grid.ColumnSpan="2" Style="{DynamicResource DatePickerStyle1}" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Stretch" Name="DatePicker" />
+        <Image Grid.Column="2" Grid.RowSpan="2" Height="150" HorizontalAlignment="Left" Margin="58,27,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="200" Source="/RazerBase;component/Resources/Delete.png" />
+    </Grid>
+</UserControl>

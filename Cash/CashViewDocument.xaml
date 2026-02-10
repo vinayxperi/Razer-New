@@ -1,0 +1,109 @@
+﻿<RazerBase:ScreenBase x:Class="Cash.CashViewDocument"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"             
+             xmlns:igDP="http://infragistics.com/DataPresenter"          
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="800">
+    <Border Grid.Row="1" Grid.ColumnSpan="4" BorderBrush="Gray" BorderThickness="0,0,0,1" >
+        <Grid Background="{DynamicResource ApplicationBackgroundDark}" Name="MainGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="5"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition Width="10" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="1" Grid.ColumnSpan="4">
+                <Grid.RowDefinitions>                    
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="10" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <RazerBase:ucLabelTextBox Name="txtDocumentID" LabelText="Document ID:" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" LabelWidth="125" 
+                                          LostFocus="txtDocumentID_LostFocus" MouseDoubleClick="DocumentID_DoubleClick" EnterActsLikeTab="True"/>
+                <RazerBase:ucLabelTextBox Name="txtRemitType" LabelText="Remit Type:" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" LabelWidth="125" 
+                                          BindPath="remit_type" IsReadOnly="True" />
+                <RazerBase:ucLabelTextBox Name="txtRemitDate" LabelText="Remit Date:" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2" LabelWidth="125" 
+                                          BindPath="remit_date" IsReadOnly="True"/>
+                <RazerBase:ucLabelTextBox Name="txtRemitNumber" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0" LabelText="Check Number:" LabelWidth="120" 
+                                          BindPath="remit_number" IsReadOnly="True"/>
+                <RazerBase:ucLabelTextBox Name="txtBatchID" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="3" LabelText="Batch ID:" LabelWidth="120" 
+                                          IsReadOnly="True" BindPath="batch_id"/>
+                <RazerBase:ucLabelTextBox Name="txtTotal" LabelText="Total:" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" LabelWidth="130" 
+                                          Text="{Binding Path=amount, Mode=TwoWay, StringFormat={}{0:C}}" IsReadOnly="True"/>
+                <RazerBase:ucLabelTextBox Name="txtBatchDate" LabelText="Batch Date:" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" LabelWidth="130" 
+                                          IsReadOnly="True" BindPath="batch_date" />
+            </Grid>
+            <!--<Grid Grid.Row="2" Grid.ColumnSpan="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="10"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="10" />
+                </Grid.ColumnDefinitions>
+                
+            </Grid>-->
+            <Grid Grid.Row="2" Grid.ColumnSpan="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <Label  Grid.Column="1" Grid.Row="0" Style="{DynamicResource LabelLightUpStyle}">Cash Document Detail</Label>
+                <RazerBase:ucBaseGrid x:Name="gCashViewDocumentDetail" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" ></RazerBase:ucBaseGrid>
+        </Grid>
+            <Grid Grid.Row="3" Grid.ColumnSpan="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10" />
+
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="1" Style="{DynamicResource LabelLightUpStyle}">Attachments</Label>
+                <RazerBase:ucAttachmentsTab x:Name="gCashAttachments" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" RootParentObjectType="Cash.CashViewDocument" ></RazerBase:ucAttachmentsTab>
+            </Grid>
+        </Grid>
+    </Border>
+</RazerBase:ScreenBase>
+

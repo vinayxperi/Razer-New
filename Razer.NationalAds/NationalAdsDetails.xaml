@@ -1,0 +1,88 @@
+﻿<RazerBase:ScreenBase x:Class="Razer.NationalAds.NationalAdsDetails"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"             
+             xmlns:igDP="http://infragistics.com/DataPresenter"  
+             xmlns:Converters="clr-namespace:RazerConverters;assembly=RazerConverters" 
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="800">
+    
+    <Grid Background="{DynamicResource ApplicationBackgroundDark}" Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="10"/>
+            <RowDefinition />
+            <RowDefinition />            
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <RazerBase:ucBaseGrid x:Name="idgAdvertisementsDetail" ></RazerBase:ucBaseGrid>
+        </Grid>
+        <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="0,0,0,1" />
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition Width="10" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="170*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1" Grid.ColumnSpan="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  />
+                    <ColumnDefinition  />
+                    <ColumnDefinition  />
+                    <ColumnDefinition  />
+                    <ColumnDefinition  />
+                    <ColumnDefinition  MinWidth="170"/>
+                    
+                </Grid.ColumnDefinitions>
+                <RazerBase:ucLabelCheckBox Name="chkCommissionRecalc" Foreground="Red" LabelText="Do Not Recalc Commission:" Grid.Column="0" LabelWidth="160" Checked="chkCommissionRecalc_Checked" Grid.ColumnSpan="2"/>
+                <RazerBase:ucLabelCheckBox Name="chkZeroCommission" Foreground="Red" LabelText="Zero Commission:  " Grid.Column="1" LabelWidth="150" Checked="chkZeroCommission_Checked" Grid.ColumnSpan="2" />
+                <RazerBase:ucLabelCheckBox Name="chkReverseAdjustment" Foreground="Red" LabelText="Reverse:" Grid.Column="2" LabelWidth="120" Checked="chkReverseAdjustment_Checked" Grid.ColumnSpan="1"  />
+                <RazerBase:ucLabelCheckBox Name="chkZeroVAT" Foreground="Red" LabelText="Zero VAT:" Grid.Column="3" LabelWidth="90" Checked="chkZeroVAT_Checked" Grid.ColumnSpan="1" />
+                <RazerBase:ucLabelCheckBox Name="chkAddVAT" Foreground="Red" LabelText="Add VAT:" Grid.Column="4" LabelWidth="90" Checked="chkAddVAT_Checked" Grid.ColumnSpan="1" />
+                <RazerBase:ucLabelTextBox Name="txtTotalAdjustment" LabelText="Total Adjustment:" IsReadOnly="True" Grid.Column="5"  LabelWidth="110" Text="{Binding Path=printed_flag, Mode=OneWay}" Grid.ColumnSpan="2" />
+            </Grid>
+            <Grid Grid.Row="3" Grid.ColumnSpan="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  />
+                    <ColumnDefinition  />
+                    <ColumnDefinition  />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <RazerBase:ucLabelTextBox Name="txtTotalAds" LabelText="Total Ads:" Grid.Row="3" IsReadOnly="True" Text="{Binding Path=total_spots, Mode=TwoWay, StringFormat={}{0:D}}" Grid.Column="0"  LabelWidth="90" />
+            <RazerBase:ucLabelTextBox Name="txtTotalAmount" LabelText="Total Amount:" Grid.Row="3" IsReadOnly="True" Text="{Binding Path=total_amt, Mode=TwoWay, StringFormat={}{0:C}}" Grid.Column="1" LabelWidth="90" />
+            <RazerBase:ucLabelTextBox Name="txtCommission" LabelText="Commission:" Grid.Row="3" IsReadOnly="True" Text="{Binding Path=comm_amt, Mode=TwoWay, StringFormat={}{0:C}}" Grid.Column="2" LabelWidth="90" />
+            <RazerBase:ucLabelTextBox Name="txtVATAmt" LabelText="VAT:" Grid.Row="3"     IsReadOnly="True" Text="{Binding Path=vat_tax, Mode=TwoWay, StringFormat={}{0:C}}" Grid.Column="3" LabelWidth="90" />
+            <RazerBase:ucLabelTextBox Name="txtNetAmount" LabelText="Net Amount:" Grid.Row="3" IsReadOnly="True" Text="{Binding Path=net_amt, Mode=TwoWay, StringFormat={}{0:C}}" Grid.Column="4" LabelWidth="90" />
+            </Grid>
+            <Grid Grid.Row="4" Grid.ColumnSpan="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  />
+                    <ColumnDefinition  />
+                    <ColumnDefinition  />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition  />
+                    <RowDefinition  />                  
+                </Grid.RowDefinitions>
+                <!--<RazerBase:ucLabelTextBox Name="txtAdjReason" LabelText="Adjustment Reason:"  Text="{Binding Path=adjustment_reason, UpdateSourceTrigger=PropertyChanged}" Grid.Row="4" IsReadOnly="False"  Grid.Column="1" LabelWidth="115"   />-->
+                <Label Name="lblAdjReason" Grid.Row="4"  Grid.Column="0" FontWeight="Light" FontStyle="Normal" Content="      Adjustment Reason: "  Width="145"  FontSize="11" />
+                <TextBox Name="txtAdjReason" Grid.Row="4" IsReadOnly="False"  Grid.Column="1"  Grid.ColumnSpan="4" MinWidth="615" Background="White"  />
+            </Grid>    
+            </Grid>
+    </Grid>
+</RazerBase:ScreenBase>

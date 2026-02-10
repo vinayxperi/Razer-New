@@ -1,0 +1,151 @@
+﻿<RazerBase:ScreenBase x:Class="Contract.ContractProductRulesScreen" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+             xmlns:local="clr-namespace:Contract"
+             xmlns:Converters="clr-namespace:RazerConverters;assembly=RazerConverters"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1480"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}" Loaded="ContractProductRuleScreen_Loaded" >
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"  >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition MaxHeight="10" />
+                <RowDefinition MaxHeight="175" />
+                <RowDefinition MaxHeight="15"/>
+                <RowDefinition MaxHeight="420"/>
+                <RowDefinition MaxHeight="10" />
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+
+            <!--Top Grouping for the control-->
+            <Border Grid.ColumnSpan="5" Grid.Row="1" BorderBrush="Gray" BorderThickness="0,0,0,1">
+                <Grid MaxHeight="250">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition MinWidth="250"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition MinWidth="250"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition MinWidth="250"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <RazerBase:ucLabelTextBox Name="txtContractId" LabelText="Contract ID:" Grid.Column="1" Grid.Row="1" BindPath="contract_id" Grid.ColumnSpan="1" LabelWidth="120" IsReadOnly="True" Loaded="txtContractId_Loaded" IsTabStop="False" />
+                    <RazerBase:ucLabelTextBox Name="txtRuleId" LabelText="Rule ID:" Grid.Column="3" Grid.Row="1" Text="{Binding Path=rule_id, Mode=TwoWay}" LabelWidth="120" IsReadOnly="True" IsTabStop="False" />
+                    <RazerBase:ucLabelComboBox Name="cmbStatus" LabelText="Status:" Grid.Column="5" Grid.Row="1" LabelWidth="120" SelectedValue="{Binding Path=status_flag, Mode=TwoWay}" VerticalAlignment="Top"/>
+                    <!--<RazerBase:ucLookupTextBox Name="cmbStatus" LabelText="Status:" Grid.Column="5" Grid.Row="1" LabelWidth="120" SelectedValue="{Binding Path=status_flag, Mode=TwoWay}"/>-->
+                    <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Column="7" Grid.Row="1" >Rule Groups</Label>
+                    <RazerBase:ucBaseGrid Name="GridRuleGroup" Grid.Column="7" Grid.Row="2" Grid.RowSpan="3"></RazerBase:ucBaseGrid>
+                    <RazerBase:ucLabelTextBox Name="txtBillMsoId" LabelText="Contract Entity ID:" Grid.Column="1" Grid.Row="2" BindPath="bill_mso_id" LabelWidth="120" IsReadOnly="True" Loaded="txtBillMsoId_Loaded" IsTabStop="False" />
+                    <RazerBase:ucLabelTextBox Name="txtContractEntity" LabelText="Contract Entity:" Grid.Column="0" Grid.Row="3" BindPath="contract_entity" Grid.ColumnSpan="4" LabelWidth="131"  IsReadOnly="True" Loaded="txtContractEntity_Loaded" IsTabStop="False" />
+                    <RazerBase:ucLabelTextBox Name="txtContractDescription" LabelText="Contract Description:" Text="{Binding Path=contract_description, Mode=TwoWay}" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5" LabelWidth="130" IsReadOnly="True" Loaded="txtContractDescription_Loaded" IsTabStop="False" />
+                </Grid>
+            </Border>
+
+            <Border Grid.ColumnSpan="5"  Grid.Row="3" BorderBrush="Gray" BorderThickness="0,0,0,1" >
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0" />
+                        <ColumnDefinition MinWidth="250" MaxWidth="400"/>
+                        <ColumnDefinition Width="0"/>
+                        <ColumnDefinition MinWidth="200" MaxWidth="300"/>
+                        
+                        <ColumnDefinition Width="5"/>
+                       
+                        <ColumnDefinition MinWidth="200" MaxWidth="400"/>
+                        <ColumnDefinition MinWidth="200" MaxWidth="400"/>
+                        <ColumnDefinition MinWidth="200" />
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <RazerBase:ucLabelComboBox Name="cmbProdItem" LabelText="Product Item:" Grid.Column="1" Grid.Row="0" LabelWidth="120" SelectedValue="{Binding Path=product_item_id, Mode=TwoWay}" SelectionChanged="cmbProdItem_SelectionChanged" Loaded="cmbProdItem_Loaded"/>
+                    <RazerBase:ucLabelTextBox Name="txtProductDesc" LabelText="Prod Code:" Grid.Column="3" Grid.Row="0" LabelWidth="120" BindPath="product_description"  IsEnabled="False"/>
+                    <RazerBase:ucLabelCheckBox Name="chkPrimaryProduct" LabelText="Primary Product:" Grid.Column="5" Grid.Row="0" LabelWidth="117" BindPath="item_type" IsEnabled="False"/>
+                   
+                    <RazerBase:ucLabelCheckBox Name="chkTierByTotal" LabelText="Tier By Total:" BindPath="tier_by_contract_flag" Grid.Row="0" Grid.Column="6" LabelWidth="127"  />
+                   
+                    <!--<RazerBase:ucLabelCheckBox Name="chkRateDispute" LabelText="Rate Dispute:" Grid.Column="6" Grid.Row="0" LabelWidth="117" BindPath="rate_dispute_flag"/>-->
+                    <!--<RazerBase:ucLabelTextBox Name="txtRateToRecognize" LabelText="Rate to Recognize:" BindPath="rate_to_recognize" Grid.Column="6" Grid.Row="1" LabelWidth="120" />-->
+                    <RazerBase:ucLabelComboBox Name="cmbCalcMethod" LabelText="Calc Method:" Grid.Column="1" Grid.Row="1" LabelWidth="120" SelectedValue="{Binding Path=calc_method, Mode=TwoWay}" PropertyChanged="cmbCalcMethod_PropertyChanged"  />
+                    <RazerBase:ucLabelDatePicker Name="dtpStartDate" LabelText="Start Date:"  SelText="{Binding Path=start_date, Mode=TwoWay}" Grid.Column="3" Grid.Row="1" LabelWidth="120" VerticalAlignment="Top"/>
+                    <RazerBase:ucLabelDatePicker Name="dtpEndDate" LabelText="End Date:" SelText="{Binding Path=end_date, Mode=TwoWay}" Grid.Column="5" Grid.Row="1" LabelWidth="120" VerticalAlignment="Top"/>
+                 
+                    <RazerBase:ucLabelCheckBox Name="chkRevenueShare" LabelText="Revenue Share:" Grid.Column="6" Grid.Row="1" LabelWidth="127" BindPath="revenue_share_flag" IsEnabled="True" />
+                    <RazerBase:ucLabelComboBox Name="cmbRuleType" LabelText="Rule Type:" Grid.Column="1" Grid.Row="2" LabelWidth="120" SelectedValue="{Binding Path=rule_type, Mode=TwoWay}" PropertyChanged="cmbRuleType_PropertyChanged"  />
+                    <RazerBase:ucLabelCheckBox Name="chkAutoBillUnits" LabelText="Auto Bill Units:" BindPath="assume_billing_units" Grid.Row="2" Grid.Column="3" LabelWidth="117"  />
+                    <RazerBase:ucLabelCheckBox Name="chkPercentComplete" LabelText="Percent Complete:" BindPath="percent_complete_flag" Grid.Row="2" Grid.Column="5" LabelWidth="117" Loaded="chkPercentComplete_Loaded" Checked="chkPercentComplete_Checked" UnChecked="chkPercentComplete_UnChecked" IsEnabled="False"/>
+                    <RazerBase:ucLabelCheckBox Name="chkCompletedContract" LabelText="Combine on Invoice:" Grid.Column="6" Grid.Row="2" LabelWidth="127" BindPath="completed_contract_flag" IsEnabled="True" Checked="chkCompletedContract_Checked" UnChecked="chkCompletedContract_UnChecked"/>
+                    <RazerBase:ucLabelComboBox Name="cmbTierBy" LabelText="Tier By:" Grid.Column="1" Grid.Row="3" LabelWidth="120" SelectedValue="{Binding Path=tier_by, Mode=TwoWay}"  />
+                    <RazerBase:ucLabelTextBox Name="txtTierPeriod" LabelText="Tier Period:" BindPath="tier_period" Grid.Column="3" Grid.Row="3" LabelWidth="120" />
+                    <RazerBase:ucLabelDatePicker Name="dtpTierStartDate" LabelText="Tier Start Date:" VerticalAlignment="Top" SelText="{Binding Path=tier_period_start_date, Mode=TwoWay}" Grid.Column="5" Grid.Row="3" LabelWidth="120" IsEnabled="{Binding ElementName=txtTierPeriod, Path=TierPeriodBool}" />
+                    <RazerBase:ucLabelComboBox Name="cmbDiscountType" LabelText="Discount Type:" Grid.Column="6" Grid.Row="3" LabelWidth="120" 
+                                               SelectedValue="{Binding Path=discount_id, Mode=TwoWay}" SelectionChanged="cmbDiscountType_SelectionChanged" />
+                    <RazerBase:ucLabelComboBox Name="cmbBillBy" LabelText="Bill By:" Grid.Column="1" Grid.Row="4" LabelWidth="120" SelectedValue="{Binding Path=bill_by, Mode=TwoWay}"  />
+                    <RazerBase:ucLabelCheckBox Name="chkNormalized" LabelText="Normalized:" BindPath="normalized_flag" Grid.Row="4" Grid.Column="3" LabelWidth="117"  />
+                    <RazerBase:ucLabelComboBox Name="cmbNormalizedBase" LabelText="Normalized Base:" Grid.Column="5" Grid.Row="4" LabelWidth="120" SelectedValue="{Binding Path=normalized_base, Mode=TwoWay}" IsEnabled="{Binding ElementName=chkNormalized, Path=IsChecked }"  />
+                    <RazerBase:ucLabelCheckBox Name="chkManualBill" LabelText="No Buckets:" BindPath="manual_bill_flag" Grid.Row="4" Grid.Column="6" LabelWidth="117"  />
+                    <RazerBase:ucLabelTextBox Name="txtServicePeriodOffset" LabelText="Service Period Offset:" Grid.Column="1" Grid.Row="5" LabelWidth="125" BindPath="service_period_offset"  />
+                    <RazerBase:ucLabelComboBox Name="cmbAcctClass" LabelText="Accounting Class:" Grid.Column="3" Grid.Row="5" LabelWidth="120" SelectedValue="{Binding Path=acct_class_id, Mode=TwoWay}"  />
+                    <RazerBase:ucLabelComboBox Name="cmbAcctRule" LabelText="Accounting Rule:" Grid.Column="5" Grid.Row="5" LabelWidth="120" SelectedValue="{Binding Path=accounting_rule, Mode=TwoWay}"  />
+                    <RazerBase:ucLabelTextBox Name="txtFrequency" LabelText="Bill Frequency:" BindPath="bill_frequency" Grid.Column="6" Grid.Row="5" LabelWidth="120"  />
+                    <RazerBase:ucLabelDatePicker Name="dtpBillFreqStartDate" Grid.Column="1" Grid.Row="6" LabelText="Bill Freq Start Date:" SelText="{Binding Path=bill_frequency_start_date, Mode=TwoWay}" LabelWidth="120" IsEnabled="{Binding ElementName=txtTierPeriod, Path=TierPeriodBool}"  />
+                    <RazerBase:ucLabelMultilineTextBox Name="txtLineDesc" Width="600"  MaxLength="250" Grid.Column="2" Grid.Row="6" Grid.RowSpan="1" Grid.ColumnSpan="4" LabelText="Line Description:" LabelWidth="102" BindPath="line_desc" LostFocus="txtLineDesc_LostFocus" />
+                    <RazerBase:ucLabelComboBox Name="cmbLineDescOptions" LabelText="Line Desc Options:" Grid.Column="6" Grid.Row="6" LabelWidth="120" SelectedValue="{Binding Path=line_desc_display_option , Mode=TwoWay}" IsEnabled="False"/>
+                    <RazerBase:ucLabelComboBox Name="cmbCola" LabelText="Cola:" Grid.Column="1" Grid.Row="7" LabelWidth="120" PropertyChanged="cmbColaID_PropertyChanged" SelectedValue="{Binding Path=cola_id, Mode=TwoWay}"  />
+                    <RazerBase:ucLabelTextBox  Name="txtCOLAMin" Grid.Row="7" Grid.Column="3" LabelText="COLA Min %:" Text ="{Binding Path=cola_min,StringFormat={}{0}%}"  LabelWidth="120" IsEnabled="False"/>
+                    <RazerBase:ucLabelTextBox  Name="txtCOLAMax" Grid.Row="7" Grid.Column="5" LabelText="COLA Max %:" Text ="{Binding Path=cola_max,StringFormat={}{0}%}"  LabelWidth="120" IsEnabled="False"/>
+                    <RazerBase:ucLabelComboBox Name="cmbCurrency" LabelText="Currency:" Grid.Column="6" Grid.Row="7" LabelWidth="120" SelectedValue="{Binding Path=currency_code, Mode=TwoWay}" PreviewKeyDown="cmbCurrency_PreviewKeyDown"  />
+                    <RazerBase:ucLabelCheckBox Name="chkRateDispute" LabelText=" 606 Lag:" Grid.Column="1" Grid.Row="8" LabelWidth="117" BindPath="rate_dispute_flag" IsEnabled="True" Checked="chkRateDispute_Checked" UnChecked="chkRateDispute_UnChecked"/>
+                    <RazerBase:ucLabelTextBox x:Name="txtratetorecognize" Grid.Row="8" Grid.Column="3" LabelText="Rate to Recognize:" LabelWidth="124" 
+                                  Text ="{Binding Path=rate_to_recognize,Mode=TwoWay,StringFormat=N6}"  
+                                              
+                                   ></RazerBase:ucLabelTextBox>
+                    <RazerBase:ucLabelCheckBox Name="chkPORequired" LabelText="PO Required:" Grid.Column="5" Grid.Row="8" LabelWidth="117" BindPath="po_required_flag" IsEnabled="False" />
+                    <RazerBase:ucLabelComboBox Name="cmbCLMNumber" LabelText="CLM Number:" Grid.Column="6" Grid.Row="8" LabelWidth="120" SelectedValue="{Binding Path=clm_id, Mode=TwoWay}" SelectionChanged="cmbCLMNumber_SelectionChanged" Loaded="cmbCLMNumber_Loaded"/>
+                </Grid>
+            </Border>
+
+
+                    <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Column="0" Grid.Row="5" >Tiers</Label>
+                    <RazerBase:ucBaseGrid Name="GridTiers" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" PreviewKeyDown="GridTiers_PreviewKeyDown" PreviewKeyUp="GridTiers_PreviewKeyUp"  ></RazerBase:ucBaseGrid>
+                    <Button Name="btnSave" Height="30" Width="150" Grid.Column="1" Grid.Row="5" Click="btnSave_Click" IsTabStop="True">Save Product Rule</Button>
+
+
+
+   
+    </Grid>
+    </ScrollViewer>
+
+</RazerBase:ScreenBase>

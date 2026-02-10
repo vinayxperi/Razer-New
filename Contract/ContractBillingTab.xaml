@@ -1,0 +1,51 @@
+﻿<local:ScreenBase x:Class="Contract.ContractBillingTab" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="720"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="1.25*" />
+          
+            <RowDefinition Height="25" />
+          
+            <RowDefinition Height=".75*" />
+            <RowDefinition Height="2" />
+        </Grid.RowDefinitions>
+        <!-- Place Controls Here -->
+        <!--<Label Style="{DynamicResource LabelLightUpStyle}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">Rovi Executing Entities</Label>-->
+        <!--<local:ucBaseGrid Name="gCompany" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"></local:ucBaseGrid>-->
+        <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">CLM Agreement Numbers</Label>
+        <local:ucBaseGrid Name="gLCR" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="3"></local:ucBaseGrid>
+        <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2">Purchase Orders</Label>
+        <local:ucBaseGrid Name="gPurchaseOrder" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="4" Grid.RowSpan="3"></local:ucBaseGrid>
+        <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="2">Contract Milestones</Label>
+        <local:ucBaseGrid Name="gContractMilestones" Grid.Row="6" Grid.Column="4" Grid.ColumnSpan="4" Grid.RowSpan="1"></local:ucBaseGrid>
+        <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2">Contract Attributes</Label>
+        <local:ucBaseGrid Name="gAttributes" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="1" Loaded="gAttributes_Loaded"></local:ucBaseGrid>
+        <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Row="7" Grid.Column="4" Grid.ColumnSpan="2" >Invoice Distribution List</Label>
+        <local:ucBaseGrid Name="gInvoiceDistribution" Grid.Row="8" Grid.Column="4" Grid.ColumnSpan="4" Grid.RowSpan="2"></local:ucBaseGrid>
+        <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" >Salesperson</Label>
+        <local:ucBaseGrid Name="gSalesperson" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="1"></local:ucBaseGrid>
+    </Grid>
+</local:ScreenBase>

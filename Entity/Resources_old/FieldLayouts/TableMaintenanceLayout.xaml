@@ -1,0 +1,1293 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:igWindows="http://infragistics.com/Windows"
+                    xmlns:igDP="http://infragistics.com/DataPresenter"
+                    xmlns:igEditors="http://infragistics.com/Editors"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <igDP:FieldLayout x:Key="TableMaintenanceList" x:Shared="False">
+        <igDP:Field Name="maint_table_id" Label="Table Id" Visibility="Collapsed"></igDP:Field>
+        <!--<igDP:Field Name="maint_table_name" Label="Table Name" Width="160"></igDP:Field>-->
+        <igDP:Field Name="maint_table_desc" Label="Table Description" Width="350"></igDP:Field>                
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="Currency" x:Shared="False">
+        <igDP:Field Name="currency_code" Label="Currency Code" Width="90"></igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="AdjustmentReason" x:Shared="False">
+        <igDP:Field Name="adj_print_reason_code" Label="Reason Code" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="adj_print_reason_desc" Label="Description" Width="200"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="AppAdminType" x:Shared="False">
+        <igDP:Field Name="app_admin_type_id" Label="Application Type ID" Width="90"></igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="GeoRgn" x:Shared="False">
+        <igDP:Field Name="geographic_region_id" Label="ID" Width="70"></igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200"></igDP:Field>
+    </igDP:FieldLayout>
+
+
+    <igDP:FieldLayout x:Key="AppServerType" x:Shared="False">
+        <igDP:Field Name="server_id" Label="Server ID" Width="90"></igDP:Field>
+        <igDP:Field Name="app_type" Label="App Type ID" Width="90"></igDP:Field>
+        <igDP:Field Name="app_type_desc" Label="Description" Width="200"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="CPIMaint" x:Shared="False">
+        <igDP:Field Name="index_name" Label="Index Name" Width="200"></igDP:Field>
+        <igDP:Field Name="index_date" Label="Index Date" Width="100"></igDP:Field>
+        <igDP:Field Name="cpi_amount" Label="CPI Amount" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="##0.0#####" />
+                            <Setter Property="Mask" Value="{}{double:-9.6}" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="ContactPhone" x:Shared="False">
+        <igDP:Field Name="phone_type_id" Label="Phone Type ID" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="description" Label="Phone Type" Width="200"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="ContactRelationship" x:Shared="False">
+        <igDP:Field Name="relationship_type_id" Label="Relationship Type ID" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="description" Label="Relationship" Width="200"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="ContactType" x:Shared="False">
+        <igDP:Field Name="contact_type_id" Label="Contact Type ID" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="description" Label="Contact Type" Width="200"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="DiscountType" x:Shared="False">
+        <igDP:Field Name="discount_id" Label="ID" Width="90"  >
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False">
+                   
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="discount_description" Label="Description" Width="200"></igDP:Field>
+        <igDP:Field Name="cumulative_flag" Label="Cumulative" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="fixed_rate_flag" Label="Fixed Rate" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="ManRevStat" x:Shared="False">
+        <igDP:Field Name="revenue_status_id" Label="Revenue Status ID" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="description" Label="Revenue Status" Width="200"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="COLAMaint" x:Shared="False">
+        <igDP:Field Name="cola_id" Label="COLA ID" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="update_date" Label="Update Date" Width="85"></igDP:Field>
+        <!--<igDP:Field Name="cola_amount" Label="COLA Amount" Width="90"></igDP:Field>-->
+        <igDP:Field Name="cola_amount" Label="COLA Amount" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="True">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="0.0###"  />
+                            <Setter Property="Mask" Value="{}{double:-9.4}" />
+                            <!--<Setter Property="Foreground" Value="{Binding Path=Cells[wht_amt_withheld].Value, Converter={StaticResource NegativeToRedConverter}}"/>-->
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200"></igDP:Field>
+        <igDP:Field Name="cola_letter_description" Label="COLA Letter Description" Width="200" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="cola_min" Label="COLA Min" Width="75">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="##0.0#####" />
+                            <Setter Property="Mask" Value="{}{double:-9.6}" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="cola_max" Label="COLA Max" Width="75">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="##0.0#####" />
+                            <Setter Property="Mask" Value="{}{double:-9.6}" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="cpi_index_name" Label="CPI Numerator" Width="140">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbCPIIndex, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="cpi_index_denominator" Label="CPI Denominator" Width="140">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbCPIIndex, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="cpi_numerator" Label="CPI Numerator" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="cpi_denominator" Label="CPI Denominator" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="cpi_cola" Label="CPI COLA" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="0.0###"  />
+                            <Setter Property="Mask" Value="{}{double:-9.4}" />
+                            <Setter Property="Foreground" Value="{Binding Path=Cells[cpi_cola].Value, Converter={StaticResource NegativeToRedConverter}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="ProductItemAutoCreate" x:Shared="False">
+        <igDP:Field Name="product_item_id" Label="Product Item" Width="140">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbItemIDs, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="md_id" Label="MetaData" Width="200" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="fkey_id" Label="Ancillary Type" Width="140">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbAncType, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+
+    <igDP:FieldLayout x:Key="BillMethod" x:Shared="False">
+        <igDP:Field Name="bill_method_id" Label="Server ID" Width="90"></igDP:Field>
+        <igDP:Field Name="bill_method_name" Label="Bill Method" Width="200"></igDP:Field>
+        <igDP:Field Name="bill_method_desc" Label="Description" Width="200"></igDP:Field>
+        <igDP:Field Name="inactive_flag" Label="Inactive" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="Brand" x:Shared="False">
+        <igDP:Field Name="brand_id" Label="Brand ID" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="brand" Label="Brand" Width="200"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="Software" x:Shared="False">
+        <igDP:Field Name="software_id" Label="Software ID" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="software_name" Label="Software" Width="200"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="Subscriber" x:Shared="False">
+        <igDP:Field Name="subscriber_id" Label="Subscriber ID" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="subscriber_name" Label="Subscriber" Width="200"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="BillFreqMaint" x:Shared="False">
+        <igDP:Field Name="bill_freq_id" Label="Bill Freq ID" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200"></igDP:Field>
+        <igDP:Field Name="months" Label="Number of Months" Width="100"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="CreditCoord" x:Shared="False">
+        <igDP:Field Name="credit_coordinator_id" Label="Credit Coordinator ID" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="credit_coordinator" Label="Credit Coordinator" Width="170">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbCreditCoord, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="inactive_flag" Label="Inactive" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="Country" x:Shared="False">
+        <igDP:Field Name="country_id" Label="Country ID" Width="90"  ></igDP:Field>
+        <igDP:Field Name="country" Label="Country" Width="200"></igDP:Field>
+        <igDP:Field Name="region_flag" Label="Region" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="region_id" Label="Region Name" Width="170">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbRegionID, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+       
+        <igDP:Field Name="geographic_region_id" Label="Geographic Region" Width="170">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbGeoRegionID, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="use_flag" Label="Use" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="Comment" x:Shared="False">
+        <igDP:Field Name="comment_code" Label="Brand ID" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="description" Label="Comment Code" Width="200"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="ManRevRulesHdr" x:Shared="False">
+        <igDP:Field Name="rule_id" Label="Rule ID" Width="90" Visibility="Collapsed">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="rule_desc" Label="Description" Width="200"></igDP:Field>
+        <igDP:Field Name="inactive_flag" Label="Inactive" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="inactive_date" Label="Inactive Date" Width="100"></igDP:Field>
+    </igDP:FieldLayout>
+
+
+    <igDP:FieldLayout x:Key="ManRevRules" x:Shared="False">
+        <igDP:Field Name="rule_id" Label="Deferred Header" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbRuleHdrID, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="seq_id" Label="Sequence ID (auto assigned)" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="alloc_period" Label="Allocation Period (0 is current)" Width="200"></igDP:Field>    
+        <igDP:Field Name="alloc_percent" Label="Allocation Percent" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings>
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Format" Value="##0.0#####" />
+                            <Setter Property="Mask" Value="{}{double:-9.6}" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="id" Visibility="Collapsed"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="ManInvItemAllocHdr" x:Shared="False">
+        <igDP:Field Name="item_rule_id" Label="Rule ID" Width="90" Visibility="Collapsed">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="item_rule_desc" Label="Description" Width="200"></igDP:Field>
+        <igDP:Field Name="inactive_flag" Label="Inactive" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="inactive_date" Label="Inactive Date" Width="100"></igDP:Field>
+    </igDP:FieldLayout>
+
+
+    <igDP:FieldLayout x:Key="ManInvItemAlloc" x:Shared="False">
+        <igDP:Field Name="item_rule_id" Label="Allocation Header" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbRuleHdrID, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="seq_id" Label="Sequence ID (auto assigned)" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="alloc_pct" Label="Allocation Percent" Width="150">
+        <igDP:Field.Settings>
+            <igDP:FieldSettings>
+                <igDP:FieldSettings.EditorStyle>
+                    <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                        <Setter Property="Format" Value="##0.0#####" />
+                        <Setter Property="Mask" Value="{}{double:-9.6}" />
+                    </Style>
+                </igDP:FieldSettings.EditorStyle>
+            </igDP:FieldSettings>
+        </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="account_code" Label="Account Code" Width="300"></igDP:Field>
+        <igDP:Field Name="id" Visibility="Collapsed"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="ManInvItem" x:Shared="False">
+        <igDP:Field Name="item_code" Label="Rule ID" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200"></igDP:Field>
+        <igDP:Field Name="account_code" Label="Account Code" Width="200"></igDP:Field>
+        <igDP:Field Name="rate" Label="Rate" Width="90"></igDP:Field>
+        <igDP:Field Name="item_rule_id" Label="Item Alloc Rule" Width="200">
+        <igDP:Field.Settings>
+            <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                <igDP:FieldSettings.EditorStyle>
+                    <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                        <Setter Property="ItemsProvider" Value="{Binding Path=cmbRuleHdrID, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                    </Style>
+                </igDP:FieldSettings.EditorStyle>
+            </igDP:FieldSettings>
+        </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="revenue_type_id" Label="Revenue Type" Width="170">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbRevType, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="inactive_flag" Label="Inactive" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="ProductItemXref" x:Shared="False">
+        <igDP:Field Name="inv_item_prod_xref_id" Label="Rule ID" Width="90" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="product_code" Label="Product Code" Width="170">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbProductCode, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="item_code" Label="Item Code" Width="170">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbItemCode, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="Company" x:Shared="False">
+        <igDP:Field Name="company_code" Label="Company Code" Width="100"></igDP:Field>
+        <!--<igDP:Field Name="remit_id" Label="Remit ID" Width="90"></igDP:Field>-->
+        <igDP:Field Name="remit_id" Label="Remit To" Width="170">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbRemitID, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="company_description" Label="Description" Width="200"></igDP:Field>
+        <igDP:Field Name="address_1" Label="Address Line 1" Width="200"></igDP:Field>
+        <igDP:Field Name="address_2" Label="Address Line 2" Width="200"></igDP:Field>
+        <igDP:Field Name="city" Label="City" Width="200"></igDP:Field>
+        <!--<igDP:Field Name="state" Label="State" Width="75"></igDP:Field>-->
+        <igDP:Field Name="state" Label="State" Width="125">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbState, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="province" Label="Province" Width="200"></igDP:Field>
+        <!--<igDP:Field Name="country_id" Label="Country" Width="200"></igDP:Field>-->
+        <igDP:Field Name="country_id" Label="Country" Width="125">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbCountry, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="postal_code" Label="Postal Code" Width="100"></igDP:Field>
+        <igDP:Field Name="bitmap_file" Label="Logo" Width="300"></igDP:Field>
+        <igDP:Field Name="functional_currency" Label="Functional Currency" Width="140">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbCurrency, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="fin_charge_account" Label="Finance Charge Account Code" Width="220"></igDP:Field>
+        <igDP:Field Name="write_off_acct" Label="Write Off Account Code" Width="220"></igDP:Field>
+        <!--<igDP:Field Name="sob_id" Label="Set of Books ID" Width="100"></igDP:Field>-->
+        <igDP:Field Name="sob_id" Label="Set of Books ID" Width="125">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbSOB, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="monthly_def_acct" Label="Monthly Deferred Account Code" Width="220"></igDP:Field>
+        <igDP:Field Name="mp_def_acct" Label="Multi-Period Deferred Account Code" Width="220"></igDP:Field>
+        <igDP:Field Name="wh_tax_account" Label="Withholding Tax Account Code" Width="220"></igDP:Field>
+        <igDP:Field Name="ad_comm_acct" Label="Ads Commission Account Code" Width="220"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="AccountClass" x:Shared="False">
+        <igDP:Field Name="acct_class" Label="Account Class" Width="110"></igDP:Field>
+        <igDP:Field Name="acct_class_id" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200"></igDP:Field>
+        <igDP:Field Name="status" Label="Status" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>        
+        <igDP:Field Name="use_ratio_flag" Label="Use Ratio" Width="70">            
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbRatioFlag, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="AccountClassAllocation" x:Shared="False">        
+        <igDP:Field Name="acct_class_id" Label="Accountt Class Id" Width="170">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="allocation_id" Visibility="Collapsed" ></igDP:Field>
+        <igDP:Field Name="acct_code" Visibility="Collapsed" ></igDP:Field>
+        <igDP:Field Name="deferred_account_code" Visibility="Collapsed" ></igDP:Field>
+        <igDP:Field Name="percentage" Label="Percentage" Width="90"></igDP:Field>
+        <igDP:Field Name="ratio_denominator" Label="Ratio Denominator" Width="70"></igDP:Field>
+        <igDP:Field Name="ratio_numerator" Label="Ratio Numerator" Width="70"></igDP:Field>
+    </igDP:FieldLayout>
+    
+    <igDP:FieldLayout x:Key="AdjustmentBaseClass" x:Shared="False">
+        <igDP:Field Name="base_class_desc" Label="Base Class Description" Width="190"></igDP:Field>
+        <igDP:Field Name="base_class_id" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="calc_type" Label="Calc Type" Width="70"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="AdjustmentType" x:Shared="False">
+        <igDP:Field Name="adjustment_type_desc" Label="Adjustment Type Description" Width="190"></igDP:Field>
+        <igDP:Field Name="adjustment_type_id" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="adjustment_type_name" Label="Adjustment Type Name" Width="150"></igDP:Field>
+        <igDP:Field Name="base_class_id" Label="Base Class" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbBaseClassID, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="calc_order" Label="Calculation Order" Width="70"></igDP:Field>
+        <igDP:Field Name="gl_natural_account" Label="Gl Natural Account" Width="90"></igDP:Field>
+        <igDP:Field Name="inactive_flag" Label="Inactive" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="AncillaryType" x:Shared="False">
+        <igDP:Field Name="ancillary_id" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="ancillary_name" Label="Ancillary Name" Width="190"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="Attribute" x:Shared="False">
+        <igDP:Field Name="attribute_id" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="attribute_type_id" Label="Attribute Type" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbAttrType, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="attribute" Label="Attribute" Width="190"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="AttributeType" x:Shared="False">
+        <igDP:Field Name="attribute_type_id" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="attribute_type" Label="Attribute Type" Width="190"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="ExpectSev" x:Shared="False">
+        <igDP:Field Name="severity_level" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="description" Label="Severity" Width="300"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="ExpectType" x:Shared="False">
+        <igDP:Field Name="type_id" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="300"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="ExpectCode" x:Shared="False">
+        <igDP:Field Name="exception_code_id" Label="Exception Code"  Width="75">
+           
+        </igDP:Field>
+        <igDP:Field Name="exception_message" Label="Exception Message" Width="275"></igDP:Field>
+        <igDP:Field Name="comment" Label="Comment" Width="275"></igDP:Field>
+        <igDP:Field Name="severity_level" Label="Severity" Width="275">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbSevLev, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="id" Visibility="Collapsed"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="CustomerType" x:Shared="False">
+        <igDP:Field Name="cust_type_id" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="cust_type_name" Label="Customer Type" Width="200"></igDP:Field>
+        <igDP:Field Name="cust_type_desc" Label="Type Description" Width="200"></igDP:Field>
+        <igDP:Field Name="inactive_flag" Label="Inactive" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="CustAttr" x:Shared="False">
+        <igDP:Field Name="cust_attribute_id" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="receivable_account" Label="Customer" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbCustomer, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="attribute" Label="Attribute" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbAttribute, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="ApplicationAdministration" x:Shared="False">        
+        <igDP:Field Name="app_id" Visibility="Collapsed" ></igDP:Field>        
+        <igDP:Field Name="description" Label="Description" Width="250"></igDP:Field>
+        <igDP:Field Name="executable" Label="Executable" Width="200"></igDP:Field>
+        <igDP:Field Name="app_type" Label="Application Type" Width="120">           
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbApplicationType, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="last_run" Label="Last Run" Width="120">     
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamDateTimeEditor}" AllowEdit="False" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamDateTimeEditor}" >
+                            <Setter Property="Mask" Value="{}{date}{longtime}" />
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>        
+        <igDP:Field Name="rpt_directory" Label="Report Directory" Width="200"></igDP:Field>
+        <igDP:Field Name="rpt_server_loc" Label="Server Location" Width="200"></igDP:Field>        
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="Bank" x:Shared="False">
+        <igDP:Field Name="bank_id" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="bank_name" Label="Bank Name" Width="90"></igDP:Field>
+        <igDP:Field Name="aba_number" Label="Aba Number" Width="90"></igDP:Field>
+        <igDP:Field Name="account_name" Label="Account Name" Width="90"></igDP:Field>
+        <igDP:Field Name="account_description" Label="Account Description" Width="150"></igDP:Field>
+        <igDP:Field Name="account_number" Label="Account Number" Width="90"></igDP:Field>
+        <igDP:Field Name="currency_code" Label="Currency" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbCurrency, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="swift_code" Label="Swift Code" Width="90"></igDP:Field>
+        <igDP:Field Name="cash_acct" Label="Cash Account" Width="130"></igDP:Field>
+    </igDP:FieldLayout>
+
+
+    <igDP:FieldLayout x:Key="StateSalesTaxAcct" x:Shared="False">
+        <igDP:Field Name="sales_tax_id" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="state" Label="State" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbStateCode, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="product_item_id" Label="Product Item" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbProductItem, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="sales_tax_acct" Label="Account Code" Width="170"></igDP:Field>
+            
+    </igDP:FieldLayout>
+    
+    
+    <igDP:FieldLayout x:Key="ProductsTableMaintenance" x:Shared="False">
+        <igDP:Field Name="product_code" Label="Product Code" Width="90">
+            
+        </igDP:Field>
+        <igDP:Field Name="product_description" Label="Product Description" Width="130"></igDP:Field>
+        <igDP:Field Name="product_type" Label="Type " Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbProductItem, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="gl_co" Label="GL Company" Width="110"></igDP:Field>
+        <igDP:Field Name="bal_gl_center" Label="GL Center" Width="90"></igDP:Field>
+        <igDP:Field Name="ar_acct" Label="Account" Width="90"></igDP:Field>
+       
+       
+       
+        <igDP:Field Name="no_remit_flag" Label="No Remit" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="archive_flag" Label="Archived" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+
+           
+
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="WhtRateMaintenance" x:Shared="False">
+        <igDP:Field Name="wht_rate_id" Label="WHT Rate ID" Width="90"></igDP:Field>
+        <igDP:Field Name="country_id" Label="Country ID" Width="70"></igDP:Field>
+        <igDP:Field Name="wht_rate" Label="WHT Rate" Width="90"></igDP:Field>
+        <igDP:Field Name="cert_ind" Label="Cert Ind" Width="90"></igDP:Field>
+
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="CompanyMaintenance" x:Shared="False">
+            <igDP:Field Name="company_code" Label="Company Code" Width="70"></igDP:Field>
+            <igDP:Field Name="company_description" Label="Description" Width="70"></igDP:Field>
+            <igDP:Field Name="wht_rate" Label="WHT Rate" Width="90"></igDP:Field>
+            <igDP:Field Name="cert_ind" Label="Cert Ind" Width="90"></igDP:Field>
+
+        </igDP:FieldLayout>
+    <igDP:FieldLayout x:Key="ProductItemMaintenance" x:Shared="False">
+        <igDP:Field Name="item_id" Visibility="Collapsed" Label="Item ID" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="item_type" Label="Item Type" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbProductItem, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="item_code" Label="Item Code" Width="90"></igDP:Field>
+        <igDP:Field Name="item_description" Label="Item Description" Width="120"></igDP:Field>
+        <igDP:Field Name="product_code" Label="Product Code" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbProductCode, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="gl_co" Label="GL Company" Width="90"></igDP:Field>
+        <igDP:Field Name="gl_center" Label="GL Center" Width="90"></igDP:Field>
+        <igDP:Field Name="revenue_acct" Label="Revenue Acct" Width="90"></igDP:Field>
+        <igDP:Field Name="gl_product" Label="Gl Product" Width="90"></igDP:Field>
+        <igDP:Field Name="geography" Label="Geography" Width="90"></igDP:Field>
+        <igDP:Field Name="interdivision" Label="Interdivision" Width="90"></igDP:Field>
+        <igDP:Field Name="free_acct" Label="Free Acct" Width="90"></igDP:Field>
+        <igDP:Field Name="item_category" Label="Item Category" Width="110">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbProductCat, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+       
+        <igDP:Field Name="revenue_share_flag" Label="Revenue Share" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="revenue_type_id" Label="Revenue Type Id" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbRevType, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="use_customer_geography" Label="Use Customer Geography" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="po_required_flag" Label="PO Required" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="archive_flag" Label="Archived" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="wfStatusMaint" x:Shared="False">
+        <igDP:Field Name="wf_status" Label="Workflow Status" Width="120"></igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200"></igDP:Field>
+        
+    </igDP:FieldLayout>
+    <igDP:FieldLayout x:Key="WorkFlowType" x:Shared="False">
+        <igDP:Field Name="description" Label="Description" Width="200"></igDP:Field>
+        <igDP:Field Name="wf_type" Label="Wf Type" Width="90"></igDP:Field>
+    </igDP:FieldLayout>
+    <igDP:FieldLayout x:Key="WorkFlowRules" x:Shared="False">
+        <igDP:Field Name="class_description" Label="Class Description" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="no_email_flag" Label="No Email" Width="70"></igDP:Field>
+        <igDP:Field Name="userid" Label="Userid" Width="90"></igDP:Field>
+        <igDP:Field Name="wf_class" Label="Wf Class" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbWfClass, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="wf_type" Label="Wf Type" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbWfType, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="workflow_limit" Label="Workflow Limit" Width="90"></igDP:Field>
+    </igDP:FieldLayout>
+    <igDP:FieldLayout x:Key="WorkFlowClass" x:Shared="False">
+        <igDP:Field Name="class_description" Label="Class Description" Width="90"></igDP:Field>
+        <igDP:Field Name="wf_class" Label="Wf Class" Width="70"></igDP:Field>
+        <igDP:Field Name="wf_type" Label="Wf Type" Width="70"></igDP:Field>
+    </igDP:FieldLayout>
+  
+    <igDP:FieldLayout x:Key="Terms" x:Shared="False">
+        <igDP:Field Name="terms_code" Label="Terms Code" Width="90"></igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200"></igDP:Field>
+        <igDP:Field Name="number_of_days" Label="Number Of Days" Width="70"></igDP:Field>
+        <igDP:Field Name="day_of_month" Label="Day Of Month" Width="70"></igDP:Field>
+        <igDP:Field Name="disc_percent" Label="Discount Percent" Width="70"></igDP:Field>
+        <igDP:Field Name="disc_num_days" Label="Discount Number Of Days" Width="70"></igDP:Field>        
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="Technology" x:Shared="False">
+        <igDP:Field Name="technology_id" Label="Technology ID" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="technology" Label="Description" Width="200"></igDP:Field>
+        <igDP:Field Name="combination_flag" Label="Combination" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>      
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="State" x:Shared="False">
+        <igDP:Field Name="state" Label="State" Width="70"></igDP:Field>
+        <igDP:Field Name="description" Label="State Name" Width="200"></igDP:Field>        
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="Region" x:Shared="False">
+        <igDP:Field Name="region_id" Label="ID" Width="70"></igDP:Field>
+        <igDP:Field Name="region" Label="Region" Width="200"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="Province" x:Shared="False">
+        <igDP:Field Name="province_id" Label="ID" Width="70"></igDP:Field>
+        <igDP:Field Name="province" Label="Province" Width="200"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="Oem" x:Shared="False">
+        <igDP:Field Name="oem_id" Label="ID" Width="70"></igDP:Field>
+        <igDP:Field Name="oem" Label="OEM" Width="200"></igDP:Field>
+    </igDP:FieldLayout>
+
+
+    <igDP:FieldLayout x:Key="RevType" x:Shared="False">
+        <igDP:Field Name="revenue_type_id" Label="ID" Width="70"></igDP:Field>
+        <igDP:Field Name="revenue_description" Label="Description" Width="200"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="RemitType" x:Shared="False">
+        <igDP:Field Name="remit_type_id" Label="ID" Width="70"></igDP:Field>
+        <igDP:Field Name="remit_type" Label="Remit Type" Width="200"></igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200"></igDP:Field>
+    </igDP:FieldLayout>
+
+  
+
+    <igDP:FieldLayout x:Key="Model" x:Shared="False">
+        <igDP:Field Name="model_id" Label="ID" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="model_description" Label="Description" Width="200"></igDP:Field>
+        <igDP:Field Name="inactive_flag" Label="Inactive" Width="120">
+        <igDP:Field.Settings>
+            <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+        </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="RuleGroupMaster" x:Shared="False">
+        <igDP:Field Name="rule_group_id" Label="ID" Visibility="Collapsed" Width="70"></igDP:Field>
+        <igDP:Field Name="rule_group_description" Label="Group Description" Width="150"></igDP:Field>
+        <igDP:Field Name="bundled_flag" Label="Bundled" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="bundled_description" Label="Bundled Description" Width="200"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <!--<igDP:FieldLayout x:Key="RuleGroup" x:Shared="False">
+        <igDP:Field Name="rule_group_key" Label="ID" Visibility="Collapsed" Width="70"></igDP:Field>
+        <igDP:Field Name="rule_group_description" Label="Group Description" Width="150"></igDP:Field>
+        <igDP:Field Name="bundled_flag" Label="Bundled" Width="80">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="bundled_description" Label="Bundled Description" Width="200"></igDP:Field>
+    </igDP:FieldLayout>-->
+
+
+    <igDP:FieldLayout x:Key="GLApproval" x:Shared="False">
+        <igDP:Field Name="approval_id" Label="ID" Width="70"></igDP:Field>
+        <igDP:Field Name="grp_id" Label="Group ID" Width="70"></igDP:Field>
+        <igDP:Field Name="userid" Label="User ID" Width="120"></igDP:Field>
+        <igDP:Field Name="email_address" Label="Email Address" Width="200"></igDP:Field>
+        <igDP:Field Name="grp_flag" Label="Group" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>        
+    </igDP:FieldLayout>
+
+
+
+    <igDP:FieldLayout x:Key="TableList2" x:Shared="False">
+        <igDP:Field Name="maint_table_id" Label="ID" Width="70"></igDP:Field>
+        <igDP:Field Name="maint_table_name" Label="Table Name" Width="200"></igDP:Field>
+        <igDP:Field Name="maint_table_desc" Label="Description" Width="200"></igDP:Field>        
+        <igDP:Field Name="robject_member_name" Label="RObject Name" Width="200"></igDP:Field>
+        <igDP:Field Name="inactive_flag" Label="Inactive" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+
+
+    <igDP:FieldLayout x:Key="Language" x:Shared="False">
+        <igDP:Field Name="language_id" Label="ID" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200"></igDP:Field>
+        <igDP:Field Name="neg_number_display" Label="Negative Number Display" Width="200"></igDP:Field>
+        <igDP:Field Name="thousands_sep" Label="Thousands Separator" Width="200"></igDP:Field>
+        <igDP:Field Name="date_format" Label="Date Format" Width="200"></igDP:Field>
+        <igDP:Field Name="invoice_dw" Label="Invoice Datawindows" Width="200"></igDP:Field>
+        <igDP:Field Name="currency_id" Label="Currency Symbol" Width="200"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="ManProduct" x:Shared="False">
+        <igDP:Field Name="manufacturer_product_id" Label="ID" Width="70"></igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200"></igDP:Field>
+        <igDP:Field Name="long_description" Label="Long Description" Width="200"></igDP:Field>
+        <igDP:Field Name="hard_drive" Label="Hard Drive" Width="70">            
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="dvd" Label="DVD" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="vcr" Label="VCR" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="crt_tv" Label="CRT TV" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="lcd_tv" Label="LCD TV" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="pdp_tv" Label="PDP TV" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="lcos_tv" Label="LCOS TV" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="crt_proj_tv" Label="CRT PROJ TV" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="dlp_proj_tv" Label="DLP PROJ TV" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="lcd_proj_tv" Label="LCD PROJ TV" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="settop" Label="SETTOP" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="bluray" Label="BLURAY" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="Mobile" Label="MOBILE" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+
+    <igDP:FieldLayout x:Key="RemitTo" x:Shared="False">
+        <igDP:Field Name="remit_to_id" Label="ID" Width="70"></igDP:Field>
+        <igDP:Field Name="bank_id" Label="Bank" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbBank, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="remit_to_name" Label="Name" Width="200"></igDP:Field>
+        <igDP:Field Name="address_1" Label="Address 1" Width="200"></igDP:Field>
+        <igDP:Field Name="address_2" Label="Address 2" Width="200"></igDP:Field>
+        <igDP:Field Name="city" Label="City" Width="200"></igDP:Field>
+        <igDP:Field Name="state" Label="State" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbState, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="province" Label="Province" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbProvince, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="country_id" Label="Country" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbCountry, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="postal_code" Label="Postal Code" Width="200"></igDP:Field>
+        <igDP:Field Name="phone" Label="Phone" Width="200"></igDP:Field>
+        <igDP:Field Name="fax" Label="Fax" Width="200"></igDP:Field>
+
+    </igDP:FieldLayout>
+
+ 
+    
+    <igDP:FieldLayout x:Key="WHTRate" x:Shared="False">
+        <igDP:Field Name="country_id" Label="Country" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbCountry, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="wht_rate" Label="WHT Rate" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings 
+			   EditorStyle="{DynamicResource RateStylePercentCalc}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="cert_ind" Label="Certificate Issued" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbCertInd, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>    
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="DataServiceType" x:Shared="False">
+        <igDP:Field Name="data_service_type_id" Label="ID" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="data_service_description" Label="Data Service Type" Width="250"></igDP:Field>
+    </igDP:FieldLayout>
+
+
+    <igDP:FieldLayout x:Key="RazerGlobalXref" x:Shared="False">
+        <igDP:Field Name="xref_id" Label="ID" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="razer_product_code" Label="Razer Product" Width="250">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbProductCode, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="global_product_code" Label="Global Service" Width="200"></igDP:Field>           
+        
+    </igDP:FieldLayout>
+</ResourceDictionary>

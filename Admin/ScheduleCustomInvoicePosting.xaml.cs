@@ -1,0 +1,136 @@
+﻿using RazerBase.Interfaces;
+using RazerBase;
+using RazerBase.Lookups;
+using RazerInterface;
+using System;
+using Infragistics.Windows.DataPresenter;
+using Infragistics.Windows.Editors;
+using System.Data;
+using System.Windows;
+using System.Windows.Documents;
+using System.Linq;
+
+namespace Admin
+{
+
+    /// Interaction logic for ScheduleCustomInvoicePosting.xaml
+
+    public partial class ScheduleCustomInvoicePosting : ScreenBase, IScreen
+    {
+        private static readonly string fieldLayoutResource = "CustomInvoicesAvailToPost";
+        private static readonly string mainTableName = "customInvAvail";
+        public static readonly string jobName = "Custom Invoice Posting";
+
+
+
+
+        public string WindowCaption { get { return string.Empty; } }
+
+
+        public ScheduleCustomInvoicePosting()
+            : base()
+        {
+            InitializeComponent();
+        }
+
+
+
+
+        public void Init(cBaseBusObject businessObject)
+        {
+            FieldLayoutSettings layouts = new FieldLayoutSettings();
+            layouts.HighlightAlternateRecords = true;
+            //set isscreendirty = false to prevent save message
+            //this.IsScreenDirty = false;
+            businessObject.BusObjectName = "ScheduleCustomInvoicePost";
+            this.CanExecuteSaveCommand = false;
+            string userValueField = "user_id";
+            string userDisplayField = "user_name";
+            gCustomInvoicesAvailToPost.WindowZoomDelegate = ReturnSelectedData;
+            gCustomInvoicesAvailToPost.xGrid.FieldLayoutSettings = layouts;
+            gCustomInvoicesAvailToPost.FieldLayoutResourceString = fieldLayoutResource;
+            gCustomInvoicesAvailToPost.MainTableName = mainTableName;
+            this.MainTableName = mainTableName;
+
+            this.Load(businessObject);
+            this.CurrentBusObj = businessObject;
+            if (this.CurrentBusObj.HasObjectData)
+            {
+
+                //Security User listbox
+
+                //this.lkUser.BindingObject = EstablishListObjectBinding(this.CurrentBusObj.GetTable("email_user") as DataTable, true, "user_name",
+                //    "user_id", "Select Business User");
+                //this.lkUser.SelectedValue = cGlobals.UserName;
+                cmbUser.SetBindingExpression(userValueField, userDisplayField, this.CurrentBusObj.ObjectData.Tables["emailUser"]);
+                cmbUser.SelectedValue = cGlobals.UserName;
+
+                //cmbUser.SelectedText = 
+
+                //this.lkUser.Text = cGlobals.UserName;
+
+            }
+            gCustomInvoicesAvailToPost.SetGridSelectionBehavior(false, true);
+            gCustomInvoicesAvailToPost.LoadGrid(businessObject, "customInvAvail");
+
+
+            System.Windows.Input.Mouse.SetCursor(System.Windows.Input.Cursors.Arrow);
+
+        }
+
+
+
+
+        /// Handler for double click on grid to return the app selected to run
+        public void ReturnSelectedData()
+        {
+
+            //gCashBatchesToRun.ReturnSelectedData();
+            //if (cGlobals.ReturnParms.Count > 0)
+            //{
+            //    jobName = cGlobals.ReturnParms[0].ToString();
+
+            //}
+
+
+
+        }
+
+        // Schedule the job
+        private void btnOK_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            DateTime dt = new DateTime();
+            string sParms = "/A";
+
+
+            dt = ldtDatetoSchedule.SelText;
+
+            MessageBoxResult result = Messages.ShowYesNo("Schedule Job " + jobName.ToString() + " for " + ldtDatetoSchedule.SelText,
+                System.Windows.MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                //Need to update the ones that were selected to be included. If non were selected, display message and return
+                this.Save();
+
+
+
+                if (cGlobals.BillService.ScheduleJob(cGlobals.UserName, jobName, sParms, ldtDatetoSchedule.SelText, this.cmbUser.SelectedValue.ToString()) == true)
+                {
+                    Messages.ShowWarning("Job Scheduled to Run");
+                    this.CallScreenClose();
+                }
+                else
+                    Messages.ShowWarning("Error Scheduling Job");
+            }
+            else
+            {
+
+                Messages.ShowMessage("Job Not Scheduled", MessageBoxImage.Information);
+            }
+
+
+
+
+        }
+    }
+}

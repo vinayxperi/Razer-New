@@ -1,0 +1,63 @@
+﻿<local:ScreenBase x:Class="MiscFolders.WHTAttachmentTab" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+             xmlns:igDP="clr-namespace:Infragistics.Windows.DataPresenter;assembly=InfragisticsWPF.DataPresenter" 
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="720"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+    
+    <UserControl.Resources>
+        <!--The resource is needed to support the color coding of the rows in the grid-->
+        <Style TargetType="{x:Type igDP:DataRecordPresenter}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="{Binding Path=Cells[color_status].Value, Converter={StaticResource AttachmentHighlightConverter}}" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+
+            <RowDefinition Height="40" />
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <!--<ColumnDefinition Width="200" />-->
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+        </Grid.ColumnDefinitions>
+
+        <local:ucColorKey Grid.Row="0" Grid.Column="1" x:Name="AttachColorKey" Visibility="Collapsed"
+                          GreenLabel="Edits Allowed"
+                          RedVisible="False" 
+                          YellowVisible="False" 
+                          TealVisible="False" >
+
+        </local:ucColorKey>
+        <local:ucBaseGrid x:Name="GridAttachments" Grid.Row="1" Grid.Column="1" AllowWindowDrag="True"  ></local:ucBaseGrid>
+        <Border Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" x:Name="CopyBorder" Visibility="Collapsed" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </Border>
+
+    </Grid>
+</local:ScreenBase>

@@ -1,0 +1,193 @@
+﻿<RazerBase:ScreenBase x:Class="Customer.CustomerMainScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+             xmlns:local="clr-namespace:Customer"
+             xmlns:igWindows="http://infragistics.com/Windows"
+             xmlns:igDP="http://infragistics.com/DataPresenter" 
+             mc:Ignorable="d" 
+             d:DesignHeight="1280" d:DesignWidth="1024">
+    <Grid Background="{DynamicResource ApplicationBackgroundDark}" Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" MaxHeight="40" MinHeight="40"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <RazerBase:ucLabelTextBox Name="txtCustomerName" LabelText="Customer Name:" LabelWidth="120" HorizontalAlignment="Stretch"  Grid.Column="0" Grid.ColumnSpan="3" MouseDoubleClick="Customer_DoubleClick" GotFocus="txtCustomerName_GotFocus" LostFocus="txtCustomerName_LostFocus" EnterActsLikeTab="True"></RazerBase:ucLabelTextBox>
+        
+        <RazerBase:ucColorKey Grid.Column="3" x:Name="ChildAcctColorKey" Visibility="Collapsed" Margin ="35,0,0,0" 
+                          YellowVisible="True" 
+                          RedVisible="False" 
+                          GreenVisible="False" 
+                           YellowLabel="Children Exist"
+                              TealLabel="Children Exist"
+                          TealVisible="False" >
+        </RazerBase:ucColorKey>
+        <RazerBase:ucColorKey Grid.Column="4" x:Name="ProformaInvoiceColorKey" Visibility="Collapsed" 
+                          YellowVisible="False" 
+                          RedVisible="False" 
+                          GreenVisible="True" 
+                           GreenLabel="Proformas Exist"
+                              TealLabel="Proformas Exist"
+                          TealVisible="False" >
+        </RazerBase:ucColorKey>
+        
+        <RazerBase:ucLabelTextBox Name="txtCustomerNum" LabelText="Customer ID:" LabelWidth="80" Grid.Column="5" MouseDoubleClick="Customer_DoubleClick" GotFocus="txtCustomerNum_GotFocus" LostFocus="txtCustomerNum_LostFocus" EnterActsLikeTab="True" ></RazerBase:ucLabelTextBox>
+        <igWindows:XamTabControl Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="6" Background="{DynamicResource ApplicationBackground}" Name="tcMainTab">
+            <igWindows:TabItemEx Name="General"  Header="General" Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:CustomerGeneralTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="uGeneral" ></local:CustomerGeneralTab>
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="History" Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:CustomerHistoryTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="uHistory"></local:CustomerHistoryTab>
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Aging" Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:CustomerAgingTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="uAging"></local:CustomerAgingTab>
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Relationships" Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:CusomterRelationshipsTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="uRelationships"></local:CusomterRelationshipsTab>
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Contracts" Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:CustomerContractsTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="uContracts"></local:CustomerContractsTab>
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Comments" Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <RazerBase:ucComments Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="uComments" RootParentObjectType="Customer.CustomerMainScreen"></RazerBase:ucComments>
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Attachments" Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <RazerBase:ucAttachmentsTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="uAttachments" RootParentObjectType="Customer.CustomerMainScreen"></RazerBase:ucAttachmentsTab>
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="People" Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:CustomerContactsTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="uContacts"></local:CustomerContactsTab>
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Review Dates" Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:CustomerReviewDates Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="uReviewDates"></local:CustomerReviewDates>
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Proforma " Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:CustomerProformaTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="uProforma"></local:CustomerProformaTab>
+                </Grid>
+            </igWindows:TabItemEx>
+            <igWindows:TabItemEx Header="Revenue " Background="{DynamicResource DataGradient}" FontWeight="Bold">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <local:CustomerRevenueTab Grid.RowSpan="2" Grid.ColumnSpan="2" x:Name="uRevenue"></local:CustomerRevenueTab>
+                </Grid>
+            </igWindows:TabItemEx>
+        </igWindows:XamTabControl>
+    </Grid>
+    </RazerBase:ScreenBase>

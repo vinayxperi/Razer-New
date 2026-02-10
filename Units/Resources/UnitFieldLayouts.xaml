@@ -1,0 +1,426 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    
+                    xmlns:igWindows="http://infragistics.com/Windows"
+                    xmlns:igDP="http://infragistics.com/DataPresenter"
+                    xmlns:igEditors="http://infragistics.com/Editors" 
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:RazerConverters="clr-namespace:RazerConverters;assembly=RazerConverters">
+   
+    <igDP:FieldLayout x:Key="filtergrid" x:Shared="False">
+        
+        <igDP:Field Name="construct" Label="Construct" Width="70" Visibility="Collapsed">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+        
+        <igDP:Field Name="construct_text" Label="Construct Text" Width="90">
+            <igDP:Field.Settings>   
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+        <igDP:Field Name="filter_id" Label="Filter Id" Width="70" Visibility="Collapsed">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+       
+        <igDP:Field Name="md_name" Label="Md Name" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+        <igDP:Field Name="operator" Label="Operator" Width="70" Visibility="Collapsed">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+        <igDP:Field Name="operator_text" Label="Operator Text" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+        <igDP:Field Name="value_text" Label="Value Text" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+        <igDP:Field Name="seq_id" Label="Seq Id" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+       
+        <igDP:Field Name="unit_md_id" Label="Unit Md Id" Width="70" Visibility="Collapsed">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+        <igDP:Field Name="value" Label="Value" Width="90" Visibility="Collapsed">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="True"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+       
+    </igDP:FieldLayout>
+    <igDP:FieldLayout x:Key="unit_filter_lookup" x:Shared="False">
+        <igDP:Field Name="filter_id" Label="Filter Id" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+        <igDP:Field Name="filter_description" Label="Filter Description" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+      
+        <igDP:Field Name="filter_name" Label="Filter Name" Width="90">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+        <igDP:Field Name="inactive_flag" Label="Inactive Flag" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+        </igDP:Field>
+    </igDP:FieldLayout>
+    
+    
+    <igDP:FieldLayout x:Key="UnitEntryGrid" x:Shared="False">
+       
+        <igDP:Field Name="cs_id" Label="Location ID" Width="72">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="True"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="name" Label="Location" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="product_code" Label="Product" Width="130" KeyboardNavigation.TabIndex="91">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbProducts, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="contract_id" Label="Contract" Width="120" KeyboardNavigation.TabIndex="91">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbContract, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="mso_name" Label="Entity" Width="140">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="psa_city" Label="PSA City" Width="130">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="psa_state" Label="PSA State" Width="65">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <!--<igDP:Field Name="unit_description" Label="Unit Type" Width="130">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>-->
+        <!--<igDP:Field Name="unit_type_id" Visibility="Collapsed" Width="120">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>-->
+        <igDP:Field Name="unit_type_id" Label="Unit Type" Width="130">           
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbUnits, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="subscriber_id" Label="Subscriber Type" Width="130">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbSubscriber, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="data_service_type_id" Visibility= "Collapsed" Label="Data Type" Width="130">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbData, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="tivo_count_id" Visibility= "Collapsed" Label="Tivo Count Type" Width="130">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbTivo, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="service_period_start" Label="Svc Period Start" Width="96"></igDP:Field>
+        <igDP:Field Name="service_period_end" Label="Svc Period End" Width="96"></igDP:Field>
+        <igDP:Field Name="report_id" Visibility="Collapsed"  Width="100"></igDP:Field>
+        <igDP:Field Name="mso_id" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="unit_id"  Width="50" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="amount" Label="Unit Count" Width="80">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditAsType="{x:Type sys:Decimal}">
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamNumericEditor}" >
+                            <Setter Property="Mask" Value="{}{double:-16.2}" />
+                           
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+
+
+        </igDP:Field>
+        <igDP:Field Name="last_update_date" Label="Last Update Date" Width="102">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False"></igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+    <igDP:FieldLayout x:Key="unit_md_grid" x:Shared="False">
+        <igDP:Field Name="unit_id"  Visibility="Collapsed" ></igDP:Field>
+        <igDP:Field Name="unit_md_id"  Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="fkey_id" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="md_name" Label="Filter" Width="90"></igDP:Field>
+        <igDP:Field Name="field_value" Label="Value" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+      </igDP:FieldLayout>
+
+
+    <igDP:FieldLayout x:Key="UnitFilterDetailGrid" x:Shared="False">
+        <igDP:Field Name="md_name" Label="Category" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="value_text" Label="Value" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="operator_text" Label="Operator" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+         <igDP:Field Name="construct_text" Label="Construct" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="filter_id"  Visibility="Collapsed" ></igDP:Field>
+        <igDP:Field Name="seq_id"  Visibility="Collapsed" ></igDP:Field>
+        <igDP:Field Name="unit_md_id"  Visibility="Collapsed" ></igDP:Field>
+        <igDP:Field Name="operator"  Visibility="Collapsed" ></igDP:Field>
+        <igDP:Field Name="value"  Visibility="Collapsed" ></igDP:Field>
+        <igDP:Field Name="construct"  Visibility="Collapsed" ></igDP:Field>
+    </igDP:FieldLayout>
+
+ 
+
+    <igDP:FieldLayout x:Key="AncillaryUploadGrid" x:Shared="False">
+ 
+        <igDP:Field Name="mca_address" Label="Service" Width="80">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="anc_code" Label="Anc Code" Width="60">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="can_upload" Label="Can Upload" Width="70">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="service_period" Label="Service Period" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="start_date" Label="Start Date" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="end_date" Label="End Date" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="comment" Label="Comment" Width="80">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="location_id" Label="Location ID" Width="80">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="location_name" Label="Location Name" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="location_city_state" Label="Location City/State" Width="150">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="service_id" Label="Service" Width="80" Visibility="Collapsed">
+           
+        </igDP:Field>
+        <igDP:Field Name="contract_id" Label="Contract ID" Width="80">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="contract_description" Label="Contract Description" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="entity_name" Label="Entity" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="service_status" Label="Global Product" Width="80">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="global_product_code" Label="Global Product" Width="80">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="razer_product_code" Label="RAZER Product" Width="80">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="item_code" Label="Item" Width="80">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="error_message" Label="Error Message" Width="350">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings AllowEdit="False" EditorType="{x:Type igEditors:XamTextEditor}" >
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        
+        <!--<igDP:Field Name="status_code"  Visibility="Collapsed" ></igDP:Field>-->
+        <igDP:Field Name="user_id"  Visibility="Collapsed" ></igDP:Field>
+        <igDP:Field Name="product_item_id"  Visibility="Collapsed" ></igDP:Field>
+        <igDP:Field Name="temp_status"  Visibility="Collapsed" ></igDP:Field>
+        <igDP:Field Name="color_status"  Visibility="Collapsed" ></igDP:Field>
+        <igDP:Field Name="unit_md_id"  Visibility="Collapsed" ></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="UnitTypeSetupLayout" x:Shared="False">
+        <igDP:Field Name="unit_type_id"  Visibility="Collapsed" ></igDP:Field>
+        <igDP:Field Name="unit_md_id" Label="Metadata" Width="200">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbUnitMD, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="old_md_id" Visibility="Collapsed"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="UnitTypeLookupGrid" x:Shared="False">
+        <igDP:Field Name="unit_type_id" Label="ID" Width="100"></igDP:Field>
+        <igDP:Field Name="unit_description" Label="Description" Width="400"></igDP:Field>
+
+    </igDP:FieldLayout>
+    
+</ResourceDictionary>
+    

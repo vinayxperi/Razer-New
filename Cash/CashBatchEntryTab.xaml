@@ -1,0 +1,74 @@
+﻿<local:ScreenBase x:Class="Cash.CashBatchEntryTab" 
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+				   xmlns:igDP="clr-namespace:Infragistics.Windows.DataPresenter;assembly=InfragisticsWPF.DataPresenter"
+		 
+			 mc:Ignorable="d" 
+			 d:DesignHeight="720" d:DesignWidth="1600"
+			 Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+	<local:ScreenBase.Resources>
+        <Style TargetType="{x:Type igDP:DataRecordPresenter}" x:Key="PosBack" x:Name="PosBack">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <!--SolidColorBrush Color="{Binding Path=DataItem.WORKPRIORITY, Converter={StaticResource genderToColorConverter}}" Opacity="0.3"/>-->
+
+                    <!--Equivalent syntax-->
+                    <SolidColorBrush Color="Green" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ButtonStyle2" TargetType="{x:Type Button}">
+			<Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+			<Setter Property="Foreground" Value="White"/>
+			<Setter Property="BorderThickness" Value="3"/>
+			<Setter Property="HorizontalContentAlignment" Value="Center"/>
+			<Setter Property="VerticalContentAlignment" Value="Center"/>
+			<Setter Property="FontFamily" Value="Helvetica" />
+			<Setter Property="FontWeight" Value="Bold" />
+			<Setter Property="FontSize" Value="11" />
+			<Setter Property="Padding" Value="0,0,1,1"/>
+			
+		</Style>
+	</local:ScreenBase.Resources>
+	<Grid FocusManager.IsFocusScope="True"  Name="CashGrid">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="100" />
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition Width="10" />
+			<ColumnDefinition Width="10" />
+			<ColumnDefinition Width="250"/>
+			<ColumnDefinition Width="250"/>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="200"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="40" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="37" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="37" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+
+		<local:ucLabelComboBox  Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" LabelText="Source:"  Name="ltbSourceID" VerticalAlignment="Center" Width="314" VerticalContentAlignment="Center" SelectedValue="{Binding Path=source_id, Mode=TwoWay}" TabIndex="1" CntrlTabIndex="1" GotFocus="ltbSourceID_GotFocus" />
+		<local:ucLabelTextBox Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Left" LabelText="Batch Total:"  Name="ltbBatchTotal"  VerticalAlignment="Top" Width="320"  BindPath="batch_total" GotFocus="ltbBatchTotal_GotFocus" TabIndex="4" LostFocus="ltbBatchTotal_LostFocus" CntrlTabIndex="4"  />
+		<local:ucLabelDatePicker Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left"  Name="ltbBatchDate" LabelText="Batch Date:" VerticalAlignment="Top" Width="314" Height="40" BindPath="acct_period" TabIndex="2" CntrlTabIndex="2" />
+		<local:ucLabelTextBox Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Left"  Name="ltbRemitTotal" LabelText="Remit Total:" Text="{Binding remit_total, Mode=TwoWay,StringFormat={}{0:C}}" VerticalAlignment="Top" Width="320" IsEnabled="False" />
+		<!--<local:ucLabelComboBox HorizontalAlignment="Left" Name="ltbCompanyCode" LabelText="Company:" Grid.Column="1" Grid.Row="3"  LabelWidth="100" Width="314"></local:ucLabelComboBox>-->
+		<local:ucLabelTextBox Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left"  Name="ltbAllocatedTotal" LabelText="Allocated:" VerticalAlignment="Top" Width="320" IsEnabled="False" Visibility="Collapsed" />
+		<local:ucLabelComboBox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left"  Name="lktbBankID" LabelText="Bank:" VerticalAlignment="Center" Width="314" VerticalContentAlignment="Center" SelectedValue="{Binding Path=bank_id, Mode=TwoWay}"   Margin="0,5" TabIndex="3" CntrlTabIndex="3" />
+        <local:ucBaseGrid  Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="6" CntrlTabIndex="5"  Name="gRemittance" VerticalAlignment="Top"   Height="100" Width="500" TabIndex="5" HorizontalAlignment="Left" />
+		<Label Content="Remittance" Style="{DynamicResource LabelLightUpStyle}" Grid.Column="1" Grid.Row="5"  Height="28" HorizontalAlignment="Center" Name="label1" VerticalAlignment="Center" />
+		<Label Content="Allocation" Style="{DynamicResource LabelLightUpStyle}" Grid.Column="4" Grid.Row="5" Height="28" HorizontalAlignment="Center"  Name="label2" VerticalAlignment="Center"  Grid.ColumnSpan="2" />
+		<local:ucBaseGrid Height="100" Name="gAllocation" VerticalAlignment="Top" Grid.Row="6" Grid.ColumnSpan="2" Grid.Column="4"  Width="500" HorizontalAlignment="Left" TabIndex="6" CntrlTabIndex="6"  />
+	</Grid>
+</local:ScreenBase>

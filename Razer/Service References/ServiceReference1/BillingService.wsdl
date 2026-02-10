@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="BillingService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IBillingService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NtlmAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:50573/BillingService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:50573/BillingService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50573/BillingService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://localhost:50573/BillingService.svc?xsd=xsd3" />
+      <xsd:import schemaLocation="http://localhost:50573/BillingService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBillingService_GetCountValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountValues" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GetCountValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_UpdateBillingLocations_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBillingLocations" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_UpdateBillingLocations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBillingLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_ScheduleJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:ScheduleJob" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_ScheduleJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ScheduleJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GenericSQL_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenericSQL" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GenericSQL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenericSQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_ReprintNationalAdInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReprintNationalAdInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_ReprintNationalAdInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReprintNationalAdInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertRemitEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRemitEntry" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertRemitEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRemitEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertAllocEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAllocEntry" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertAllocEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAllocEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertCashEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCashEntry" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertCashEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCashEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertUnitEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUnitEntry" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertUnitEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUnitEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertUnitMetaData_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUnitMetaData" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertUnitMetaData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUnitMetaDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertNewRatefromRateCopy_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewRatefromRateCopy" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertNewRatefromRateCopy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewRatefromRateCopyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DeleteRatefromRateCopy_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRatefromRateCopy" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DeleteRatefromRateCopy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRatefromRateCopyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GetNextInvoiceNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextInvoiceNumber" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GetNextInvoiceNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextInvoiceNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_NationalAdsAdjustment_InputMessage">
+    <wsdl:part name="parameters" element="tns:NationalAdsAdjustment" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_NationalAdsAdjustment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NationalAdsAdjustmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DeleteBatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBatch" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DeleteBatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DeleteBCF_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBCF" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DeleteBCF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBCFResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_PermDeleteBatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:PermDeleteBatch" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_PermDeleteBatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PermDeleteBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DeleteAdjustment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAdjustment" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DeleteAdjustment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAdjustmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DeleteContractfromBatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteContractfromBatch" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DeleteContractfromBatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteContractfromBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DeleteContractfromCreateBatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteContractfromCreateBatch" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DeleteContractfromCreateBatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteContractfromCreateBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_UnitUpload_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnitUpload" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_UnitUpload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnitUploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_AncillaryUnitUpload_InputMessage">
+    <wsdl:part name="parameters" element="tns:AncillaryUnitUpload" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_AncillaryUnitUpload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AncillaryUnitUploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_AdjustmentStatusUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdjustmentStatusUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_AdjustmentStatusUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdjustmentStatusUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DeleteCustomInvoiceDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomInvoiceDetail" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DeleteCustomInvoiceDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomInvoiceDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_UpdateCustomInvoiceDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomInvoiceDetail" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_UpdateCustomInvoiceDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomInvoiceDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertNewAdjustmentPreamble_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewAdjustmentPreamble" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertNewAdjustmentPreamble_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewAdjustmentPreambleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DeleteNewAdjusmentPreamble_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNewAdjusmentPreamble" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DeleteNewAdjusmentPreamble_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNewAdjusmentPreambleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_ClearExceptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClearExceptions" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_ClearExceptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearExceptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_EndJobonMonitor_InputMessage">
+    <wsdl:part name="parameters" element="tns:EndJobonMonitor" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_EndJobonMonitor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EndJobonMonitorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_WorkflowMultiApproval_InputMessage">
+    <wsdl:part name="parameters" element="tns:WorkflowMultiApproval" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_WorkflowMultiApproval_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WorkflowMultiApprovalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertNewAdjustmentUACash_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewAdjustmentUACash" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertNewAdjustmentUACash_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewAdjustmentUACashResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GetMiscCreditDebitMaximums_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMiscCreditDebitMaximums" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GetMiscCreditDebitMaximums_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMiscCreditDebitMaximumsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertNewAdjustmentMiscCreditDebit_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewAdjustmentMiscCreditDebit" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertNewAdjustmentMiscCreditDebit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewAdjustmentMiscCreditDebitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertNewAdjustmentBillingDiff_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewAdjustmentBillingDiff" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertNewAdjustmentBillingDiff_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewAdjustmentBillingDiffResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertNewAdjustmentFXCredit_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewAdjustmentFXCredit" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertNewAdjustmentFXCredit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewAdjustmentFXCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertNewAdjustmentFXDebit_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewAdjustmentFXDebit" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertNewAdjustmentFXDebit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewAdjustmentFXDebitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_WorkflowSubmit_InputMessage">
+    <wsdl:part name="parameters" element="tns:WorkflowSubmit" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_WorkflowSubmit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WorkflowSubmitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_WorkflowApprove_InputMessage">
+    <wsdl:part name="parameters" element="tns:WorkflowApprove" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_WorkflowApprove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WorkflowApproveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_LaunchWorkflowEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:LaunchWorkflowEmail" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_LaunchWorkflowEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LaunchWorkflowEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_SendWorkflowEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendWorkflowEmail" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_SendWorkflowEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendWorkflowEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_AddWorkflowApprover_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddWorkflowApprover" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_AddWorkflowApprover_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddWorkflowApproverResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_SetInvoiceEmailQueue_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetInvoiceEmailQueue" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_SetInvoiceEmailQueue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetInvoiceEmailQueueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertNewCashAdjustment_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewCashAdjustment" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_InsertNewCashAdjustment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewCashAdjustmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GetCustomerName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerName" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GetCustomerName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DeleteUnit_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUnit" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_DeleteUnit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_UpdateUnitAmount_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUnitAmount" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_UpdateUnitAmount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUnitAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_UpdateSalesPerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSalesPerson" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_UpdateSalesPerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSalesPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GetAttachmentsForEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachmentsForEmail" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_GetAttachmentsForEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachmentsForEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_CopyAttachments_InputMessage">
+    <wsdl:part name="parameters" element="tns:CopyAttachments" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_CopyAttachments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CopyAttachmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_ReprintCustomInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReprintCustomInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IBillingService_ReprintCustomInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReprintCustomInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBillingService">
+    <wsdl:operation name="GetCountValues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/GetCountValues" message="tns:IBillingService_GetCountValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/GetCountValuesResponse" message="tns:IBillingService_GetCountValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBillingLocations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/UpdateBillingLocations" message="tns:IBillingService_UpdateBillingLocations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/UpdateBillingLocationsResponse" message="tns:IBillingService_UpdateBillingLocations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/ScheduleJob" message="tns:IBillingService_ScheduleJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/ScheduleJobResponse" message="tns:IBillingService_ScheduleJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenericSQL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/GenericSQL" message="tns:IBillingService_GenericSQL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/GenericSQLResponse" message="tns:IBillingService_GenericSQL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReprintNationalAdInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/ReprintNationalAdInvoice" message="tns:IBillingService_ReprintNationalAdInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/ReprintNationalAdInvoiceResponse" message="tns:IBillingService_ReprintNationalAdInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertRemitEntry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/InsertRemitEntry" message="tns:IBillingService_InsertRemitEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/InsertRemitEntryResponse" message="tns:IBillingService_InsertRemitEntry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertAllocEntry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/InsertAllocEntry" message="tns:IBillingService_InsertAllocEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/InsertAllocEntryResponse" message="tns:IBillingService_InsertAllocEntry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCashEntry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/InsertCashEntry" message="tns:IBillingService_InsertCashEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/InsertCashEntryResponse" message="tns:IBillingService_InsertCashEntry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUnitEntry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/InsertUnitEntry" message="tns:IBillingService_InsertUnitEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/InsertUnitEntryResponse" message="tns:IBillingService_InsertUnitEntry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUnitMetaData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/InsertUnitMetaData" message="tns:IBillingService_InsertUnitMetaData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/InsertUnitMetaDataResponse" message="tns:IBillingService_InsertUnitMetaData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewRatefromRateCopy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/InsertNewRatefromRateCopy" message="tns:IBillingService_InsertNewRatefromRateCopy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/InsertNewRatefromRateCopyResponse" message="tns:IBillingService_InsertNewRatefromRateCopy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRatefromRateCopy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/DeleteRatefromRateCopy" message="tns:IBillingService_DeleteRatefromRateCopy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/DeleteRatefromRateCopyResponse" message="tns:IBillingService_DeleteRatefromRateCopy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextInvoiceNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/GetNextInvoiceNumber" message="tns:IBillingService_GetNextInvoiceNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/GetNextInvoiceNumberResponse" message="tns:IBillingService_GetNextInvoiceNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NationalAdsAdjustment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/NationalAdsAdjustment" message="tns:IBillingService_NationalAdsAdjustment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/NationalAdsAdjustmentResponse" message="tns:IBillingService_NationalAdsAdjustment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/DeleteBatch" message="tns:IBillingService_DeleteBatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/DeleteBatchResponse" message="tns:IBillingService_DeleteBatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBCF">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/DeleteBCF" message="tns:IBillingService_DeleteBCF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/DeleteBCFResponse" message="tns:IBillingService_DeleteBCF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PermDeleteBatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/PermDeleteBatch" message="tns:IBillingService_PermDeleteBatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/PermDeleteBatchResponse" message="tns:IBillingService_PermDeleteBatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAdjustment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/DeleteAdjustment" message="tns:IBillingService_DeleteAdjustment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/DeleteAdjustmentResponse" message="tns:IBillingService_DeleteAdjustment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContractfromBatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/DeleteContractfromBatch" message="tns:IBillingService_DeleteContractfromBatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/DeleteContractfromBatchResponse" message="tns:IBillingService_DeleteContractfromBatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContractfromCreateBatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/DeleteContractfromCreateBatch" message="tns:IBillingService_DeleteContractfromCreateBatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/DeleteContractfromCreateBatchResponse" message="tns:IBillingService_DeleteContractfromCreateBatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnitUpload">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/UnitUpload" message="tns:IBillingService_UnitUpload_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/UnitUploadResponse" message="tns:IBillingService_UnitUpload_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AncillaryUnitUpload">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/AncillaryUnitUpload" message="tns:IBillingService_AncillaryUnitUpload_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/AncillaryUnitUploadResponse" message="tns:IBillingService_AncillaryUnitUpload_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AdjustmentStatusUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/AdjustmentStatusUpdate" message="tns:IBillingService_AdjustmentStatusUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/AdjustmentStatusUpdateResponse" message="tns:IBillingService_AdjustmentStatusUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomInvoiceDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/DeleteCustomInvoiceDetail" message="tns:IBillingService_DeleteCustomInvoiceDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/DeleteCustomInvoiceDetailResponse" message="tns:IBillingService_DeleteCustomInvoiceDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomInvoiceDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/UpdateCustomInvoiceDetail" message="tns:IBillingService_UpdateCustomInvoiceDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/UpdateCustomInvoiceDetailResponse" message="tns:IBillingService_UpdateCustomInvoiceDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewAdjustmentPreamble">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/InsertNewAdjustmentPreamble" message="tns:IBillingService_InsertNewAdjustmentPreamble_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/InsertNewAdjustmentPreambleResponse" message="tns:IBillingService_InsertNewAdjustmentPreamble_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNewAdjusmentPreamble">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/DeleteNewAdjusmentPreamble" message="tns:IBillingService_DeleteNewAdjusmentPreamble_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/DeleteNewAdjusmentPreambleResponse" message="tns:IBillingService_DeleteNewAdjusmentPreamble_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearExceptions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/ClearExceptions" message="tns:IBillingService_ClearExceptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/ClearExceptionsResponse" message="tns:IBillingService_ClearExceptions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EndJobonMonitor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/EndJobonMonitor" message="tns:IBillingService_EndJobonMonitor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/EndJobonMonitorResponse" message="tns:IBillingService_EndJobonMonitor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WorkflowMultiApproval">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/WorkflowMultiApproval" message="tns:IBillingService_WorkflowMultiApproval_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/WorkflowMultiApprovalResponse" message="tns:IBillingService_WorkflowMultiApproval_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewAdjustmentUACash">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/InsertNewAdjustmentUACash" message="tns:IBillingService_InsertNewAdjustmentUACash_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/InsertNewAdjustmentUACashResponse" message="tns:IBillingService_InsertNewAdjustmentUACash_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMiscCreditDebitMaximums">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/GetMiscCreditDebitMaximums" message="tns:IBillingService_GetMiscCreditDebitMaximums_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/GetMiscCreditDebitMaximumsResponse" message="tns:IBillingService_GetMiscCreditDebitMaximums_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewAdjustmentMiscCreditDebit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/InsertNewAdjustmentMiscCreditDebit" message="tns:IBillingService_InsertNewAdjustmentMiscCreditDebit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/InsertNewAdjustmentMiscCreditDebitResponse" message="tns:IBillingService_InsertNewAdjustmentMiscCreditDebit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewAdjustmentBillingDiff">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/InsertNewAdjustmentBillingDiff" message="tns:IBillingService_InsertNewAdjustmentBillingDiff_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/InsertNewAdjustmentBillingDiffResponse" message="tns:IBillingService_InsertNewAdjustmentBillingDiff_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewAdjustmentFXCredit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/InsertNewAdjustmentFXCredit" message="tns:IBillingService_InsertNewAdjustmentFXCredit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/InsertNewAdjustmentFXCreditResponse" message="tns:IBillingService_InsertNewAdjustmentFXCredit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewAdjustmentFXDebit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/InsertNewAdjustmentFXDebit" message="tns:IBillingService_InsertNewAdjustmentFXDebit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/InsertNewAdjustmentFXDebitResponse" message="tns:IBillingService_InsertNewAdjustmentFXDebit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WorkflowSubmit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/WorkflowSubmit" message="tns:IBillingService_WorkflowSubmit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/WorkflowSubmitResponse" message="tns:IBillingService_WorkflowSubmit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WorkflowApprove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/WorkflowApprove" message="tns:IBillingService_WorkflowApprove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/WorkflowApproveResponse" message="tns:IBillingService_WorkflowApprove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LaunchWorkflowEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/LaunchWorkflowEmail" message="tns:IBillingService_LaunchWorkflowEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/LaunchWorkflowEmailResponse" message="tns:IBillingService_LaunchWorkflowEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendWorkflowEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/SendWorkflowEmail" message="tns:IBillingService_SendWorkflowEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/SendWorkflowEmailResponse" message="tns:IBillingService_SendWorkflowEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddWorkflowApprover">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/AddWorkflowApprover" message="tns:IBillingService_AddWorkflowApprover_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/AddWorkflowApproverResponse" message="tns:IBillingService_AddWorkflowApprover_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetInvoiceEmailQueue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/SetInvoiceEmailQueue" message="tns:IBillingService_SetInvoiceEmailQueue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/SetInvoiceEmailQueueResponse" message="tns:IBillingService_SetInvoiceEmailQueue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewCashAdjustment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/InsertNewCashAdjustment" message="tns:IBillingService_InsertNewCashAdjustment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/InsertNewCashAdjustmentResponse" message="tns:IBillingService_InsertNewCashAdjustment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/GetCustomerName" message="tns:IBillingService_GetCustomerName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/GetCustomerNameResponse" message="tns:IBillingService_GetCustomerName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUnit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/DeleteUnit" message="tns:IBillingService_DeleteUnit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/DeleteUnitResponse" message="tns:IBillingService_DeleteUnit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUnitAmount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/UpdateUnitAmount" message="tns:IBillingService_UpdateUnitAmount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/UpdateUnitAmountResponse" message="tns:IBillingService_UpdateUnitAmount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSalesPerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/UpdateSalesPerson" message="tns:IBillingService_UpdateSalesPerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/UpdateSalesPersonResponse" message="tns:IBillingService_UpdateSalesPerson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentsForEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/GetAttachmentsForEmail" message="tns:IBillingService_GetAttachmentsForEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/GetAttachmentsForEmailResponse" message="tns:IBillingService_GetAttachmentsForEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CopyAttachments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/CopyAttachments" message="tns:IBillingService_CopyAttachments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/CopyAttachmentsResponse" message="tns:IBillingService_CopyAttachments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReprintCustomInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBillingService/ReprintCustomInvoice" message="tns:IBillingService_ReprintCustomInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBillingService/ReprintCustomInvoiceResponse" message="tns:IBillingService_ReprintCustomInvoice_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBillingService" type="tns:IBillingService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IBillingService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCountValues">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/GetCountValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBillingLocations">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/UpdateBillingLocations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleJob">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/ScheduleJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenericSQL">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/GenericSQL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReprintNationalAdInvoice">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/ReprintNationalAdInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertRemitEntry">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/InsertRemitEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertAllocEntry">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/InsertAllocEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCashEntry">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/InsertCashEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUnitEntry">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/InsertUnitEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUnitMetaData">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/InsertUnitMetaData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewRatefromRateCopy">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/InsertNewRatefromRateCopy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRatefromRateCopy">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/DeleteRatefromRateCopy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextInvoiceNumber">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/GetNextInvoiceNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NationalAdsAdjustment">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/NationalAdsAdjustment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBatch">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/DeleteBatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBCF">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/DeleteBCF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PermDeleteBatch">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/PermDeleteBatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAdjustment">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/DeleteAdjustment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContractfromBatch">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/DeleteContractfromBatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContractfromCreateBatch">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/DeleteContractfromCreateBatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnitUpload">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/UnitUpload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AncillaryUnitUpload">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/AncillaryUnitUpload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AdjustmentStatusUpdate">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/AdjustmentStatusUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomInvoiceDetail">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/DeleteCustomInvoiceDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomInvoiceDetail">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/UpdateCustomInvoiceDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewAdjustmentPreamble">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/InsertNewAdjustmentPreamble" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNewAdjusmentPreamble">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/DeleteNewAdjusmentPreamble" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearExceptions">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/ClearExceptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndJobonMonitor">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/EndJobonMonitor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WorkflowMultiApproval">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/WorkflowMultiApproval" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewAdjustmentUACash">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/InsertNewAdjustmentUACash" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMiscCreditDebitMaximums">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/GetMiscCreditDebitMaximums" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewAdjustmentMiscCreditDebit">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/InsertNewAdjustmentMiscCreditDebit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewAdjustmentBillingDiff">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/InsertNewAdjustmentBillingDiff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewAdjustmentFXCredit">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/InsertNewAdjustmentFXCredit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewAdjustmentFXDebit">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/InsertNewAdjustmentFXDebit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WorkflowSubmit">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/WorkflowSubmit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WorkflowApprove">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/WorkflowApprove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LaunchWorkflowEmail">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/LaunchWorkflowEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendWorkflowEmail">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/SendWorkflowEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddWorkflowApprover">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/AddWorkflowApprover" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetInvoiceEmailQueue">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/SetInvoiceEmailQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewCashAdjustment">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/InsertNewCashAdjustment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerName">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/GetCustomerName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUnit">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/DeleteUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUnitAmount">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/UpdateUnitAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSalesPerson">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/UpdateSalesPerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentsForEmail">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/GetAttachmentsForEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopyAttachments">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/CopyAttachments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReprintCustomInvoice">
+      <soap:operation soapAction="http://tempuri.org/IBillingService/ReprintCustomInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BillingService">
+    <wsdl:port name="BasicHttpBinding_IBillingService" binding="tns:BasicHttpBinding_IBillingService">
+      <soap:address location="http://localhost:50573/BillingService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{25AD4BCA-45A3-41FC-A550-FFE6FE516841}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Admin</RootNamespace>
+    <AssemblyName>Admin</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="InfragisticsWPF, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.25.2.59\lib\net40\InfragisticsWPF.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DataPresenter, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DataGrids.25.2.59\lib\net40\InfragisticsWPF.DataPresenter.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DataPresenter.ExcelExporter, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DataGrids.Excel.25.2.59\lib\net40\InfragisticsWPF.DataPresenter.ExcelExporter.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Documents.Core, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Documents.Core.25.2.59\lib\net40\InfragisticsWPF.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Documents.Excel, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Excel.25.2.59\lib\net40\InfragisticsWPF.Documents.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Editors, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Editors.25.2.59\lib\net40\InfragisticsWPF.Editors.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CurrencyConvRates.xaml.cs">
+      <DependentUpon>CurrencyConvRates.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleLockdownCMMemo.xaml.cs">
+      <DependentUpon>ScheduleLockdownCMMemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SetDates.xaml.cs">
+      <DependentUpon>SetDates.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionHandling.xaml.cs">
+      <DependentUpon>ExceptionHandling.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="JobMonitor.xaml.cs">
+      <DependentUpon>JobMonitor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportManager.xaml.cs">
+      <DependentUpon>ReportManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Audit.xaml.cs">
+      <DependentUpon>Audit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkflowApprovalQueue.xaml.cs">
+      <DependentUpon>WorkflowApprovalQueue.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleDefPool.xaml.cs">
+      <DependentUpon>ScheduleDefPool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleInvoicePrint.xaml.cs">
+      <DependentUpon>ScheduleInvoicePrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleCustomInvPrint.xaml.cs">
+      <DependentUpon>ScheduleCustomInvPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleAdsInvPrint.xaml.cs">
+      <DependentUpon>ScheduleAdsInvPrint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleGLPosting.xaml.cs">
+      <DependentUpon>ScheduleGLPosting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleCustomInvoicePosting.xaml.cs">
+      <DependentUpon>ScheduleCustomInvoicePosting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleAdsPosting.xaml.cs">
+      <DependentUpon>ScheduleAdsPosting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleBillPosting.xaml.cs">
+      <DependentUpon>ScheduleBillPosting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleCashPosting.xaml.cs">
+      <DependentUpon>ScheduleCashPosting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScheduleJob.xaml.cs">
+      <DependentUpon>ScheduleJob.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="CurrencyConvRates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\AdminFieldLayouts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScheduleLockdownCMMemo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SetDates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ExceptionHandling.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="JobMonitor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ReportManager.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Audit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WorkflowApprovalQueue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScheduleDefPool.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScheduleInvoicePrint.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScheduleCustomInvPrint.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScheduleAdsInvPrint.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScheduleGLPosting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScheduleCustomInvoicePosting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScheduleAdsPosting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScheduleBillPosting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScheduleCashPosting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ScheduleJob.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RazerBase\RazerBase.csproj">
+      <Project>{92F34D8B-F692-41A7-AF2D-42F5B84D6C9C}</Project>
+      <Name>RazerBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RazerConverters\RazerConverters.csproj">
+      <Project>{3B0B455E-4F81-461C-8C72-A3033470B72F}</Project>
+      <Name>RazerConverters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RazerInterface\RazerInterface.csproj">
+      <Project>{8E38FFCB-144A-45F2-AF87-123DD9245220}</Project>
+      <Name>RazerInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

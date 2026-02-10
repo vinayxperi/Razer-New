@@ -1,0 +1,38 @@
+﻿<local:ScreenBase x:Class="Adjustment.AdjustmentAcctgTab" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="1020"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="180" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="180" />
+                <ColumnDefinition Width="180" />
+                <ColumnDefinition Width="5"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="10" />
+
+            </Grid.RowDefinitions>
+           <!--<local:ucBaseGrid Name="GridAcctSmry" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,169,0" Loaded="GridAcctSmry_Loaded"></local:ucBaseGrid>-->
+            <local:ucLedgerTextBox Grid.Column="3" Grid.Row="1" LabelText="Debits" Name="txtDebits" 
+                                   Text="{Binding Path=debitTotal, Mode=TwoWay,Converter={StaticResource HideNegatives}}" 
+                                   IsReadOnly="True" Loaded="txtDebits_Loaded" LabelWidth="150" ></local:ucLedgerTextBox>
+            <local:ucLedgerTextBox Grid.Column="4" Grid.Row="1" LabelText="Credits" Name="txtCredits" 
+                                   Text="{Binding Path=creditTotal, Mode=TwoWay, Converter={StaticResource HideNegatives}}" IsReadOnly="True" 
+                                   Loaded="txtCredits_Loaded" LabelWidth="150"></local:ucLedgerTextBox>
+            <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Row="1"   Grid.Column="1"  >Accounting Detail</Label>
+        <local:ucBaseGrid Name="GridAcctDetail" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" ></local:ucBaseGrid>
+        </Grid>
+
+</local:ScreenBase>

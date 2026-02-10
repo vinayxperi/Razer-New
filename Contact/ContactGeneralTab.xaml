@@ -1,0 +1,79 @@
+﻿<RazerBase:ScreenBase x:Class="Contact.ContactGeneralTab" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+             xmlns:local="clr-namespace:Contact"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1080"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="5" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+        <RazerBase:ucLabelTextBox Name="txtFirstName" Grid.Column="1"  Grid.Row="1" LabelText="First Name:" BindPath="first_name"  TabIndex="0" />
+        <RazerBase:ucLabelTextBox Name="txtLastName" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="1" LabelText="Last Name:" BindPath="last_name"  />
+        <RazerBase:ucLabelTextBox Name="txtSalutation" Grid.Column="5" LabelWidth="120" Grid.Row="1" LabelText="Salutation:" BindPath="salutation"  />
+        <!--<RazerBase:ucLabelTextBox Name="txtTitle" Grid.Column="7" Grid.ColumnSpan="1" Grid.Row="1" LabelText="Title:" BindPath="title"  />-->
+        <RazerBase:ucLabelComboBox Name="cmbType" Grid.Column="1" Grid.Row="2" LabelText="Type" SelectedValue="{Binding Path=type, Mode=TwoWay}" LostFocus="cmbType_LostFocus" Loaded="cmbType_Loaded"/>
+        <RazerBase:ucLabelComboBox Name="cmbGender" Grid.Column="3" Grid.Row="2" LabelText="Gender" SelectedValue="{Binding Path=sex, Mode=TwoWay}" />
+        <RazerBase:ucLabelCheckBox Name="chkInactiveFlag" Grid.Column="5" LabelWidth="130" Grid.Row="2" LabelText="Inactive Flag:" BindPath="inactive_flag" Checked="chkInactiveFlag_Checked" />
+        <!--<RazerBase:ucLabelTextBox Name="txtSex" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="1" LabelText="Sex:" BindPath="sex"  />-->
+       
+       
+        
+        <RazerBase:ucLabelTextBox Name="txtAddress1" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="3" LabelText="Address 1:" BindPath="address_1"  />
+        <RazerBase:ucLabelTextBox Name="txtAddress2" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="3" LabelText="Address 2:" BindPath="address_2"  />
+        <RazerBase:ucLabelCheckBox Name="chkCommFlag" Grid.Column="5" LabelWidth="130" Grid.Row="3" LabelText="Comm Flag:" BindPath="comm_flag" Visibility="Hidden"/>
+        <RazerBase:ucLabelTextBox Name="txtAddress3" Grid.Column="7" Grid.ColumnSpan="1" Grid.Row="3" LabelText="Address 3:" BindPath="address_3"  />
+        <RazerBase:ucLabelTextBox Name="txtCity" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="4" LabelText="City:" BindPath="city"  />
+        <RazerBase:ucLabelComboBox Name="cmbState" Grid.Column="3" Grid.Row="4"  LabelText="State:" SelectedValue="{Binding Path=state, Mode=TwoWay}" LabelWidth="82"  />
+        <RazerBase:ucLabelCheckBox Name="chkExternalFlag" Grid.Column="5" LabelWidth="130" Grid.Row="4" LabelText="External Flag:" BindPath="external_flag" />
+        <RazerBase:ucLabelTextBox Name="txtPostalCode" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="5" LabelText="Postal Code:" BindPath="postal_code"  />
+        <RazerBase:ucLabelTextBox Name="txtProvince" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="6" LabelText="Province:" BindPath="province"  />
+        <RazerBase:ucLabelComboBox Name="cmbCountry" Grid.Column="1" Grid.Row="5" LabelText="Country:" SelectedValue="{Binding Path=country_id, Mode=TwoWay}"  />
+        <RazerBase:ucLabelTextBox Name="txtComment" Grid.Column="3" Grid.ColumnSpan="4" Grid.Row="6" LabelText="Comment:" BindPath="comment"  />
+
+        <Grid Grid.Column="0" Grid.Row="7" Grid.RowSpan="3" Grid.ColumnSpan="7">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="5"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+            </Grid.ColumnDefinitions>
+            <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Row="1" Grid.Column="1">Phone</Label>
+            <Label Style="{DynamicResource LabelLightUpStyle}" Grid.Row="1" Grid.Column="3">Email</Label>
+            <RazerBase:ucBaseGrid Name="GridPhone" Grid.Row="2" Grid.Column="1"></RazerBase:ucBaseGrid>
+            <RazerBase:ucBaseGrid Name="GridEmail" Grid.Row="2" Grid.Column="3"></RazerBase:ucBaseGrid>
+        </Grid>
+    </Grid>
+
+
+</RazerBase:ScreenBase>

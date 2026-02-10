@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="RazerBase.ucLookupTextBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"  
+             HorizontalAlignment="Stretch"
+             d:DesignHeight="40" d:DesignWidth="320" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Name="GridLabelColumn" />
+			  <ColumnDefinition />
+            <ColumnDefinition Width="*"/>
+           
+            <ColumnDefinition Width="31"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="40"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Style="{DynamicResource LabelLightUpStyle}"  Name="Label" 
+               Content="[LabelText]" Width="87.667" HorizontalContentAlignment="Right" Margin="1,1,0,1"></Label>
+        <TextBox Style="{DynamicResource ComboBoxStyle}" Name="TextBox" 
+                 Grid.Column="1" Grid.ColumnSpan="3" Width="Auto"
+                 HorizontalAlignment="Stretch" LostFocus="TextBox_LostFocus" ></TextBox>
+		<Button  IsTabStop="False"  Background="Transparent" BorderBrush="{x:Null}" Name="Button" Grid.Column="3" Width="31" Height="40" HorizontalAlignment="Center" Click="Button_Click" d:LayoutOverrides="GridBox" Style="{DynamicResource ButtonStyle1}" BorderThickness="0"></Button>
+        <Border BorderBrush="#FF3F3F3F" BorderThickness="1,0,0,0" Width="36" Height="30" Grid.Column="3" Margin="0,5,-5,5">
+            <Label Foreground="#FF3F3F3F" FontFamily="Webdings" Height="20" Background="Transparent" FontSize="10" BorderBrush="White" VerticalAlignment="Center" Content="6" Margin="1,0,-3,0" />
+        </Border>
+    </Grid>
+</UserControl>
+

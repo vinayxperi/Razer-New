@@ -1,0 +1,69 @@
+﻿<local:ScreenBase x:Class="Units.UnitUploadTab" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="190" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="350" />
+                <ColumnDefinition Width="350" />
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="0" />
+                <RowDefinition Height="0" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            <!-- Place Controls Here -->
+            <local:ucLabelTextBox Grid.Column="1" HorizontalAlignment="Left" Name="txtEntity" VerticalAlignment="Top" Width="320" LabelText="Entity:" MouseDoubleClick="txtEntity_MouseDoubleClick" IsReadOnly="True" />
+            <local:ucLabelComboBox HorizontalAlignment="Left" Name="ltbContract" VerticalAlignment="Top" Width="320" Grid.Column="1" Grid.Row="3" LabelText="Contract:" PropertyChanged="ltbContract_PropertyChanged" />
+            <local:ucLabelComboBox Grid.RowSpan="4" HorizontalAlignment="Left"  Name="ltbReport" VerticalAlignment="Top" Width="320" Grid.Column="2" LabelText="Report:" />
+            <local:ucLabelTextBox HorizontalAlignment="Left" Name="txtLocation" VerticalAlignment="Top" Width="320" Grid.Column="2" Grid.Row="3" LabelText="Location:" MouseDoubleClick="txtLocation_MouseDoubleClick" IsReadOnly="True" />
+            <local:ucLabelDatePicker Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left"  Name="ldpPeriod" VerticalAlignment="Top" Width="320" LabelText="Period Start:" />
+            <local:ucLabelDatePicker Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left"  Name="ldpPeriodEnd" VerticalAlignment="Top" Width="320" LabelText="Period End:" />
+            <local:ucLabelComboBox Name="ltbUnitType" Grid.Column="1" Grid.Row="5"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="320" LabelText="Unit Type:"/>
+            <Button Content="Clear Search" Grid.Column="2" Grid.Row="5" Height="23" Width="75" HorizontalAlignment="Center" Name="btnClearSearch" VerticalAlignment="Center" Click="btnClearSearch_Click" />
+            <local:ucLabelTextBox Name="txtUnitTotal" Grid.Row="3" Grid.Column="3" LabelText="Total Units:" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top"
+                                  Text ="{Binding Path=unit_total,Mode=TwoWay,StringFormat=N}" />
+            <local:ucLabelTextBox Name="txtRowCount" Grid.Row="4" Grid.Column="3" LabelText="Row Count:" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" BindPath="row_count"/>
+
+            <Grid Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Content="Get Data" Grid.Column="0" Grid.Row="5" Height="23" HorizontalAlignment="Center" Name="btnGetData" VerticalAlignment="Center" Width="75" Click="btnGetData_Click" />
+                <Button Content="Clear" Grid.Column="1" Grid.Row="5" Height="23" HorizontalAlignment="Center" Name="btnClear" VerticalAlignment="Center" Width="75" Click="btnClear_Click" />
+                <Button Content="Load Spreadsheet" Grid.Column="2" Height="23" HorizontalAlignment="Center" Name="btnLoad" VerticalAlignment="Center" Width="160" Click="btnLoad_Click" Margin="0,2" />
+                <Button Content="Verify Data" Grid.Column="3" Grid.Row="5" Height="23" HorizontalAlignment="Center" Name="btnVerify" VerticalAlignment="Center" Width="75" Click="btnVerify_Click" />
+                <Button Content="Upload Data" Grid.Column="4" Height="23" HorizontalAlignment="Center" Name="btnUpload" VerticalAlignment="Center" Width="87" Margin="31,2,42,2" Click="btnUpload_Click" />
+            </Grid>
+
+        </Grid>
+        
+        <local:ucBaseGrid Grid.Row="1" HorizontalAlignment="Stretch" Name="bgResults" VerticalAlignment="Stretch" />
+
+    </Grid>
+</local:ScreenBase>

@@ -1,0 +1,99 @@
+﻿<ResourceDictionary  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    
+                    xmlns:igWindows="http://infragistics.com/Windows"
+                    xmlns:igDP="http://infragistics.com/DataPresenter"
+                    xmlns:igEditors="http://infragistics.com/Editors" 
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:RazerConverters="clr-namespace:RazerConverters;assembly=RazerConverters">
+
+
+
+    <igDP:FieldLayout x:Key="ContactLookupGrid" x:Shared="False">
+        <igDP:Field Name="contact_id" Label="Contact Id" Width="90"></igDP:Field>
+        <igDP:Field Name="first_name" Label="First Name" Width="90"></igDP:Field>
+        <igDP:Field Name="last_name" Label="Last Name" Width="90"></igDP:Field>
+        <igDP:Field Name="address_1" Label="Address" Width="200"></igDP:Field>
+        <igDP:Field Name="city" Label="City" Width="90"></igDP:Field>
+        <igDP:Field Name="state" Label="State" Width="90"></igDP:Field>
+        <igDP:Field Name="description" Label="Contact Type" Width="200"></igDP:Field>
+        <igDP:Field Name="full_name" Label="Contact Name" Width="100"></igDP:Field>
+        <igDP:Field Name="inactive_flag" Label="InActive" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="ContactAssignmentGrid" x:Shared="False">
+        <igDP:Field Name="description" Label="Relationship Type" Width="250"></igDP:Field>
+        <igDP:Field Name="account_name" Label="Assigned To" Width="450"></igDP:Field>
+        <igDP:Field Name="related_to_char_id" Label="Customer Num" Width="90"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="ContactPhoneGrid" x:Shared="False">
+        <igDP:Field Name="phone" Label="Phone" Width="150"></igDP:Field>
+        <igDP:Field Name="phone_type_id" Label="Phone Type" Width="150">
+            <!--Code to do a drop down box in a grid or can be used as a text lookup for a value field for a non editable grid-->
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbPhoneTypeGridCombo, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="primary_flag" Label="Primary Flag" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="350"></igDP:Field>
+      
+        <igDP:Field Name="phone_id" Label="phone_id" Width="150" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="contact_id" Label="contact_id" Width="150" Visibility="Collapsed"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="ContactEmailGrid" x:Shared="False">
+        <igDP:Field Name="email" Label="Email" Width="450"></igDP:Field>
+        <igDP:Field Name="description" Label="Description" Width="200"></igDP:Field>
+        <igDP:Field Name="primary_flag" Label="Primary Flag" Width="100">
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamCheckEditor}"/>
+            </igDP:Field.Settings>
+        </igDP:Field>
+        <igDP:Field Name="contact_id" Label="contact_id" Width="150" Visibility="Collapsed"></igDP:Field>
+    </igDP:FieldLayout>
+
+    <igDP:FieldLayout x:Key="SalespersonUploadGrid" x:Shared="False">
+        <igDP:Field Name="contract_salesperson_id" Label="ID" Width="85" Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="salesperson_id" Label="Salesperson ID" Width="100"  Visibility="Collapsed"></igDP:Field>
+        <igDP:Field Name="first_name" Label="First Name" Width="120"></igDP:Field>
+        <igDP:Field Name="last_name" Label="Last Name" Width="120"></igDP:Field>
+        <!--<igDP:Field Name="title" Label="Title" Width="130"></igDP:Field>-->
+        <igDP:Field Name="sf_account_id" Label="SalesForce Account ID" Width="130"></igDP:Field>
+        <igDP:Field Name="contract_id" Label="Contract ID" Width="100"></igDP:Field>
+        <igDP:Field Name="contract_description" Label="Contract Description" Width="250"></igDP:Field>
+        <igDP:Field Name="receivable_account" Label="Customer ID" Width="100"></igDP:Field>
+        <igDP:Field Name="account_name" Label="Customer" Width="180"></igDP:Field>
+        
+        <igDP:Field Name="product_code" Label="Product Code" Width="130"></igDP:Field>
+        <igDP:Field Name="new_salesperson_id" Label="New Salesperson ID" Width="150"  >
+            <!--Code to do a drop down box in a grid or can be used as a text lookup for a value field for a non editable grid-->
+            <igDP:Field.Settings>
+                <igDP:FieldSettings EditorType="{x:Type igEditors:XamComboEditor}" >
+                    <igDP:FieldSettings.EditorStyle>
+                        <Style TargetType="{x:Type igEditors:XamComboEditor}">
+                            <Setter Property="ItemsProvider" Value="{Binding Path=cmbNewSales, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2}}"/>
+                        </Style>
+                    </igDP:FieldSettings.EditorStyle>
+                </igDP:FieldSettings>
+            </igDP:Field.Settings>
+        </igDP:Field>
+
+    </igDP:FieldLayout>
+
+
+</ResourceDictionary>

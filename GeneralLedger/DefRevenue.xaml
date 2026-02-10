@@ -1,0 +1,45 @@
+﻿<RazerBase:ScreenBase x:Class="GeneralLedger.DefRevenue" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+                  xmlns:igDP="http://infragistics.com/DataPresenter" 
+             mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="1000"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+
+
+
+    <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="320" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="10" />
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="35" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+ 
+     <RazerBase:ucLabelTextBox Name="txtDefAcct" LabelText="Deferred Account:" Grid.Column="1" Grid.Row="1" LabelWidth="140"  GotFocus="txtDefAcct_GotFocus" LostFocus="txtDefAcct_LostFocus" EnterActsLikeTab="True" MouseDoubleClick="txtDefAcct_MouseDoubleClick" IsReadOnly="True"/>
+                    <!--<RazerBase:ucLabelTextBox Name="txtProductCode" LabelText="Product Code:" Grid.Column="1" Grid.Row="1" LabelWidth="125" LostFocus="txtProductCode_LostFocus"/>-->
+     <RazerBase:ucLabelTextBox Name="txtAmt" LabelText="Total Amount Deferred:" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="1" LabelWidth="140" Text="{Binding Path=total_def_amt, Mode=TwoWay, StringFormat={}{0:C}}" IsReadOnly="True"
+                               />
+                    
+ 
+    <RazerBase:ucBaseGrid Name="GridDefPool" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" />
+
+
+    <RazerBase:ucBaseGrid Name="GridDefPoolDetail" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"  />
+
+
+        </Grid>
+ 
+</RazerBase:ScreenBase>

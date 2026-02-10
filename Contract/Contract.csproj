@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7BEE0E17-B391-431B-9077-1335EF8F1702}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Contract</RootNamespace>
+    <AssemblyName>Contract</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Infragistics.Services.Schedules.WcfConnectorService, Version=25.2.20252.45, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Schedules.Wcf.25.2.45\lib\net40\Infragistics.Services.Schedules.WcfConnectorService.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.25.2.59\lib\net40\InfragisticsWPF.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Charts.XamDataChart, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Charts.25.2.59\lib\net40\InfragisticsWPF.Controls.Charts.XamDataChart.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Editors.XamCalendar, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Calendar.25.2.59\lib\net40\InfragisticsWPF.Controls.Editors.XamCalendar.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Editors.XamColorPicker, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.ColorPicker.25.2.59\lib\net40\InfragisticsWPF.Controls.Editors.XamColorPicker.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Editors.XamSlider, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Slider.25.2.59\lib\net40\InfragisticsWPF.Controls.Editors.XamSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Interactions.XamDialogWindow, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DialogWindow.25.2.59\lib\net40\InfragisticsWPF.Controls.Interactions.XamDialogWindow.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Interactions.XamSpellChecker, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.SpellChecker.25.2.59\lib\net40\InfragisticsWPF.Controls.Interactions.XamSpellChecker.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Layouts.XamTileManager, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.TileManager.25.2.59\lib\net40\InfragisticsWPF.Controls.Layouts.XamTileManager.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Menus.XamDataTree, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DataTree.25.2.59\lib\net40\InfragisticsWPF.Controls.Menus.XamDataTree.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Menus.XamMenu, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Menus.25.2.59\lib\net40\InfragisticsWPF.Controls.Menus.XamMenu.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Menus.XamTagCloud, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.TagCloud.25.2.59\lib\net40\InfragisticsWPF.Controls.Menus.XamTagCloud.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.Schedules, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Schedules.25.2.59\lib\net40\InfragisticsWPF.Controls.Schedules.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.SchedulesDialogs, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Schedules.Dialogs.25.2.59\lib\net40\InfragisticsWPF.Controls.SchedulesDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Controls.SchedulesExchangeConnector, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Schedules.Exchange.25.2.59\lib\net40\InfragisticsWPF.Controls.SchedulesExchangeConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DataManager, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DataManager.25.2.59\lib\net40\InfragisticsWPF.DataManager.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DataPresenter, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DataGrids.25.2.59\lib\net40\InfragisticsWPF.DataPresenter.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DataPresenter.ExcelExporter, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DataGrids.Excel.25.2.59\lib\net40\InfragisticsWPF.DataPresenter.ExcelExporter.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DataPresenter.WordWriter, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DataGrids.Word.25.2.59\lib\net40\InfragisticsWPF.DataPresenter.WordWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DataVisualization, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DataVisualization.25.2.59\lib\net40\InfragisticsWPF.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DockManager, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DockManager.25.2.59\lib\net40\InfragisticsWPF.DockManager.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Documents.Core, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Documents.Core.25.2.59\lib\net40\InfragisticsWPF.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Documents.Excel, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Excel.25.2.59\lib\net40\InfragisticsWPF.Documents.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Documents.IO, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Word.25.2.59\lib\net40\InfragisticsWPF.Documents.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.DragDrop, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.DragDrop.25.2.59\lib\net40\InfragisticsWPF.DragDrop.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Editors, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Editors.25.2.59\lib\net40\InfragisticsWPF.Editors.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Math, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Math.25.2.59\lib\net40\InfragisticsWPF.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.OutlookBar, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.OutlookBar.25.2.59\lib\net40\InfragisticsWPF.OutlookBar.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Reporting, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Reporting.25.2.59\lib\net40\InfragisticsWPF.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Ribbon, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Ribbon.25.2.59\lib\net40\InfragisticsWPF.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Themes.Fall, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Themes.Fall.25.2.59\lib\net40\InfragisticsWPF.Themes.Fall.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Themes.ForestGreen, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Themes.ForestGreen.25.2.59\lib\net40\InfragisticsWPF.Themes.ForestGreen.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Themes.Leaf, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Themes.Leaf.25.2.59\lib\net40\InfragisticsWPF.Themes.Leaf.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Themes.Lipstick, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Themes.Lipstick.25.2.59\lib\net40\InfragisticsWPF.Themes.Lipstick.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Themes.Water, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Themes.Water.25.2.59\lib\net40\InfragisticsWPF.Themes.Water.dll</HintPath>
+    </Reference>
+    <Reference Include="InfragisticsWPF.Themes.Wind, Version=25.2.20252.59, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\Infragistics.WPF.Themes.Wind.25.2.59\lib\net40\InfragisticsWPF.Themes.Wind.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Log" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContractLocationRulesTab.xaml.cs">
+      <DependentUpon>ContractLocationRulesTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContractLocationServiceLookup.xaml.cs">
+      <DependentUpon>ContractLocationServiceLookup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContractLocationsTab.xaml.cs">
+      <DependentUpon>ContractLocationsTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContractProductRulesScreen.xaml.cs">
+      <DependentUpon>ContractProductRulesScreen.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContractRatesTab.xaml.cs">
+      <DependentUpon>ContractRatesTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContractReportingComments.xaml.cs">
+      <DependentUpon>ContractReportingComments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContractReportingReminderQueue.xaml.cs">
+      <DependentUpon>ContractReportingReminderQueue.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContractUnitsTab.xaml.cs">
+      <DependentUpon>ContractUnitsTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContractOpsTab.xaml.cs">
+      <DependentUpon>ContractOpsTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContractOpsAdd.xaml.cs">
+      <DependentUpon>ContractOpsAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContractReviewDatesTab.xaml.cs">
+      <DependentUpon>ContractReviewDatesTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContractLocationMove.xaml.cs">
+      <DependentUpon>ContractLocationMove.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContractOpsUnpostData.xaml.cs">
+      <DependentUpon>ContractOpsUnpostData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContractPostOpsData.xaml.cs">
+      <DependentUpon>ContractPostOpsData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContractRatesCopy.xaml.cs">
+      <DependentUpon>ContractRatesCopy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataRowExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ContractFolderMainScreen.xaml.cs">
+      <DependentUpon>ContractFolderMainScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContractGeneralTab.xaml.cs">
+      <DependentUpon>ContractGeneralTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContractBillingTab.xaml.cs">
+      <DependentUpon>ContractBillingTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContractBillingTotalsTab.xaml.cs">
+      <DependentUpon>ContractBillingTotalsTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContractReportingTab.xaml.cs">
+      <DependentUpon>ContractReportingTab.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Adjustment\Adjustment.csproj">
+      <Project>{61456C56-E80D-45D2-B07A-017ADFE0DB4B}</Project>
+      <Name>Adjustment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Contact\Contact.csproj">
+      <Project>{cc278ee5-a925-4814-a598-347ebe3388fe}</Project>
+      <Name>Contact</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Razer.Common\Razer.Common.csproj">
+      <Project>{87A25370-5697-4F1A-855D-EC5F4390B219}</Project>
+      <Name>Razer.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RazerBase\RazerBase.csproj">
+      <Project>{92F34D8B-F692-41A7-AF2D-42F5B84D6C9C}</Project>
+      <Name>RazerBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RazerConverters\RazerConverters.csproj">
+      <Project>{3B0B455E-4F81-461C-8C72-A3033470B72F}</Project>
+      <Name>RazerConverters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RazerInterface\RazerInterface.csproj">
+      <Project>{8E38FFCB-144A-45F2-AF87-123DD9245220}</Project>
+      <Name>RazerInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ContractFolderMainScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContractGeneralTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContractBillingTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContractLocationRulesTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContractLocationServiceLookup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContractLocationsTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContractProductRulesScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContractRatesTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContractBillingTotalsTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContractReportingComments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContractReportingReminderQueue.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContractReportingTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContractUnitsTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContractOpsTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ContractOpsAdd.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ContractReviewDatesTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ContractLocationMove.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ContractOpsUnpostData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ContractPostOpsData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ContractRatesCopy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ContractFieldLayouts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

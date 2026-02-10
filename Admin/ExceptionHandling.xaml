@@ -1,0 +1,38 @@
+﻿<RazerBase:ScreenBase x:Class="Admin.ExceptionHandling" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+                  xmlns:igDP="http://infragistics.com/DataPresenter" 
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="900"
+             Height="Auto" Width="Auto" >
+
+    <Border Grid.Row="5" Grid.ColumnSpan="3" BorderBrush="Gray" BorderThickness="1,0,0,0">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="320" />
+                <ColumnDefinition Width="400" />
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="300" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <RazerBase:ucLabelComboBox Name="cmbExceptionType" Grid.Column="1" LabelText="Razer Process:" LabelWidth="100"  Margin="0,6,0,0" Grid.RowSpan="2"  />
+            <Label  Grid.Column="1" Grid.Row="2" FontSize="12" FontWeight="Bold">Exceptions</Label>
+            <RazerBase:ucBaseGrid Name="gExceptions" Grid.Row="3" Grid.ColumnSpan="3" Margin="0,6,0,300" Grid.Column="1" Grid.RowSpan="2" />
+           
+            <!--<Border Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" BorderBrush="Gray"  BorderThickness="2" >-->
+           
+          
+            <!--</Border>-->
+          
+        </Grid>
+    </Border>
+</RazerBase:ScreenBase>

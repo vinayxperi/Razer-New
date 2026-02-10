@@ -1,0 +1,45 @@
+﻿<RazerBase:ScreenBase x:Class="Razer.CustomInvoice.CustomInvoiceDetail"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"              
+             xmlns:igDP="http://infragistics.com/DataPresenter"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="900">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="10" />
+            <RowDefinition />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="10" />
+            <RowDefinition />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Label Content="Detail Records" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontWeight="DemiBold" FontFamily="Arial" Foreground="Black" />
+        <RazerBase:ucBaseGrid Name="idgDetails" Grid.Row="3" Grid.ColumnSpan="3" />
+        <Label Content="Revenue Allocation" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontWeight="DemiBold" FontFamily="Arial" Foreground="Black" />
+        <RazerBase:ucBaseGrid Name="idgRevenueAllocation" Grid.Row="7" Grid.ColumnSpan="3" />        
+        <Grid Grid.Row="9" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="275" />
+                <ColumnDefinition Width="275" />
+                <ColumnDefinition Width="275"/>                
+            </Grid.ColumnDefinitions>
+            <RazerBase:ucLabelTextBox Name="txtTotalAmount" LabelText="Total Amount:  " Text="{Binding Path=total_amt, Mode=TwoWay, StringFormat={}{0:C}}" Grid.Column="1" LabelWidth="130" Foreground="Red" IsReadOnly="True" />
+            <RazerBase:ucLabelTextBox Name="txtDiscountAmount" LabelText="Discount Amount:  " Text="{Binding Path=disc_amt, Mode=TwoWay, StringFormat={}{0:C}}" Grid.Column="2" LabelWidth="130" />
+            <RazerBase:ucLabelTextBox Name="txtNetAmount" LabelText="Net Amount:  " Text="{Binding Path=net_amt, Mode=TwoWay, StringFormat={}{0:C}}" Grid.Column="3" LabelWidth="130" IsReadOnly="True" />
+        </Grid>
+    </Grid>
+</RazerBase:ScreenBase>

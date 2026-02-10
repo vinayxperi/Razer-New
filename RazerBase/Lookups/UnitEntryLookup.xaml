@@ -1,0 +1,40 @@
+﻿<local:DialogBase x:Class="RazerBase.Lookups.UnitEntryLookup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:RazerBase"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+         mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="850"
+             Height="650" Width="800" Background="{StaticResource ApplicationBackground}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="320" />
+            <ColumnDefinition Width="320" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="140" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!-- Place Controls Here -->
+        <local:ucLabelTextBox Grid.Column="1" LabelText="Entity" HorizontalAlignment="Left" x:Name="tbEntity" VerticalAlignment="Top" Width="320"  MouseDoubleClick="tbEntity_MouseDoubleClick" />
+        <local:ucLabelTextBox Grid.Column="2" LabelText="Location" HorizontalAlignment="Left" x:Name="tbLocation" VerticalAlignment="Top" Width="320"  MouseDoubleClick="tbLocationMouseDoubleClick"/>
+        <local:ucLabelComboBox Grid.Column="1" LabelText="Product:"  Grid.Row="1" Height="40" HorizontalAlignment="Left" x:Name="cbProduct" VerticalAlignment="Top"  Width="320"  />
+        <local:ucLabelDatePicker Grid.Column="1" LabelText="Date Start:"  Grid.Row="3" HorizontalAlignment="Left" x:Name="dpDateStart" VerticalAlignment="Top" Width="320" />
+        <local:ucLabelDatePicker Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" x:Name="dpDateEnd" VerticalAlignment="Top" Width="320" LabelText="Date End:" />
+        <local:ucBaseGrid Grid.Column="1" Grid.ColumnSpan="2"  Grid.Row="5" Grid.RowSpan="2"  HorizontalAlignment="Left" x:Name="gFilterGrid" VerticalAlignment="Top" Width="640" />
+        <local:ucLabelComboBox Height="40" HorizontalAlignment="Left" LabelText="Report:" x:Name="cbReport" VerticalAlignment="Top" Width="320" Grid.Column="1" Grid.Row="2" IsEnabled="False" />
+        <local:ucLabelTextBox Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" x:Name="tbContract" VerticalAlignment="Top" Width="320" LabelText="Contract:"  MouseDoubleClick="tbContractMouseDoubleClick" />
+        <local:ucLabelComboBox Grid.Column="2" Height="40" HorizontalAlignment="Left" LabelText="Unit Type:" x:Name="cbUnits" VerticalAlignment="Top" Width="320" Grid.Row="2" />
+        <Button Content="Search" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" Height="23" HorizontalAlignment="Center" x:Name="btnSearch" VerticalAlignment="Center" Width="75" Click="btnSearch_Click" />
+    </Grid>
+</local:DialogBase>

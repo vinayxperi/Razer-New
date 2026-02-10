@@ -1,0 +1,48 @@
+﻿<local:ScreenBase x:Class="Razer.BatchBilling.UpdateAccountingClass" 
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+             mc:Ignorable="d" 
+            d:DesignHeight="1280" d:DesignWidth="1024"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}"  >
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="330" />
+            <ColumnDefinition Width="330" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="5" />
+        </Grid.RowDefinitions>
+        <!-- Place Controls Here -->
+        <local:ucLabelTextBox BindPath="acct_class_id"  HorizontalAlignment="Left" LabelText="Acct Class ID:" Name="ucAccTClassID" 
+                              VerticalAlignment="Top" Width="320" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" 
+                              LostFocus="ucEntityClick_LostFocus" EnterActsLikeTab="True"  MouseDoubleClick="ucAccTClassID_MouseDoubleClick" />
+        <local:ucLabelTextBox  LabelText="Acct Class:"  BindPath="acct_class"  HorizontalAlignment="Left" Name="tbAcctClass" 
+                               VerticalAlignment="Top" Width="320" Grid.Row="1" Grid.Column="2" IsEnabled="False"  
+                                Grid.ColumnSpan="2"  />
+        <local:ucLabelCheckBox Grid.Column="3" Grid.Row="1" HorizontalAlignment="Right" BindPath="status"   Name="cbActive" 
+                               VerticalAlignment="Top" LabelText="InActive:"  IsEnabled="True"  />
+        <local:ucLabelComboBox Grid.ColumnSpan="1" LabelText="Use Ratio" Name="cbRatio"  Grid.Column="1" Grid.Row="2" 
+                               SelectedValue="{Binding Path=use_ratio_flag, Mode=TwoWay}" IsEnabled="False" SelectionChanged="cbRatio_SelectionChanged"   />
+        <local:ucLabelTextBox Grid.Column="1" Grid.Row="3"  Name="tbDescription" 
+                              BindPath="description" VerticalAlignment="Top" Grid.ColumnSpan="3" LabelText="Description:" IsEnabled="False" />
+
+        <Label Content="Account Class Allocation" Grid.Column="2" Grid.Row="4"  HorizontalAlignment="Center"  Name="label1" 
+               VerticalAlignment="Bottom"  HorizontalContentAlignment="Center" Style="{StaticResource LabelLightUpStyle}" />
+        <local:ucBaseGrid Grid.ColumnSpan="4" Grid.RowSpan="2" Grid.Row="5" Name="gFilterGrid" Grid.Column="1" />
+
+    </Grid>
+</local:ScreenBase>

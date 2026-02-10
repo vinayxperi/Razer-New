@@ -1,0 +1,56 @@
+﻿<RazerBase:ScreenBase x:Class="COLA.COLAGeneralTab" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:RazerBase="clr-namespace:RazerBase;assembly=RazerBase"
+        xmlns:igWindows="http://infragistics.com/Windows"
+        xmlns:igDP="http://infragistics.com/DataPresenter" 
+        mc:Ignorable="d" 
+        d:DesignHeight="720" d:DesignWidth="1080">
+    
+    <UserControl.Resources>
+        <!--The resource is needed to support the color coding of the rows in the grid-->
+        <Style TargetType="{x:Type igDP:DataRecordPresenter}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="{Binding Path=Cells[color_status].Value, Converter={StaticResource AttachmentHighlightConverter}}" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <RazerBase:ucBaseGrid x:Name="GridCola" Grid.RowSpan="2" Grid.ColumnSpan="2"></RazerBase:ucBaseGrid>
+        <Border Grid.Column="1" Grid.Row="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <RazerBase:ucLabelComboBox Name="cmbProductCode" LabelText="Product:" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" LabelWidth="150" ></RazerBase:ucLabelComboBox>
+                <RazerBase:ucLabelTextBox Name="txtEntityId" Grid.Row="1" Grid.Column="0" LabelText="Entity Id:" MouseDoubleClick="txtEntityId_MouseDoubleClick" LostFocus="txtEntityId_LostFocus" IsEnabled="False"  />
+                <RazerBase:ucLabelTextBox Name="txtEntityName" Grid.Row="1" Grid.Column="1" LabelText="Entity Name:" IsEnabled="False"/>
+                <Button Name="btnRemove" Content="Remove Hold" Grid.Row="2" Grid.Column="1" MaxWidth="100" MaxHeight="30" Click="btnRemove_Click" />
+            </Grid>
+        </Border>
+    </Grid>
+</RazerBase:ScreenBase>

@@ -1,0 +1,55 @@
+﻿<local:ScreenBase x:Class="RazerTestProject.ucTab2" 
+             MainTableName="[CHANGE]"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RazerBase;assembly=RazerBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="720"
+             Height="Auto" Width="Auto" Background="{DynamicResource ApplicationBackground}">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition  Height="40" />
+            <RowDefinition  Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!-- Controls For Layout Column: 1 -->
+        <local:ucLabelTextBox Name="AccountNameTextBox" LabelWidth="84" LabelText="Account Name" 
+Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="4" 
+Text="{Binding Path=account_name,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <local:ucLabelTextBox Name="AccountStatusTextBox" LabelWidth="84" LabelText="Account Status" 
+Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="4" 
+Text="{Binding Path=account_status,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <local:ucLabelTextBox Name="AccountTypeTextBox" LabelWidth="84" LabelText="Account Type" 
+Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="4" 
+Text="{Binding Path=account_type,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <local:ucLabelTextBox Name="Address1TextBox" LabelWidth="84" LabelText="Address 1" 
+Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="4" 
+Text="{Binding Path=address_1,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <local:ucLabelTextBox Name="AssessFinChargeTextBox" LabelWidth="84" LabelText="Assess Fin Charge" 
+Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="4" 
+Text="{Binding Path=assess_fin_charge,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+</local:ScreenBase>
