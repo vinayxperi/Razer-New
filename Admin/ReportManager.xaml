@@ -1079,11 +1079,24 @@
         </igDP:FieldLayout>
 
         <igDP:FieldLayout x:Key="RptMgrSalesBillingRates" x:Shared="False">
-            <igDP:Field Name="service_period" Label="Service Period" Width="180">
+            <igDP:Field Name="service_period_start" Label="Service Period Start" Width="120">
                 <igDP:Field.Settings>
                     <igDP:FieldSettings EditorType="{x:Type igEditors:XamDateTimeEditor}"/>
                 </igDP:Field.Settings>
-            </igDP:Field>          
+            </igDP:Field>
+            <igDP:Field Name="service_period_end" Label="Service Period End" Width="120">
+                <igDP:Field.Settings>
+                    <igDP:FieldSettings EditorType="{x:Type igEditors:XamDateTimeEditor}"/>
+                </igDP:Field.Settings>
+            </igDP:Field>
+        </igDP:FieldLayout>
+
+        <igDP:FieldLayout x:Key="RptMgrPTMOBIRevenue" x:Shared="False">
+            <igDP:Field Name="start_period" Label="Account Period" Width="120">
+                <igDP:Field.Settings>
+                    <igDP:FieldSettings EditorType="{x:Type igEditors:XamDateTimeEditor}"/>
+                </igDP:Field.Settings>
+            </igDP:Field>
         </igDP:FieldLayout>
 
 

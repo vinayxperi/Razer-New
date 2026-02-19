@@ -1252,8 +1252,14 @@ namespace Admin
                             rptParmsFieldLayout = (FieldLayout)FindResource("RptMgrSalesBillingRates");
                         }
 
-                        
-                              //Sales Tax by Invoice Date
+                        //Sales Billing Rates
+                        if (jobName == "PTMOBI Revenue Report")
+                        {
+                            rptParmsFieldLayout = (FieldLayout)FindResource("RptMgrPTMOBIRevenue");
+                        }
+
+
+                        //Sales Tax by Invoice Date
                         if (jobName == "Sales Tax by Invoice Date")
                         {
                             rptParmsFieldLayout = (FieldLayout)FindResource("RptMgrSalesTaxbyInvDtRpt");
